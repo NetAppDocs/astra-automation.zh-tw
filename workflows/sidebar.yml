@@ -1,0 +1,48 @@
+---
+section: workflows
+title: 管理工作流程
+entries:
+- title: 開始之前
+  url: "/workflows/workflows_before.html"
+- title: 應用程式控制
+  entries:
+  - title: 列出未受管理的應用程式
+    url: "/workflows/wf_list_unman_apps.html"
+  - title: 列出託管應用程式
+    url: "/workflows/wf_list_man_apps.html"
+  - title: 取得託管應用程式
+    url: "/workflows/wf_get_man_app.html"
+  - title: 管理應用程式
+    url: "/workflows/wf_manage_app.html"
+  - title: 取消管理應用程式
+    url: "/workflows/wf_unmanage_app.html"
+- title: 應用程式保護
+  entries:
+  - title: 列出快照
+    url: "/workflows/wf_list_snapshots.html"
+  - title: 列出備份
+    url: "/workflows/wf_list_backups.html"
+  - title: 建立快照
+    url: "/workflows/wf_create_snapshot.html"
+  - title: 建立備份
+    url: "/workflows/wf_create_backup.html"
+  - title: 刪除快照
+    url: "/workflows/wf_delete_snapshot.html"
+  - title: 刪除備份
+    url: "/workflows/wf_delete_backup.html"
+- title: 複製及還原應用程式
+  entries:
+  - title: 複製應用程式
+    url: "/workflows/wf_clone_app.html"
+  - title: 從快照複製應用程式
+    url: "/workflows/wf_clone_app_snapshot.html"
+  - title: 從備份複製應用程式
+    url: "/workflows/wf_clone_app_backup.html"
+  - title: 從備份還原應用程式
+    url: "/workflows/wf_restore_app_backup.html"
+- title: 支援
+  entries:
+  - title: 列出通知
+    url: "/workflows/wf_list_notifications.html"
+  - title: 刪除失敗的應用程式
+    url: "/workflows/wf_delete_failed_app.html"

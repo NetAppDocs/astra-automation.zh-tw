@@ -1,0 +1,202 @@
+---
+sidebar: sidebar 
+permalink: endpoints/resources.html 
+keywords:  
+summary:  
+---
+= 資源與端點
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用Astra Control REST API提供的資源、將Astra部署自動化。每個資源都是透過一或多個端點進行存取。以下資訊將介紹您可在自動化部署中使用的REST資源。
+
+
+NOTE: 用於存取Astra Control資源的路徑格式和完整URL是以數個值為基礎。請參閱 link:../rest-core/url_format.html["URL格式"] 以取得更多資訊。另請參閱 link:../reference/api_reference.html["API 參考"] 如需使用Astra資源和端點的詳細資訊、
+
+
+
+== Astra Control REST資源摘要
+
+Astra Control REST API中提供的主要資源端點分為三類。每個資源都可以使用CRUD作業的完整集合（建立、讀取、更新、刪除）存取、除非另有說明。
+
+「*版本*」欄位會指出首次引進資源時的Astra版本。此欄位會以粗體顯示新增至目前版本的資源。
+
+
+
+=== 核心資源
+
+核心資源端點提供建立及維護Astra執行時間環境所需的基礎服務。
+
+[cols="20,10,70"]
+|===
+| 資源 | 版本 | 說明 
+
+
+| 帳戶 | 21：12 | 帳戶資源可讓您管理多租戶Astra Control部署環境中的隔離租戶。 
+
+
+| ASUP | 21.08年 | ASUP資源代表AutoSupport 轉寄給NetApp支援部門的各種產品組合。 
+
+
+| 認證資料 | 21.04. | 認證資源包含安全性相關資訊、可與Astra使用者、叢集、儲存區及儲存後端搭配使用。 
+
+
+| 權利 | 21.08年 | 權利資源是根據使用中的授權與訂閱、代表帳戶可用的功能與容量。 
+
+
+| 活動 | 21.04. | 事件資源代表系統中發生的所有事件、包括分類為通知的子集。 
+
+
+| 執行掛勾 | 21：12 | 執行攔截資源代表自訂指令碼、您可以在執行託管應用程式快照之前或之後執行。 
+
+
+| 功能 | 21.08年 | 功能資源代表所選的Astra功能、您可以查詢這些功能、以判斷系統中是否已啟用或停用這些功能。存取限制為唯讀。 
+
+
+| 攔截來源 | 21：12 | Hook來源資源代表實際使用的原始程式碼與執行掛勾。將原始程式碼與執行控制區分開有幾項優點、例如允許共用指令碼。 
+
+
+| 授權 | 21.08年 | 授權資源代表Astra帳戶可用的授權。 
+
+
+| 通知 | 21.04. | 通知資源代表有通知目的地的Astra事件。存取權限是以每位使用者為單位提供。 
+
+
+| 套件 | * 22.04 * | 套件資源提供套件定義的登錄與存取。軟體套件包含各種元件、包括檔案、映像及其他成品。 
+
+
+| 角色繫結 | 21.04. | 角色繫結資源代表特定使用者與帳戶配對之間的關係。除了兩者之間的連結之外、還會透過特定角色為每個角色指定一組權限。 
+
+
+| 設定 | 21.08年 | 設定資源代表一組金鑰值配對、說明特定Astra帳戶的功能。 
+
+
+| 訂購 | 21.08年 | 訂閱資源代表Astra帳戶的使用中訂閱。 
+
+
+| 權杖 | 21.04. | 權杖資源代表可以程式設計方式存取Astra Control REST API的權杖。 
+
+
+| 未讀取通知 | 21.04. | 未讀取的通知資源代表指派給特定使用者但尚未讀取的通知。 
+
+
+| 升級 | * 22.04 * | 升級資源可存取軟體元件、以及啟動升級的能力。 
+
+
+| 使用者 | 21.04. | 使用者資源代表Astra使用者能夠根據其定義的角色來存取系統。 
+|===
+
+
+=== 託管應用程式資源
+
+託管應用程式資源端點可讓您存取託管的Kubernetes應用程式。
+
+[cols="20,10,70"]
+|===
+| 資源 | 版本 | 說明 
+
+
+| 應用程式資產 | 21.04. | 應用程式資產資源代表管理Astra應用程式所需的狀態資訊內部集合。 
+
+
+| 應用程式備份 | 21.04. | 應用程式備份資源代表託管應用程式的備份。 
+
+
+| 應用程式快照 | 21.04. | 應用程式快照資源代表託管應用程式的快照。 
+
+
+| 執行攔截置換 | 21：12 | 執行掛勾置換資源可讓您視需要停用特定應用程式的預先載入NetApp預設執行掛勾。 
+
+
+| 託管應用程式 | 21.04. | 託管應用程式資源代表由Astra管理的Kubernetes應用程式。 
+
+
+| 排程 | 21.04. | 排程資源代表排程用於託管應用程式的資料保護作業、做為資料保護原則的一部分。 
+|===
+
+
+=== 拓撲資源
+
+拓撲資源端點可讓您存取未受管理的應用程式和儲存資源。
+
+[cols="20,10,70"]
+|===
+| 資源 | 版本 | 說明 
+
+
+| 應用程式 | 21.04. | 應用程式資源代表Kubernetes的所有應用程式、包括Astra未管理的應用程式。 
+
+
+| 鏟斗 | 21.08年 | 儲存庫資源代表S3雲端儲存庫、用於儲存由Astra管理之應用程式的備份。 
+
+
+| 雲端 | 21.08年 | 雲端資源代表Astra用戶端可連線至的雲端、以便管理叢集和應用程式。 
+
+
+| 叢集 | 21.08年 | 叢集資源代表Kubernetes叢集、並非由Kubernetes管理。 
+
+
+| 叢集節點 | 21：12 | 叢集節點資源可讓您存取Kubernetes叢集中的個別節點、以提供額外的解析度。 
+
+
+| 託管叢集 | 21.08年 | 託管叢集資源代表Kubernetes目前由Kubernetes管理的叢集。 
+
+
+| 託管儲存後端 | 21：12 | 託管儲存後端資源可讓您存取後端儲存供應商的抽象呈現。這些儲存後端可由託管叢集和應用程式使用。 
+
+
+| 命名空間 | 21：12 | 命名空間資源可讓您存取Kubernetes叢集中所使用的命名空間。 
+
+
+| 儲存後端 | 21.08年 | 儲存後端資源代表可由Astra託管叢集和應用程式使用的儲存服務供應商。 
+
+
+| 儲存類別 | 21.08年 | 儲存類別資源代表所探索到的不同類別或類型的儲存設備、可供特定的託管叢集使用。 
+
+
+| 儲存設備 | 21：12 | 儲存設備資源可讓您存取與Astra Data Store（廣告）類型儲存後端的特定儲存節點相關聯的磁碟。將廣告儲存後端部署為Kubernetes叢集。 
+
+
+| 儲存節點 | 21：12 | 儲存節點資源代表屬於ADS叢集的節點。 
+
+
+| Volume | 21.04. | Volume資源代表與託管應用程式相關聯的Kubernetes儲存磁碟區。 
+|===
+
+
+== 最新版本的新端點
+
+目前的22.04 Astra Control版本已新增下列REST端點。此外、多個現有資源的版本也已升級。
+
+* /Accounts /｛account_id｝/核心/ v1/packages
+* /Accounts /｛account_id｝/core / v1/packages/｛package_id｝
+* /Accounts /｛account_id｝/核心/ v1/升級
+* /Accounts /｛account_id｝/核心/ v1/exgrades//｛grade_id｝
+* /Accounts /｛account_id｝/拓撲/ v1/appBackups
+* /Accounts /｛account_id｝/拓撲/ v1/appBackups/｛appBackup｝
+* /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集/｛cluster_id｝/叢集節點
+* /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集/｛cluster_id｝/叢集節點/｛clusterNode_id｝
+* /accounts/{account_id}/topology / v1/managedClusters/｛managedCluster_id｝/apps /｛app_id｝/appAsset
+* /Accounts /｛account_id｝/拓撲/ v1/managedClusters/｛managedCluster_id｝/應用程式/｛app_id｝/應用程式資產/｛appAsset_id｝
+* /accounts/{account_id}/topology / v1/managedClusters/{managedCluster_id}/clusterNode
+* /Accounts /｛account_id｝/拓撲/ v1/managedClusters/｛managedCluster_id｝/叢集節點/｛clusterNode_id｝
+
+
+
+
+== 其他資源和端點
+
+您可以使用數種額外的資源和端點來支援Astra部署。
+
+
+NOTE: Astra Control REST API參考文件目前未隨附這些資源和端點。
+
+OpenAPI:: OpenAPI端點可讓您存取目前的OpenAPI Json文件及其他相關資源。
+OpenMetrics:: OpenMetrics端點可透過OpenMetrics資源存取帳戶指標。Astra Control Center部署模式可提供支援。
+

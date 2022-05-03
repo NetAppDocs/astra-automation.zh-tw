@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: information/additional_resources.html 
+keywords:  
+summary:  
+---
+= 其他資源
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以存取更多資源、以取得協助、並尋找更多有關NetApp雲端服務與支援、以及一般REST與雲端概念的資訊。
+
+
+
+=== Astra
+
+* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center文件"^]
++
+部署在客戶駐地的Astra Control Center軟體目前版本的文件。
+
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service文件"^]
++
+目前在公有雲上提供Astra Control Service軟體版本的文件。
+
+* https://docs.netapp.com/us-en/astra-data-store/["Astra Data Store文件"^]
++
+部署在客戶內部環境中的Astra Data Store軟體目前版本的文件。
+
+* https://docs.netapp.com/us-en/trident/["Astra Trident文件"^]
++
+由NetApp維護的開放原始碼儲存協調程式Astra Trident軟體目前版本的文件。
+
+* https://docs.netapp.com/us-en/astra-family/["Astra系列文件"^]
++
+集中位置、可存取內部部署和公有雲部署的所有Astra文件。
+
+
+
+
+
+=== NetApp雲端資源
+
+* https://cloud.netapp.com/["NetApp雲端解決方案"^]
++
+NetApp雲端解決方案的中央網站。
+
+* https://services.cloud.netapp.com/redirect-to-login?startOnSignup=false["NetApp Cloud Central主控台"^]
++
+使用登入功能的NetApp Cloud Central服務主控台。
+
+* https://mysupport.netapp.com/["NetApp支援"^]
++
+存取疑難排解工具、文件及技術支援協助。
+
+
+
+
+
+=== REST與雲端概念
+
+* 博士 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["論文"^] 作者：Roy Fielding
++
+本出版品介紹並建立REST應用程式開發模式。
+
+* https://auth0.com/["驗證0"^]
++
+這是Astra服務用於網路存取的驗證與授權平台服務。
+
+* https://www.rfc-editor.org/["RFC編輯器"^]
++
+Web和網際網路標準的權威來源、以獨特編號的RFC文件集合形式加以維護。
+
+

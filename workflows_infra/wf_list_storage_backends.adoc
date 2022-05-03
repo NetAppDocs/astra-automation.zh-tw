@@ -1,0 +1,79 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_storage_backends.html 
+keywords:  
+summary:  
+---
+= 列出儲存後端
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出可用的儲存後端。
+
+
+
+=== 1.列出庫存箱
+
+執行下列REST API呼叫。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /Account/{AccountID}/topology / v1/storageBackends 
+|===
+
+
+===== Curl範例：傳回所有儲存後端的所有資料
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/storageBackends' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Json輸出範例
+
+[source, json]
+----
+{
+  "items": [
+    {
+      "backendCredentialsName": "10.191.77.177",
+      "backendName": "myinchunhcluster-1",
+      "backendType": "ONTAP",
+      "backendVersion": "9.8.0",
+      "configVersion": "Not applicable",
+      "health": "Not applicable",
+      "id": "46467c16-1585-4b71-8e7f-f0bc5ff9da15",
+      "location": "nalab2",
+      "metadata": {
+        "createdBy": "4c483a7e-207b-4f9a-87b7-799a4629d7c8",
+        "creationTimestamp": "2021-07-30T14:26:19Z",
+        "modificationTimestamp": "2021-07-30T14:26:19Z"
+      },
+      "ontap": {
+        "backendManagementIP": "10.191.77.177",
+        "managementIPs": [
+          "10.191.77.177",
+          "10.191.77.179"
+        ]
+      },
+      "protectionPolicy": "Not applicable",
+      "region": "Not applicable",
+      "state": "Running",
+      "stateUnready": [],
+      "type": "application/astra-storageBackend",
+      "version": "1.0",
+      "zone": "Not applicable"
+    }
+  ]
+}
+----

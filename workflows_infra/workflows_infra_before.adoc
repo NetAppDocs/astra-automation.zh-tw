@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/workflows_infra_before.html 
+keywords:  
+summary:  
+---
+= 開始之前
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用這些工作流程來建立及維護Astra Control Center部署模式所使用的基礎架構。在大多數情況下、工作流程也可搭配Astra Control Service使用。
+
+
+NOTE: NetApp可隨時擴充及強化這些工作流程、因此您應定期檢閱。
+
+
+
+== 一般準備
+
+使用任何Astra工作流程之前、請務必先檢閱 link:../get-started/prepare_to_use_workflows.html["準備好使用工作流程"]。
+
+
+
+== 工作流程類別
+
+基礎架構工作流程會依不同類別進行組織、以便更容易找到您想要的工作流程。
+
+[cols="25,75"]
+|===
+| 類別 | 說明 
+
+
+| 身分識別與存取 | 這些工作流程可讓您管理身分識別、以及Astra的存取方式。這些資源包括使用者、認證和權杖。 
+
+
+| 桶 | 您可以使用這些工作流程來建立及管理用來儲存備份的S3儲存區。 
+
+
+| 儲存設備 | 這些工作流程可讓您新增及維護儲存後端和磁碟區。 
+
+
+| 叢集 | 您可以新增受管理的Kubernetes叢集、以保護及支援其中所包含的應用程式。 
+|===

@@ -1,0 +1,12 @@
+---
+section: additional
+title: 其他使用考量
+entries:
+- title: RBAC安全性
+  url: "/additional/rbac.html"
+- title: 使用集合
+  url: "/additional/work_with_collections.html"
+- title: 診斷
+  url: "/additional/diagnostics_support.html"
+- title: 撤銷API權杖
+  url: "/additional/revoke_token.html"

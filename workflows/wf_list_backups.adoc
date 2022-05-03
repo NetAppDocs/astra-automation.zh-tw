@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_backups.html 
+keywords:  
+summary:  
+---
+= 列出備份
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出已為特定託管應用程式建立的備份。
+
+
+
+=== 開始之前
+
+您必須擁有要列出備份的託管應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 以找出應用程式。
+
+
+
+=== 1.列出備份
+
+執行下列REST API呼叫。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/appBackups 
+|===
+
+
+===== 其他輸入參數
+
+除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
+
+[cols="25,10,10,55"]
+|===
+| 參數 | 類型 | 必要 | 說明 
+
+
+| 託管應用程式ID | 路徑 | 是的 | 識別擁有所列備份的託管應用程式。 
+|===
+
+
+===== Curl範例：傳回應用程式的所有備份
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Json輸出範例
+
+[source, json]
+----
+{
+  "items": [
+    {
+      "type": "application/astra-appBackup",
+      "version": "1.0",
+      "id": "ed39fdb0-12db-497b-9e46-20036c1fb0d2",
+      "name": "mariadb-mariadb-backup-20210617175900",
+      "state": "completed",
+      "stateUnready": [],
+      "bytesDone": 0,
+      "percentDone": 100,
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2021-06-17T17:59:09Z",
+        "modificationTimestamp": "2021-06-17T17:59:09Z",
+        "createdBy": "fb093413-b6fc-4a64-a48a-afc32ada8537"
+      }
+    }
+  ],
+  "metadata": {}
+}
+----

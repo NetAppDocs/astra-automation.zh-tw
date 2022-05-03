@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: rn/known_issues.html 
+keywords:  
+summary:  
+---
+= 已知問題
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。
+
+
+NOTE: Astra Control REST API 22.04版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。
+
+
+
+== 並未探索後端儲存節點中的所有儲存裝置
+
+發出REST API呼叫以擷取儲存節點中定義的儲存裝置時、只會探索Astra Data Store裝置。並非所有裝置都會歸還。
+
+
+
+== Astra Data Store儲存後端處於未知狀態
+
+Astra Data Store儲存後端在發出API呼叫以擷取儲存後端後端後端後端時、會處於「未知」狀態。在這種情況下、儲存後端實際上仍然可用、可以與通訊。不過、儲存後端內的元件可能處於不正常狀態、因此需要將其恢復為正常狀態、以便儲存後端顯示為「可用」。

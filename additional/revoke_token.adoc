@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: additional/revoke_token.html 
+keywords:  
+summary:  
+---
+= 撤銷API權杖
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在Astra Web介面上撤銷不再需要的API權杖。
+
+您需要Astra帳戶。您也應該識別要撤銷的權杖。
+
+撤銷權杖之後、權杖會立即且永久地無法使用。
+
+.步驟
+. 使用您的帳戶認證登入Astra。
++
+存取Astra Control Service的下列站台： https://astra.netapp.io/["https://astra.netapp.io"^]
+
+. 按一下頁面右上角的圖示、然後選取「* API access*（* API存取*）」。
+. 選取您要撤銷的權杖。
+. 在「*動作*」下拉式方塊下、按一下「*撤銷權杖*」。
+

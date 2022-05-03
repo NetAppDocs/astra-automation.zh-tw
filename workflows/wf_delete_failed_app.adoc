@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_delete_failed_app.html 
+keywords:  
+summary:  
+---
+= 刪除失敗的應用程式
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果託管應用程式的備份或快照處於故障狀態、您可能無法移除該應用程式。在此情況下、您可以使用下列工作流程手動移除應用程式。
+
+
+
+=== 1.選取要刪除的託管應用程式
+
+執行工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 並選取您要移除的應用程式。
+
+
+
+=== 2.列出應用程式的現有備份
+
+執行工作流程 link:wf_list_backups.html["列出備份"]。
+
+
+
+=== 3.刪除所有備份
+
+執行工作流程、刪除所有應用程式備份 link:wf_delete_backup.html["刪除備份"] 針對清單中的每個備份。
+
+
+
+=== 4.列出應用程式的現有快照
+
+執行工作流程 link:wf_list_snapshots.html["列出快照"]。
+
+
+
+=== 5.刪除所有快照
+
+執行工作流程 link:wf_delete_snapshot.html["刪除快照"] 從清單中的每個快照。
+
+
+
+=== 6.移除應用程式
+
+執行工作流程 link:wf_unmanage_app.html["取消管理應用程式"] 移除應用程式。

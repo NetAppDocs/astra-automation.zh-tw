@@ -1,0 +1,37 @@
+---
+sidebar: sidebar 
+permalink: additional/diagnostics_support.html 
+keywords:  
+summary:  
+---
+= 診斷與支援
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Astra Control REST API提供多項支援功能、可用於診斷與偵錯。
+
+
+
+== API資源
+
+API資源提供多項Astra功能、可提供診斷資訊和支援。
+
+[cols="20,80"]
+|===
+| 類型 | 說明 
+
+
+| 活動 | 在Astra處理過程中記錄的系統活動。 
+
+
+| 通知 | 被視為重要的事件子集、足以呈現給使用者。 
+
+
+| 未讀取通知 | 使用者尚未讀取或擷取的通知。 
+|===

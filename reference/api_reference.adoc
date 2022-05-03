@@ -1,0 +1,32 @@
+---
+sidebar: sidebar 
+permalink: reference/api_reference.html 
+keywords:  
+summary:  
+---
+= API 參考
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以存取所有Astra Control REST API呼叫的詳細資料、包括HTTP方法、輸入參數和回應。這份完整參考資料有助於使用REST API開發自動化應用程式。
+
+
+NOTE: REST API參考文件目前已隨Astra Control提供、並可線上取得。
+
+您需要Astra Control Center或Astra Control Service帳戶。
+
+.步驟
+. 使用您的帳戶認證登入Astra。
++
+存取Astra Control Service的下列站台： link:https://astra.netapp.io["https://astra.netapp.io"^]
+
+. 按一下頁面右上角的圖示、然後選取「* API access*（* API存取*）」。
+. 在頁面頂端、按一下「* API Documentation *（* API文件*）」下方顯示的URL。
+. 出現提示時、請再次提供您的帳戶認證資料。
+

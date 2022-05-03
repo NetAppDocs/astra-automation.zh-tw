@@ -1,0 +1,14 @@
+---
+section: get-started
+title: 開始使用
+entries:
+- title: 開始之前
+  url: "/get-started/before_get_started.html"
+- title: 取得API權杖
+  url: "/get-started/get_api_token.html"
+- title: 您好：World
+  url: "/get-started/hello_world.html"
+- title: 準備好使用工作流程
+  url: "/get-started/prepare_to_use_workflows.html"
+- title: Kubernetes基本概念
+  url: "/get-started/kubernetes_concepts.html"

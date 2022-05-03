@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_notifications.html 
+keywords:  
+summary:  
+---
+= 列出通知
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出特定Astra帳戶的通知。您可以在監控系統活動或偵錯問題時執行此動作。
+
+
+
+=== 1.列出通知
+
+執行下列REST API呼叫。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /Account/｛AccountID｝/核心/ v1/notifications 
+|===
+
+
+===== 其他輸入參數
+
+除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
+
+[cols="25,10,10,55"]
+|===
+| 參數 | 類型 | 必要 | 說明 
+
+
+| 篩選器 | 查詢 | 否 | 選擇性地篩選您要在回應中傳回的通知。 
+
+
+| 包括 | 查詢 | 否 | 選擇性地選取您要傳回回應中的值。 
+|===
+
+
+===== Curl範例：傳回所有通知
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Curl範例：傳回嚴重性為警告的通知說明
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/notifications?filter=severity%20eq%20'warning'&include=description' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Json輸出範例
+
+[source, json]
+----
+{
+  "items": [
+    [
+      "Trident on cluster david-ie-00 has failed or timed out; installation of the Trident operator failed or is not yet complete; operator failed to reach an installed state within 300.00 seconds; container trident-operator not found in operator deployment"
+    ],
+    [
+      "Trident on cluster david-ie-00 has failed or timed out; installation of the Trident operator failed or is not yet complete; operator failed to reach an installed state within 300.00 seconds; container trident-operator not found in operator deployment"
+    ]
+  ],
+  "metadata": {}
+}
+----

@@ -1,0 +1,99 @@
+---
+sidebar: sidebar 
+permalink: workflows/wf_list_snapshots.html 
+keywords:  
+summary:  
+---
+= 列出快照
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出針對特定託管應用程式所拍攝的快照。
+
+
+
+=== 開始之前
+
+您必須擁有想要列出快照的託管應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 以找出應用程式。
+
+
+
+=== 1.列出快照
+
+執行下列REST API呼叫。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/應用程式快照 
+|===
+
+
+===== 其他輸入參數
+
+除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
+
+[cols="15,10,10,65"]
+|===
+| 參數 | 類型 | 必要 | 說明 
+
+
+| 託管應用程式ID | 路徑 | 是的 | 識別擁有所列快照的託管應用程式。 
+
+
+| 數 | 查詢 | 否 | 如果是「count=true」、快照數量會包含在回應的中繼資料區段中。 
+|===
+
+
+===== Curl範例：傳回應用程式的所有快照
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Curl範例：傳回應用程式和計數的所有快照
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== Json輸出範例
+
+[source, json]
+----
+{
+  "items": [
+    {
+      "id": "dc2974ae-f71d-4c81-91b5-f96cf72dc3ba",
+      "metadata": {
+        "createdBy": "fb093413-b6fc-4a64-a48a-afc32ada8537",
+        "creationTimestamp": "2021-06-04T21:23:14Z",
+        "modificationTimestamp": "2021-06-04T21:23:14Z",
+        "labels": []
+      },
+      "snapshotAppAsset": "4547658d-cc06-4c1d-ad8a-4a05274d0db0",
+      "snapshotCreationTimestamp": "2021-06-04T21:23:47Z",
+      "name": "test-postgres-app-snapshot-20210604212213",
+      "state": "completed",
+      "stateUnready": [],
+      "type": "application/astra-appSnap",
+      "version": "1.0"
+    }
+  ],
+  "metadata": {
+    "count": 1
+  }
+}
+----

@@ -1,0 +1,22 @@
+---
+section: workflows_infra
+title: 基礎架構工作流程
+entries:
+- title: 開始之前
+  url: "/workflows_infra/workflows_infra_before.html"
+- title: 身分識別與存取
+  entries:
+  - title: 列出使用者
+    url: "/workflows_infra/wf_list_users.html"
+- title: 桶
+  entries:
+  - title: 列出庫存箱
+    url: "/workflows_infra/wf_list_buckets.html"
+- title: 儲存設備
+  entries:
+  - title: 列出儲存後端
+    url: "/workflows_infra/wf_list_storage_backends.html"
+- title: 叢集
+  entries:
+  - title: 列出託管叢集
+    url: "/workflows_infra/wf_list_man_clusters.html"

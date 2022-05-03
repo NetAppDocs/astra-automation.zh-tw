@@ -1,0 +1,12 @@
+---
+section: python
+title: 使用Python
+entries:
+- title: NetApp Astra Control Python SDK
+  url: "/python/astra_toolkits.html"
+- title: 原生Python
+  entries:
+  - title: 開始之前
+    url: "/python/python_before.html"
+  - title: 列出託管應用程式
+    url: "/python/py_list_man_apps.html"

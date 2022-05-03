@@ -1,0 +1,12 @@
+---
+section: rest-core
+title: 核心REST實作
+entries:
+- title: REST Web服務
+  url: "/rest-core/rest_web_services.html"
+- title: 資源與收藏
+  url: "/rest-core/resources_collections.html"
+- title: HTTP詳細資料
+  url: "/rest-core/http_details.html"
+- title: URL格式
+  url: "/rest-core/url_format.html"

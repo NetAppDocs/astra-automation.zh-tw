@@ -1,0 +1,10 @@
+---
+section: rn
+title: 版本資訊
+entries:
+- title: 關於本版本
+  url: "/rn/about.html"
+- title: 新增功能
+  url: "/rn/whats_new.html"
+- title: 已知問題
+  url: "/rn/known_issues.html"

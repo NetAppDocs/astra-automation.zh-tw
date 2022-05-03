@@ -1,0 +1,117 @@
+---
+sidebar: sidebar 
+permalink: python/astra_toolkits.html 
+keywords:  
+summary:  
+---
+= NetApp Astra Control Python SDK
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+NetApp Astra Control Python SDK是開放原始碼套件、可用於自動化Astra Control部署。此套件也是瞭解Astra Control REST API的寶貴資源、可能是建立自己自動化平台的一部分。
+
+
+NOTE: 為了簡化作業、NetApp Astra Control Python SDK將在本頁的其餘部分中稱為* SDK*。
+
+
+
+== 兩種相關軟體工具
+
+SDK包含兩種不同但相關的工具、可在存取Astra Control REST API時以不同的抽象層級運作。
+
+
+
+==== Astra SDK
+
+Astra SDK提供核心平台功能。其中包含一組Python類別、可抽象化基礎REST API呼叫。這些類別可支援各種Astra Control資源的管理動作、包括應用程式、備份、快照和叢集。
+
+Astra SDK是套件的一部分、以單一的「astrasdk.py」檔案提供。您可以將此檔案匯入您的環境、並直接使用類別。
+
+
+NOTE: * NetApp Astra Control Python SDK*（或僅SDK）是整個套件的名稱。* Astra SDK*是指單一檔案「astrasdk.py」中的核心Python類別。
+
+
+
+==== 工具套件指令碼
+
+除了Astra SDK檔案之外、也提供「toolkit.py」指令碼。此指令碼可存取內部定義為Python功能的獨立管理動作、以更高的抽象層級運作。指令碼會匯入Astra SDK、並視需要呼叫類別。
+
+
+
+== 如何存取
+
+您可以使用下列方式存取SDK。
+
+
+
+==== Python套件
+
+SDK可從取得 https://pypi.org/["Python套件索引"^] 以* NetApp-Astra工具套件*的名稱。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。
+
+請參閱 https://pypi.org/project/netapp-astra-toolkits/["PyPI：NetApp Astra Control Python SDK"^] 以取得更多資訊。
+
+
+
+==== GitHub原始程式碼
+
+您也可以在GitHub取得SDK原始程式碼。儲存庫包含下列項目：
+
+* 「astrasdk.py」（使用Python類別的Astra SDK）
+* 「toolit.py」（較高層級的功能型指令碼）
+* 詳細的安裝要求與指示
+* 安裝指令碼
+* 其他文件
+
+
+您可以複製 https://github.com/NetApp/netapp-astra-toolkits["GitHub：NetApp/NetApp-Astra工具套件"^] 儲存庫。
+
+
+
+== 安裝與基本需求
+
+在安裝套件及準備使用套件時、需要考量幾種選項和需求。
+
+
+
+==== 安裝選項摘要
+
+您可以使用下列其中一種方法來安裝SDK：
+
+* 使用Pip將套件從PyPI安裝到Python環境
+* 複製GIT Hub儲存庫、然後：
++
+** 將套件部署為Docker容器（包含您所需的一切）
+** 複製兩個核心Python檔案、以便Python用戶端程式碼存取
+
+
+
+
+如需詳細資訊、請參閱PyPI和GitHub頁面。
+
+
+
+==== Astra Control環境的需求
+
+無論是直接使用Astra SDK中的Python類別、或是「toolkit.py」指令碼中的功能、最終都能在Astra Control部署中存取REST API。因此、您需要Astra帳戶和API權杖。請參閱 link:../get-started/before_get_started.html["開始之前"] 如需詳細資訊、請參閱本文件*入門*一節中的其他頁面。
+
+
+
+==== NetApp Astra Control Python SDK的需求
+
+SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.5或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。
+
+
+
+== 實用資源摘要
+
+以下是您開始使用所需的資源摘要。
+
+* https://pypi.org/project/netapp-astra-toolkits/["PyPI：NetApp Astra Control Python SDK"^]
+* https://github.com/NetApp/netapp-astra-toolkits["GitHub：NetApp/NetApp-Astra工具套件"^]
+

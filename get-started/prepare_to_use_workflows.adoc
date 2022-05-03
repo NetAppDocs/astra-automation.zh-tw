@@ -1,0 +1,106 @@
+---
+sidebar: sidebar 
+permalink: get-started/prepare_to_use_workflows.html 
+keywords:  
+summary:  
+---
+= 準備好使用工作流程
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該先熟悉Astra工作流程的組織和格式、再將其用於即時部署。
+
+
+
+== 簡介
+
+工作流程_是完成特定管理工作或目標所需的一或多個步驟順序。Astra Control工作流程的每個步驟都是下列其中一個步驟：
+
+* REST API呼叫（詳細資料如Curl和Json範例）
+* 呼叫另一個Astra工作流程
+* 其他相關工作（例如做出必要的設計決策）
+
+
+工作流程包括完成每項工作所需的核心步驟和參數。這些工具可提供自訂自動化環境的起點。
+
+
+
+== 通用輸入參數
+
+以下所述的輸入參數適用於用來說明REST API呼叫的所有Curl範例。
+
+
+NOTE: 由於這些輸入參數是通用需求、因此不會在個別工作流程中進一步說明。如果特定的捲曲範例使用其他輸入參數、請參閱*其他輸入參數*一節。
+
+
+
+=== 路徑參數
+
+每次REST API呼叫所使用的端點路徑包括下列參數。另請參閱 link:../rest-core/url_format.html["URL格式"] 以取得更多資訊。
+
+帳戶ID:: 這是UUIDv4值、可識別執行API作業的Astra帳戶。請參閱 link:../get-started/get_api_token.html["取得API權杖"] 如需尋找帳戶ID的詳細資訊、請參閱。
+
+
+
+
+=== 要求標頭
+
+視REST API呼叫而定、您可能需要包含數個要求標頭。
+
+授權:: 工作流程中的所有API呼叫都需要API權杖來識別使用者。您必須在「授權」要求標頭中加入該標誌。請參閱 link:../get-started/get_api_token.html["取得API權杖"] 以取得有關產生API權杖的詳細資訊。
+內容類型:: 使用HTTP POST並將Json包含在要求本文中的要求放入、您應該根據Astra資源來宣告媒體類型。例如、您可以在建立託管應用程式的快照時、加入標題「Content-Type：application/Astra-appsnap+json」。
+接受:: 您可以根據Astra資源、宣告回應中預期內容的特定媒體類型。例如、您可以在列出託管應用程式的備份時、加入標題「Accept: application/Astra appBackup + json」。不過為了簡化、工作流程中的捲曲範例可接受所有媒體類型。
+
+
+
+
+== 呈現權杖和識別碼
+
+與捲動範例搭配使用的API權杖和其他ID值不透明、沒有明顯的意義。因此為了改善範例的讀取性、不會使用實際的權杖和ID值。而是使用較小的保留關鍵字、其優點如下：
+
+* Curl和Json樣本更清楚、更容易瞭解。
+* 由於所有關鍵字的格式都與方括弧和大寫字母相同、因此您可以快速識別要插入或擷取的位置和內容。
+* 不會遺失任何值、因為無法複製原始參數、並與實際部署搭配使用。
+
+
+以下是Curl範例中使用的一些常用保留關鍵字。此清單並非詳盡無遺、並會視需要使用其他關鍵字。其意義應根據背景而明確。
+
+[cols="25,15,60"]
+|===
+| 關鍵字 | 類型 | 說明 
+
+
+| <Account（帳戶）_ID> | 路徑 | UUIDv4值可識別執行API作業的帳戶。 
+
+
+| <API_tokent> | 標頭 | 識別及授權呼叫者的承載權杖。 
+
+
+| <託 管應用程式ID > | 路徑 | UUIDv4值可識別API呼叫的託管應用程式。 
+|===
+
+
+== 工作流程類別
+
+根據您的部署模式、Astra工作流程分為兩大類。如果您使用Astra Control Center、則應從基礎架構工作流程開始、然後繼續進行管理工作流程。使用Astra Control Service時、您通常可以直接前往管理工作流程。
+
+
+NOTE: 工作流程中的Curl範例使用Astra Control Service的URL。當您根據環境使用內部部署的Astra Control Center時、需要變更URL。
+
+
+
+=== 基礎架構工作流程
+
+這些工作流程適用於Astra基礎架構、包括認證、儲存庫和儲存後端。Astra Control Center需要這些工具、但在大多數情況下、也可搭配Astra Control Service使用。工作流程著重於建立及維護Astra託管叢集所需的工作。
+
+
+
+=== 管理工作流程
+
+您可以在擁有託管叢集之後使用這些工作流程。工作流程著重於應用程式保護和支援作業、例如備份、還原及複製託管應用程式。

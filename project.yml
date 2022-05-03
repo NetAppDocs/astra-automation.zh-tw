@@ -1,0 +1,79 @@
+---
+settings:
+  name: Astra Automation
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: Astra Control Automation文件
+    url: "/index.html"
+  - section: rn
+  - section: intro
+  - section: get-started
+  - section: rest-core
+  - section: endpoints
+  - section: additional
+  - section: workflows_infra
+  - section: workflows
+  - section: python
+  - section: reference
+  - section: information
+  - title: 舊版
+    url: "/aa-earlier-versions.html"
+  - title: 法律聲明
+    url: "/legal-notices.html"
+homepage:
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 簡介
+      url: "/intro/introduction.html"
+    - title: 開始之前
+      url: "/get-started/before_get_started.html"
+    - title: 取得API權杖
+      url: "/get-started/get_api_token.html"
+    - title: 您好：World
+      url: "/get-started/hello_world.html"
+  - title: REST實作
+    links:
+    - title: REST Web服務
+      url: "/rest-core/rest_web_services.html"
+    - title: HTTP詳細資料
+      url: "/rest-core/http_details.html"
+    - title: URL格式
+      url: "/rest-core/url_format.html"
+  - title: 其他考量
+    links:
+    - title: RBAC安全性
+      url: "/additional/rbac.html"
+    - title: 使用集合
+      url: "/additional/work_with_collections.html"
+    - title: 診斷與支援
+      url: "/additional/diagnostics_support.html"
+    - title: 撤銷API權杖
+      url: "/additional/revoke_token.html"
+  - title: 資源
+    links:
+    - title: 閒置資源與收藏
+      url: "/rest-core/resources_collections.html"
+    - title: Astra API資源摘要
+      url: "/endpoints/resources.html"
+  - title: 工作流程
+    links:
+    - title: 準備
+      url: "/get-started/prepare_to_use_workflows.html"
+    - title: 基礎架構工作流程
+      url: "/workflows_infra/workflows_infra_before.html"
+    - title: 管理工作流程
+      url: "/workflows/workflows_before.html"
+  - title: Python
+    links:
+    - title: NetApp Astra Control Python SDK
+      url: "/python/astra_toolkits.html"
+    - title: 以原生方式使用Python
+      url: "/python/python_before.html"
+product-family: {}
