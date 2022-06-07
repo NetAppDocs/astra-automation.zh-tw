@@ -40,15 +40,10 @@
   <block id="ae4a6c751a5ef4ed21296977cde2b309" category="list-text">在「*動作*」下拉式方塊下、按一下「*撤銷權杖*」。</block>
   <block id="3d9217d4e4ef94c56689e548b5186591" category="doc">使用集合</block>
   <block id="8814863051032c96890d514b89b4519c" category="paragraph">Astra Control REST API提供數種不同的方法、可透過定義的查詢參數來存取資源集合。</block>
-  <block id="bf14a6bb5484aa858662864c8b0d062f" category="section-title">選擇值</block>
   <block id="70aa5e2062c38998b012ec6ad0a58b47" category="paragraph">您可以使用「include」參數、指定每個資源執行個體應傳回的金鑰值配對。所有執行個體都會傳回回應本文中。</block>
-  <block id="9a588db8471730dbfebac65cd5467ad8" category="section-title">篩選</block>
   <block id="9ef1f99668081dc49f2b7578a58a3eb0" category="paragraph">集合資源篩選可讓API使用者指定條件、以判斷回應本文中是否傳回資源。使用「filter」參數來表示篩選條件。</block>
-  <block id="2808a34767e19b842d906ab8ab6264c6" category="section-title">排序</block>
   <block id="46a94c0bcecf335769bbfabb72514b44" category="paragraph">集合資源排序可讓API使用者指定資源在回應本文中的傳回順序。使用「OrderBy」參數來表示篩選條件。</block>
-  <block id="cbb81506a7fe3ef03f7a89c76c52131a" category="section-title">分頁</block>
   <block id="b4a49af66f4e673d029ee977129248ee" category="paragraph">您可以使用「限制」參數、限制在要求時傳回的資源執行個體數目、以強制分頁。</block>
-  <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="section-title">數</block>
   <block id="6a7d4ae9b8c0f0a303422357fd399580" category="paragraph">如果您將布林參數「counts」設為「true」、則會在中繼資料區段中提供傳回之給定回應陣列中的資源數量。</block>
   <block id="68f3bee395b27d2cbfdf4b021846dcca" category="doc">診斷與支援</block>
   <block id="d5def2c7a33c06df000ce3ff88f44d5e" category="paragraph">Astra Control REST API提供多項支援功能、可用於診斷與偵錯。</block>
@@ -66,23 +61,14 @@
   <block id="5bfa69d8f97671928100931c0d411913" category="doc">Astra Control REST API簡介</block>
   <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API的主要重點和優點如下所示。</block>
   <block id="351df3aa3706c8ed2199a8019e815c0c" category="admonition">若要存取REST API、您必須先登入Astra網路使用者介面、然後產生API權杖。您必須在每個API要求中加入權杖。</block>
-  <block id="305f82eee427805e1142e3f58b3e6aff" category="section-title">以REST技術為基礎</block>
   <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">Astra Control API是使用REST技術和目前最佳實務做法所建立。核心技術包括HTTP、Json及RBAC。</block>
-  <block id="9f58c2cc1c4a1a9d30320aec8702f1e5" category="section-title">支援兩種Astra Control部署模式</block>
   <block id="6ded6cd1a82081d2c5fe31ad44e26927" category="paragraph">Astra Control Service適用於公有雲環境、Astra Control Center則適用於內部部署。有一個REST API支援這兩種部署模式。</block>
-  <block id="308e494b1e26dffecccd3503e87801ab" category="section-title">清除REST端點資源與物件模型之間的對應</block>
   <block id="8538dfe988aff949d5dd74e2d6c12949" category="paragraph">外部REST端點、用於存取資源對應至由Astra服務內部維護的一致物件模型。物件模型是使用實體關係（ER）模型設計、有助於清楚定義API動作和回應。</block>
-  <block id="5c4c20c54ea821de85f6857e32e28368" category="section-title">豐富的查詢參數集</block>
   <block id="479c256f055cedaadf40e8a31b1cb62f" category="paragraph">REST API提供一組豐富的查詢參數、可用來存取資源集合。部分支援的作業包括篩選、排序及分頁。</block>
-  <block id="807ccc731ac69ad871b23fef84f7a6a9" category="section-title">與Astra Control網路UI對齊</block>
   <block id="bdc2516aa5546e7df819a07cd9385485" category="paragraph">Astra網路使用者介面的設計與REST API一致、因此兩種存取路徑和使用者體驗之間保持一致。</block>
-  <block id="d92a4a4962077027ebae61f4c351e303" category="section-title">強大的除錯與問題判斷資料</block>
   <block id="973e2c06fdb700a27ccfb70fe4627261" category="paragraph">Astra Control REST API提供強大的除錯與問題判斷功能、包括系統事件與使用者通知。</block>
-  <block id="04bff76b57babc7298f6780f4f20901e" category="section-title">工作流程程序</block>
   <block id="b6c92126e042e664395830549916fde8" category="paragraph">我們提供一組工作流程、協助您開發自動化程式碼。工作流程分為兩大類：基礎架構與管理。</block>
-  <block id="fcf3c3d757005a8b62346f06f3b393ff" category="section-title">先進自動化技術的基礎</block>
   <block id="e252a713c9e65fd0bb92dbc65b6b0610" category="paragraph">除了直接存取REST API之外、您也可以使用其他以REST API為基礎的自動化技術。</block>
-  <block id="d4f45c394127f6c3eb5c89e1eb467c9b" category="section-title">Astra系列文件的一部分</block>
   <block id="4b675e54aa1095b2b20f8c4019de37b0" category="inline-link">Astra文件</block>
   <block id="e24577a913c63a00f3c432062590ce18" category="paragraph">Astra Control Automation文件是Astra系列文件的一部分。請參閱<block ref="30a4a2719bc4878ee8fefb5295fc2613" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">關於本版本</block>
@@ -161,15 +147,11 @@
   <block id="39fc3040b9fe64cf202ce4de80bf7f69" category="list-text">有一組豐富的查詢參數可用來存取資源集合。部分支援的作業包括篩選、排序及分頁。</block>
   <block id="135b308ed83c53f1516b7c754566d1c4" category="doc">開始之前</block>
   <block id="ff187555434d269d1d36dedf48955cdb" category="paragraph">您可以檢閱下列步驟、快速準備開始使用Astra Control REST API。</block>
-  <block id="1a615153bb2bd3389942d44023a8f4bb" category="section-title">擁有Astra帳戶認證資料</block>
   <block id="2f4e21e17441a71f2d731b0fdb15fc17" category="paragraph">您需要Astra認證資料才能登入Astra網路使用者介面並產生API權杖。使用Astra Control Center、您可以在本機管理這些認證資料。Astra Control Service可透過*驗證0*服務存取帳戶認證資料。</block>
-  <block id="7e8def8db3d7d1cc38b119879791cb9b" category="section-title">熟悉Kubernetes的基本概念</block>
   <block id="35e431c9f5b342b3021d74196ba6d0ca" category="inline-link-macro">Kubernetes基本概念</block>
   <block id="4b96d62533ac6ea29ddc9891a6776a3b" category="paragraph">您應該熟悉幾個基本的Kubernetes概念。請參閱 <block ref="e274b8e6d2e2ed892d318b3b2d0764db" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="0182974655f974e8429fb64bb3d15eb2" category="section-title">檢視REST概念與實作</block>
   <block id="67d003f4d71c424d95442bd22e4d9b35" category="inline-link-macro">核心REST實作</block>
   <block id="0c59027cf761af16d5101de509ed5ef7" category="paragraph">請務必詳閱 <block ref="533ba43849291e761802432633424684" category="inline-link-macro-rx"></block> 如需REST概念的相關資訊、以及Astra Control REST API的設計細節。</block>
-  <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="section-title">取得更多資訊</block>
   <block id="8cd58c89ff3d51a256ecfe3fe8bab20f" category="inline-link-macro">其他資源</block>
   <block id="1975d27c17bd745494bde5176f3687d2" category="paragraph">您應該瞭解中建議的其他資訊資源 <block ref="d9232e9ba333ee728d29f8228e038c57" category="inline-link-macro-rx"></block>。</block>
   <block id="4086ad8bc58a79384e2abed3e4c7b4f1" category="paragraph">使用Astra REST API時、有幾個Kubernetes概念是相關的。</block>
@@ -244,7 +226,6 @@
   <block id="3e25960a79dbc69b674cd4ec67a72c62" category="doc">您好：World</block>
   <block id="fcc723c942724132893726738da56aeb" category="paragraph">您可以在工作站的CLI上發出簡單的Curl命令、開始使用Astra Control REST API並確認其可用度。</block>
   <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">Curl公用程式必須可在本機工作站上使用。您也必須擁有API權杖和相關的帳戶識別碼。請參閱 <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">Curl範例</block>
   <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">下列Curl命令會擷取Astra使用者清單。請依指示提供適當的&lt;ACON_ID&gt;和&lt;API_Toke&gt;。</block>
   <block id="bff6b273561ec6570215c14bdba13a26" category="section-title">Json輸出範例</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">法律聲明提供版權聲明、商標、專利等存取權限。</block>
@@ -348,28 +329,23 @@
   <block id="a1da6a69dc3621a153be0d63ad955397" category="admonition">從概念上來說、REST *資源*類似於以物件導向程式設計（OOP）語言和系統所定義的*物件*。有時這些術語會互換使用。但一般而言、在外部REST API的內容中使用「資源」是偏好的、而「物件」則是用於儲存在伺服器上的對應狀態執行個體資料。</block>
   <block id="10522d991ba47cf052332e37b93638f3" category="section-title">Astra資源的屬性</block>
   <block id="c4613329138e41e46eb20ecf28914817" category="paragraph">Astra Control REST API符合RESTful設計原則。每個Astra資源執行個體都是根據明確定義的資源類型來建立。一組相同類型的資源執行個體稱為*集合*。API呼叫會對個別資源或資源集合起作用。</block>
-  <block id="b6af2b8fdca63591236d48930018b8db" category="section-title">資源類型</block>
   <block id="f501980961d6c7a1f8d0f73eb1998d2d" category="paragraph">Astra Control REST API隨附的資源類型具有下列特性：</block>
   <block id="1462bc4396a7f92c2a40fdb70353c11b" category="list-text">每種資源類型都是使用架構來定義（通常是在Json中）</block>
   <block id="6a7693b24adc0a8f49972d3c9fa44aa7" category="list-text">每個資源架構都包含資源類型和版本</block>
   <block id="3a5bb03daf09a5f9ee7c38abedb79438" category="list-text">資源類型是全域唯一的</block>
-  <block id="515fc3276bd3187a4917ddf7d57db2be" category="section-title">資源執行個體</block>
   <block id="a520c7cb73d88575fc93ad35b53894ab" category="paragraph">透過Astra Control REST API提供的資源執行個體具有下列特性：</block>
   <block id="ad12b03bd967f6232973db6e1e8d54e8" category="list-text">資源執行個體是根據單一資源類型建立</block>
   <block id="a8ae0ec6707984a7a25ae5d6d872a26e" category="list-text">資源類型會使用「媒體類型」值來表示</block>
   <block id="32add7a750dbbb025d0ec6c3b8058890" category="list-text">執行個體由Astra服務維護的狀態資料組成</block>
   <block id="e53d478a862931c0d5d839bc35228be1" category="list-text">每個執行個體都可透過專屬且長效的URL存取</block>
   <block id="60c8f94b742e229bdac6f65b26abd188" category="list-text">如果資源執行個體可以有多種表示形式、則可以使用不同的媒體類型來要求所需的表示形式</block>
-  <block id="c63467857ced87bca573cc84332ea38e" category="section-title">資源集合</block>
   <block id="5edbe2734dc4b7c3185c8a5192c5e940" category="paragraph">透過Astra Control REST API提供的資源集合具有下列特性：</block>
   <block id="4ed370961773751cbf665ad3ec9bbe7d" category="list-text">單一資源類型的資源執行個體集稱為集合</block>
   <block id="8bb3319f4df785fb5e6ac6a323cc692e" category="list-text">資源集合具有獨特且長久存在的URL</block>
-  <block id="55920bcaefa36a6964fdc7020a835d5f" category="section-title">執行個體識別碼</block>
   <block id="7b37fb297bfca9ad91bb761c9ecdb3e0" category="paragraph">每個資源執行個體都會在建立時指派一個識別碼。此識別碼為128位元UUIDv4值。指派的UUUIDv4值是全域唯一且不可變的。發出API呼叫以建立新執行個體之後、會在HTTP回應的「位置」標頭中、將具有相關ID的URL傳回給呼叫者。您可以擷取識別碼、並在參照資源執行個體時用於後續通話。</block>
   <block id="bf5096ce255d57836c10f7a02fbd117d" category="admonition">資源識別碼是用於集合的主要金鑰。</block>
   <block id="052550c93dde25614a02e3e525606762" category="section-title">Astra資源的通用架構</block>
   <block id="1e34169f9f85961a4918c2a3ec12335c" category="paragraph">每個Astra Control資源都是使用通用結構來定義。</block>
-  <block id="2ed6f74fc82a2206a6fa7ea55363656c" category="section-title">通用資料</block>
   <block id="d691a99f89ba35430c2ae2930698e2f3" category="paragraph">每個Astra資源都包含下表所示的關鍵值。</block>
   <block id="897356954c2cd3d41b221e3f24f99bba" category="cell">金鑰</block>
   <block id="599dcce2998a6b40b1e38e8c6006cb0a" category="cell">類型</block>
@@ -380,7 +356,6 @@
   <block id="679eeb2f006a684ca3bde51d5ee04c65" category="cell">全域唯一識別碼、稱為*資源識別碼*。</block>
   <block id="9f81f3c07476a0d97f6793673dd8e475" category="cell">中繼資料</block>
   <block id="e4cf899c2773024506ffc1cf5118b130" category="cell">包含各種資訊的Json物件、包括使用者和系統標籤。</block>
-  <block id="647f6448e005296f7ac5b882aa71a868" category="section-title">中繼資料物件</block>
   <block id="743dff21ad3d768ffb79a4dc0d853b4a" category="paragraph">每個Astra資源隨附的中繼資料Json物件包含下表所示的索引鍵值。</block>
   <block id="42cecfeff00cc916fef4f64e7b921079" category="cell">標籤</block>
   <block id="d7aefd81a0396b4a6170af899b6ba156" category="cell">與資源相關聯之用戶端指定標籤的Json陣列。</block>
@@ -390,22 +365,15 @@
   <block id="a2a12fff7c0c1ad7aa7d6ec9894d7dfd" category="cell">Json字串包含ISO-8601格式化時間戳記、指出上次變更資源的時間。</block>
   <block id="34998857f537140306898d54d4b970dc" category="cell">建立者</block>
   <block id="af7c4c7bd30238dcb53e639cf7a50996" category="cell">Json字串、包含建立資源之使用者ID的UUIDv4識別碼。如果資源是由內部系統元件所建立、且與建立實體沒有相關聯的UUID、則會使用* null * UUID。</block>
-  <block id="6cb8b958a36383ed1b7bacc626d0a5dd" category="section-title">資源狀態</block>
   <block id="b7aa38141b9dd3f7e78cd09e7f60ce0c" category="paragraph">所選資源是一種「最大」值、用於協調生命週期轉換和控制存取。</block>
   <block id="94fd56b370187429c8fbd312f50f5c1b" category="paragraph">用於透過REST API存取資源執行個體或集合的URL一般結構由數個值組成。此結構反映基礎物件模型和系統設計。</block>
-  <block id="04af7c5cae35340b12ac2ff18f2993fb" category="section-title">URL格式</block>
-  <block id="3e0ab85384ebe4f846202e772b341dc5" category="paragraph">URL格式及範例如下所示。</block>
-  <block id="6e84a7dae5ae82dd22a0ec6f456dbc8d" category="section-title">帳戶為root</block>
   <block id="e166d573b25ce4160633b91145d1eae5" category="paragraph">每個REST端點的資源路徑根目錄為Astra帳戶。因此URL中的所有路徑都以「/ACE/{ACUID_ID}」開頭、其中「ACU_ID」是帳戶的唯一UUIDv4值。內部架構反映出所有資源存取都以特定帳戶為基礎的設計。</block>
-  <block id="faf17fd8415851163c880ffe0eee8b37" category="section-title">端點資源類別</block>
   <block id="c96943fca3fb4769805adeaadbfa2a4c" category="paragraph">Astra資源端點分為三種不同類別：</block>
   <block id="f5eee40efb177a56f7f47f4e9ae88fc0" category="list-text">核心（`/Core）</block>
   <block id="e82590686de294a35499703d86b3864d" category="list-text">託管應用程式（`/k8s）</block>
   <block id="339ca9edd021d342e12ce488d3083b7b" category="list-text">拓撲（`/topology）</block>
   <block id="2598572d1690c4e8c484f3411842c6ed" category="paragraph">請參閱 <block ref="f79c22f30a5c9f960ce998adee5739fa" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
-  <block id="1a13e0be61ce3aab0376745ec89773a0" category="section-title">類別版本</block>
   <block id="807911da3f02747e900f1cbb28978d93" category="paragraph">這三種資源類別各有一個全域版本、可控制所存取資源的版本。根據慣例和定義、移轉至資源類別的新主要版本（例如、從「/v1」移至「/v2」）、將會導致API發生突破性變更。</block>
-  <block id="b59579c5294990b3465d2a6e5a853fc0" category="section-title">資源執行個體或集合</block>
   <block id="a759694558fdad138d8e71cc88a58b5b" category="paragraph">根據資源執行個體或集合是否被存取、路徑中可以使用資源類型和識別碼的組合。</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="section-title">範例</block>
   <block id="2fc537b9f7b2c95f698a1e045c1ca8c7" category="list-text">資源路徑</block>
@@ -416,9 +384,7 @@
   <block id="8dc7c8b39c78b50c93daffc3e502aa5e" category="paragraph">Astra Control REST API使用HTTP及相關參數來處理資源和集合。HTTP實作的詳細資料如下。</block>
   <block id="deaf360f123e9392f769c7ceb4e01747" category="section-title">API交易與CRUD模式</block>
   <block id="01b7ef875c4a217845bac8e7ae38175b" category="paragraph">Astra Control REST API實作交易模式、提供定義完善的作業和狀態轉換。</block>
-  <block id="fc068ae597c9019f5d61b19badc39991" category="section-title">要求及回應API交易</block>
   <block id="1f5760bedf7c68291dfd4d306c189bc8" category="paragraph">每個REST API呼叫都會以HTTP要求的形式執行、以供Astra服務使用。每個要求都會產生與用戶端相關的回應。此要求回應配對可視為API交易。</block>
-  <block id="54ba5d4469f49d79d837dd2472a96c36" category="section-title">支援CRUD營運模式</block>
   <block id="c015cb2c04ac629966b40f1d6b58b583" category="paragraph">每個透過Astra Control REST API提供的資源執行個體和集合、都是根據* CRUD*模型來存取。共有四項作業、每項作業對應至單一HTTP方法。這些作業包括：</block>
   <block id="686e697538050e4664636337cc3b834f" category="list-text">建立</block>
   <block id="7a1a5f3e79fdc91edf2f5ead9d66abb4" category="list-text">讀取</block>
@@ -643,13 +609,9 @@
   <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">除了直接使用Python存取Astra Control REST API之外、NetApp也提供工具套件、可擷取API並移除部分複雜性。請參閱 <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">準備環境</block>
   <block id="eacdf05a2e0f975530592f3afa7c5858" category="paragraph">執行Python指令碼的基本組態需求如下所述。</block>
-  <block id="3c91a74236fab100f024452f6df13b5e" category="section-title">Python 3.</block>
   <block id="5d4e91ee0c02874831683e91598ba067" category="paragraph">您需要安裝最新版本的Python 3。</block>
-  <block id="56fc4201e750acc72a0afd74dd68fbf7" category="section-title">其他程式庫</block>
   <block id="eac991115911389530678363913a1115" category="paragraph">必須安裝*請求*和* urllib3*程式庫。您可以根據環境使用pip或其他Python管理工具。</block>
-  <block id="7a7bc312cecb8df7c0104f60400498da" category="section-title">網路存取</block>
   <block id="67a1ee90ebb7f60d74dc1baee961de03" category="paragraph">執行指令碼的工作站必須具備網路存取權、而且必須能夠連線到Astra Control。使用Astra Control Service時、您必須連線至網際網路、才能連線至https://astra.netapp.io`上的服務。</block>
-  <block id="479ddc3e49067c67012525e145d88610" category="section-title">身分識別資訊</block>
   <block id="ddeb9b8a16dddd591affefce272eca3b" category="paragraph">您需要具有帳戶識別碼和API權杖的有效Astra帳戶。請參閱 <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="4b8e18b7aa4e59cfa3e050e47541b237" category="section-title">建立Json輸入檔</block>
   <block id="28d986906a20a82d756066c923b70105" category="paragraph">Python指令碼仰賴Json輸入檔中包含的組態資訊。範例檔案如下所示。</block>
@@ -659,20 +621,16 @@
   <block id="20f4f585bd60497ac5129e3cac5ce9f3" category="admonition">為了簡化作業、NetApp Astra Control Python SDK將在本頁的其餘部分中稱為* SDK*。</block>
   <block id="583a49db5f92162fc0bd14c90e6dfd12" category="section-title">兩種相關軟體工具</block>
   <block id="6185cd9749993dbef93bbd9484213c5d" category="paragraph">SDK包含兩種不同但相關的工具、可在存取Astra Control REST API時以不同的抽象層級運作。</block>
-  <block id="7a947a0e78de7f2a4b74b7420db98fc3" category="section-title">Astra SDK</block>
   <block id="ad7e7ea46900019430506e34b6c4ad49" category="paragraph">Astra SDK提供核心平台功能。其中包含一組Python類別、可抽象化基礎REST API呼叫。這些類別可支援各種Astra Control資源的管理動作、包括應用程式、備份、快照和叢集。</block>
   <block id="6dbbc40c6449ca3fda5f8c356b6b0376" category="paragraph">Astra SDK是套件的一部分、以單一的「astrasdk.py」檔案提供。您可以將此檔案匯入您的環境、並直接使用類別。</block>
   <block id="5e5df168638042d7a718b1e5462bfb24" category="admonition">* NetApp Astra Control Python SDK*（或僅SDK）是整個套件的名稱。* Astra SDK*是指單一檔案「astrasdk.py」中的核心Python類別。</block>
-  <block id="042f2f95117cad397f19ae8bda1b2bbf" category="section-title">工具套件指令碼</block>
   <block id="56b26fd2ed2c36f5045eb36cf77c7948" category="paragraph">除了Astra SDK檔案之外、也提供「toolkit.py」指令碼。此指令碼可存取內部定義為Python功能的獨立管理動作、以更高的抽象層級運作。指令碼會匯入Astra SDK、並視需要呼叫類別。</block>
   <block id="c1fa54c7b9d3166a56b9afe8d178025e" category="section-title">如何存取</block>
   <block id="caf8d9c274d92761873c194de7fd847e" category="paragraph">您可以使用下列方式存取SDK。</block>
-  <block id="f789019254e2d94578114761c04bb180" category="section-title">Python套件</block>
   <block id="0b0321c50e2a79cdce826f0c8f5f7f20" category="inline-link">Python套件索引</block>
   <block id="a65d831b17fd79d3bf54336b2ed84e31" category="paragraph">SDK可從取得<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> 以* NetApp-Astra工具套件*的名稱。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。</block>
   <block id="cc255a90b5e22a79adcc253fd5643c0e" category="inline-link">PyPI：NetApp Astra Control Python SDK</block>
   <block id="5101ad75321ce3f01dd0612c22b9fa44" category="paragraph">請參閱<block ref="b0ae7ae3e90ea984094ad8df5b6a65f5" category="inline-link-rx"></block> 以取得更多資訊。</block>
-  <block id="0c9b6306d32fc8f44ff469ab235c5104" category="section-title">GitHub原始程式碼</block>
   <block id="e8c4206b0f47aa117169255eaa08c5eb" category="paragraph">您也可以在GitHub取得SDK原始程式碼。儲存庫包含下列項目：</block>
   <block id="674eb3a9ec8ac34ddaaf6ea44b7eb422" category="list-text">「astrasdk.py」（使用Python類別的Astra SDK）</block>
   <block id="f2af4f364548b21864e1b7b7bd176f6c" category="list-text">「toolit.py」（較高層級的功能型指令碼）</block>
@@ -683,19 +641,15 @@
   <block id="6a3e1686f161e74193cdf5b583396b8c" category="paragraph">您可以複製<block ref="722f7e844f39c6d237353116706890c9" category="inline-link-rx"></block> 儲存庫。</block>
   <block id="6343ba741cd1ee396593580192d07224" category="section-title">安裝與基本需求</block>
   <block id="7e5ad59a792bdfb61631a29cbadd4216" category="paragraph">在安裝套件及準備使用套件時、需要考量幾種選項和需求。</block>
-  <block id="a2c5d7f1ae59d7e25522b6b34ea1f27f" category="section-title">安裝選項摘要</block>
   <block id="9fcb3e0ffb2078377dcce5ceb342f1b1" category="paragraph">您可以使用下列其中一種方法來安裝SDK：</block>
   <block id="658d546fab60a55bbf70f000f63ee91c" category="list-text">使用Pip將套件從PyPI安裝到Python環境</block>
   <block id="144f4cb6f91591a4b697a30ebcf1ab07" category="list-text">複製GIT Hub儲存庫、然後：</block>
   <block id="32ffd39c439ea17f73e4f5036abb3944" category="list-text">將套件部署為Docker容器（包含您所需的一切）</block>
   <block id="a09f9226f893c1dac534e03b85311d73" category="list-text">複製兩個核心Python檔案、以便Python用戶端程式碼存取</block>
   <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">如需詳細資訊、請參閱PyPI和GitHub頁面。</block>
-  <block id="1737ce95b71a7983a78611220c00300c" category="section-title">Astra Control環境的需求</block>
   <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">無論是直接使用Astra SDK中的Python類別、或是「toolkit.py」指令碼中的功能、最終都能在Astra Control部署中存取REST API。因此、您需要Astra帳戶和API權杖。請參閱 <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 如需詳細資訊、請參閱本文件*入門*一節中的其他頁面。</block>
-  <block id="dfbe44cf1815fe1873dd8a7c434bcda9" category="section-title">NetApp Astra Control Python SDK的需求</block>
   <block id="d53f4bad554105d2379ba7cf28728467" category="paragraph">SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.5或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。</block>
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">實用資源摘要</block>
-  <block id="9d287cbd5a950094749c49fb0370b01c" category="paragraph">以下是您開始使用所需的資源摘要。</block>
   <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
   <block id="e2cfa1b12557ae7ad3c2bb28c8b77d7c" category="paragraph">您可以存取所有Astra Control REST API呼叫的詳細資料、包括HTTP方法、輸入參數和回應。這份完整參考資料有助於使用REST API開發自動化應用程式。</block>
@@ -920,4 +874,5 @@
   <block id="879ad4bddb82a977b90643c7b33a4e49" category="sidebar">從備份複製應用程式</block>
   <block id="dc299aaf3e84eb3627f50d2d2484cf17" category="sidebar">從備份還原應用程式</block>
   <block id="999e0dcec594b55111b1ede61b4409f5" category="sidebar">列出通知</block>
+  <block id="74c118bd101940603c14c3d7326843a4" category="paragraph">以下是您開始使用所需的一些資源。</block>
 </blocks>

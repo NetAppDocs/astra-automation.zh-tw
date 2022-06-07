@@ -18,7 +18,7 @@ summary:
 
 
 
-=== Astra
+== Astra
 
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center文件"^]
 +
@@ -44,7 +44,7 @@ summary:
 
 
 
-=== NetApp雲端資源
+== NetApp雲端資源
 
 * https://cloud.netapp.com/["NetApp雲端解決方案"^]
 +
@@ -62,7 +62,7 @@ NetApp雲端解決方案的中央網站。
 
 
 
-=== REST與雲端概念
+== REST與雲端概念
 
 * 博士 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["論文"^] 作者：Roy Fielding
 +

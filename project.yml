@@ -76,4 +76,6 @@ homepage:
       url: "/python/astra_toolkits.html"
     - title: 以原生方式使用Python
       url: "/python/python_before.html"
-product-family: {}
+product-family:
+  name: Astra
+  repo: astra-family

@@ -18,20 +18,13 @@ summary:
 
 Curl公用程式必須可在本機工作站上使用。您也必須擁有API權杖和相關的帳戶識別碼。請參閱 link:get_api_token.html["取得API權杖"] 以取得更多資訊。
 
-
-
-===== Curl範例
-
 下列Curl命令會擷取Astra使用者清單。請依指示提供適當的<ACON_ID>和<API_Toke>。
 
 [source, curl]
 ----
 curl --location --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/json' --header 'Authorization: Bearer <API_TOKEN>'
 ----
-
-
-===== Json輸出範例
-
+.Json輸出範例
 [source, json]
 ----
 {
