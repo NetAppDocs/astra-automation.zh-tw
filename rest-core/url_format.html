@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/astra-automation/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-automation/rest-core/url_format.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-automation/rest-core/url_format.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-automation/rest-core/url_format.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-automation/rest-core/url_format.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-automation/rest-core/url_format.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-automation/rest-core/url_format.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/astra-automation/rest-core/url_format.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-automation/rest-core/url_format.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-automation/rest-core/url_format.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-automation/rest-core/url_format.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -903,7 +895,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-automation/index.html">
         Astra Control Automation文件
       </a></li><li class="subfolders "><a href="#">
@@ -1078,6 +1070,10 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/zh-tw/astra-family/">Astra</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
           <a href="/zh-tw/astra-automation/">Astra&nbsp;Automation</a>
@@ -1111,34 +1107,19 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:00:38 +0000">05/03/2022</time>
+    <time datetime="2022-06-07 17:53:35 +0000">06/07/2022</time>
     
   
 
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph lead">
 <p>用於透過REST API存取資源執行個體或集合的URL一般結構由數個值組成。此結構反映基礎物件模型和系統設計。</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="url格式">URL格式</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>URL格式及範例如下所示。</p>
-</div>
-<div class="sect4">
-<h5 id="帳戶為root">帳戶為root</h5>
 <div class="paragraph">
 <p>每個REST端點的資源路徑根目錄為Astra帳戶。因此URL中的所有路徑都以「/ACE/{ACUID_ID}」開頭、其中「ACU_ID」是帳戶的唯一UUIDv4值。內部架構反映出所有資源存取都以特定帳戶為基礎的設計。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="端點資源類別">端點資源類別</h5>
 <div class="paragraph">
 <p>Astra資源端點分為三種不同類別：</p>
 </div>
@@ -1158,22 +1139,14 @@
 <div class="paragraph">
 <p>請參閱 <a href="../endpoints/resources.html">"資源"</a> 以取得更多資訊。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="類別版本">類別版本</h5>
 <div class="paragraph">
 <p>這三種資源類別各有一個全域版本、可控制所存取資源的版本。根據慣例和定義、移轉至資源類別的新主要版本（例如、從「/v1」移至「/v2」）、將會導致API發生突破性變更。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="資源執行個體或集合">資源執行個體或集合</h5>
 <div class="paragraph">
 <p>根據資源執行個體或集合是否被存取、路徑中可以使用資源類型和識別碼的組合。</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="範例">範例</h5>
 <div class="ulist">
+<div class="title">範例</div>
 <ul>
 <li>
 <p>資源路徑</p>
@@ -1188,9 +1161,6 @@
 </div>
 </li>
 </ul>
-</div>
-</div>
-</div>
 </div>
 
     </article>
@@ -1211,16 +1181,16 @@
               <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">條款與條件</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a class="ot-sdk-show-settings">cookie-settings</a>
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
             </li>
           </ul>
         </div>
@@ -1338,4 +1308,5 @@
     </script>
     <script src='/zh-tw/astra-automation/js/www-ntap.js'></script>
     <script src='/zh-tw/astra-automation/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/astra-automation/js/sidebar.js'></script>
   </body></html>

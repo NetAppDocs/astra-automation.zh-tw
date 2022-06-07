@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/astra-automation/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/astra-automation/get-started/kubernetes_concepts.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/astra-automation/get-started/kubernetes_concepts.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/astra-automation/get-started/kubernetes_concepts.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/astra-automation/get-started/kubernetes_concepts.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/astra-automation/get-started/kubernetes_concepts.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/astra-automation/get-started/kubernetes_concepts.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/astra-automation/get-started/kubernetes_concepts.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/astra-automation/get-started/kubernetes_concepts.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/astra-automation/get-started/kubernetes_concepts.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/astra-automation/get-started/kubernetes_concepts.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -903,7 +895,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/astra-automation/index.html">
         Astra Control Automation文件
       </a></li><li class="subfolders "><a href="#">
@@ -1078,6 +1070,10 @@
         
 
         
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/zh-tw/astra-family/">Astra</a>
+        </li>
+        
 
         <li class="n-breadcrumb__list-item">
           <a href="/zh-tw/astra-automation/">Astra&nbsp;Automation</a>
@@ -1111,7 +1107,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-03 06:00:38 +0000">05/03/2022</time>
+    <time datetime="2022-06-07 17:53:35 +0000">06/07/2022</time>
     
   
 
@@ -1125,22 +1121,28 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="物件">物件</h3>
+<div class="sect1">
+<h2 id="物件">物件</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Kubernetes環境中維護的物件是代表叢集組態的持續實體。這些物件共同說明系統狀態、包括叢集工作負載。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="命名空間">命名空間</h3>
+</div>
+<div class="sect1">
+<h2 id="命名空間">命名空間</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>命名空間提供一種技術、可用來隔離單一叢集內的資源。這種組織架構在劃分工作類型、使用者和資源時非常實用。命名空間範圍為_namespac__的物件必須在命名空間內是唯一的、而具有_cluster範圍_的物件則必須在整個叢集內是唯一的。</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="標籤">標籤</h3>
+</div>
+<div class="sect1">
+<h2 id="標籤">標籤</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>標籤可與Kubernetes物件建立關聯。它們使用金鑰值配對來描述屬性、並可在叢集上強制執行任意組織、這對組織而言很有用、但卻不在核心Kubernetes作業範圍內。</p>
+</div>
 </div>
 </div>
 
@@ -1162,16 +1164,16 @@
               <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/terms-of-use/">legal-terms</a>
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">條款與條件</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/privacy-policy/">legal-privacy</a>
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/company/legal/cookie-policy/">legal-cookies</a>
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
             </li>
             <li class="n-footer__copyright-link">
-              <a class="ot-sdk-show-settings">cookie-settings</a>
+              <a class="ot-sdk-show-settings">Cookie 設定</a>
             </li>
           </ul>
         </div>
@@ -1289,4 +1291,5 @@
     </script>
     <script src='/zh-tw/astra-automation/js/www-ntap.js'></script>
     <script src='/zh-tw/astra-automation/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/astra-automation/js/sidebar.js'></script>
   </body></html>
