@@ -27,7 +27,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account/{AccountID}/k8s/v1/managedApps 
+| 取得 | /account/{aper_id}/k8s/v1/managedApps 
 |===
 
 

@@ -17,7 +17,7 @@ summary:
 您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。
 
 
-NOTE: Astra Control REST API 22.04版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。
+NOTE: Astra Control REST API 22.08版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。
 
 
 

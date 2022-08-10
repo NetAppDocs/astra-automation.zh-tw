@@ -33,7 +33,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /Account/{AccountID}/k8s/v1/managedApps 
+| 貼文 | /account/{aper_id}/k8s/v1/managedApps 
 |===
 
 

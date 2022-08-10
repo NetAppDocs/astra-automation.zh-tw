@@ -1,0 +1,415 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_ldap_configure_server.html 
+keywords:  
+summary:  
+---
+= 設定Astra使用LDAP伺服器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您需要選取LDAP伺服器、並設定Astra以使用伺服器做為驗證供應商。組態工作包含下列步驟。每個步驟都包含單一REST API呼叫。
+
+
+
+=== 1.新增CA憑證
+
+執行下列REST API呼叫、將CA憑證新增至Astra。
+
+
+NOTE: 此步驟為選用步驟、只有當您希望Astra和LDAP透過使用LDAPS的安全通道進行通訊時才需要執行。
+
+[cols="1,6"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 貼文 | /ACE/｛ACON_ID｝/核心/ v1 /認證 
+|===
+
+
+===== JSONN輸入範例
+
+[source, json]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.0",
+  "certUse": "rootCA",
+  "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMyVEN",
+  "isSelfSigned": "true"
+}
+----
+請注意下列關於輸入參數的資訊：
+
+* 「CERT」是Json字串、包含一個已編碼的64位元的PKCS-11格式憑證（PES編碼）。
+* 如果憑證是自行簽署的、則「isselfSigned」應設為「true」。預設值為「假」。
+
+
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/certificates' --header 'Content-Type: application/astra-certificate+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSONN回應範例
+
+[source, json]
+----
+{
+  "type": "application/astra-certificate",
+  "version": "1.0",
+  "id": "a5212e7e-402b-4cff-bba0-63f3c6505199",
+  "certUse": "rootCA",
+  "cert": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMyVEN",
+  "cn": "adldap.example.com",
+  "expiryTimestamp": "2023-07-08T20:22:07Z",
+  "isSelfSigned": "true",
+  "trustState": "trusted",
+  "trustStateTransitions": [
+  {
+    "from": "untrusted",
+    "to": [
+      "trusted",
+      "expired"
+    ]
+  },
+  {
+    "from": "trusted",
+    "to": [
+      "untrusted",
+      "expired"
+    ]
+  },
+  {
+    "from": "expired",
+    "to": [
+     "untrusted",
+     "trusted"
+    ]
+  }
+  ],
+  "trustStateDesired": "trusted",
+  "trustStateDetails": [],
+  "metadata": {
+    "creationTimestamp": "2022-07-21T04:16:06Z",
+    "modificationTimestamp": "2022-07-21T04:16:06Z",
+    "createdBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "modifiedBy": "8a02d2b8-a69d-4064-827f-36851b3e1e6e",
+    "labels": []
+    }
+}
+----
+
+
+=== 2.新增連結認證資料
+
+執行下列REST API呼叫以新增繫結認證。
+
+[cols="1,6"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 貼文 | /ACE/｛ACON_ID｝/核心/ v1 /認證 
+|===
+
+
+===== JSONN輸入範例
+
+[source, json]
+----
+{
+  "name": "ldapBindCredential",
+  "type": "application/astra-credential",
+  "version": "1.1",
+  "keyStore": {
+    "bindDn": "dWlkPWFkbWluLG91PXN5c3RlbQ==",
+    "password": "cGFzc3dvcmQ="
+  }
+}
+----
+請注意下列關於輸入參數的資訊：
+
+* 「binddn」和「password」是LDAP管理使用者的基64編碼繫結認證、可用來連線及搜尋LDAP目錄。「binddn」是LDAP使用者的電子郵件地址。
+
+
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Content-Type: application/astra-credential+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSONN回應範例
+
+[source, json]
+----
+{
+    "type": "application/astra-credential",
+    "version": "1.1",
+    "id": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "name": "ldapBindCredential",
+    "metadata": {
+        "creationTimestamp": "2022-07-21T06:53:11Z",
+        "modificationTimestamp": "2022-07-21T06:53:11Z",
+        "createdBy": "527329f2-662c-41c0-ada9-2f428f14c137"
+    }
+}
+----
+請注意下列回應參數：
+
+* 認證資料的「ID」會用於後續的工作流程步驟。
+
+
+
+
+=== 3.擷取LDAP設定的UUID
+
+執行下列REST API呼叫、以擷取Astra Control Center隨附的「Astra .account.LDAP」設定的UUID。
+
+
+NOTE: 下列Curl範例使用查詢參數來篩選設定集合。您可以移除篩選條件以取得所有設定、然後搜尋「Astra帳戶.LDAP」。
+
+[cols="1,6"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /ACE/｛ACON_ID｝/核心/ v1/settings 
+|===
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings?filter=name%20eq%20'astra.account.ldap'&include=name,id' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSONN回應範例
+
+[source, json]
+----
+{
+  "items": [
+    ["astra.account.ldap",
+    "12072b56-e939-45ec-974d-2dd83b7815df"
+    ]
+  ],
+  "metadata": {}
+}
+----
+
+
+=== 4.更新LDAP設定
+
+執行下列REST API呼叫、以更新LDAP設定並完成組態。請使用先前API呼叫中的「id」值、在下方URL路徑中輸入「<controlling_ID>」值。
+
+
+NOTE: 您可以先發出特定設定的Get要求、以查看configSchema。這將提供組態中必要欄位的詳細資訊。
+
+[cols="1,6"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 放入 | /ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝ 
+|===
+
+
+===== JSONN輸入範例
+
+[source, json]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.0",
+  "desiredConfig": {
+    "connectionHost": "myldap.example.com",
+    "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+    "groupBaseDN": "OU=groups,OU=astra,DC=example,DC=com",
+    "isEnabled": "true",
+    "port": 686,
+    "secureMode": "LDAPS",
+    "userBaseDN": "OU=users,OU=astra,DC=example,dc=com",
+    "userSearchFilter": "((objectClass=User))",
+    "vendor": "Active Directory"
+    }
+}
+----
+請注意下列關於輸入參數的資訊：
+
+* "isEnabled"應設為"true"、否則可能發生錯誤。
+* 「credentialId」是先前建立的連結認證資料ID。
+* 「RecureMode」（執行模式）應設定為「LDAP」（LDAP）或「LDAPS」（LDAPS）、視您在先前步驟中的組態而定。
+* 廠商僅支援「Active Directory」。
+
+
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+如果通話成功、則會傳回HTTP 204回應。
+
+
+
+=== 5.擷取LDAP設定
+
+您可以選擇性地執行下列REST API呼叫、以擷取LDAP設定並確認更新。
+
+[cols="1,6"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝ 
+|===
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----
+
+
+===== JSONN回應範例
+
+[source, json]
+----
+{
+  "items": [
+  {
+    "type": "application/astra-setting",
+    "version": "1.0",
+    "metadata": {
+      "creationTimestamp": "2022-06-17T21:16:31Z",
+      "modificationTimestamp": "2022-07-21T07:12:20Z",
+      "labels": [],
+      "createdBy": "system",
+      "modifiedBy": "00000000-0000-0000-0000-000000000000"
+    },
+    "id": "12072b56-e939-45ec-974d-2dd83b7815df",
+    "name": "astra.account.ldap",
+    "desiredConfig": {
+      "connectionHost": "10.193.61.88",
+      "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+      "groupBaseDN": "ou=groups,ou=astra,dc=example,dc=com",
+      "isEnabled": "true",
+      "port": 686,
+      "secureMode": "LDAPS",
+      "userBaseDN": "ou=users,ou=astra,dc=example,dc=com",
+      "userSearchFilter": "((objectClass=User))",
+      "vendor": "Active Directory"
+    },
+    "currentConfig": {
+      "connectionHost": "10.193.160.209",
+      "credentialId": "3bd9c8a7-f5a4-4c44-b778-90a85fc7d154",
+      "groupBaseDN": "ou=groups,ou=astra,dc=example,dc=com",
+      "isEnabled": "true",
+      "port": 686,
+      "secureMode": "LDAPS",
+      "userBaseDN": "ou=users,ou=astra,dc=example,dc=com",
+      "userSearchFilter": "((objectClass=User))",
+      "vendor": "Active Directory"
+    },
+    "configSchema": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "astra.account.ldap",
+      "type": "object",
+      "properties": {
+        "connectionHost": {
+          "type": "string",
+          "description": "The hostname or IP address of your LDAP server."
+        },
+        "credentialId": {
+          "type": "string",
+          "description": "The credential ID for LDAP account."
+        },
+        "groupBaseDN": {
+          "type": "string",
+          "description": "The base DN of the tree used to start the group search. The system searches the subtree from the specified location."
+        },
+        "groupSearchCustomFilter": {
+          "type": "string",
+          "description": "Type of search that controls the default group search filter used."
+        },
+        "isEnabled": {
+          "type": "string",
+          "description": "This property determines if this setting is enabled or not."
+        },
+        "port": {
+          "type": "integer",
+          "description": "The port on which the LDAP server is running."
+        },
+        "secureMode": {
+          "type": "string",
+          "description": "The secure mode LDAPS or LDAP."
+        },
+        "userBaseDN": {
+          "type": "string",
+          "description": "The base DN of the tree used to start the user search. The system searches the subtree from the specified location."
+        },
+        "userSearchFilter": {
+          "type": "string",
+          "description": "The filter used to search for users according a search criteria."
+        },
+        "vendor": {
+          "type": "string",
+          "description": "The LDAP provider you are using.",
+          "enum": ["Active Directory"]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "connectionHost",
+        "secureMode",
+        "credentialId",
+        "userBaseDN",
+        "userSearchFilter",
+        "groupBaseDN",
+        "vendor",
+        "isEnabled"
+      ]
+      },
+      "state": "valid",
+    }
+  ],
+  "metadata": {}
+}
+----
+請在回應中找出「shate」欄位、此欄位的值如下表所示。
+
+[cols="1,4"]
+|===
+| 州/省 | 說明 
+
+
+| 擱置中 | 組態程序仍在作用中、尚未完成。 
+
+
+| 有效 | 組態已成功完成、回應中的「currentConfig」符合「eseredConfig」。 
+
+
+| 錯誤 | LDAP組態程序失敗。 
+|===

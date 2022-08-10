@@ -8,6 +8,16 @@ entries:
   entries:
   - title: 列出使用者
     url: "/workflows_infra/wf_list_users.html"
+- title: LDAP組態
+  entries:
+  - title: 準備LDAP組態
+    url: "/workflows_infra/ldap_prepare.html"
+  - title: 設定LDAP伺服器
+    url: "/workflows_infra/wf_ldap_configure_server.html"
+  - title: 將LDAP項目新增至Astra
+    url: "/workflows_infra/wf_ldap_add_entries.html"
+  - title: 停用並重設LDAP
+    url: "/workflows_infra/wf_ldap_disable_reset.html"
 - title: 桶
   entries:
   - title: 列出庫存箱

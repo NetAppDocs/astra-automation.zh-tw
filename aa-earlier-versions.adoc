@@ -16,6 +16,7 @@ summary:
 [role="lead"]
 您可以從下列連結存取先前Astra Control版本的自動化文件。
 
+* https://docs.netapp.com/us-en/astra-automation-2204/["Astra Control Automation 22.04文件"^]
 * https://docs.netapp.com/us-en/astra-automation-2112/["Astra Control Automation 21.12文件"^]
 * https://docs.netapp.com/us-en/astra-automation-2108/["Astra Control Automation 21.08文件"^]
 

@@ -72,21 +72,15 @@
   <block id="4b675e54aa1095b2b20f8c4019de37b0" category="inline-link">Astra文件</block>
   <block id="e24577a913c63a00f3c432062590ce18" category="paragraph">Astra Control Automation文件是Astra系列文件的一部分。請參閱<block ref="30a4a2719bc4878ee8fefb5295fc2613" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="d71331c5ce470b093ebf6c996f4ed88a" category="doc">關於本版本</block>
-  <block id="2ed9c00506ccdd2b103717bce2773b16" category="paragraph">本網站的文件說明Astra Control的2022年4月（22.04）版Astra Control隨附的Astra Control REST API及相關自動化技術。特別是、此版本的REST API隨附於Astra Control Center和Astra Control Service的相應22.04版本。</block>
   <block id="ea68f7ff6b79a550f669d752f15bd5da" category="paragraph">請參閱下列頁面和網站、以取得本版本及先前版本的詳細資訊：</block>
   <block id="89d597c4d411409065b7e48fe97b7327" category="inline-link-macro">Astra Control REST API的新功能</block>
   <block id="55d1aec576bc2fa5929c487a67f4f1fe" category="list-text"><block ref="55d1aec576bc2fa5929c487a67f4f1fe" category="inline-link-macro-rx"></block></block>
   <block id="c4fabb35d8b386aaa673c94aee7e69f2" category="inline-link-macro">閒置資源和端點</block>
   <block id="d8c5d8ee32fcd828c5197ddcb0a431b2" category="list-text"><block ref="d8c5d8ee32fcd828c5197ddcb0a431b2" category="inline-link-macro-rx"></block></block>
-  <block id="74456513b7ca75af96c4b1316688791f" category="inline-link">Astra Control Center 22.04文件</block>
-  <block id="468721780732e23fa637324968cd2783" category="list-text"><block ref="468721780732e23fa637324968cd2783" category="inline-link-rx"></block></block>
-  <block id="a6e9ae9fa8a8d65b930fd7704e4863bb" category="inline-link">Astra Control Service 22.04文件</block>
-  <block id="fa979f157aaf36a8653ce9ba1d7433ac" category="list-text"><block ref="fa979f157aaf36a8653ce9ba1d7433ac" category="inline-link-rx"></block></block>
   <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">舊版Astra Automation文件</block>
   <block id="0cc206202c15e68cf39519791ed593a1" category="list-text"><block ref="0cc206202c15e68cf39519791ed593a1" category="inline-link-macro-rx"></block></block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">已知問題</block>
   <block id="78ceba6718263592394adb03dc11471c" category="paragraph">您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。</block>
-  <block id="186b5474f8ff952677455ef8c6479620" category="admonition">Astra Control REST API 22.04版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。</block>
   <block id="f977fda19bbfe49b9346f60f532f0704" category="section-title">並未探索後端儲存節點中的所有儲存裝置</block>
   <block id="13595bcf3f8022567de41bcd09ef92b2" category="paragraph">發出REST API呼叫以擷取儲存節點中定義的儲存裝置時、只會探索Astra Data Store裝置。並非所有裝置都會歸還。</block>
   <block id="fd341dfea170932946910997510c48e8" category="section-title">Astra Data Store儲存後端處於未知狀態</block>
@@ -299,17 +293,14 @@
   <block id="0ded27ebd95eb2dcf0ec2ac7f61b926c" category="paragraph">執行下列REST API呼叫。</block>
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">HTTP方法</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">取得</block>
-  <block id="2b8c3d151c26a15222ba4fd36b95c95c" category="cell">/Account/{AccountID}/topology / v1/managedClusters</block>
   <block id="6ff447fbf69dd4070e63e99da1dde7b0" category="section-title">Curl範例：傳回所有叢集的所有資料</block>
   <block id="99a4fd4c49fccb599a3b4d33e4b37909" category="doc">列出儲存後端</block>
   <block id="c3a6f95958616037be5bc621e7f71032" category="paragraph">您可以列出可用的儲存後端。</block>
   <block id="9117feaebfa26145178f03156c040dec" category="section-title">1.列出庫存箱</block>
-  <block id="4eacc2a0a923a10006113b19b58a5cf6" category="cell">/Account/{AccountID}/topology / v1/storageBackends</block>
   <block id="97d6ce33b116e0cdc883be2e518a550e" category="section-title">Curl範例：傳回所有儲存後端的所有資料</block>
   <block id="f923f903857a5387d3db70494e074632" category="doc">列出使用者</block>
   <block id="4c7aee6e8d40dfdf7713e4a924264d5a" category="paragraph">您可以列出針對特定Astra帳戶所定義的使用者。</block>
   <block id="908398b479e9327ae04f2325e64e79ad" category="section-title">1.列出使用者</block>
-  <block id="b16682201ded465cc3160dbc12de687f" category="cell">/Account/｛AccountID｝/核心/ v1/uss</block>
   <block id="c24b0224d3b54e6b4e908019f2447f30" category="section-title">其他輸入參數</block>
   <block id="8ad1007adda12ebaacc83f24d677e5e6" category="paragraph">除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">參數</block>
@@ -322,7 +313,6 @@
   <block id="6f0f5a995f8609d334baee54a5b0c773" category="section-title">Curl範例：傳回所有使用者的名字、姓氏和ID</block>
   <block id="b65e59022e022b723c1c1fbb73cd0092" category="doc">列出庫存箱</block>
   <block id="846402b8c9f043783b1fea0eaa5d5e3a" category="paragraph">您可以列出針對特定Astra帳戶所定義的S3儲存區。</block>
-  <block id="03cc29fd4f89a995e6358b462606ee73" category="cell">/Account/{AccountID}/topology / v1/buckets</block>
   <block id="cfafa44c04121f529847f5cd8be51756" category="section-title">Curl範例：傳回所有儲存區的所有資料</block>
   <block id="0ef9d205b3c12ed04d4b22391e87afc8" category="doc">資源與收藏</block>
   <block id="28f2e38e559165835d242a67c869c1fb" category="paragraph">Astra Control REST API可讓您存取資源執行個體和資源執行個體集合。</block>
@@ -520,7 +510,6 @@
   <block id="b2d55dc4fec3ba025999ca224e38960b" category="cell">授權資源代表Astra帳戶可用的授權。</block>
   <block id="c4f95a0bc4f1a90ec9fa6c084868ffe3" category="cell">通知資源代表有通知目的地的Astra事件。存取權限是以每位使用者為單位提供。</block>
   <block id="209802fb858e2c83205027dbbb5d9e6c" category="cell">套件</block>
-  <block id="6777d9fcfed4364226ace710a3a4ebbb" category="cell">* 22.04 *</block>
   <block id="d340d1aca9540d03d5dbc3a841480388" category="cell">套件資源提供套件定義的登錄與存取。軟體套件包含各種元件、包括檔案、映像及其他成品。</block>
   <block id="fd2bd51169cf1622d8afc842b6c7fae9" category="cell">角色繫結</block>
   <block id="6ebaa723a81c40b3c1242f8bad10ff34" category="cell">角色繫結資源代表特定使用者與帳戶配對之間的關係。除了兩者之間的連結之外、還會透過特定角色為每個角色指定一組權限。</block>
@@ -577,20 +566,6 @@
   <block id="2c0709150edcf4371b39572b109c04c3" category="cell">儲存節點資源代表屬於ADS叢集的節點。</block>
   <block id="bd7a9717d29c5ddcab1bc175eda1e298" category="cell">Volume</block>
   <block id="d0600f0c4c9b294b53d39320b3945b84" category="cell">Volume資源代表與託管應用程式相關聯的Kubernetes儲存磁碟區。</block>
-  <block id="a4defd5be5a64ad7db7bf34bbb2d7bd5" category="section-title">最新版本的新端點</block>
-  <block id="1472c716e11246059bd5bad85258d4fa" category="paragraph">目前的22.04 Astra Control版本已新增下列REST端點。此外、多個現有資源的版本也已升級。</block>
-  <block id="60f19edaba62296afaacba509d2b225c" category="list-text">/Accounts /｛account_id｝/核心/ v1/packages</block>
-  <block id="7a7c91988c5a19469d8334fad1ec5c38" category="list-text">/Accounts /｛account_id｝/core / v1/packages/｛package_id｝</block>
-  <block id="7a15e41858611250b2b43df48995251e" category="list-text">/Accounts /｛account_id｝/核心/ v1/升級</block>
-  <block id="6e1712f69f618f74a5e744bc9fea885b" category="list-text">/Accounts /｛account_id｝/核心/ v1/exgrades//｛grade_id｝</block>
-  <block id="30ab72a33c39ac472d4fcdb91ef0a504" category="list-text">/Accounts /｛account_id｝/拓撲/ v1/appBackups</block>
-  <block id="e340612c1a39b19881ab28cb164d3767" category="list-text">/Accounts /｛account_id｝/拓撲/ v1/appBackups/｛appBackup｝</block>
-  <block id="c0484da53699af19f1945268b462f2d0" category="list-text">/Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集/｛cluster_id｝/叢集節點</block>
-  <block id="09b7193670ee8eaefdf2ad50fef6a76d" category="list-text">/Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集/｛cluster_id｝/叢集節點/｛clusterNode_id｝</block>
-  <block id="d3f25c248c7a0c122bc45b3a69071627" category="list-text">/accounts/{account_id}/topology / v1/managedClusters/｛managedCluster_id｝/apps /｛app_id｝/appAsset</block>
-  <block id="300f9968ddf97bc0ecebcc8be8ed5ac2" category="list-text">/Accounts /｛account_id｝/拓撲/ v1/managedClusters/｛managedCluster_id｝/應用程式/｛app_id｝/應用程式資產/｛appAsset_id｝</block>
-  <block id="38edf6fb6f3379336c180aaa2a4ed5c4" category="list-text">/accounts/{account_id}/topology / v1/managedClusters/{managedCluster_id}/clusterNode</block>
-  <block id="9c66bb701e33b6862773eeb2967c6548" category="list-text">/Accounts /｛account_id｝/拓撲/ v1/managedClusters/｛managedCluster_id｝/叢集節點/｛clusterNode_id｝</block>
   <block id="a3033e8e82a579c4e34115e2186d13ad" category="section-title">其他資源和端點</block>
   <block id="4ded71dc03234200c0b0b124900cea7d" category="paragraph">您可以使用數種額外的資源和端點來支援Astra部署。</block>
   <block id="55fcf9a6a46c69408785dcd2e3a82522" category="admonition">Astra Control REST API參考文件目前未隨附這些資源和端點。</block>
@@ -669,7 +644,6 @@
   <block id="b6a35c94f854cd740168a0764638d0df" category="section-title">僅列出管理狀態等於Unmanaged的應用程式</block>
   <block id="bc9eb7d967c0a164260a3a3362df3173" category="paragraph">此工作流程使用「filter」查詢參數、只傳回未受管理的應用程式。</block>
   <block id="b778c76d47db062e719ea97fffdb251e" category="section-title">1.列出未受管理的應用程式</block>
-  <block id="5a7e60861a502dc956f007273373ee29" category="cell">/Account/{AccountID}/topology / v1/apps</block>
   <block id="225ff177d2b3ca52f452571419d65f70" category="cell">使用篩選器來指定應傳回哪些應用程式。</block>
   <block id="b27c8e443cc3570cdff9e631ba1485fa" category="section-title">Curl範例：傳回未受管理應用程式的名稱、ID和管理狀態</block>
   <block id="3a340585a0931b07ac9b6627082689c8" category="section-title">列出所有應用程式、然後選取未受管理的應用程式</block>
@@ -709,7 +683,6 @@
   <block id="537000f9a14aec12548122fc358faea9" category="section-title">1.選取要複製的託管應用程式</block>
   <block id="99155ec73c71b392b5b5511fca5b8697" category="paragraph">執行工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 並選取您要複製的應用程式。用於複製應用程式的REST呼叫需要幾個資源值。</block>
   <block id="91e9ad87c32b1417c98a1c8a57d14d21" category="section-title">2.複製應用程式</block>
-  <block id="cbe7fc9bb59d104e00843a80a446088a" category="cell">/Account/{AccountID}/k8s/v1/managedApps</block>
   <block id="0ecd11c1d7a287401d148a23bbd7a2f8" category="cell">JSON</block>
   <block id="ac101b32dda4448cf13a93fe283dddd8" category="cell">本文</block>
   <block id="5a77a315cc422da89819194837af885d" category="cell">提供複製應用程式的參數。請參閱以下範例。</block>
@@ -736,7 +709,6 @@
   <block id="d40d66b0e6d970d00db3de547260af68" category="paragraph">執行工作流程 <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> 並選取您要使用的備份。</block>
   <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3.還原應用程式</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">執行下列REST API呼叫。您必須提供備份（如下所示）或快照的ID。</block>
-  <block id="51cd01a5a6a691746293ce972056d4c1" category="cell">/Account/{AccountID}/k8s/v1/managedApps/{AppID}</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">Curl範例：從備份中就地還原應用程式</block>
   <block id="6fff62f9303e1554ae200440f5af5315" category="paragraph">您可以使用這些工作流程來管理Astra託管叢集內的應用程式。</block>
   <block id="27a254eb05f2f4059b9d5170bcd8034f" category="paragraph">管理工作流程會依不同類別進行組織、以便更容易找到您想要的工作流程。</block>
@@ -809,7 +781,6 @@
   <block id="a6fe5f717c07a456c15f8f2af8c1c7b7" category="doc">列出通知</block>
   <block id="28e5da4816b7e4821438045e6ed86d2b" category="paragraph">您可以列出特定Astra帳戶的通知。您可以在監控系統活動或偵錯問題時執行此動作。</block>
   <block id="9d9ee088d3dd8f7e21041745a8cf259f" category="section-title">1.列出通知</block>
-  <block id="92ad0efa758f9a5fc8bbf60f72e9dc6f" category="cell">/Account/｛AccountID｝/核心/ v1/notifications</block>
   <block id="0aaaa617845874504df6c76a750325da" category="cell">選擇性地篩選您要在回應中傳回的通知。</block>
   <block id="f921030431759c9c846d8a3fd7d84ca2" category="section-title">Curl範例：傳回所有通知</block>
   <block id="943e5258980784703a84c31110cf2eec" category="section-title">Curl範例：傳回嚴重性為警告的通知說明</block>
@@ -875,4 +846,162 @@
   <block id="dc299aaf3e84eb3627f50d2d2484cf17" category="sidebar">從備份還原應用程式</block>
   <block id="999e0dcec594b55111b1ede61b4409f5" category="sidebar">列出通知</block>
   <block id="74c118bd101940603c14c3d7326843a4" category="paragraph">以下是您開始使用所需的一些資源。</block>
+  <block id="798161428a705ba47c31cc8ace9316e3" category="inline-link">Astra Control Automation 22.04文件</block>
+  <block id="693af21b54b2e5032434113328d4a53e" category="list-text"><block ref="693af21b54b2e5032434113328d4a53e" category="inline-link-rx"></block></block>
+  <block id="eb0f48a107df1a0f343d4cd513b555e6" category="cell">憑證</block>
+  <block id="c966687cd1c8354905372f920eb2a23b" category="cell">* 22.08*</block>
+  <block id="3fe0021542d501c59073fddce2d62709" category="cell">憑證資源代表已安裝的憑證、用於對傳出連線進行強式驗證。</block>
+  <block id="03937134cedab9078be39a77ee3a48a0" category="cell">群組</block>
+  <block id="a744e9bf981f07cf1f6ae31ed0df70b1" category="cell">群組資源代表Astra群組及相關資源。目前版本僅支援LDAP群組。</block>
+  <block id="e764fe6b8f8825a307a87cedbef45678" category="cell">22.04</block>
+  <block id="c600ce546bf9ac67939481d537d10403" category="cell">AppMirror</block>
+  <block id="2ea0c70486ac42aa9093e842d4d23473" category="cell">AppMirror資源代表AppMirror資源、用於管理應用程式鏡射關係。</block>
+  <block id="8421de10d5dbbb7e150fb9700fe89879" category="cell">/account/{aper_id}/k8s/v1/managedApps</block>
+  <block id="66faf58201d5b76b037701451b9a3234" category="cell">/ACE/｛ACON_ID｝/核心/ v1/notifications</block>
+  <block id="cf0a08323ecbf4b810438acdd526b436" category="cell">/account/{aper_id}/k8s/v1/managedApps/{app_id}</block>
+  <block id="c07be556746490be1229e10b74e3eb29" category="cell">/account/{aper_id}/topology / v1/apps</block>
+  <block id="9fb6a7e4842bd1acf9b57b499b8036b0" category="cell">/ACE/｛ACON_ID｝/拓撲/ v1/buckets</block>
+  <block id="9f836651cdc687b80d11b030386b39cc" category="doc">停用並重設LDAP</block>
+  <block id="29927b373bf91a30324f8b9244efff87" category="paragraph">您可以視需要執行兩項選用的相關管理工作、以進行Astra Control Center部署。您可以全域停用LDAP驗證並重設LDAP組態。</block>
+  <block id="0409c9f1dab10d77e34c0dde2e7d2640" category="inline-link-macro">擷取LDAP設定的UUID</block>
+  <block id="60c04eaeef0130847b81e4afbda94ddd" category="paragraph">這兩項工作流程工作都需要「Astra .account.LDAP」Astra設定的ID。有關如何擷取設定ID的詳細資訊、請參閱*設定LDAP伺服器*。請參閱 <block ref="79d5da28a6715eb561c830637b2fc4c6" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="1b7e4184801e48f4201e523ef3933d7f" category="inline-link-macro">停用LDAP驗證</block>
+  <block id="7d40ea0a4f491763035cc48ea1a6ddcf" category="list-text"><block ref="7d40ea0a4f491763035cc48ea1a6ddcf" category="inline-link-macro-rx"></block></block>
+  <block id="1f4306b5533c4a2e43c1a403aeb464e4" category="inline-link-macro">重設LDAP驗證組態</block>
+  <block id="554945e8b5658618072d4db6e6f57ea1" category="list-text"><block ref="554945e8b5658618072d4db6e6f57ea1" category="inline-link-macro-rx"></block></block>
+  <block id="e37b6056e7a6d186a2c97a4d2a9aad18" category="paragraph">您可以執行下列REST API呼叫、以全域停用特定Astra部署的LDAP驗證。通話會更新「Astra帳戶.LDAP」設定、而「isEnabled」值則會設為「假」。</block>
+  <block id="815d5f652b66fa7fa04278a0dc9e7f06" category="cell">/ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝</block>
+  <block id="2fc2b6f607cda95230b0bc78aff13ddf" category="paragraph">如果通話成功、就會傳回「HTTP 204」回應。您可以選擇再次擷取組態設定以確認變更。</block>
+  <block id="d2378ce17d1deb939d9765a975ab1310" category="paragraph">您可以執行下列REST API呼叫、以中斷Astra與LDAP伺服器的連線、並在Astra中重設LDAP組態。通話會更新「Astra帳戶.LDAP」設定、並清除「connectionHost」的值。</block>
+  <block id="404ddca7091b6ebdfdac8d79757305f6" category="paragraph">"isEnabled"的值也必須設為"假"。您可以在進行重設通話之前或在進行重設通話時設定此值。在第二種情況下、應清除「connectionHost」、並在相同的重設通話中將「isEnabled」設為「假」。</block>
+  <block id="bbb26ec6e926ef3caf7a0e11d73ac4f8" category="admonition">這是一項顛覆性的作業、您應該謹慎進行。它會刪除所有匯入的LDAP使用者和群組。它也會刪除您在Astra Control Center中建立的所有相關Astra使用者、群組和角色繫結（LDAP類型）。</block>
+  <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">請注意下列事項：</block>
+  <block id="bca37564b08c352c9b5fbb27a68163fc" category="list-text">若要變更LDAP伺服器、您必須停用並重設LDAP、將「connectHost」變更為null值、如上例所示。</block>
+  <block id="6fde5ce7c3e78a7b80189e22926ce1a9" category="paragraph">如果通話成功、就會傳回「HTTP 204」回應。您可以選擇再次擷取組態以確認變更。</block>
+  <block id="7a75d31b87be9d056b6bda38eaa0ec04" category="cell">LDAP組態</block>
+  <block id="da44d6a90298c4994e9893ac3929f496" category="cell">您可以選擇性地將Astra Control Center設定為使用LDAP來驗證選取的使用者。</block>
+  <block id="5416f32b477dd06c275634ccd1f515ef" category="doc">準備LDAP組態</block>
+  <block id="64e2f4d6a4ddca1f96b57f2204e643e0" category="paragraph">您可以選擇性地將Astra Control Center與輕量型目錄存取傳輸協定（LDAP）伺服器整合、以便為選取的Astra使用者執行驗證。LDAP是存取分散式目錄資訊的業界標準傳輸協定、也是企業驗證的熱門選擇。</block>
+  <block id="7ec8f89b6c735a5a73c147cd118f1dc0" category="inline-link">LDAP技術規格藍圖</block>
+  <block id="4a5c91444ee2cc7af3551ee1a7752ceb" category="list-text"><block ref="4a5c91444ee2cc7af3551ee1a7752ceb" category="inline-link-rx"></block></block>
+  <block id="2a906b17d905fdd3a0299e217eccf792" category="inline-link">LDAP版本3</block>
+  <block id="7cf9f7fe5b261dcd2ad0d601d9060fc4" category="list-text"><block ref="7cf9f7fe5b261dcd2ad0d601d9060fc4" category="inline-link-rx"></block></block>
+  <block id="28b2cfaececf9f33556a32eb29382c27" category="section-title">實作程序總覽</block>
+  <block id="32011db5e3f2b973acfc8aed3c0529a5" category="paragraph">在高層級上、您需要執行幾個步驟來設定LDAP伺服器、以便為Astra使用者提供驗證。</block>
+  <block id="c1b67e408996198828424d7c76c02bd0" category="admonition">雖然下列步驟依序顯示、但在某些情況下、您可以依照不同的順序執行這些步驟。例如、您可以先定義Astra使用者和群組、再設定LDAP伺服器。</block>
+  <block id="a3cb839890daad4f93490c8dec227de5" category="inline-link-macro">要求與限制</block>
+  <block id="c56b0e2cad98039f90afc405a76c9339" category="list-text">檢閱 <block ref="686b04a911782dec11ddeea9b8f057bc" category="inline-link-macro-rx"></block> 以瞭解選項、需求及限制。</block>
+  <block id="90380231066a158ebf6100b796ff4c99" category="list-text">選取LDAP伺服器和所需的組態選項（包括安全性）。</block>
+  <block id="5eb4ace08e506648d2ccc5e95a6d5d96" category="inline-link-macro">設定Astra使用LDAP伺服器</block>
+  <block id="5740ce327fba4073ca1904b06bc75eb3" category="list-text">執行工作流程 <block ref="bf310a7fd12c5fc1c6d25b61c9a5b93c" category="inline-link-macro-rx"></block> 將Astra與LDAP伺服器整合。</block>
+  <block id="b9c3ffd9ba3c6bf134abfff90267daf9" category="list-text">檢閱LDAP伺服器上的使用者和群組、確定其定義正確。</block>
+  <block id="14a831c3d0557a853d7f16eb752484db" category="inline-link-macro">將LDAP項目新增至Astra</block>
+  <block id="449f06d287054d92195f8d12380492a2" category="list-text">在中執行適當的工作流程 <block ref="fa99eeb7a6945e9d3646f3be23581902" category="inline-link-macro-rx"></block> 識別要使用LDAP驗證的使用者。</block>
+  <block id="3ff570634537eaff0815860b69ce8091" category="paragraph">您應該先檢閱下列Astra組態基本要點、包括限制和組態選項、再將Astra設定為使用LDAP進行驗證。</block>
+  <block id="c36e6b423c38bf8ef0ea8072377038ba" category="paragraph">Astra Control平台提供兩種部署模式。LDAP驗證僅支援Astra Control Center部署。</block>
+  <block id="7fef125dab1669f0bd061ee06a5d6f99" category="paragraph">Astra Control Center目前版本僅支援使用Astra Control REST API組態LDAP驗證。這項限制的重要一點是、LDAP使用者不會顯示在Astra網路介面的「使用者」索引標籤中。端點的REST API提供這些功能、如：/Core / v1/users)。</block>
+  <block id="18164a8c6c2e5e2bcefd983d32500f4b" category="paragraph">您必須擁有LDAP伺服器、才能接受及處理Astra驗證要求。Microsoft的Active Directory受目前Astra Control Center版本支援。</block>
+  <block id="200a1d5a87da368403e19065f0bdc581" category="paragraph">在Astra中設定LDAP伺服器時、您可以選擇性地定義安全連線。在此情況下、LDAPS傳輸協定需要憑證。</block>
+  <block id="9977ea9eb2d078e2d962856f8263451f" category="paragraph">您需要選取要使用LDAP驗證的使用者。您可以透過識別個別使用者或使用者群組來執行此作業。帳戶必須在LDAP伺服器上定義。也需要在Astra（類型LDAP）中識別這些驗證要求、以便將驗證要求轉送到LDAP。</block>
+  <block id="2513c835dd297cecfbb5520096ce3826" category="paragraph">目前Astra Control Center版本中、唯一支援的「roleConstraint」值是「*」。這表示使用者不受限於一組有限的命名空間、而且可以存取所有命名空間。請參閱 <block ref="fa99eeb7a6945e9d3646f3be23581902" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="9b220fa67069c2260857f2597ac91e53" category="paragraph">LDAP使用的認證資料包括使用者名稱（電子郵件地址）和相關密碼。</block>
+  <block id="8c7e9f2dfcd0125922dfbce36a1a4c2a" category="inline-link">移除使用者</block>
+  <block id="8b762bd0efe3e57dbdbc5d0f912ee411" category="paragraph">Astra Control Center部署中所有以使用者名稱身分使用的電子郵件地址都必須是唯一的。您無法使用已定義為Astra的電子郵件地址新增LDAP使用者。如果存在重複的電子郵件、您必須先從Astra刪除。請參閱<block ref="a92cb03f8a893365ffccb1d3a846870f" category="inline-link-rx"></block> 如需詳細資訊、請參閱Astra Control Center文件網站。</block>
+  <block id="83e2e963b0499e60bb6c46f08a38ce7b" category="paragraph">您可以將LDAP使用者和群組新增至Astra Control Center、即使LDAP中尚未存在或LDAP伺服器尚未設定亦然。這可讓您在設定LDAP伺服器之前預先設定使用者和群組。</block>
+  <block id="2839ece291324f6c806790ca58811cc8" category="paragraph">如果LDAP使用者屬於多個LDAP群組、且已在Astra中指派不同的角色、則使用者在驗證時的有效角色將是最具權限的角色。例如、如果使用者被指派群組1的「檢視者」角色、但在群組2中具有「成員」角色、則使用者的角色為「成員」。這是根據Astra（最高至最低）所使用的階層架構而定：</block>
+  <block id="f2ed562f43254d0123b5ec5c7446769b" category="paragraph">Astra大約每60秒將IT的使用者和群組與LDAP伺服器同步一次。因此、如果將使用者或群組新增至LDAP或從LDAP移除、可能需要一分鐘的時間才能在Astra中使用。</block>
+  <block id="b76debe413bda7ec6dfd72991496d708" category="paragraph">在嘗試重設LDAP組態之前、您必須先停用LDAP驗證。此外、若要變更LDAP伺服器（「connectionHost」）、您必須執行這兩項作業。請參閱 <block ref="9757cdec26988067ceb9687504d1344e" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="fd492c20355537c6885cfc88284a0f9c" category="paragraph">LDAP組態工作流程會呼叫REST API來完成特定工作。每個API呼叫都可以包含輸入參數、如所提供的範例所示。請參閱 <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> 以取得如何找到參考文件的相關資訊。</block>
+  <block id="a4cce93638d786143ceaec53646fcbd0" category="paragraph">您需要選取LDAP伺服器、並設定Astra以使用伺服器做為驗證供應商。組態工作包含下列步驟。每個步驟都包含單一REST API呼叫。</block>
+  <block id="b05f354eda3398ade96e9055b0305ee6" category="section-title">1.新增CA憑證</block>
+  <block id="468c35b0a371a6568ff7d068ff72eeea" category="paragraph">執行下列REST API呼叫、將CA憑證新增至Astra。</block>
+  <block id="073d8b65fb7ecf85a06f38d463b9fdd1" category="admonition">此步驟為選用步驟、只有當您希望Astra和LDAP透過使用LDAPS的安全通道進行通訊時才需要執行。</block>
+  <block id="13b11308d2e55c74d3dd35f8e9035cf4" category="cell">/ACE/｛ACON_ID｝/核心/ v1 /認證</block>
+  <block id="ecfba265de37f13d6cf0121430a4909e" category="paragraph">請注意下列關於輸入參數的資訊：</block>
+  <block id="7557b2b9d5bb2e98944494352545b875" category="list-text">「CERT」是Json字串、包含一個已編碼的64位元的PKCS-11格式憑證（PES編碼）。</block>
+  <block id="6387f0ce5ee860358d87cf0c10e51883" category="list-text">如果憑證是自行簽署的、則「isselfSigned」應設為「true」。預設值為「假」。</block>
+  <block id="e0da47631d6f2648f3a36bde7e269c3b" category="section-title">Curl範例</block>
+  <block id="d6c64252b8ce71696a41d941f4cab6e6" category="section-title">JSONN回應範例</block>
+  <block id="d18a6eed5380b79bc54e2eb6e4de5506" category="section-title">2.新增連結認證資料</block>
+  <block id="9beb1432cc918de4d5a2f634c78b257d" category="paragraph">執行下列REST API呼叫以新增繫結認證。</block>
+  <block id="b8044c82f34d859cca6a593e7b24a79d" category="cell">/ACE/｛ACON_ID｝/核心/ v1 /認證</block>
+  <block id="ae15f0c9912e2e37b3523e7e2e9f84ee" category="list-text">「binddn」和「password」是LDAP管理使用者的基64編碼繫結認證、可用來連線及搜尋LDAP目錄。「binddn」是LDAP使用者的電子郵件地址。</block>
+  <block id="bc1e18d5941e02ad1eb5530ea712bf97" category="paragraph">請注意下列回應參數：</block>
+  <block id="7650c05d04a1e9ff8418e0b2c4d3117a" category="list-text">認證資料的「ID」會用於後續的工作流程步驟。</block>
+  <block id="be0de023c657d3318fab7db4965e926d" category="section-title">3.擷取LDAP設定的UUID</block>
+  <block id="bdf56457fecf48ce12cedd63e4baec6a" category="paragraph">執行下列REST API呼叫、以擷取Astra Control Center隨附的「Astra .account.LDAP」設定的UUID。</block>
+  <block id="9a7c85ed5d7349bb01adfea8e76844c3" category="admonition">下列Curl範例使用查詢參數來篩選設定集合。您可以移除篩選條件以取得所有設定、然後搜尋「Astra帳戶.LDAP」。</block>
+  <block id="29a6dc5ec66799293d0f657ef700f728" category="cell">/ACE/｛ACON_ID｝/核心/ v1/settings</block>
+  <block id="a04f6fc98905b19569e98c821652785c" category="section-title">4.更新LDAP設定</block>
+  <block id="c74075f7ca4f004176562adafe18dc7f" category="paragraph">執行下列REST API呼叫、以更新LDAP設定並完成組態。請使用先前API呼叫中的「id」值、在下方URL路徑中輸入「&lt;controlling_ID&gt;」值。</block>
+  <block id="0634ea9e84d965a9b2b7b53435251582" category="admonition">您可以先發出特定設定的Get要求、以查看configSchema。這將提供組態中必要欄位的詳細資訊。</block>
+  <block id="ca58d7a87892784f449108b5713d3d80" category="list-text">"isEnabled"應設為"true"、否則可能發生錯誤。</block>
+  <block id="51d0b9cf69c2739ca15a60cff099889f" category="list-text">「credentialId」是先前建立的連結認證資料ID。</block>
+  <block id="91977da3ac4942f4a1225522ce4a5c8d" category="list-text">「RecureMode」（執行模式）應設定為「LDAP」（LDAP）或「LDAPS」（LDAPS）、視您在先前步驟中的組態而定。</block>
+  <block id="760e899cc5769c0faca3e4d9e4a5fe50" category="list-text">廠商僅支援「Active Directory」。</block>
+  <block id="c7d952ff6c857d0f8f2f2361f8599340" category="paragraph">如果通話成功、則會傳回HTTP 204回應。</block>
+  <block id="da31a4db41ccdf3dc0b4203a87c48c02" category="section-title">5.擷取LDAP設定</block>
+  <block id="49776a9f5739155239c8bae279694c8f" category="paragraph">您可以選擇性地執行下列REST API呼叫、以擷取LDAP設定並確認更新。</block>
+  <block id="88b81844873daf6f3107692fe9afb47e" category="paragraph">請在回應中找出「shate」欄位、此欄位的值如下表所示。</block>
+  <block id="46a2a41cc6e552044816a2d04634545d" category="cell">州/省</block>
+  <block id="7c6c2e5d48ab37a007cbf70d3ea25fa4" category="cell">擱置中</block>
+  <block id="1bf4c086db2064d68723fe48dcda6be2" category="cell">組態程序仍在作用中、尚未完成。</block>
+  <block id="9f7d0ee82b6a6ca7ddeae841f3253059" category="cell">有效</block>
+  <block id="8ca1440fffd6ba28f4d36aa66ef134f4" category="cell">組態已成功完成、回應中的「currentConfig」符合「eseredConfig」。</block>
+  <block id="cb5e100e5a9a3e7f6d1fd97512215282" category="cell">錯誤</block>
+  <block id="d6b82591a59dcebabe58a580017b8eb7" category="cell">LDAP組態程序失敗。</block>
+  <block id="10b14b5f4283ee7f1b6186e8ca9a4bb1" category="cell">/Account /｛account_id｝/拓撲/ v1/managedClusters</block>
+  <block id="512191c92b8b24122d2373ac3caf757a" category="paragraph">將LDAP設定為Astra Control Center的驗證提供者之後、您可以選取Astra將使用LDAP認證進行驗證的LDAP使用者。每位使用者必須在Astra中扮演角色、才能透過Astra Control REST API存取Astra。</block>
+  <block id="1259e1bcb3defbf8468fa9b4b317baff" category="paragraph">您可以使用兩種方式設定Astra來指派角色。選擇適合您環境的產品。</block>
+  <block id="4e373987ab6f121d73cb3c9d829a077c" category="inline-link-macro">新增及連結個別使用者</block>
+  <block id="f5acfb5a1e2e11204a7efeab66f37841" category="list-text"><block ref="f5acfb5a1e2e11204a7efeab66f37841" category="inline-link-macro-rx"></block></block>
+  <block id="eada538a3e306c617fada774394426a6" category="inline-link-macro">新增及繫結群組</block>
+  <block id="16cec7fbd9ab597f4db09dbf853b7ceb" category="list-text"><block ref="16cec7fbd9ab597f4db09dbf853b7ceb" category="inline-link-macro-rx"></block></block>
+  <block id="e99b81ee58ab09acce5c0fbc08127e13" category="admonition">LDAP認證資料的形式為使用者名稱、電子郵件地址及相關的LDAP密碼。</block>
+  <block id="362b4b17b5ad67c04eaf618b3c217139" category="paragraph">您可以指派角色給LDAP驗證後所使用的每個Astra使用者。當使用者人數不多、而且每個使用者可能具有不同的管理特性時、這是適當的做法。</block>
+  <block id="7250e7ffd1bdbfad9824adacd3541cb3" category="section-title">1.新增使用者</block>
+  <block id="80429b74c4df5ad07a23ce4efb1b2faa" category="paragraph">執行下列REST API呼叫、將使用者新增至Astra、並指出LDAP為驗證提供者。</block>
+  <block id="25f12a573132de043b7448f6ef78dbbe" category="cell">/ACE/｛ACON_ID｝/核心/ v1/uss</block>
+  <block id="181e7c57490e9fb900c9322a2192473b" category="list-text">需要下列參數：</block>
+  <block id="1123062a01214f821b854c82829467dc" category="list-text">"authProvid者"</block>
+  <block id="b40bc453bbcc2acf8046abddfb823971" category="list-text">"authID"</block>
+  <block id="ae1bde34794270bb273f407db5974619" category="list-text">電子郵件</block>
+  <block id="8b6d79c2a8205303d04c5e068e578fd8" category="list-text">「驗證ID」是LDAP中使用者的辨別名稱（DN）</block>
+  <block id="885e6661c5477a454659497bcf807df5" category="list-text">「電子郵件」必須是所有在Astra中定義的使用者的唯一名稱</block>
+  <block id="97c54ae5385dfb0bfaf0ebfe82486c53" category="paragraph">如果「電子郵件」值並非唯一、則會發生錯誤、並傳回回應中的409 HTTP狀態代碼。</block>
+  <block id="73ae336a1bcf7abf02f83c9d961066d2" category="section-title">2.新增使用者的角色繫結</block>
+  <block id="f82c041e2677cb63989e7061882203bc" category="paragraph">執行下列REST API呼叫、將使用者繫結至特定角色。您必須擁有上一步建立的使用者UUID。</block>
+  <block id="3798adb6ae243fda3b502c1a26ac7f38" category="cell">/ACE/｛ACON_ID｝/核心/ v1/ROleBindings</block>
+  <block id="afeef4481e8f77ed56c4383e82369e67" category="list-text">上述「RoleConstraint」的值是目前Astra版本唯一可用的選項。這表示使用者不受限於一組有限的命名空間、而且可以全部存取。</block>
+  <block id="0622cb2fb15cd9db10328e2ba1d3e821" category="paragraph">請注意下列關於回應參數的資訊：</block>
+  <block id="ac7d66f43ecf3e035bc9139997762243" category="list-text">「pripalType」欄位的值「user」表示已為使用者（而非群組）新增角色繫結。</block>
+  <block id="1cce2e3f66074da3b3746e8ff32e3fa7" category="paragraph">您可以將角色指派給Astra群組、此群組在LDAP驗證之後使用。當使用者數量眾多、而且每個使用者可能具有類似的管理特性時、這是適當的做法。</block>
+  <block id="92c4973d42b7f8c2b77e4ecde1fb1110" category="section-title">1.新增群組</block>
+  <block id="c0ad03b2572c4c7580edf10837ea5620" category="paragraph">執行下列REST API呼叫、將群組新增至Astra、並指出LDAP為驗證提供者。</block>
+  <block id="53e67e3e5364a93faa473947d3e71330" category="cell">/ACE/｛ACON_ID｝/核心/ v1 /群組</block>
+  <block id="d951c83a74c1539e200b4b2a6abc7a9d" category="section-title">2.新增群組的角色繫結</block>
+  <block id="a5a9025a2565e62426d0d6fa46ca4e54" category="paragraph">執行下列REST API呼叫、將群組繫結至特定角色。您必須擁有上一步建立的群組UUID。在LDAP執行驗證之後、屬於群組成員的使用者將能夠登入Astra。</block>
+  <block id="3f78918ffaed6aa648fbf481030b078e" category="list-text">上述「RoleConstraint」的值是目前Astra版本唯一可用的選項。這表示使用者不受限於特定命名空間、而且可以全部存取。</block>
+  <block id="535f31c0d94d3cf84629bee7a5935c63" category="list-text">「pripalType」欄位的值「group」表示已為群組（而非使用者）新增角色繫結。</block>
+  <block id="be1dcc1afbc1a43cd23e6374cd48ad18" category="section-title">1.列出後端</block>
+  <block id="61bf96d95cf34f1d59a77975db5785f3" category="cell">/Account /｛account_id｝/拓撲/ v1/storage後 端</block>
+  <block id="affab1573a02975db1b9ece3ebe809a2" category="section-title">2022年8月10日（22.08）</block>
+  <block id="a143d01f8afcfb8648ec6fb992293200" category="paragraph">新增三種資源類型：*憑證*、*群組*和*應用程式鏡射*。此外、多個現有資源的版本也已更新。</block>
+  <block id="a49c9c380ec2e13191e995f949a1c440" category="section-title">LDAP驗證</block>
+  <block id="9ea80302c854cab54e3ed66f65694108" category="paragraph">您可以選擇性地設定Astra Control Center、以便與LDAP伺服器整合、以驗證所選的Astra使用者。請參閱 <block ref="4c601a7a96565855370b413505d72329" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="b79763fc13e85adccc94bdf927bdccb8" category="section-title">增強的執行攔截功能</block>
+  <block id="ed2e31da39a5549d92b9ca0161d3b6e8" category="paragraph">Astra Control 21.12版本新增了執行掛勾的支援。除了現有的快照前和快照後執行掛勾之外、您現在可以使用22.08版本來設定下列類型的執行掛勾：</block>
+  <block id="0a2055495a94f091655a2e4d421cffe2" category="list-text">預先備份</block>
+  <block id="cf6e97e89c4b36c29252fcb7b0728d2f" category="list-text">備份後</block>
+  <block id="349b93d2884e6ca3d41d0d9dab41dcd8" category="list-text">還原後</block>
+  <block id="255ac707ef7c398985c59f77208f8d50" category="paragraph">Astra Control現在也能將相同的指令碼用於多個執行掛勾。</block>
+  <block id="4d3f5aacbe703c00b43aa62f3955f464" category="section-title">使用SnapMirror進行應用程式複寫</block>
+  <block id="ecdbe161d2c7428016e927963a859b5c" category="paragraph">您現在可以使用NetApp SnapMirror技術、在叢集之間複寫資料和應用程式變更。這項增強功能可用來改善您的業務持續運作和恢復功能。</block>
+  <block id="8b4ec359317fe3f9d108f39c57680e63" category="paragraph">本網站的文件說明Astra Control的2022（22.08）版Astra Control隨附的Astra Control REST API及相關自動化技術。特別是、此版本的REST API隨附於Astra Control Center和Astra Control Service的相應22.08版本。</block>
+  <block id="432b09f47d1f21c47c9c27c092f6475a" category="inline-link">Astra Control Center 22.08文件</block>
+  <block id="9177c91a006b716e5c7a48a3d2949f6f" category="list-text"><block ref="9177c91a006b716e5c7a48a3d2949f6f" category="inline-link-rx"></block></block>
+  <block id="8f54ea65f0b6d079dd66703c0e3d7fbd" category="inline-link">Astra Control Service 22.08文件</block>
+  <block id="3d951227fdf405841826a71ed6c30234" category="list-text"><block ref="3d951227fdf405841826a71ed6c30234" category="inline-link-rx"></block></block>
+  <block id="0b7d1e8a8b66c054d1b104e700b7bd15" category="admonition">Astra Control REST API 22.08版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。</block>
+  <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">設定LDAP伺服器</block>
 </blocks>

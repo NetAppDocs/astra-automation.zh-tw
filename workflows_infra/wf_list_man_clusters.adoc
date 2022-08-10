@@ -22,12 +22,12 @@ summary:
 
 執行下列REST API呼叫。
 
-[cols="25,75"]
+[cols="1,6"]
 |===
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account/{AccountID}/topology / v1/managedClusters 
+| 取得 | /Account /｛account_id｝/拓撲/ v1/managedClusters 
 |===
 
 

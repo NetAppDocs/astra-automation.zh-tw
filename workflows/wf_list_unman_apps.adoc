@@ -36,7 +36,7 @@ NOTE: 依預設、這些工作流程中使用的REST端點會傳回所有Astra�
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account/{AccountID}/topology / v1/apps 
+| 取得 | /account/{aper_id}/topology / v1/apps 
 |===
 
 
@@ -121,7 +121,7 @@ curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account/{AccountID}/topology / v1/apps 
+| 取得 | /account/{aper_id}/topology / v1/apps 
 |===
 
 

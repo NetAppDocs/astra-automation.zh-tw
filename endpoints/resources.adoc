@@ -44,6 +44,9 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 | ASUP | 21.08年 | ASUP資源代表AutoSupport 轉寄給NetApp支援部門的各種產品組合。 
 
 
+| 憑證 | * 22.08* | 憑證資源代表已安裝的憑證、用於對傳出連線進行強式驗證。 
+
+
 | 認證資料 | 21.04. | 認證資源包含安全性相關資訊、可與Astra使用者、叢集、儲存區及儲存後端搭配使用。 
 
 
@@ -59,6 +62,9 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 | 功能 | 21.08年 | 功能資源代表所選的Astra功能、您可以查詢這些功能、以判斷系統中是否已啟用或停用這些功能。存取限制為唯讀。 
 
 
+| 群組 | * 22.08* | 群組資源代表Astra群組及相關資源。目前版本僅支援LDAP群組。 
+
+
 | 攔截來源 | 21：12 | Hook來源資源代表實際使用的原始程式碼與執行掛勾。將原始程式碼與執行控制區分開有幾項優點、例如允許共用指令碼。 
 
 
@@ -68,7 +74,7 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 | 通知 | 21.04. | 通知資源代表有通知目的地的Astra事件。存取權限是以每位使用者為單位提供。 
 
 
-| 套件 | * 22.04 * | 套件資源提供套件定義的登錄與存取。軟體套件包含各種元件、包括檔案、映像及其他成品。 
+| 套件 | 22.04 | 套件資源提供套件定義的登錄與存取。軟體套件包含各種元件、包括檔案、映像及其他成品。 
 
 
 | 角色繫結 | 21.04. | 角色繫結資源代表特定使用者與帳戶配對之間的關係。除了兩者之間的連結之外、還會透過特定角色為每個角色指定一組權限。 
@@ -86,7 +92,7 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 | 未讀取通知 | 21.04. | 未讀取的通知資源代表指派給特定使用者但尚未讀取的通知。 
 
 
-| 升級 | * 22.04 * | 升級資源可存取軟體元件、以及啟動升級的能力。 
+| 升級 | 22.04 | 升級資源可存取軟體元件、以及啟動升級的能力。 
 
 
 | 使用者 | 21.04. | 使用者資源代表Astra使用者能夠根據其定義的角色來存取系統。 
@@ -133,6 +139,9 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 | 應用程式 | 21.04. | 應用程式資源代表Kubernetes的所有應用程式、包括Astra未管理的應用程式。 
 
 
+| AppMirror | * 22.08* | AppMirror資源代表AppMirror資源、用於管理應用程式鏡射關係。 
+
+
 | 鏟斗 | 21.08年 | 儲存庫資源代表S3雲端儲存庫、用於儲存由Astra管理之應用程式的備份。 
 
 
@@ -168,26 +177,6 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 
 | Volume | 21.04. | Volume資源代表與託管應用程式相關聯的Kubernetes儲存磁碟區。 
 |===
-
-
-== 最新版本的新端點
-
-目前的22.04 Astra Control版本已新增下列REST端點。此外、多個現有資源的版本也已升級。
-
-* /Accounts /｛account_id｝/核心/ v1/packages
-* /Accounts /｛account_id｝/core / v1/packages/｛package_id｝
-* /Accounts /｛account_id｝/核心/ v1/升級
-* /Accounts /｛account_id｝/核心/ v1/exgrades//｛grade_id｝
-* /Accounts /｛account_id｝/拓撲/ v1/appBackups
-* /Accounts /｛account_id｝/拓撲/ v1/appBackups/｛appBackup｝
-* /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集/｛cluster_id｝/叢集節點
-* /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集/｛cluster_id｝/叢集節點/｛clusterNode_id｝
-* /accounts/{account_id}/topology / v1/managedClusters/｛managedCluster_id｝/apps /｛app_id｝/appAsset
-* /Accounts /｛account_id｝/拓撲/ v1/managedClusters/｛managedCluster_id｝/應用程式/｛app_id｝/應用程式資產/｛appAsset_id｝
-* /accounts/{account_id}/topology / v1/managedClusters/{managedCluster_id}/clusterNode
-* /Accounts /｛account_id｝/拓撲/ v1/managedClusters/｛managedCluster_id｝/叢集節點/｛clusterNode_id｝
-
-
 
 
 == 其他資源和端點

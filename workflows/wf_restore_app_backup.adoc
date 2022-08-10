@@ -39,7 +39,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 放入 | /Account/{AccountID}/k8s/v1/managedApps/{AppID} 
+| 放入 | /account/{aper_id}/k8s/v1/managedApps/{app_id} 
 |===
 
 

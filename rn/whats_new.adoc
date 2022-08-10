@@ -18,6 +18,48 @@ NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功�
 
 
 
+== 2022年8月10日（22.08）
+
+此版本包括REST API的擴充與更新、以及增強的安全性與管理功能。
+
+
+
+=== 全新強化的Astra資源
+
+新增三種資源類型：*憑證*、*群組*和*應用程式鏡射*。此外、多個現有資源的版本也已更新。
+
+
+
+=== LDAP驗證
+
+您可以選擇性地設定Astra Control Center、以便與LDAP伺服器整合、以驗證所選的Astra使用者。請參閱 link:../workflows_infra/ldap_prepare.html["LDAP組態"] 以取得更多資訊。
+
+
+
+=== 增強的執行攔截功能
+
+Astra Control 21.12版本新增了執行掛勾的支援。除了現有的快照前和快照後執行掛勾之外、您現在可以使用22.08版本來設定下列類型的執行掛勾：
+
+* 預先備份
+* 備份後
+* 還原後
+
+
+Astra Control現在也能將相同的指令碼用於多個執行掛勾。
+
+
+
+=== 使用SnapMirror進行應用程式複寫
+
+您現在可以使用NetApp SnapMirror技術、在叢集之間複寫資料和應用程式變更。這項增強功能可用來改善您的業務持續運作和恢復功能。
+
+.相關資訊
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center：最新消息"^]
+* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service：最新消息"^]
+
+
+
+
 == 2022年4月26日（22.04）
 
 此版本包括REST API的擴充與更新、以及增強的安全性與管理功能。
