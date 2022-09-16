@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: python/py_list_man_apps.html 
-keywords:  
-summary:  
+keywords: python script, list apps, managed apps 
+summary: 您可以使用下列指令碼來列出Astra帳戶的託管應用程式。 
 ---
 = 列出託管應用程式
 :hardbreaks:

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rn/about.html 
-keywords:  
-summary:  
+keywords: about, current release 
+summary: 本網站的文件說明Astra Control REST API及Astra Control提供的相關自動化技術。 
 ---
 = 關於本版本
 :hardbreaks:
@@ -24,3 +24,5 @@ summary:
 * https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 22.08文件"^]
 * link:../aa-earlier-versions.html["舊版Astra Automation文件"]
 
+
+歡迎前往Twitter @NetAppDoc追蹤我們的動態。請透過成為來傳送有關文件的意見反應 link:https://docs.netapp.com/us-en/contribute/["GitHub貢獻者"^] 或傳送電子郵件至doccomments@netapp.com。

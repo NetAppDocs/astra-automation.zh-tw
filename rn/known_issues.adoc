@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rn/known_issues.html 
-keywords:  
-summary:  
+keywords: known issues, bugs, fixes, issues 
+summary: 您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。 
 ---
 = 已知問題
 :hardbreaks:

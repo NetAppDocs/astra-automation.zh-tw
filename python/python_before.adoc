@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: python/python_before.html 
-keywords:  
-summary:  
+keywords: python3, requests, urllib3, identity, json 
+summary: Python是熱門的開發語言、尤其是資料中心自動化。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。 
 ---
 = 開始之前
 :hardbreaks:

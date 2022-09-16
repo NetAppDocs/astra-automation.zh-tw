@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: additional/rbac.html 
 keywords:  
-summary:  
+summary: Astra REST API支援角色型存取控制（RBAC）、以限制系統功能的存取。 
 ---
 = RBAC安全性
 :hardbreaks:

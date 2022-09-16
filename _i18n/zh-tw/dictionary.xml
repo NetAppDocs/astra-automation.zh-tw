@@ -56,9 +56,7 @@
   <block id="b9df3bfca1810fb5992aadc53d6c5f6e" category="cell">被視為重要的事件子集、足以呈現給使用者。</block>
   <block id="3d74270bce6df5c461068acd3992d1bd" category="cell">未讀取通知</block>
   <block id="0f15555c27239decf2cb19f7c4f55045" category="cell">使用者尚未讀取或擷取的通知。</block>
-  <block id="c6c51849eeb1ac322baa3a99b7cd7e43" category="summary">這是Astra Automation的摘要。</block>
   <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation文件</block>
-  <block id="5bfa69d8f97671928100931c0d411913" category="doc">Astra Control REST API簡介</block>
   <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API的主要重點和優點如下所示。</block>
   <block id="351df3aa3706c8ed2199a8019e815c0c" category="admonition">若要存取REST API、您必須先登入Astra網路使用者介面、然後產生API權杖。您必須在每個API要求中加入權杖。</block>
   <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">Astra Control API是使用REST技術和目前最佳實務做法所建立。核心技術包括HTTP、Json及RBAC。</block>
@@ -218,7 +216,6 @@
   <block id="df98c0b39730eeb3f14749ea1c0684c2" category="list-text">複製並儲存相同頁面上的帳戶ID。</block>
   <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">當您透過Curl或程式設計語言存取Astra Control REST API時、必須在HTTP「授權」要求標頭中加入API承載權杖。</block>
   <block id="3e25960a79dbc69b674cd4ec67a72c62" category="doc">您好：World</block>
-  <block id="fcc723c942724132893726738da56aeb" category="paragraph">您可以在工作站的CLI上發出簡單的Curl命令、開始使用Astra Control REST API並確認其可用度。</block>
   <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">Curl公用程式必須可在本機工作站上使用。您也必須擁有API權杖和相關的帳戶識別碼。請參閱 <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">下列Curl命令會擷取Astra使用者清單。請依指示提供適當的&lt;ACON_ID&gt;和&lt;API_Toke&gt;。</block>
   <block id="bff6b273561ec6570215c14bdba13a26" category="section-title">Json輸出範例</block>
@@ -479,7 +476,6 @@
   <block id="bd4c8bbdccbcb7826a3bc4ae421c0604" category="section-title">JSON格式化</block>
   <block id="352836aad17f0db4217873eb0a9524b3" category="paragraph">雖然資訊可透過多種方式在Web服務用戶端和伺服器之間進行結構化和傳輸、但最受歡迎的選項是JavaScript物件標記法（Json）。Json是以純文字表示簡單資料結構的產業標準、用於傳輸描述資源的狀態資訊。Astra Control REST API使用Json格式化在每個HTTP要求和回應的本文中所攜帶的資料。</block>
   <block id="599887dba3179dd0daaa4b5d587aa0a0" category="doc">資源與端點</block>
-  <block id="8e9b0300da42294f8690b8db105eb132" category="paragraph">您可以使用Astra Control REST API提供的資源、將Astra部署自動化。每個資源都是透過一或多個端點進行存取。以下資訊將介紹您可在自動化部署中使用的REST資源。</block>
   <block id="98904826ae5cef8716020180473276c8" category="admonition">用於存取Astra Control資源的路徑格式和完整URL是以數個值為基礎。請參閱 <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> 以取得更多資訊。另請參閱 <block ref="10fd548eb0773eced2b1f8455835ae29" category="inline-link-macro-rx"></block> 如需使用Astra資源和端點的詳細資訊、</block>
   <block id="94076f0e9f9b57b9bc636dff06dec4be" category="section-title">Astra Control REST資源摘要</block>
   <block id="0f879b71f480ca631ac007cea8270eb9" category="paragraph">Astra Control REST API中提供的主要資源端點分為三類。每個資源都可以使用CRUD作業的完整集合（建立、讀取、更新、刪除）存取、除非另有說明。</block>
@@ -1004,4 +1000,12 @@
   <block id="3d951227fdf405841826a71ed6c30234" category="list-text"><block ref="3d951227fdf405841826a71ed6c30234" category="inline-link-rx"></block></block>
   <block id="0b7d1e8a8b66c054d1b104e700b7bd15" category="admonition">Astra Control REST API 22.08版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">設定LDAP伺服器</block>
+  <block id="941b6ae90f15cea12f3fe36796089500" category="summary">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。以下資訊將介紹您可在自動化部署中使用的REST資源。</block>
+  <block id="a941511c207017106c6b7b09e9dec884" category="summary">本網站的文件說明Astra Control REST API及Astra Control提供的相關自動化技術。</block>
+  <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub貢獻者</block>
+  <block id="65ed3c4720fad34d453db54755338725" category="paragraph">歡迎前往Twitter @NetAppDoc追蹤我們的動態。請透過成為來傳送有關文件的意見反應 <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> 或傳送電子郵件至doccomments@netapp.com。</block>
+  <block id="2d388ce46646f517f31092dee87e1af6" category="paragraph">您可以在工作站的CLI上發出簡單的Curl命令、開始使用Astra Control REST API並確認其可用度。</block>
+  <block id="29af96a9ec5aae2cc2423a2c632b3216" category="doc">功能與效益簡介</block>
+  <block id="775e2faa120631457b3eb5f26a2f323a" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center和Astra Control Service在特定版本中共用相同的REST API。您可以使用API及其他相關的自動化技術來管理Astra Control部署。</block>
+  <block id="35ae08a314ffffc02580e3c3fbfad924" category="sidebar">功能與優勢</block>
 </blocks>

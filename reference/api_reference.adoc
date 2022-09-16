@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: reference/api_reference.html 
-keywords:  
-summary:  
+keywords: reference, api reference 
+summary: 您可以存取所有Astra Control REST API呼叫的詳細資料、包括HTTP方法、輸入參數和回應。這份完整參考資料有助於使用REST API開發自動化應用程式。 
 ---
 = API 參考
 :hardbreaks:
