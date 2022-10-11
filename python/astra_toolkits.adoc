@@ -82,7 +82,7 @@ SDK有幾項與本機Python環境相關的先決條件。例如、您必須使�
 
 以下是您開始使用所需的一些資源。
 
-* https://pypi.org/project/netapp-astra-toolkits/["PyPI：NetApp Astra Control Python SDK"^]
+* https://pypi.org/project/actoolkit["PyPI：NetApp Astra Control Python SDK"^]
 * https://github.com/NetApp/netapp-astra-toolkits["GitHub：NetApp/NetApp-Astra工具套件"^]
 * https://hub.docker.com/r/netapp/astra-toolkits["Docker：NetApp/Astra工具套件"^]
 

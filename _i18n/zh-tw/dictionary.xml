@@ -611,7 +611,6 @@
   <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">如需詳細資訊、請參閱PyPI和GitHub頁面。</block>
   <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">無論是直接使用Astra SDK中的Python類別、或是「toolkit.py」指令碼中的功能、最終都能在Astra Control部署中存取REST API。因此、您需要Astra帳戶和API權杖。請參閱 <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 如需詳細資訊、請參閱本文件*入門*一節中的其他頁面。</block>
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">實用資源摘要</block>
-  <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
   <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API參考文件目前已隨Astra Control提供、並可線上取得。</block>
   <block id="18bfd97c33ffd64bcd077be2ff48cd45" category="paragraph">您需要Astra Control Center或Astra Control Service帳戶。</block>
@@ -1013,4 +1012,5 @@
   <block id="d2eba1db06d9a5fbe5780c6a0d3131b9" category="list-text">複製GitHub儲存庫並複製/修改兩個核心Python檔案、以便Python用戶端程式碼存取</block>
   <block id="27b72a5b697b4b5014519a7f674fe0f9" category="paragraph">SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.8或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。</block>
   <block id="e598386ca051245bd47f1531754638e2" category="list-text"><block ref="e598386ca051245bd47f1531754638e2" category="inline-link-rx"></block></block>
+  <block id="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="list-text"><block ref="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="inline-link-rx"></block></block>
 </blocks>
