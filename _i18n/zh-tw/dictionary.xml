@@ -596,9 +596,7 @@
   <block id="c1fa54c7b9d3166a56b9afe8d178025e" category="section-title">如何存取</block>
   <block id="caf8d9c274d92761873c194de7fd847e" category="paragraph">您可以使用下列方式存取SDK。</block>
   <block id="0b0321c50e2a79cdce826f0c8f5f7f20" category="inline-link">Python套件索引</block>
-  <block id="a65d831b17fd79d3bf54336b2ed84e31" category="paragraph">SDK可從取得<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> 以* NetApp-Astra工具套件*的名稱。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。</block>
   <block id="cc255a90b5e22a79adcc253fd5643c0e" category="inline-link">PyPI：NetApp Astra Control Python SDK</block>
-  <block id="5101ad75321ce3f01dd0612c22b9fa44" category="paragraph">請參閱<block ref="b0ae7ae3e90ea984094ad8df5b6a65f5" category="inline-link-rx"></block> 以取得更多資訊。</block>
   <block id="e8c4206b0f47aa117169255eaa08c5eb" category="paragraph">您也可以在GitHub取得SDK原始程式碼。儲存庫包含下列項目：</block>
   <block id="674eb3a9ec8ac34ddaaf6ea44b7eb422" category="list-text">「astrasdk.py」（使用Python類別的Astra SDK）</block>
   <block id="f2af4f364548b21864e1b7b7bd176f6c" category="list-text">「toolit.py」（較高層級的功能型指令碼）</block>
@@ -610,13 +608,8 @@
   <block id="6343ba741cd1ee396593580192d07224" category="section-title">安裝與基本需求</block>
   <block id="7e5ad59a792bdfb61631a29cbadd4216" category="paragraph">在安裝套件及準備使用套件時、需要考量幾種選項和需求。</block>
   <block id="9fcb3e0ffb2078377dcce5ceb342f1b1" category="paragraph">您可以使用下列其中一種方法來安裝SDK：</block>
-  <block id="658d546fab60a55bbf70f000f63ee91c" category="list-text">使用Pip將套件從PyPI安裝到Python環境</block>
-  <block id="144f4cb6f91591a4b697a30ebcf1ab07" category="list-text">複製GIT Hub儲存庫、然後：</block>
-  <block id="32ffd39c439ea17f73e4f5036abb3944" category="list-text">將套件部署為Docker容器（包含您所需的一切）</block>
-  <block id="a09f9226f893c1dac534e03b85311d73" category="list-text">複製兩個核心Python檔案、以便Python用戶端程式碼存取</block>
   <block id="acb730b2d5158050dc822b6dc8c932e2" category="paragraph">如需詳細資訊、請參閱PyPI和GitHub頁面。</block>
   <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">無論是直接使用Astra SDK中的Python類別、或是「toolkit.py」指令碼中的功能、最終都能在Astra Control部署中存取REST API。因此、您需要Astra帳戶和API權杖。請參閱 <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 如需詳細資訊、請參閱本文件*入門*一節中的其他頁面。</block>
-  <block id="d53f4bad554105d2379ba7cf28728467" category="paragraph">SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.5或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。</block>
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">實用資源摘要</block>
   <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
@@ -1011,4 +1004,13 @@
   <block id="c03785645670327afbef79672d54b2df" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center和Astra Control Service在特定版本中共用相同的REST API。您可以使用REST API和其他相關的自動化技術來管理Astra Control部署。</block>
   <block id="d803102aaa79040d7acdf0fdfaf7f156" category="summary">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。本頁提供您可作為自動化部署一部分使用的REST資源簡介。</block>
   <block id="2cb4d33cb32e61ac40dcce4208d54e3c" category="paragraph">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。以下是自動化部署中可用的REST資源簡介。</block>
+  <block id="44dd27a5a91f4e2450789bd7e3f6c406" category="paragraph">SDK可從取得<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> 名稱* actooltooltool包*。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。</block>
+  <block id="fa103d25b0ba58afb589f2477f97ed72" category="paragraph">安裝完成後、您可以在指令碼中放置「匯入astraSDK」來使用astraSDK.py類別。此外、也可在命令提示字元上直接叫用「actoolkit'」、相當於「toolkit.py」（「actoolkitlist叢集」與「./toolkit.py list叢集」相同）。</block>
+  <block id="9b0e393771050d40b4c31aba2a4ced9d" category="paragraph">請參閱<block ref="42193bd5b0dd84ae5b9573e56d2978ff" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="addd50afdb87beb574080cc62fcaac55" category="inline-link">Docker：NetApp/Astra工具套件</block>
+  <block id="afc927e48c3a27421eaa76491afcb73f" category="list-text">使用準備好的<block ref="a7cb3b9c076603cec82f8f2444d22246" category="inline-link-rx"></block> 映像、安裝了所有必要的相依性、包括「actoolkit」</block>
+  <block id="8dc9da526ba6c16b80ab6196594c6d59" category="list-text">使用Pip將PyPI的「actoolkit」套件安裝到Python環境中</block>
+  <block id="d2eba1db06d9a5fbe5780c6a0d3131b9" category="list-text">複製GitHub儲存庫並複製/修改兩個核心Python檔案、以便Python用戶端程式碼存取</block>
+  <block id="27b72a5b697b4b5014519a7f674fe0f9" category="paragraph">SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.8或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。</block>
+  <block id="e598386ca051245bd47f1531754638e2" category="list-text"><block ref="e598386ca051245bd47f1531754638e2" category="inline-link-rx"></block></block>
 </blocks>

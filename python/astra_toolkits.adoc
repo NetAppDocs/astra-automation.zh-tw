@@ -40,9 +40,11 @@ NOTE: * NetApp Astra Control Python SDK*（或僅SDK）是整個套件的名稱�
 
 您可以使用下列方式存取SDK。
 
-SDK可從取得 https://pypi.org/["Python套件索引"^] 以* NetApp-Astra工具套件*的名稱。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。
+SDK可從取得 https://pypi.org/["Python套件索引"^] 名稱* actooltooltool包*。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。
 
-請參閱 https://pypi.org/project/netapp-astra-toolkits/["PyPI：NetApp Astra Control Python SDK"^] 以取得更多資訊。
+安裝完成後、您可以在指令碼中放置「匯入astraSDK」來使用astraSDK.py類別。此外、也可在命令提示字元上直接叫用「actoolkit'」、相當於「toolkit.py」（「actoolkitlist叢集」與「./toolkit.py list叢集」相同）。
+
+請參閱 https://pypi.org/project/actoolkit/["PyPI：NetApp Astra Control Python SDK"^] 以取得更多資訊。
 
 您也可以在GitHub取得SDK原始程式碼。儲存庫包含下列項目：
 
@@ -63,20 +65,16 @@ SDK可從取得 https://pypi.org/["Python套件索引"^] 以* NetApp-Astra工具
 
 您可以使用下列其中一種方法來安裝SDK：
 
-* 使用Pip將套件從PyPI安裝到Python環境
-* 複製GIT Hub儲存庫、然後：
-+
-** 將套件部署為Docker容器（包含您所需的一切）
-** 複製兩個核心Python檔案、以便Python用戶端程式碼存取
-
-
+* 使用準備好的 https://hub.docker.com/r/netapp/astra-toolkits["Docker：NetApp/Astra工具套件"^] 映像、安裝了所有必要的相依性、包括「actoolkit」
+* 使用Pip將PyPI的「actoolkit」套件安裝到Python環境中
+* 複製GitHub儲存庫並複製/修改兩個核心Python檔案、以便Python用戶端程式碼存取
 
 
 如需詳細資訊、請參閱PyPI和GitHub頁面。
 
 無論是直接使用Astra SDK中的Python類別、或是「toolkit.py」指令碼中的功能、最終都能在Astra Control部署中存取REST API。因此、您需要Astra帳戶和API權杖。請參閱 link:../get-started/before_get_started.html["開始之前"] 如需詳細資訊、請參閱本文件*入門*一節中的其他頁面。
 
-SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.5或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。
+SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.8或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。
 
 
 
@@ -86,4 +84,5 @@ SDK有幾項與本機Python環境相關的先決條件。例如、您必須使�
 
 * https://pypi.org/project/netapp-astra-toolkits/["PyPI：NetApp Astra Control Python SDK"^]
 * https://github.com/NetApp/netapp-astra-toolkits["GitHub：NetApp/NetApp-Astra工具套件"^]
+* https://hub.docker.com/r/netapp/astra-toolkits["Docker：NetApp/Astra工具套件"^]
 
