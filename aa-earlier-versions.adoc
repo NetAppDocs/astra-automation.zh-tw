@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: aa-earlier-versions.html 
-keywords: earlier versions 
-summary: 您可以從下列連結存取先前Astra Control版本的自動化文件。 
+keywords: earlier versions, earlier releases 
+summary: 您可以存取先前Astra Control版本的自動化文件。 
 ---
 = 舊版Astra Control Automation文件
 :hardbreaks:

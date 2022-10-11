@@ -2,7 +2,6 @@
 <blocks>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="summary"></block>
   <block id="2496b3f288a81c8c923f8c9c19fe6ed4" category="doc">RBAC安全性</block>
-  <block id="220c398b098026c9c6d51b8c5eed3f89" category="paragraph">Astra REST API支援角色型存取控制（RBAC）、以限制系統功能的存取。</block>
   <block id="93f59591ef6394ec20a0c8c92e574665" category="section-title">Astra角色</block>
   <block id="1dfeab1980c9d1053325319ee410d098" category="paragraph">每位Astra使用者都會被指派到單一角色、以決定可執行的動作。這些角色會依照下表所述的階層架構來排列。</block>
   <block id="bbbabdbe1b262f75d99d62880b953be1" category="cell">角色</block>
@@ -84,7 +83,6 @@
   <block id="fd341dfea170932946910997510c48e8" category="section-title">Astra Data Store儲存後端處於未知狀態</block>
   <block id="e1c83179f57e62cb00fbb2646ef58e6e" category="paragraph">Astra Data Store儲存後端在發出API呼叫以擷取儲存後端後端後端後端時、會處於「未知」狀態。在這種情況下、儲存後端實際上仍然可用、可以與通訊。不過、儲存後端內的元件可能處於不正常狀態、因此需要將其恢復為正常狀態、以便儲存後端顯示為「可用」。</block>
   <block id="c93cc787737ceea532bea714170e32cf" category="doc">Astra Control REST API的新功能</block>
-  <block id="b0c0f8ac8f671541655d3d0e2beb2ce8" category="paragraph">NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功能和錯誤修復。</block>
   <block id="638191aa40b01d59e16da3223262a2ae" category="section-title">2022年4月26日（22.04）</block>
   <block id="0e7874b5c73e32ebc1ff07cc0f74f4d2" category="paragraph">此版本包括REST API的擴充與更新、以及增強的安全性與管理功能。</block>
   <block id="b2e7eefe39dff61bfe224d948a6b01f1" category="section-title">全新強化的Astra資源</block>
@@ -576,7 +574,6 @@
   <block id="a50be7a834c95319089495cab34dcc3a" category="doc">列出託管應用程式</block>
   <block id="e61ad2d01a2692e9ed29c90c0c413101" category="paragraph">您可以使用下列指令碼來列出Astra帳戶的託管應用程式。</block>
   <block id="0dca49fc2e144253162b8cbd94b3b83c" category="admonition">請參閱 <block ref="471a805638f43cfd34206d9398385425" category="inline-link-macro-rx"></block> 以取得所需Json輸入檔的範例。</block>
-  <block id="1966cbc7987b76acf54312ed4c9007ec" category="paragraph">Python是熱門的開發語言、尤其是資料中心自動化。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。</block>
   <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">除了直接使用Python存取Astra Control REST API之外、NetApp也提供工具套件、可擷取API並移除部分複雜性。請參閱 <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">準備環境</block>
   <block id="eacdf05a2e0f975530592f3afa7c5858" category="paragraph">執行Python指令碼的基本組態需求如下所述。</block>
@@ -623,7 +620,6 @@
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">實用資源摘要</block>
   <block id="ba24114401f0d96a4086faa5796f3079" category="list-text"><block ref="ba24114401f0d96a4086faa5796f3079" category="inline-link-rx"></block></block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
-  <block id="e2cfa1b12557ae7ad3c2bb28c8b77d7c" category="paragraph">您可以存取所有Astra Control REST API呼叫的詳細資料、包括HTTP方法、輸入參數和回應。這份完整參考資料有助於使用REST API開發自動化應用程式。</block>
   <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API參考文件目前已隨Astra Control提供、並可線上取得。</block>
   <block id="18bfd97c33ffd64bcd077be2ff48cd45" category="paragraph">您需要Astra Control Center或Astra Control Service帳戶。</block>
   <block id="1fb6c6816575c47391caa2d4408774f5" category="paragraph">存取Astra Control Service的下列站台： <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
@@ -1000,12 +996,19 @@
   <block id="3d951227fdf405841826a71ed6c30234" category="list-text"><block ref="3d951227fdf405841826a71ed6c30234" category="inline-link-rx"></block></block>
   <block id="0b7d1e8a8b66c054d1b104e700b7bd15" category="admonition">Astra Control REST API 22.08版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">設定LDAP伺服器</block>
-  <block id="941b6ae90f15cea12f3fe36796089500" category="summary">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。以下資訊將介紹您可在自動化部署中使用的REST資源。</block>
   <block id="a941511c207017106c6b7b09e9dec884" category="summary">本網站的文件說明Astra Control REST API及Astra Control提供的相關自動化技術。</block>
   <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub貢獻者</block>
   <block id="65ed3c4720fad34d453db54755338725" category="paragraph">歡迎前往Twitter @NetAppDoc追蹤我們的動態。請透過成為來傳送有關文件的意見反應 <block ref="78cabac26f0b6e0ce9a3e24d1b749910" category="inline-link-macro-rx"></block> 或傳送電子郵件至doccomments@netapp.com。</block>
   <block id="2d388ce46646f517f31092dee87e1af6" category="paragraph">您可以在工作站的CLI上發出簡單的Curl命令、開始使用Astra Control REST API並確認其可用度。</block>
-  <block id="29af96a9ec5aae2cc2423a2c632b3216" category="doc">功能與效益簡介</block>
-  <block id="775e2faa120631457b3eb5f26a2f323a" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center和Astra Control Service在特定版本中共用相同的REST API。您可以使用API及其他相關的自動化技術來管理Astra Control部署。</block>
   <block id="35ae08a314ffffc02580e3c3fbfad924" category="sidebar">功能與優勢</block>
+  <block id="7a161061772a428a5823e2adbe01f5f4" category="summary">您可以存取Astra Control REST API呼叫的詳細資料、包括HTTP方法、輸入參數和回應。這份完整參考資料有助於使用REST API開發自動化應用程式。</block>
+  <block id="86d5185860be6c597f7e7d99be200aa0" category="summary">您可以存取先前Astra Control版本的自動化文件。</block>
+  <block id="c09d3feeeeb00d4c76b65e91bde7c0ac" category="summary">Astra REST API支援角色型存取控制（RBAC）、以授予及限制系統功能的存取權限。</block>
+  <block id="c30daace746a4b0fbccf1758ed0282eb" category="summary">Python是資料中心自動化的熱門開發語言。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。</block>
+  <block id="e14d216616a4529ca008fe30d48b4bda" category="summary">Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API有幾項重要重點和優點。</block>
+  <block id="48f085a79b3bd49f8180067c06092213" category="doc">功能與效益總覽</block>
+  <block id="7128d9d8a839786105f002007172fbe5" category="summary">NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功能和錯誤修復。</block>
+  <block id="c03785645670327afbef79672d54b2df" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center和Astra Control Service在特定版本中共用相同的REST API。您可以使用REST API和其他相關的自動化技術來管理Astra Control部署。</block>
+  <block id="d803102aaa79040d7acdf0fdfaf7f156" category="summary">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。本頁提供您可作為自動化部署一部分使用的REST資源簡介。</block>
+  <block id="2cb4d33cb32e61ac40dcce4208d54e3c" category="paragraph">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。以下是自動化部署中可用的REST資源簡介。</block>
 </blocks>

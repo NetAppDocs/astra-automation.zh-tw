@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: intro/introduction.html 
-keywords: introduction, features, benefits, deployment models, object model, query parameters, automation, family 
-summary: Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API的主要重點和優點如下所示。 
+permalink: intro/overview.html 
+keywords: overview, introduction, features, benefits, deployment models, object model, query parameters, automation, family 
+summary: Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API有幾項重要重點和優點。 
 ---
-= 功能與效益簡介
+= 功能與效益總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

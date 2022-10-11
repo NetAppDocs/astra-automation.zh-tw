@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: python/python_before.html 
 keywords: python3, requests, urllib3, identity, json 
-summary: Python是熱門的開發語言、尤其是資料中心自動化。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。 
+summary: Python是資料中心自動化的熱門開發語言。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。 
 ---
 = 開始之前
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Python是熱門的開發語言、尤其是資料中心自動化。在�
 
 
 [role="lead"]
-Python是熱門的開發語言、尤其是資料中心自動化。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。
+Python是資料中心自動化的熱門開發語言。在將Python的原生功能與數個通用套件搭配使用之前、您必須先準備環境和所需的輸入檔。
 
 
 NOTE: 除了直接使用Python存取Astra Control REST API之外、NetApp也提供工具套件、可擷取API並移除部分複雜性。請參閱 link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] 以取得更多資訊。
