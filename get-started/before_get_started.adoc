@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/before_get_started.html 
-keywords:  
-summary:  
+keywords: get started, planning 
+summary: 您可以快速準備開始使用Astra Control REST API。 
 ---
 = 開始之前
 :hardbreaks:

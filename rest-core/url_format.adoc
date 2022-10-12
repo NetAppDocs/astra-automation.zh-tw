@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rest-core/url_format.html 
-keywords:  
-summary:  
+keywords: url, url format, endpoint, version 
+summary: 用於透過REST API存取資源執行個體或集合的URL一般結構由數個值組成。此結構反映基礎物件模型和系統設計。 
 ---
 = URL格式
 :hardbreaks:

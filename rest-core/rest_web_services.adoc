@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rest-core/rest_web_services.html 
-keywords:  
-summary:  
+keywords: rest, web, web services 
+summary: 代表性狀態傳輸（REST）是建立分散式Web應用程式的風格。當套用到網路服務API的設計時、它會建立一套主流技術和最佳實務做法、以揭露伺服器型資源並管理其狀態。 
 ---
 = REST Web服務
 :hardbreaks:

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/get_api_token.html 
-keywords:  
-summary:  
+keywords: token, obtain token 
+summary: 您需要取得Astra API權杖、才能使用Astra Control REST API。 
 ---
 = 取得API權杖
 :hardbreaks:

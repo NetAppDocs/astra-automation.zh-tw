@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rest-core/http_details.html 
-keywords: http 
-summary:  
+keywords: http, http details, uri, json 
+summary: Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集合。 
 ---
 = HTTP詳細資料
 :hardbreaks:
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-Astra Control REST API使用HTTP及相關參數來處理資源和集合。HTTP實作的詳細資料如下。
+Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集合。HTTP實作的詳細資料如下。
 
 
 

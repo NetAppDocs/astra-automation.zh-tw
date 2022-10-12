@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: additional/revoke_token.html 
-keywords:  
-summary:  
+keywords: token, revoke token 
+summary: 您可以在Astra Web介面上撤銷不再需要的API權杖。 
 ---
 = 撤銷API權杖
 :hardbreaks:

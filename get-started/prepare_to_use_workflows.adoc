@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/prepare_to_use_workflows.html 
-keywords:  
-summary:  
+keywords: workflows, prepare workflows, use workflows 
+summary: 您應該先熟悉Astra工作流程的組織和格式、再將其用於即時部署。 
 ---
 = 準備好使用工作流程
 :hardbreaks:

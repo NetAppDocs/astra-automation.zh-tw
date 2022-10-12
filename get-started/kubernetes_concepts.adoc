@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: get-started/kubernetes_concepts.html 
-keywords:  
-summary:  
+keywords: kubernetes, objects, namespaces, labels 
+summary: 使用Astra REST API時、有幾個Kubernetes概念是相關的。 
 ---
 = Kubernetes基本概念
 :hardbreaks:

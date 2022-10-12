@@ -366,7 +366,6 @@
   <block id="8a95104150e07b745de96037e7eb15b4" category="list-text">完整URL</block>
   <block id="f39323c9cdd9d851595dba08fa974f82" category="paragraph">對應端點的完整URL為：「https://astra.netapp.io/accounts/{account_id}/core/v1/users`。</block>
   <block id="7ab91fd48b58ce1ea4cada1f1a4e1808" category="doc">HTTP詳細資料</block>
-  <block id="8dc7c8b39c78b50c93daffc3e502aa5e" category="paragraph">Astra Control REST API使用HTTP及相關參數來處理資源和集合。HTTP實作的詳細資料如下。</block>
   <block id="deaf360f123e9392f769c7ceb4e01747" category="section-title">API交易與CRUD模式</block>
   <block id="01b7ef875c4a217845bac8e7ae38175b" category="paragraph">Astra Control REST API實作交易模式、提供定義完善的作業和狀態轉換。</block>
   <block id="1f5760bedf7c68291dfd4d306c189bc8" category="paragraph">每個REST API呼叫都會以HTTP要求的形式執行、以供Astra服務使用。每個要求都會產生與用戶端相關的回應。此要求回應配對可視為API交易。</block>
@@ -1013,4 +1012,8 @@
   <block id="27b72a5b697b4b5014519a7f674fe0f9" category="paragraph">SDK有幾項與本機Python環境相關的先決條件。例如、您必須使用Python 3.8或更新版本。此外、還需要幾個Python套件。如需詳細資訊、請參閱GitHub儲存庫頁面或PyPI套件頁面。</block>
   <block id="e598386ca051245bd47f1531754638e2" category="list-text"><block ref="e598386ca051245bd47f1531754638e2" category="inline-link-rx"></block></block>
   <block id="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="list-text"><block ref="420fbf00d0fa9a9d0a4c6d109b03b7ab" category="inline-link-rx"></block></block>
+  <block id="ce44f3c6e8850cf4a69ccd2da1d186c8" category="summary">代表性狀態傳輸（REST）是建立分散式Web應用程式的風格。當套用到網路服務API的設計時、它會建立一套主流技術和最佳實務做法、以揭露伺服器型資源並管理其狀態。</block>
+  <block id="ad60c6f0b038daedb3b46ea65cd82bc1" category="summary">Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集合。</block>
+  <block id="e4c8251a9c6d357d3aa4b05293542914" category="paragraph">Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集合。HTTP實作的詳細資料如下。</block>
+  <block id="3c7367ab4ec3900042f765d5f3b81ee6" category="summary">您可以快速準備開始使用Astra Control REST API。</block>
 </blocks>

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: rest-core/resources_collections.html 
-keywords: concepts 
-summary:  
+keywords: resources, instances, collections, uuid, uuidv4, state 
+summary: Astra Control REST API可讓您存取資源執行個體和資源執行個體集合。 
 ---
 = 資源與收藏
 :hardbreaks:

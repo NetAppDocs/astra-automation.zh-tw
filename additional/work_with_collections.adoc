@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: additional/work_with_collections.html 
-keywords: collections 
-summary:  
+keywords: collections, filtering, pagination, count 
+summary: Astra Control REST API提供數種不同的方法、可透過定義的查詢參數來存取資源集合。 
 ---
 = 使用集合
 :hardbreaks:
