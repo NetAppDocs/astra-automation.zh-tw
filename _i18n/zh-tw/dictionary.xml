@@ -268,7 +268,6 @@
   <block id="fa862ec81357f8907a8b75f4d969c590" category="inline-link">RFC編輯器</block>
   <block id="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="list-text"><block ref="6763d4dfc2fa6c04b08ba1e1b7751f5f" category="inline-link-rx"></block></block>
   <block id="ba793efaa4293b35388d140ee9308a68" category="paragraph">Web和網際網路標準的權威來源、以獨特編號的RFC文件集合形式加以維護。</block>
-  <block id="40e6d99f89a6388188f257045e26e638" category="paragraph">您可以使用這些工作流程來建立及維護Astra Control Center部署模式所使用的基礎架構。在大多數情況下、工作流程也可搭配Astra Control Service使用。</block>
   <block id="8f6291e033ff30c19e8b03e19a26f0f3" category="admonition">NetApp可隨時擴充及強化這些工作流程、因此您應定期檢閱。</block>
   <block id="6fd2337d24b1882caa5014a35282404b" category="section-title">一般準備</block>
   <block id="cbdeff17f21659aa95f18f7102990f97" category="paragraph">使用任何Astra工作流程之前、請務必先檢閱 <block ref="1d4e486ef41d26d87e2c5a1c939d4914" category="inline-link-macro-rx"></block>。</block>
@@ -693,7 +692,6 @@
   <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3.還原應用程式</block>
   <block id="08d7f360c94a906d3639173599184943" category="paragraph">執行下列REST API呼叫。您必須提供備份（如下所示）或快照的ID。</block>
   <block id="a477f086784d869d73c5ae084b145ca8" category="section-title">Curl範例：從備份中就地還原應用程式</block>
-  <block id="6fff62f9303e1554ae200440f5af5315" category="paragraph">您可以使用這些工作流程來管理Astra託管叢集內的應用程式。</block>
   <block id="27a254eb05f2f4059b9d5170bcd8034f" category="paragraph">管理工作流程會依不同類別進行組織、以便更容易找到您想要的工作流程。</block>
   <block id="eadfe8388f5ebf45cdfeff23f0e39899" category="cell">應用程式控制</block>
   <block id="9de4b07ae6319c45521f7ab9180fa62e" category="cell">這些工作流程可讓您控制託管及未受管理的應用程式。您可以列出應用程式、以及建立和移除託管應用程式。</block>
@@ -1016,4 +1014,7 @@
   <block id="ad60c6f0b038daedb3b46ea65cd82bc1" category="summary">Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集合。</block>
   <block id="e4c8251a9c6d357d3aa4b05293542914" category="paragraph">Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集合。HTTP實作的詳細資料如下。</block>
   <block id="3c7367ab4ec3900042f765d5f3b81ee6" category="summary">您可以快速準備開始使用Astra Control REST API。</block>
+  <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">您可以使用這些工作流程來建立及維護Astra Control Center部署所使用的基礎架構。在許多情況下、工作流程也可搭配Astra Control Service使用。</block>
+  <block id="efc48892bfa2d48bf7b7099da5e8b1cb" category="summary">您可以選擇性地將Astra Control Center與輕量型目錄存取傳輸協定（LDAP）伺服器整合、以便為選取的Astra使用者執行驗證。</block>
+  <block id="29d0525c4055c4b47d6c1f6b4681a4d4" category="summary">您可以使用這些工作流程來管理Astra託管叢集中的應用程式。</block>
 </blocks>

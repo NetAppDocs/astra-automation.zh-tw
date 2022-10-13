@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: workflows_infra/workflows_infra_before.html 
-keywords:  
-summary:  
+keywords: workflows, infrastructure workflows, preparation 
+summary: 您可以使用這些工作流程來建立及維護Astra Control Center部署所使用的基礎架構。在許多情況下、工作流程也可搭配Astra Control Service使用。 
 ---
 = 開始之前
 :hardbreaks:
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-您可以使用這些工作流程來建立及維護Astra Control Center部署模式所使用的基礎架構。在大多數情況下、工作流程也可搭配Astra Control Service使用。
+您可以使用這些工作流程來建立及維護Astra Control Center部署所使用的基礎架構。在許多情況下、工作流程也可搭配Astra Control Service使用。
 
 
 NOTE: NetApp可隨時擴充及強化這些工作流程、因此您應定期檢閱。

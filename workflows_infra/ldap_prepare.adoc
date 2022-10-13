@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: workflows_infra/ldap_prepare.html 
-keywords:  
-summary:  
+keywords: LDAP, LDAP integration 
+summary: 您可以選擇性地將Astra Control Center與輕量型目錄存取傳輸協定（LDAP）伺服器整合、以便為選取的Astra使用者執行驗證。 
 ---
 = 準備LDAP組態
 :hardbreaks:
