@@ -20,7 +20,7 @@ summary:
 
 === 開始之前
 
-您必須擁有想要取消管理的託管應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 以找出應用程式。
+您必須擁有想要取消管理的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 應用程式的備份與快照不會在刪除時自動移除。如果您不再需要備份和快照、則應在移除應用程式之前先將其刪除。
 
@@ -28,14 +28,14 @@ summary:
 
 === 1.不受管理的應用程式
 
-執行下列REST API呼叫。
+執行下列REST API呼叫以移除應用程式。
 
 [cols="25,75"]
 |===
 | HTTP方法 | 路徑 
 
 
-| 刪除 | /Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝ 
+| 刪除 | /Accounts /｛account_id｝/k8s/v2/apps /｛app_id｝ 
 |===
 
 
@@ -48,7 +48,7 @@ summary:
 | 參數 | 類型 | 必要 | 說明 
 
 
-| 託管應用程式ID | 路徑 | 是的 | 識別要移除的託管應用程式。 
+| 應用程式ID | 路徑 | 是的 | 識別要移除的應用程式。 
 |===
 
 
@@ -56,5 +56,5 @@ summary:
 
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
 ----

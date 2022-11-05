@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_list_clouds.html 
+keywords:  
+summary: 您可以列出已定義的雲端、以及可用的特定Astra帳戶。 
+---
+= 列出雲端
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以列出已定義的雲端、以及可用的特定Astra帳戶。
+
+
+
+=== 1.列出雲端
+
+執行下列REST API呼叫、以列出雲端。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 取得 | /account/{aper_id}/topology / v1/v雲端 
+|===
+
+
+===== Curl範例：傳回所有雲端的所有資料
+
+[source, curl]
+----
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+----

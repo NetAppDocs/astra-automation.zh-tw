@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: workflows/wf_restore_app_backup.html 
 keywords:  
-summary:  
+summary: 您可以從備份建立新的應用程式來還原應用程式。 
 ---
-= 從備份還原託管應用程式
+= 從備份還原應用程式
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,13 +14,13 @@ summary:
 
 
 [role="lead"]
-您可以從備份建立新的應用程式來還原託管應用程式。
+您可以從備份建立新的應用程式來還原應用程式。
 
 
 
-=== 1.選取要還原的託管應用程式
+=== 1.選取要還原的應用程式
 
-執行工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 並選取您要複製的應用程式。用於複製應用程式的REST呼叫需要幾個資源值。
+執行工作流程 link:wf_list_man_apps.html["列出應用程式"] 並選取您要複製的應用程式。用來還原應用程式的REST呼叫需要幾個資源值。
 
 
 
@@ -39,7 +39,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 放入 | /account/{aper_id}/k8s/v1/managedApps/{app_id} 
+| 放入 | /account/{aper_id}/k8s/v2/aps/{app_id} 
 |===
 
 
@@ -61,8 +61,8 @@ summary:
 [source, json]
 ----
 {
-  "type": "application/astra-managedApp",
-  "version": "1.2",
+  "type": "application/astra-app",
+  "version": "2.0",
   "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
 ----
@@ -72,5 +72,5 @@ summary:
 
 [source, curl]
 ----
-curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<APP_ID>' --header 'Content-Type: application/astra-managedApp+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --d @JSONinput
+curl --location -i --request PUT 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps/<APP_ID>' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'ForceUpdate: true' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

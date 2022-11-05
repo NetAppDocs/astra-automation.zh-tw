@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_delete_backup.html 
 keywords:  
-summary:  
+summary: 您可以刪除與應用程式相關的備份。 
 ---
 = 刪除備份
 :hardbreaks:
@@ -14,7 +14,7 @@ summary:
 
 
 [role="lead"]
-您可以刪除與託管應用程式相關的備份。
+您可以刪除與應用程式相關的備份。
 
 
 
@@ -22,7 +22,7 @@ summary:
 
 您必須具備下列條件：
 
-* 擁有備份的託管應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 以找出應用程式。
+* 擁有備份的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 * 您要刪除的備份ID。如有需要、您可以使用工作流程 link:wf_list_backups.html["列出備份"] 以找出快照。
 
 
@@ -40,7 +40,7 @@ NOTE: 您可以使用選用的要求標頭強制刪除失敗的備份、如下�
 | HTTP方法 | 路徑 
 
 
-| 刪除 | /Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/appBackups/｛appBackup｝ 
+| 刪除 | /accounts/{aper_id}/k8s/v1/apps/｛app_id｝/appBackups/{appBackup _id} 
 |===
 
 
@@ -53,7 +53,7 @@ NOTE: 您可以使用選用的要求標頭強制刪除失敗的備份、如下�
 | 參數 | 類型 | 必要 | 說明 
 
 
-| 託管應用程式ID | 路徑 | 是的 | 識別擁有備份的託管應用程式。 
+| 應用程式ID | 路徑 | 是的 | 識別擁有備份的託管應用程式。 
 
 
 | 備份ID | 路徑 | 是的 | 識別要刪除的備份。 
@@ -67,7 +67,7 @@ NOTE: 您可以使用選用的要求標頭強制刪除失敗的備份、如下�
 
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
 ----
 
 
@@ -75,5 +75,5 @@ curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_I
 
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Force-Delete: true'
+curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Force-Delete: true'
 ----

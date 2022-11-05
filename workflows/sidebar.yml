@@ -6,11 +6,9 @@ entries:
   url: "/workflows/workflows_before.html"
 - title: 應用程式控制
   entries:
-  - title: 列出未受管理的應用程式
-    url: "/workflows/wf_list_unman_apps.html"
-  - title: 列出託管應用程式
+  - title: 列出應用程式
     url: "/workflows/wf_list_man_apps.html"
-  - title: 取得託管應用程式
+  - title: 取得應用程式
     url: "/workflows/wf_get_man_app.html"
   - title: 管理應用程式
     url: "/workflows/wf_manage_app.html"
@@ -40,6 +38,10 @@ entries:
     url: "/workflows/wf_clone_app_backup.html"
   - title: 從備份還原應用程式
     url: "/workflows/wf_restore_app_backup.html"
+- title: 命名空間
+  entries:
+  - title: 列出命名空間
+    url: "/workflows/wf_list_namespaces.html"
 - title: 支援
   entries:
   - title: 列出通知

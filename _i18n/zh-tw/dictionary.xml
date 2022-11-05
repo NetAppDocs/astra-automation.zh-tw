@@ -188,15 +188,12 @@
   <block id="4a66fdca0794b65eaa799aa5ead36fb1" category="cell">&lt;API_tokent&gt;</block>
   <block id="bf50d5e661106d0abe925af3c2e6f7e7" category="cell">標頭</block>
   <block id="14ce98600753e7afda082ba76ce94155" category="cell">識別及授權呼叫者的承載權杖。</block>
-  <block id="ef388075ecc9c993b3b3b5dd15b487de" category="cell">&lt;託 管應用程式ID &gt;</block>
-  <block id="478387b91feafb83455f33de88aa26eb" category="cell">UUIDv4值可識別API呼叫的託管應用程式。</block>
   <block id="ec34ea1038c99109c93f6776a16e2be8" category="section-title">工作流程類別</block>
   <block id="20d2410ae6d60054698fdb2241648ec0" category="paragraph">根據您的部署模式、Astra工作流程分為兩大類。如果您使用Astra Control Center、則應從基礎架構工作流程開始、然後繼續進行管理工作流程。使用Astra Control Service時、您通常可以直接前往管理工作流程。</block>
   <block id="3968c3333db40e7d3ec4d8fb2fc30853" category="admonition">工作流程中的Curl範例使用Astra Control Service的URL。當您根據環境使用內部部署的Astra Control Center時、需要變更URL。</block>
   <block id="3037de0d7a975b284e2a80d0ff32a9cc" category="section-title">基礎架構工作流程</block>
   <block id="23f646b4da04b69e64a7e464ec005504" category="paragraph">這些工作流程適用於Astra基礎架構、包括認證、儲存庫和儲存後端。Astra Control Center需要這些工具、但在大多數情況下、也可搭配Astra Control Service使用。工作流程著重於建立及維護Astra託管叢集所需的工作。</block>
   <block id="a0aa3c13c7e155cdac2e684ed97bd329" category="section-title">管理工作流程</block>
-  <block id="6ea966a7aff682cea4e20915ee526ea8" category="paragraph">您可以在擁有託管叢集之後使用這些工作流程。工作流程著重於應用程式保護和支援作業、例如備份、還原及複製託管應用程式。</block>
   <block id="f2082cbd04c532123c4a60b265595268" category="paragraph">您需要取得Astra API權杖、才能使用Astra Control REST API。</block>
   <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">API權杖可識別Astra的呼叫者、且必須包含在每個REST API呼叫中。</block>
   <block id="0e2c9374186101782c17c706d964b6ab" category="list-text">您可以使用Astra網路使用者介面來產生API權杖。</block>
@@ -283,7 +280,6 @@
   <block id="fb06a1a5fb91fa6698fe3e86c0957986" category="cell">您可以新增受管理的Kubernetes叢集、以保護及支援其中所包含的應用程式。</block>
   <block id="49d7482cad2dac48b0f0e77473d3a249" category="doc">列出託管叢集</block>
   <block id="1b382a88a3817dcba16a81ec9e5cf1c5" category="paragraph">您可以列出目前由Astra管理的Kubernetes叢集。</block>
-  <block id="c58119ccc549e36f20a93873ead75956" category="section-title">1.列出叢集</block>
   <block id="0ded27ebd95eb2dcf0ec2ac7f61b926c" category="paragraph">執行下列REST API呼叫。</block>
   <block id="3ded167f4ad4afb85c6ace5862e27ba0" category="cell">HTTP方法</block>
   <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="cell">取得</block>
@@ -526,8 +522,6 @@
   <block id="73150caf4eee48175bcbbee6e9bdf201" category="cell">應用程式快照資源代表託管應用程式的快照。</block>
   <block id="9f9b94351efdd20bfec97ae027bdd1de" category="cell">執行攔截置換</block>
   <block id="d20b671eee65b07689030c1a810243c7" category="cell">執行掛勾置換資源可讓您視需要停用特定應用程式的預先載入NetApp預設執行掛勾。</block>
-  <block id="1d1de1a5cacebf8dae3ee084e7af3eaf" category="cell">託管應用程式</block>
-  <block id="2991d7bd84b53963293c4248a415922e" category="cell">託管應用程式資源代表由Astra管理的Kubernetes應用程式。</block>
   <block id="25f7347236b51a5eae4ba01a7862cb55" category="cell">排程</block>
   <block id="91fd88ee3861a8eb1aa5fb75a5577d89" category="cell">排程資源代表排程用於託管應用程式的資料保護作業、做為資料保護原則的一部分。</block>
   <block id="67c58d2de17edb43efeda54f12292dd2" category="section-title">拓撲資源</block>
@@ -569,8 +563,6 @@
   <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
   <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link">Astra注意事項</block>
   <block id="b571cab532f203c4ad9f53bdd8a27935" category="paragraph"><block ref="b571cab532f203c4ad9f53bdd8a27935" category="inline-link-rx"></block></block>
-  <block id="a50be7a834c95319089495cab34dcc3a" category="doc">列出託管應用程式</block>
-  <block id="e61ad2d01a2692e9ed29c90c0c413101" category="paragraph">您可以使用下列指令碼來列出Astra帳戶的託管應用程式。</block>
   <block id="0dca49fc2e144253162b8cbd94b3b83c" category="admonition">請參閱 <block ref="471a805638f43cfd34206d9398385425" category="inline-link-macro-rx"></block> 以取得所需Json輸入檔的範例。</block>
   <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">除了直接使用Python存取Astra Control REST API之外、NetApp也提供工具套件、可擷取API並移除部分複雜性。請參閱 <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">準備環境</block>
@@ -620,50 +612,25 @@
   <block id="f7fb8efb01216bddc5505f64c4c92bae" category="list-text"><block ref="f7fb8efb01216bddc5505f64c4c92bae" category="inline-link-rx"></block></block>
   <block id="832210201d55f5c764a32c055a00b726" category="inline-link">Astra Control Automation 21.08文件</block>
   <block id="025fa2688359a439d7fa215fbbbaf287" category="list-text"><block ref="025fa2688359a439d7fa215fbbbaf287" category="inline-link-rx"></block></block>
-  <block id="3d8174b7a5e7e2c2f19aa676ce494658" category="doc">列出未受管理的應用程式</block>
-  <block id="563a0b5f6c4efcacd5b8847d1eee9649" category="paragraph">您可以列出目前未由Astra管理的應用程式。您可以在選擇要管理的應用程式時執行此動作。</block>
-  <block id="f13263898a2cd18c9ee7843dc1459aba" category="admonition">依預設、這些工作流程中使用的REST端點會傳回所有Astra應用程式。您可以在API呼叫上使用「filter」查詢參數、只要求傳回未受管理的應用程式。您也可以省略filter參數來傳回所有應用程式、然後檢查輸出中的「managedState」欄位、以判斷哪些應用程式處於「Unmanaged」狀態。</block>
-  <block id="b6a35c94f854cd740168a0764638d0df" category="section-title">僅列出管理狀態等於Unmanaged的應用程式</block>
-  <block id="bc9eb7d967c0a164260a3a3362df3173" category="paragraph">此工作流程使用「filter」查詢參數、只傳回未受管理的應用程式。</block>
-  <block id="b778c76d47db062e719ea97fffdb251e" category="section-title">1.列出未受管理的應用程式</block>
-  <block id="225ff177d2b3ca52f452571419d65f70" category="cell">使用篩選器來指定應傳回哪些應用程式。</block>
-  <block id="b27c8e443cc3570cdff9e631ba1485fa" category="section-title">Curl範例：傳回未受管理應用程式的名稱、ID和管理狀態</block>
-  <block id="3a340585a0931b07ac9b6627082689c8" category="section-title">列出所有應用程式、然後選取未受管理的應用程式</block>
-  <block id="f370302c742b824210b358edece7e15d" category="paragraph">此工作流程會傳回所有應用程式。您必須檢查輸出、判斷哪些是未受管理的。</block>
-  <block id="0f17193d6bf995f16caf5e86bc3ded83" category="section-title">1.列出所有應用程式</block>
   <block id="6ca58aed53ac62d5749597600edbbdff" category="section-title">Curl範例：傳回所有應用程式的所有資料</block>
-  <block id="e2c473c218d9b4c045f316cd4af94e1c" category="section-title">Curl範例：傳回所有應用程式的名稱、ID和管理狀態</block>
-  <block id="3640a41cdbb2456f459491fd8672e6cb" category="section-title">2.選取未受管理的應用程式</block>
-  <block id="a2fee71d053291b11da659df7d22ce18" category="paragraph">檢閱API呼叫的輸出、然後手動選取「managedState」等於「Unmanaged」的應用程式。</block>
   <block id="efb44cfe1d5b8d9954ea045385675c66" category="doc">刪除快照</block>
-  <block id="482aff56a1c2140c6b17c288f13f98d1" category="paragraph">您可以刪除與託管應用程式相關的快照。</block>
   <block id="a08d0039b6defc60dd0db0aebca289d8" category="paragraph">您必須具備下列條件：</block>
-  <block id="d2feaf779ccf544c3e1d8746f06f8b6c" category="list-text">擁有快照的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="020ac174aad4268a50eed3705447b327" category="inline-link-macro">列出快照</block>
   <block id="8228d21d4972f0a8ed1a2129680b70b2" category="list-text">您要刪除的快照ID。如有需要、您可以使用工作流程 <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> 以找出快照。</block>
   <block id="860aa2c08f5183e7dd18366105498ef2" category="section-title">1.刪除快照</block>
-  <block id="c673742e49a29363ba7d2d773a12101f" category="cell">/Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/應用程式快照/｛appsnap_id｝</block>
-  <block id="f5cd5a00af0952558b2b1674f802d0f8" category="cell">託管應用程式ID</block>
   <block id="93cba07454f06a4a960172bbd6e2a435" category="cell">是的</block>
   <block id="151b82a6507e2eebe2f879130b46a783" category="cell">識別擁有快照的託管應用程式。</block>
   <block id="79e04f95eeac07344faa5b56bab83760" category="cell">Snapshot ID</block>
   <block id="49a137437654fc49a3099dbd628c1484" category="cell">識別要刪除的快照。</block>
   <block id="c60d917b462a557b73224bd3194b4cf6" category="section-title">Curl範例：刪除應用程式的單一快照</block>
   <block id="8aa0f7001085d2ffdad3efbc0e9de159" category="doc">列出備份</block>
-  <block id="73dc919e6ecbb6cad3d9d9ba9392aee2" category="paragraph">您可以列出已為特定託管應用程式建立的備份。</block>
-  <block id="85c7807d3ea7259393890e092ea20eea" category="paragraph">您必須擁有要列出備份的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="4cd1e59d794feeee43e7cd32844ec8ec" category="section-title">1.列出備份</block>
-  <block id="de8116e7a1571e52baf8e636aca38f81" category="cell">/Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/appBackups</block>
   <block id="0254dd3f84d764f594f8490729e7c196" category="cell">識別擁有所列備份的託管應用程式。</block>
   <block id="53c07d76a2f4ca060d727cd96fd24eeb" category="section-title">Curl範例：傳回應用程式的所有備份</block>
-  <block id="04a20f97156c327fa56ba3a250089cba" category="doc">複製託管應用程式</block>
-  <block id="4ff0a0de39ae6f53c4831148ad61fcef" category="paragraph">您可以透過複製現有的託管應用程式來建立新的應用程式。</block>
   <block id="f9af5d61179519ce2b27f22348ea2c5b" category="paragraph">請注意下列關於此工作流程的資訊：</block>
   <block id="c16473b0d0e0a369510a4772f6a13523" category="list-text">未使用應用程式備份或快照</block>
   <block id="8b442400420c3b7121c9e031882bcf48" category="list-text">複製作業會在同一個叢集內執行</block>
   <block id="e1d39bdee6b9663d35dc3845e9dd04e5" category="admonition">若要將應用程式複製到不同的叢集、您必須視環境的需求、更新Json輸入中的「clusterid」參數。</block>
-  <block id="537000f9a14aec12548122fc358faea9" category="section-title">1.選取要複製的託管應用程式</block>
-  <block id="99155ec73c71b392b5b5511fca5b8697" category="paragraph">執行工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 並選取您要複製的應用程式。用於複製應用程式的REST呼叫需要幾個資源值。</block>
   <block id="91e9ad87c32b1417c98a1c8a57d14d21" category="section-title">2.複製應用程式</block>
   <block id="0ecd11c1d7a287401d148a23bbd7a2f8" category="cell">JSON</block>
   <block id="ac101b32dda4448cf13a93fe283dddd8" category="cell">本文</block>
@@ -671,12 +638,9 @@
   <block id="0577bbabd0439eea401a8ec18491d1a6" category="section-title">JSONN輸入範例</block>
   <block id="812ae8a5c2b12f97ec673b1ed61bab86" category="section-title">Curl範例：複製應用程式</block>
   <block id="cb2cecbd9776fc0c17c7929541fe9404" category="doc">刪除備份</block>
-  <block id="245b889f170a1caa3c38b6933fe09e9f" category="paragraph">您可以刪除與託管應用程式相關的備份。</block>
-  <block id="b17b8f6ccac7f28b3e6293a447fd1fb1" category="list-text">擁有備份的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="9332cf683c594f797fdb3d0a19819c01" category="list-text">您要刪除的備份ID。如有需要、您可以使用工作流程 <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> 以找出快照。</block>
   <block id="9764b72f7f4c0e5ee3e7e8350c8ccd00" category="section-title">1.刪除備份</block>
   <block id="e6c08d334ddcc8f5824e2eb3371f9b4f" category="admonition">您可以使用選用的要求標頭強制刪除失敗的備份、如下所述。</block>
-  <block id="5ceeae484264e7fdea333c9b933670e6" category="cell">/Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/appBackups/｛appBackup｝</block>
   <block id="bd5f8c5e1797c9b7450b0fcd4de20d28" category="cell">識別擁有備份的託管應用程式。</block>
   <block id="deed7df33f535761651277671dff8ecd" category="cell">備份ID</block>
   <block id="31bed42d29869473ab52c27108626330" category="cell">識別要刪除的備份。</block>
@@ -684,9 +648,6 @@
   <block id="7fbc2bc01923d084eec8be7efd48837b" category="cell">用於強制刪除失敗的備份。</block>
   <block id="97b9689d8a4aef28c756533c3e3bca1d" category="section-title">Curl範例：刪除應用程式的單一備份</block>
   <block id="58f00e9fb9c0fb6247e6c188b96d901b" category="section-title">Curl範例：使用force選項刪除應用程式的單一備份</block>
-  <block id="5ad1db1f03ff165972b0c70619a75ba3" category="doc">從備份還原託管應用程式</block>
-  <block id="ce134f7334fe009ec211cc92e1c0b79d" category="paragraph">您可以從備份建立新的應用程式來還原託管應用程式。</block>
-  <block id="88164f3abe33a2d7cadd994093364280" category="section-title">1.選取要還原的託管應用程式</block>
   <block id="a873d81cfc688902e71d08400f93684a" category="section-title">2.選取要使用的備份</block>
   <block id="d40d66b0e6d970d00db3de547260af68" category="paragraph">執行工作流程 <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block> 並選取您要使用的備份。</block>
   <block id="dac907b900763815cd0dab3692a0ccb9" category="section-title">3.還原應用程式</block>
@@ -720,8 +681,6 @@
   <block id="af5cd1844721ca591969375d08152b0e" category="list-text">還原應用程式時、您必須提供備份或快照。</block>
   <block id="6a94b76b128da4767ce7885cb84ec799" category="doc">刪除失敗的應用程式</block>
   <block id="90c78af3e4fa9a4298b9bc66f86d06a6" category="paragraph">如果託管應用程式的備份或快照處於故障狀態、您可能無法移除該應用程式。在此情況下、您可以使用下列工作流程手動移除應用程式。</block>
-  <block id="5a58a2434bb85bcdb2f88f89a54856e8" category="section-title">1.選取要刪除的託管應用程式</block>
-  <block id="1718c6712c2030f412e9494b4d22c89f" category="paragraph">執行工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 並選取您要移除的應用程式。</block>
   <block id="c776475c27b1d7a554d7f110559479d9" category="section-title">2.列出應用程式的現有備份</block>
   <block id="03697ae46f1d2d1002ffcb19e1ebbd04" category="paragraph">執行工作流程 <block ref="e6b45b76c52a9dd27daf9fa3d915439e" category="inline-link-macro-rx"></block>。</block>
   <block id="dcefcc8de5a7541a95d041f4943c300d" category="section-title">3.刪除所有備份</block>
@@ -734,28 +693,16 @@
   <block id="f33f60a3b5c95e8659ec5a992f0f055c" category="inline-link-macro">取消管理應用程式</block>
   <block id="08a28b071946cc1515702440ff6582d8" category="paragraph">執行工作流程 <block ref="a7ef8d5c47daed312bb700c375f9019c" category="inline-link-macro-rx"></block> 移除應用程式。</block>
   <block id="44d23b5c3f8571e7bb4294d0b82f7497" category="doc">管理應用程式</block>
-  <block id="d3475627a9245c69f16195dc1b7e76c6" category="paragraph">您可以根據Astra已知的應用程式來建立託管應用程式。管理應用程式時、您可以定期備份和快照來保護應用程式。</block>
-  <block id="e998c93727ba4b42fb21ab7eb5b2a36d" category="paragraph">您必須擁有要管理的探索應用程式ID。如有需要、您可以使用工作流程 <block ref="ad26acc8f05568b58fadc6a01e36de64" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
-  <block id="146e5b45541ec01c95f3c39d17e6cb56" category="section-title">1.管理應用程式</block>
   <block id="f211caf53405c1c7a730894c76845b78" category="cell">提供識別要管理之應用程式所需的參數。請參閱以下範例。</block>
   <block id="6a476923d36b27fb8d2ff2da1e18c322" category="section-title">Curl範例：管理應用程式</block>
-  <block id="5a040e0212028f4e1b11cb1ca4c1f6b3" category="paragraph">您可以列出針對特定託管應用程式所拍攝的快照。</block>
-  <block id="abd4e0354b71e6e1bbb5728e6b5ef675" category="paragraph">您必須擁有想要列出快照的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="f09394ee48f57bbe80f0a951776c3439" category="section-title">1.列出快照</block>
-  <block id="d07095366fb3f7a5563f836aeaace3bf" category="cell">/Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/應用程式快照</block>
-  <block id="07b981f0108ccf7265702dde8bd01e8e" category="cell">識別擁有所列快照的託管應用程式。</block>
   <block id="5aeb23b435f0d586a0493bb8c70b8fc5" category="cell">如果是「count=true」、快照數量會包含在回應的中繼資料區段中。</block>
   <block id="f51493699b1a1513a7a2e95212bdc3da" category="section-title">Curl範例：傳回應用程式的所有快照</block>
   <block id="a6678bfaa94621c04bacbb0514f6d9d4" category="section-title">Curl範例：傳回應用程式和計數的所有快照</block>
   <block id="2b194b9170143eb845c618e13f34e5fb" category="paragraph">您可以在不再需要的情況下移除託管應用程式。移除託管應用程式也會刪除相關的排程。</block>
-  <block id="3e1039dbfbb34cea04f6e9ad984e888d" category="paragraph">您必須擁有想要取消管理的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="1fa9ca676a71f70d29ff65963febbf34" category="paragraph">應用程式的備份與快照不會在刪除時自動移除。如果您不再需要備份和快照、則應在移除應用程式之前先將其刪除。</block>
   <block id="ba058813d4014443679bdc5bad08e6da" category="section-title">1.不受管理的應用程式</block>
-  <block id="3901599d0fd96520d6bf312cf8f94bf4" category="cell">/Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝</block>
-  <block id="659ce686d2a2b1df0facd830a74cdc4a" category="cell">識別要移除的託管應用程式。</block>
   <block id="0be694be5856c81608913372d1359b00" category="section-title">Curl範例：移除託管應用程式</block>
-  <block id="3ae4faabc8d186416cb233eb7c276c1f" category="doc">從備份複製託管應用程式</block>
-  <block id="bcb874876569db1f62920ea72a96e0ed" category="paragraph">您可以從應用程式備份複製新的託管應用程式、藉此建立新的託管應用程式。</block>
   <block id="6a3f7086385ab02e213a4864a905e1e5" category="list-text">使用應用程式備份</block>
   <block id="a2e167678135121b44df9d3e6c7a8d2d" category="section-title">3.複製應用程式</block>
   <block id="b8622ecf971d21371a3ba9d07a233300" category="section-title">Curl範例：從備份複製應用程式</block>
@@ -768,28 +715,15 @@
   <block id="82d9e1423b1fe50e0e9afcb47255d25a" category="paragraph">您可以列出目前由Astra管理的應用程式。您可以在尋找特定應用程式的快照或備份時執行此動作。</block>
   <block id="48db3210f5486202c6926aa7551be0bd" category="section-title">1.列出應用程式</block>
   <block id="68c53a357a1ff35f5aa8ba654aab4362" category="section-title">Curl範例：傳回所有應用程式的名稱、ID和狀態</block>
-  <block id="eacfebc40e4c5274fcf9a4f5c191753f" category="doc">取得託管應用程式</block>
-  <block id="e3045f9e9da6edc5411efe234eb8d7a0" category="paragraph">您可以擷取所有描述單一託管應用程式的資源變數。</block>
-  <block id="4c9466a5ebb832e841259b6ff45eb3f3" category="paragraph">您必須擁有想要擷取的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="d822b85cd89777748e1bd6b0a8fd0a46" category="section-title">1.取得應用程式</block>
-  <block id="aeb049f425f4d71edb3a5580d5a2155d" category="cell">要擷取之託管應用程式的ID值。</block>
   <block id="036e9ec4ee01123ffae8afd3dab3ff9f" category="section-title">Curl範例：傳回應用程式的所有資料</block>
-  <block id="3e1ffa4f0f56cc64320d9813031ed226" category="doc">為託管應用程式建立備份</block>
-  <block id="dd4ad95efd478c84cdb33460b84c4a9e" category="paragraph">您可以為特定的託管應用程式建立備份。您可以使用備份來還原或複製應用程式。</block>
-  <block id="98f7c990eb05a7e5b5e449e8808c1ba0" category="paragraph">您必須擁有想要建立備份的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="15d4d7ada9bf77d46154e409388ea743" category="section-title">1.建立備份</block>
-  <block id="0cb7b7e0036252a8d2ac816a0e9ce6dc" category="cell">識別要建立備份的託管應用程式。</block>
   <block id="6f3183b7efdec0553f8a26ad8a42bd12" category="cell">提供備份參數。請參閱以下範例。</block>
   <block id="eaa80d521faeae22624528a6ab4291dc" category="section-title">Curl範例：為應用程式建立備份</block>
-  <block id="14ead4573d59a3fd24fd074f4279a1ce" category="doc">為託管應用程式建立快照</block>
-  <block id="e3187f556451d0afc040d8d2882a9cf8" category="paragraph">您可以為特定的託管應用程式建立快照。</block>
-  <block id="aabc01843e9612eddd27f0ccdd01a0cf" category="paragraph">您必須擁有想要建立快照的託管應用程式ID。如有需要、您可以使用工作流程 <block ref="6e36d50230a1accd660d246a27cbc504" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
   <block id="18c7420f03313eb33044afb6b943cb43" category="section-title">1.建立快照</block>
   <block id="ca88d296d98d8a63f103fe3b0b63d819" category="cell">識別要建立快照的託管應用程式。</block>
   <block id="97edc5e90d2062e191a3eae330d2afa0" category="cell">提供快照的參數。請參閱以下範例。</block>
   <block id="c681a34970e8e1b61eddc5718f0627e9" category="section-title">Curl範例：建立應用程式的快照</block>
-  <block id="d12275e5ed9a0bebaad289f16e74c1e3" category="doc">從快照複製託管應用程式</block>
-  <block id="50e826b69d89371f5df994a8efc1fa9a" category="paragraph">您可以從應用程式快照複製新應用程式、以建立新的應用程式。</block>
   <block id="38395f100e712c841ca6c8a613f86abc" category="list-text">使用應用程式快照</block>
   <block id="da88fe405a2037d8a9476bbfc8f6cf7f" category="section-title">2.選取要使用的快照</block>
   <block id="176ae10d2b65c2e741fef4d23fc66fe5" category="paragraph">執行工作流程 <block ref="ec07e92ba8186e37075c19b8ee786603" category="inline-link-macro-rx"></block> 然後選取您要使用的快照。</block>
@@ -811,8 +745,6 @@
   <block id="365c8dec8255a8a164436c71a2611920" category="sidebar">使用Python</block>
   <block id="35bcd8d33247c44923eb71df2f2f0a2d" category="sidebar">原生Python</block>
   <block id="824ee32982b0cc1ac1aca8447c9cb3cf" category="sidebar">應用程式控制</block>
-  <block id="0990e289177ad252ad62d3e723123f2d" category="sidebar">列出未受管理的應用程式</block>
-  <block id="6e401175b804a895ba134912540780f9" category="sidebar">列出託管應用程式</block>
   <block id="373370c9330843dbc9a492b75e68e396" category="sidebar">應用程式保護</block>
   <block id="f787d303cdb9d100881b69dd4d492588" category="sidebar">列出快照</block>
   <block id="f7bcabdf07e891b3508301fa92282eea" category="sidebar">列出備份</block>
@@ -837,10 +769,7 @@
   <block id="e764fe6b8f8825a307a87cedbef45678" category="cell">22.04</block>
   <block id="c600ce546bf9ac67939481d537d10403" category="cell">AppMirror</block>
   <block id="2ea0c70486ac42aa9093e842d4d23473" category="cell">AppMirror資源代表AppMirror資源、用於管理應用程式鏡射關係。</block>
-  <block id="8421de10d5dbbb7e150fb9700fe89879" category="cell">/account/{aper_id}/k8s/v1/managedApps</block>
   <block id="66faf58201d5b76b037701451b9a3234" category="cell">/ACE/｛ACON_ID｝/核心/ v1/notifications</block>
-  <block id="cf0a08323ecbf4b810438acdd526b436" category="cell">/account/{aper_id}/k8s/v1/managedApps/{app_id}</block>
-  <block id="c07be556746490be1229e10b74e3eb29" category="cell">/account/{aper_id}/topology / v1/apps</block>
   <block id="9fb6a7e4842bd1acf9b57b499b8036b0" category="cell">/ACE/｛ACON_ID｝/拓撲/ v1/buckets</block>
   <block id="9f836651cdc687b80d11b030386b39cc" category="doc">停用並重設LDAP</block>
   <block id="29927b373bf91a30324f8b9244efff87" category="paragraph">您可以視需要執行兩項選用的相關管理工作、以進行Astra Control Center部署。您可以全域停用LDAP驗證並重設LDAP組態。</block>
@@ -1017,4 +946,96 @@
   <block id="bec9f16b8e469e038cb36941a7f49a27" category="summary">您可以使用這些工作流程來建立及維護Astra Control Center部署所使用的基礎架構。在許多情況下、工作流程也可搭配Astra Control Service使用。</block>
   <block id="efc48892bfa2d48bf7b7099da5e8b1cb" category="summary">您可以選擇性地將Astra Control Center與輕量型目錄存取傳輸協定（LDAP）伺服器整合、以便為選取的Astra使用者執行驗證。</block>
   <block id="29d0525c4055c4b47d6c1f6b4681a4d4" category="summary">您可以使用這些工作流程來管理Astra託管叢集中的應用程式。</block>
+  <block id="5b11110b9a97c66915e86bcba53ee809" category="summary">您可以列出已定義的雲端、以及可用的特定Astra帳戶。</block>
+  <block id="aef02d026fec2eb688571bfa2422be3a" category="doc">列出雲端</block>
+  <block id="1b6ac21e78d44a219b6937e90879165d" category="section-title">1.列出雲端</block>
+  <block id="095599abd98771dd2c043675b15cd910" category="paragraph">執行下列REST API呼叫、以列出雲端。</block>
+  <block id="d5141cbc6eb85bf48e94e7d96fbd6a95" category="cell">/account/{aper_id}/topology / v1/v雲端</block>
+  <block id="e660247893e67f2eed38a94a3b63cd22" category="section-title">Curl範例：傳回所有雲端的所有資料</block>
+  <block id="69e44482660be2fd1013a46b8f354ef2" category="doc">列出庫存箱</block>
+  <block id="4609424b2fcb4eca19af08e562b2f818" category="paragraph">執行下列REST API呼叫、以列出儲存區。</block>
+  <block id="9b419681cf780fc8739ee91b14338a6d" category="summary">您可以列出可用的儲存類別。</block>
+  <block id="a2e45d2c4126abee2b89f161a0a3a50f" category="doc">列出儲存類別</block>
+  <block id="daaec12836753c1aad81b32a5a058476" category="section-title">1.選取雲端</block>
+  <block id="0d3339545a3c8c350c171199c6549779" category="paragraph">執行工作流程 <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> 並選擇您要使用的雲端。</block>
+  <block id="cb1d8fe3c0fa41d5a40e80cca7f91ff2" category="section-title">2.選取叢集</block>
+  <block id="1a26d4a9628f05c630331939becee5ab" category="inline-link-macro">列出叢集</block>
+  <block id="4c52978a3e6a86d17e5ea3080d73c1d4" category="paragraph">執行工作流程 <block ref="23d58ac86c4531c319d79804ab05ca2c" category="inline-link-macro-rx"></block> 然後選取叢集。</block>
+  <block id="0555a951c447a0cbe3807de815a06d5d" category="section-title">3.列出特定叢集的儲存類別</block>
+  <block id="646ae38688e5af41b737db05fd5a5cdb" category="paragraph">執行下列REST API呼叫、列出特定叢集和雲端的儲存類別。</block>
+  <block id="bed512ae2e247eeb98fdd4cd3feb1f36" category="cell">/Account /｛account_id｝/拓撲/ v1/v雲端/&lt;雲端_ID&gt;/叢集/&lt;叢集_ID&gt;/storageClass</block>
+  <block id="55d1071fe1b5a920cb319a5cdd834452" category="section-title">Curl範例：傳回所有儲存類別的所有資料</block>
+  <block id="a70539afac49ca03ebbf1219df791a81" category="paragraph">您可以在特定雲端中列出可用的叢集。</block>
+  <block id="6e7a5e444e17b81da2d35e5e7b5fb7ea" category="paragraph">執行工作流程 <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> 然後選取包含叢集的雲端。</block>
+  <block id="4a8c29c133faeda5a63e72796ed312c8" category="section-title">2.列出叢集</block>
+  <block id="279e904c662f9babe50ce81e0df24ea5" category="paragraph">執行下列REST API呼叫、以列出特定雲端中的叢集。</block>
+  <block id="ea62700eaf9c7c85e33b80518f121429" category="cell">/Account /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集</block>
+  <block id="fa52d266bf5c95bd5d51a11ed63c7fa3" category="section-title">1.列出託管叢集</block>
+  <block id="8aaca9da7a2057e6c3482b19683ee3b0" category="cell">&lt;APP_ID&gt;</block>
+  <block id="f5a4b32e77235d71cac07525901e432b" category="cell">UUIDv4值可識別API呼叫的應用程式。</block>
+  <block id="ead63516b6f8d40a5195059120a34741" category="paragraph">您可以在擁有託管叢集之後使用這些工作流程。工作流程著重於應用程式保護和支援作業、例如備份、還原及複製應用程式。</block>
+  <block id="3559bd2aaec7a375c246be9bad63a176" category="summary">您可以為特定應用程式建立備份、然後使用備份來還原或複製應用程式。</block>
+  <block id="80681c9412a27f13b376ee7ffc18f647" category="doc">為應用程式建立備份</block>
+  <block id="7d45849f0acada4f0f40e1349c847305" category="inline-link-macro">列出應用程式</block>
+  <block id="e02fd4c0a67641762561c661c332b72d" category="paragraph">您必須擁有要備份的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="96d15410fa829d04096983645e60475b" category="cell">/Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups</block>
+  <block id="c9a1712ca7c64da73ff9ce7bc4f48bea" category="cell">應用程式ID</block>
+  <block id="8eb729367d3278cfd6c5aa5310d1f61c" category="cell">識別要建立備份的應用程式。</block>
+  <block id="ada65121a72989ba6a7ceafb787c2971" category="summary">您可以透過複製現有應用程式來建立新的應用程式。</block>
+  <block id="c92ab9403e09db69311aeb9f72e2e480" category="list-text">新應用程式會放置在不同的命名空間中</block>
+  <block id="1db96426d6f4f867edf3cc0ae9e35947" category="section-title">1.選取要複製的應用程式</block>
+  <block id="b46f6842bf882cb490d122382f7a98d5" category="paragraph">執行工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 並選取您要複製的應用程式。用於複製應用程式的REST呼叫需要幾個資源值。</block>
+  <block id="af2926b139e31d88056f28937a9c49b6" category="paragraph">執行下列REST API呼叫來複製應用程式。</block>
+  <block id="567a9af273a25b92860b783e7f5a7524" category="cell">/account/｛account_id｝/k8s/v2/apps</block>
+  <block id="7bf69d8a687703afd9b5af54243f143d" category="summary">您可以從備份複製新的應用程式、以建立新的應用程式。</block>
+  <block id="f3e3d6adafd239930134d426b02920c1" category="cell">/account/{aper_id}/k8s/v2/qpps</block>
+  <block id="ecf41bcdc089c3b619f5975173077430" category="summary">您可以列出已為特定應用程式建立的備份。</block>
+  <block id="dbd2251516ab8d7e1775469c5c1508a3" category="paragraph">您必須擁有想要列出備份的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="8b7796198eef86f78d17188652bd8260" category="section-title">1.選取要刪除的應用程式</block>
+  <block id="82029d5fee8f7191d3a021c9db8b43ac" category="paragraph">執行工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 並選取您要移除的應用程式。</block>
+  <block id="5678454487dc87ea3b9a2601e9ecd8e3" category="summary">您可以刪除與應用程式相關的快照。</block>
+  <block id="057648776a4afb375be6db76fd760748" category="list-text">擁有快照的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="c25f938f3e5ab183a0718fbc32b60cce" category="cell">/accounts/{aper_id}/k8s/v1/apps/｛app_id｝/應用程式快照/｛appsnap_id｝</block>
+  <block id="a9f7d2aed593551dc011220c90a52be3" category="paragraph">您可以在特定命名空間中、根據Astra已知的應用程式來建立託管應用程式。當Astra管理或定義應用程式時、您可以透過備份和快照來保護應用程式。</block>
+  <block id="d801ba89b540c5da0e4f732a81e855fd" category="section-title">1.選取命名空間</block>
+  <block id="ef1d4c0913b02ff6423ee4d1161fea0b" category="inline-link-macro">列出命名空間</block>
+  <block id="0a94b02b2f35acb72af0ca2e31006abb" category="paragraph">執行工作流程 <block ref="d14574597a65756c248d691b26627131" category="inline-link-macro-rx"></block> 然後選取命名空間。</block>
+  <block id="0c686bb338de3ff0d9a5c7aff0164f66" category="section-title">3.管理應用程式</block>
+  <block id="3c7008ad6fd78ff999655de722126630" category="paragraph">執行下列REST API呼叫來管理應用程式。</block>
+  <block id="a32aff1568b14bb39f1c15ef5e32eb54" category="paragraph">您必須擁有想要取消管理的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="cc627e860ccc11393d4a5fb9a37cf9a7" category="paragraph">執行下列REST API呼叫以移除應用程式。</block>
+  <block id="f6ae66a627b9c3047f8f88beffc23cd7" category="cell">/Accounts /｛account_id｝/k8s/v2/apps /｛app_id｝</block>
+  <block id="58e5b159105a6ed936549bb5a1695ea7" category="cell">識別要移除的應用程式。</block>
+  <block id="596763b84eac1a557d6c2b19a508c915" category="summary">您可以刪除與應用程式相關的備份。</block>
+  <block id="9a7affff9968bb03650e50fa108c3fa7" category="list-text">擁有備份的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="907cc0ef4298a38b7fa096493c7684a0" category="cell">/accounts/{aper_id}/k8s/v1/apps/｛app_id｝/appBackups/{appBackup _id}</block>
+  <block id="1003e23b805c899981a7d5126ccc0378" category="summary">您可以列出針對特定應用程式所拍攝的快照。</block>
+  <block id="9abace8c90645d3ee8eec992f42d897a" category="paragraph">您必須擁有要列出快照的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="02b00e5480497e1586ce1bf62bf8184a" category="paragraph">執行下列REST API呼叫、以列出快照。</block>
+  <block id="250f359ba7b762da3435baba160a6f1b" category="cell">/Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/應用程式快照</block>
+  <block id="f38ae0e099fa484b915fa7bab67ac4b2" category="cell">識別擁有所列快照的應用程式。</block>
+  <block id="0388f8ab481ed6c7aef94777258ef378" category="summary">您可以擷取所有描述單一應用程式的資源變數。</block>
+  <block id="61b98994206e2a99e823ca136bdf24a1" category="doc">取得應用程式</block>
+  <block id="c2e04773cf7cf8f91a4a9a351b03c32f" category="paragraph">您必須擁有想要擷取的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="6bb9953a8e27258bd16ce65f51b81000" category="cell">要擷取的應用程式ID值。</block>
+  <block id="bfdba4e9998c294b1a4016914698c099" category="summary">您可以從備份建立新的應用程式來還原應用程式。</block>
+  <block id="14e236ddabe391b8a0496211807ab78b" category="section-title">1.選取要還原的應用程式</block>
+  <block id="7a217d2f25d9076086e8f01a3a0e198d" category="paragraph">執行工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 並選取您要複製的應用程式。用來還原應用程式的REST呼叫需要幾個資源值。</block>
+  <block id="46690c7c33008cbcef94d31765deede2" category="cell">/account/{aper_id}/k8s/v2/aps/{app_id}</block>
+  <block id="55c34d696f9301dcae31350ec87093ac" category="summary">您可以從快照複製新的應用程式、以建立新的應用程式。</block>
+  <block id="29fd28138191fbfa1b58ba0623d40105" category="summary">您可以為特定應用程式建立快照。</block>
+  <block id="be48e6237dab1df212834256a63ceb44" category="doc">建立應用程式的快照</block>
+  <block id="e32d1c8a20aafa5c39c1d3b2c3875f36" category="paragraph">您必須擁有想要建立快照的應用程式ID。如有需要、您可以使用工作流程 <block ref="d96e127c1e0eb8087e951700668e3465" category="inline-link-macro-rx"></block> 以找出應用程式。</block>
+  <block id="c9ed41c2c3fbdd3ab2809e8a19fa57ee" category="summary">您可以列出可用的命名空間。</block>
+  <block id="2a983bbf122e057a73bf1870cf2ea2db" category="section-title">1.列出命名空間</block>
+  <block id="c42968dfccb26ee2ef5912aaf9ee50ed" category="paragraph">執行下列REST API呼叫、以列出命名空間。</block>
+  <block id="11ccdd095a2f5d49045fb5bc39eaae3e" category="cell">/ACE/｛ACON_ID｝/拓撲/ v1/命名 空間</block>
+  <block id="55b85a82f8838ea89842d9ebe5cbe0d6" category="section-title">Curl範例：傳回所有命名空間的所有資料</block>
+  <block id="f06023f42f86a62fda5cde9e1ca56143" category="section-title">Curl範例：所有命名空間的傳回名稱、狀態和叢集ID</block>
+  <block id="a5f871c981a398cb87374a1ff883bcca" category="summary">您可以使用下列指令碼來列出Astra帳戶的應用程式。</block>
+  <block id="c7a97245522ed1fb42a97f5e4d3c60b7" category="sidebar">列出叢集</block>
+  <block id="4a8f72b777dc9735afaebac72822c77e" category="sidebar">雲端</block>
+  <block id="b99e07f4bea810f88b69ecfe1784ab28" category="sidebar">列出雲端</block>
+  <block id="4d3e9b74a79b7af51564aa58491a951e" category="sidebar">列出應用程式</block>
+  <block id="76427b3f214d8ae919f1432a89eefd65" category="sidebar">列出命名空間</block>
 </blocks>

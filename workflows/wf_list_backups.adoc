@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_list_backups.html 
 keywords:  
-summary:  
+summary: 您可以列出已為特定應用程式建立的備份。 
 ---
 = 列出備份
 :hardbreaks:
@@ -14,13 +14,13 @@ summary:
 
 
 [role="lead"]
-您可以列出已為特定託管應用程式建立的備份。
+您可以列出已為特定應用程式建立的備份。
 
 
 
 === 開始之前
 
-您必須擁有要列出備份的託管應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出託管應用程式"] 以找出應用程式。
+您必須擁有想要列出備份的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
@@ -33,7 +33,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Accounts /｛account_id｝/k8s/v1/managedApps/｛managedApp_id｝/appBackups 
+| 取得 | /Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups 
 |===
 
 
@@ -46,7 +46,7 @@ summary:
 | 參數 | 類型 | 必要 | 說明 
 
 
-| 託管應用程式ID | 路徑 | 是的 | 識別擁有所列備份的託管應用程式。 
+| 應用程式ID | 路徑 | 是的 | 識別擁有所列備份的託管應用程式。 
 |===
 
 
@@ -54,7 +54,7 @@ summary:
 
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/managedApps/<MANAGED_APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
 ----
 
 
@@ -63,24 +63,33 @@ curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/
 [source, json]
 ----
 {
-  "items": [
-    {
-      "type": "application/astra-appBackup",
-      "version": "1.0",
-      "id": "ed39fdb0-12db-497b-9e46-20036c1fb0d2",
-      "name": "mariadb-mariadb-backup-20210617175900",
-      "state": "completed",
-      "stateUnready": [],
-      "bytesDone": 0,
-      "percentDone": 100,
-      "metadata": {
-        "labels": [],
-        "creationTimestamp": "2021-06-17T17:59:09Z",
-        "modificationTimestamp": "2021-06-17T17:59:09Z",
-        "createdBy": "fb093413-b6fc-4a64-a48a-afc32ada8537"
-      }
-    }
-  ],
-  "metadata": {}
+    "items": [
+        {
+            "type": "application/astra-appBackup",
+            "version": "1.1",
+            "id": "8edeb4a4-fd8b-4222-a559-1013145b28fc",
+            "name": "backup-david-oct28-1",
+            "bucketID": "a443e58f-59bd-4d45-835a-1bc7813f659a",
+            "snapshotID": "dfe237cb-57b7-4576-af4d-00ba3a8f2828",
+            "state": "completed",
+            "stateUnready": [],
+            "hookState": "success",
+            "totalBytes": 205219132,
+            "bytesDone": 205219132,
+            "percentDone": 100,
+            "metadata": {
+                "labels": [
+                    {
+                        "name": "astra.netapp.io/labels/read-only/triggerType",
+                        "value": "backup"
+                    }
+                ],
+                "creationTimestamp": "2022-10-28T21:58:37Z",
+                "modificationTimestamp": "2022-10-28T21:58:55Z",
+                "createdBy": "a530e865-23e8-4e2e-8020-e92c419a3867"
+            }
+        }
+    ],
+    "metadata": {}
 }
 ----

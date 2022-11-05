@@ -18,15 +18,23 @@ entries:
     url: "/workflows_infra/wf_ldap_add_entries.html"
   - title: 停用並重設LDAP
     url: "/workflows_infra/wf_ldap_disable_reset.html"
+- title: 叢集
+  entries:
+  - title: 列出叢集
+    url: "/workflows_infra/wf_list_clusters.html"
+  - title: 列出託管叢集
+    url: "/workflows_infra/wf_list_man_clusters.html"
+- title: 雲端
+  entries:
+  - title: 列出雲端
+    url: "/workflows_infra/wf_list_clouds.html"
 - title: 桶
   entries:
   - title: 列出庫存箱
     url: "/workflows_infra/wf_list_buckets.html"
 - title: 儲存設備
   entries:
+  - title: 列出儲存類別
+    url: "/workflows_infra/wf_list_storage_classes.html"
   - title: 列出儲存後端
     url: "/workflows_infra/wf_list_storage_backends.html"
-- title: 叢集
-  entries:
-  - title: 列出託管叢集
-    url: "/workflows_infra/wf_list_man_clusters.html"
