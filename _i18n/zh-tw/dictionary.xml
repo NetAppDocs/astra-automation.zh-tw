@@ -558,11 +558,6 @@
   <block id="34b4714329fbd5b24fd78ba32d5a5722" category="list-text">OpenAPI</block>
   <block id="4f48af1c326e720124a79cc1f9216ecb" category="list-text">OpenMetrics</block>
   <block id="27ee1c661b70f7b369179a81dd12721d" category="list-text">OpenMetrics端點可透過OpenMetrics資源存取帳戶指標。Astra Control Center部署模式可提供支援。</block>
-  <block id="095c5c108494764107cc19d59aa10a7b" category="section-title">Astra API授權</block>
-  <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">開放原始碼</block>
-  <block id="9b73989307c1975dfa4d5e1581e4afe8" category="paragraph">通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。</block>
-  <block id="fbd3ad11889bebf7ba34d30c64465dc9" category="inline-link">Astra注意事項</block>
-  <block id="b571cab532f203c4ad9f53bdd8a27935" category="paragraph"><block ref="b571cab532f203c4ad9f53bdd8a27935" category="inline-link-rx"></block></block>
   <block id="0dca49fc2e144253162b8cbd94b3b83c" category="admonition">請參閱 <block ref="471a805638f43cfd34206d9398385425" category="inline-link-macro-rx"></block> 以取得所需Json輸入檔的範例。</block>
   <block id="a048c98daf24dc4c378ae4a226190097" category="admonition">除了直接使用Python存取Astra Control REST API之外、NetApp也提供工具套件、可擷取API並移除部分複雜性。請參閱 <block ref="d09002f98f3f10539db2caafc83b3213" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="0998ed5beee28345ae02fc586e2414f2" category="section-title">準備環境</block>
@@ -1038,4 +1033,5 @@
   <block id="b99e07f4bea810f88b69ecfe1784ab28" category="sidebar">列出雲端</block>
   <block id="4d3e9b74a79b7af51564aa58491a951e" category="sidebar">列出應用程式</block>
   <block id="76427b3f214d8ae919f1432a89eefd65" category="sidebar">列出命名空間</block>
+  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">所有Astra文件</block>
 </blocks>
