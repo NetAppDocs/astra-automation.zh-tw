@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_add_cluster.html 
+keywords:  
+summary: 您可以新增叢集、以便由Astra管理。 
+---
+= 使用認證新增叢集
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以新增叢集、以便由Astra管理。從Astra 22.11開始、您可以使用Astra Control Center或Astra Control Service來新增叢集。
+
+
+NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供的Kubernetes服務時、不需要新增叢集。
+
+
+
+=== 1.取得Kbeconfig檔案
+
+您需要向Kubernetes系統管理員或服務取得* kubconfig*檔案的複本。
+
+
+
+=== 2.準備Kbeconfig檔案
+
+在使用* kubeconfig *檔案之前、您應該先執行下列作業：
+
+如果您收到格式為Yaml的Kbeconfig檔案、則必須將其轉換為Json。
+
+您必須在base64中編碼Json檔案。例如：
+
+`yq -o=json ~/.kube/config | base64`
+
+
+
+=== 3.選擇雲端
+
+執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 然後選取要新增叢集的雲端。
+
+
+NOTE: 您唯一可以選擇的雲端是*私有*雲端。
+
+
+
+=== 4.建立認證資料
+
+執行下列REST API呼叫、以使用Kbeconfig檔案建立認證。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 貼文 | /Accounts /｛account_id｝/核心/ v1 /認證 
+|===
+
+
+===== JSONN輸入範例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-credential",
+  "version" : "1.1",
+  "name" : "Cloud One",
+  "keyType" : "kubeconfig",
+  "keyStore" : {
+    "base64": encoded_kubeconfig
+  },
+  "valid" : "true"
+}
+----
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----
+
+
+=== 5.新增叢集
+
+執行下列REST API呼叫、將叢集新增至雲端。的值 `credentialID` 輸入欄位可從上一步的REST API呼叫取得。
+
+[cols="25,75"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 貼文 | /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集 
+|===
+
+
+===== JSONN輸入範例
+
+[source, curl]
+----
+{
+  "type" :  "application/astra-cluster",
+  "version" : "1.1",
+  "credentialID": credential_id
+}
+----
+
+
+===== Curl範例
+
+[source, curl]
+----
+curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
+----

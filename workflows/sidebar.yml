@@ -28,6 +28,8 @@ entries:
     url: "/workflows/wf_delete_snapshot.html"
   - title: 刪除備份
     url: "/workflows/wf_delete_backup.html"
+  - title: 建立保護原則
+    url: "/workflows/wf_create_protection.html"
 - title: 複製及還原應用程式
   entries:
   - title: 複製應用程式

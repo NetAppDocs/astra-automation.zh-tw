@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_add_entries.html 
 keywords:  
-summary:  
+summary: 將LDAP設定為Astra Control Center的驗證提供者之後、您可以選取Astra將使用LDAP認證進行驗證的LDAP使用者。 
 ---
 = 將LDAP項目新增至Astra
 :hardbreaks:
@@ -42,7 +42,7 @@ NOTE: LDAP認證資料的形式為使用者名稱、電子郵件地址及相關�
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /ACE/｛ACON_ID｝/核心/ v1/uss 
+| 貼文 | /Accounts /｛account_id｝/核心/ v1 /使用者 
 |===
 
 
@@ -132,7 +132,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /ACE/｛ACON_ID｝/核心/ v1/ROleBindings 
+| 貼文 | /Accounts /｛account_id｝/核心/ v1/roleBindings 
 |===
 
 
@@ -208,7 +208,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /ACE/｛ACON_ID｝/核心/ v1 /群組 
+| 貼文 | /Accounts /｛account_id｝/核心/ v1/Groups 
 |===
 
 
@@ -274,7 +274,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /ACE/｛ACON_ID｝/核心/ v1/ROleBindings 
+| 貼文 | /Accounts /｛account_id｝/核心/ v1/roleBindings 
 |===
 
 

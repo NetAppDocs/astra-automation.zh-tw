@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_disable_reset.html 
 keywords:  
-summary:  
+summary: 您可以視需要執行兩項選用的相關管理工作、以進行Astra Control Center部署。您可以全域停用LDAP驗證並重設LDAP組態。 
 ---
 = 停用並重設LDAP
 :hardbreaks:
@@ -33,7 +33,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 放入 | /ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝ 
+| 放入 | /Accounts /｛account_id｝/核心/ v1/settings /｛setting_id｝ 
 |===
 
 
@@ -79,7 +79,7 @@ CAUTION: 這是一項顛覆性的作業、您應該謹慎進行。它會刪除�
 | HTTP方法 | 路徑 
 
 
-| 放入 | /ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝ 
+| 放入 | /Accounts /｛account_id｝/核心/ v1/settings /｛setting_id｝ 
 |===
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_storage_backends.html 
 keywords:  
-summary:  
+summary: 您可以列出可用的儲存後端。 
 ---
 = 列出儲存後端
 :hardbreaks:
@@ -27,7 +27,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account /｛account_id｝/拓撲/ v1/storage後 端 
+| 取得 | /accounts/{account_id}/topology / v1/storageBackends 
 |===
 
 

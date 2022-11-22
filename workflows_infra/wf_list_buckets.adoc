@@ -27,7 +27,7 @@ summary: 您可以列出針對特定Astra帳戶所定義的S3儲存區。
 | HTTP方法 | 路徑 
 
 
-| 取得 | /ACE/｛ACON_ID｝/拓撲/ v1/buckets 
+| 取得 | /Accounts /｛account_id｝/拓撲/ v1/buckets 
 |===
 
 

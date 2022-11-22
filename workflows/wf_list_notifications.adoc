@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_list_notifications.html 
 keywords:  
-summary:  
+summary: 您可以列出特定Astra帳戶的通知。您可以在監控系統活動或偵錯問題時執行此動作。 
 ---
 = 列出通知
 :hardbreaks:
@@ -27,7 +27,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 取得 | /ACE/｛ACON_ID｝/核心/ v1/notifications 
+| 取得 | /Accounts /｛account_id｝/核心/ v1/notifications 
 |===
 
 

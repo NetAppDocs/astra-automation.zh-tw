@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_users.html 
 keywords:  
-summary:  
+summary: 您可以列出針對特定Astra帳戶所定義的使用者。 
 ---
 = 列出使用者
 :hardbreaks:
@@ -27,7 +27,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 取得 | /ACE/｛ACON_ID｝/核心/ v1/uss 
+| 取得 | /Accounts /｛account_id｝/核心/ v1 /使用者 
 |===
 
 
@@ -62,7 +62,7 @@ curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/
 
 ===== Json輸出範例
 
-[source, json]
+[source, curl]
 ----
 {
   "items": [

@@ -39,7 +39,7 @@ summary: 您可以從備份建立新的應用程式來還原應用程式。
 | HTTP方法 | 路徑 
 
 
-| 放入 | /account/{aper_id}/k8s/v2/aps/{app_id} 
+| 放入 | /Accounts /｛account_id｝/k8s/v2/apps /｛app_id｝ 
 |===
 
 

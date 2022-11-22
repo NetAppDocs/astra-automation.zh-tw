@@ -52,7 +52,7 @@ NOTE: 若要將應用程式複製到不同的叢集、您必須視環境的需�
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /account/{aper_id}/k8s/v2/qpps 
+| 貼文 | /Accounts /｛account_id｝/k8s/v2/qpps 
 |===
 
 

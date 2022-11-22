@@ -8,6 +8,8 @@ entries:
   entries:
   - title: 列出使用者
     url: "/workflows_infra/wf_list_users.html"
+  - title: 建立使用者
+    url: "/workflows_infra/wf_create_user.html"
 - title: LDAP組態
   entries:
   - title: 準備LDAP組態
@@ -22,8 +24,12 @@ entries:
   entries:
   - title: 列出叢集
     url: "/workflows_infra/wf_list_clusters.html"
+  - title: 新增叢集
+    url: "/workflows_infra/wf_add_cluster.html"
   - title: 列出託管叢集
     url: "/workflows_infra/wf_list_man_clusters.html"
+  - title: 管理叢集
+    url: "/workflows_infra/wf_man_cluster.html"
 - title: 雲端
   entries:
   - title: 列出雲端

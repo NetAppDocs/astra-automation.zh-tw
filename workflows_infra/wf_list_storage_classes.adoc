@@ -39,7 +39,7 @@ summary: 您可以列出可用的儲存類別。
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account /｛account_id｝/拓撲/ v1/v雲端/<雲端_ID>/叢集/<叢集_ID>/storageClass 
+| 取得 | /accounts/{account_id}/topology / v1/ves/setf/setles/wes/sets/wese/storageClasses <CLUSTER_ID> <CLOUD_ID> 
 |===
 
 

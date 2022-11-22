@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_ldap_configure_server.html 
 keywords:  
-summary:  
+summary: 您需要選取LDAP伺服器、並設定Astra以使用伺服器做為驗證供應商。 
 ---
 = 設定Astra使用LDAP伺服器
 :hardbreaks:
@@ -30,7 +30,7 @@ NOTE: 此步驟為選用步驟、只有當您希望Astra和LDAP透過使用LDAPS
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /ACE/｛ACON_ID｝/核心/ v1 /認證 
+| 貼文 | /Accounts /｛account_id｝/核心/ v1/certificates 
 |===
 
 
@@ -121,7 +121,7 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 | HTTP方法 | 路徑 
 
 
-| 貼文 | /ACE/｛ACON_ID｝/核心/ v1 /認證 
+| 貼文 | /Accounts /｛account_id｝/核心/ v1 /認證 
 |===
 
 
@@ -189,7 +189,7 @@ NOTE: 下列Curl範例使用查詢參數來篩選設定集合。您可以移除�
 | HTTP方法 | 路徑 
 
 
-| 取得 | /ACE/｛ACON_ID｝/核心/ v1/settings 
+| 取得 | /Accounts /｛account_id｝/核心/ v1/settings 
 |===
 
 
@@ -228,7 +228,7 @@ NOTE: 您可以先發出特定設定的Get要求、以查看configSchema。這�
 | HTTP方法 | 路徑 
 
 
-| 放入 | /ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝ 
+| 放入 | /Accounts /｛account_id｝/核心/ v1/settings /｛setting_id｝ 
 |===
 
 
@@ -281,7 +281,7 @@ curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/ac
 | HTTP方法 | 路徑 
 
 
-| 取得 | /ACE/｛ACON_ID｝/核心/ v1/settings /｛setting_id｝ 
+| 取得 | /Accounts /｛account_id｝/核心/ v1/settings /｛setting_id｝ 
 |===
 
 

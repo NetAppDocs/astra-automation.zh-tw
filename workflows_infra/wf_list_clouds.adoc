@@ -27,7 +27,7 @@ summary: 您可以列出已定義的雲端、以及可用的特定Astra帳戶。
 | HTTP方法 | 路徑 
 
 
-| 取得 | /account/{aper_id}/topology / v1/v雲端 
+| 取得 | /Accounts /｛account_id｝/拓撲/ v1/v雲端 
 |===
 
 

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows_infra/wf_list_clusters.html 
 keywords:  
-summary:  
+summary: 您可以在特定雲端中列出可用的叢集。 
 ---
 = 列出叢集
 :hardbreaks:
@@ -33,7 +33,7 @@ summary:
 | HTTP方法 | 路徑 
 
 
-| 取得 | /Account /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集 
+| 取得 | /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集 
 |===
 
 

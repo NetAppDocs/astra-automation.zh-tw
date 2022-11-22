@@ -27,7 +27,7 @@ summary: 您可以列出可用的命名空間。
 | HTTP方法 | 路徑 
 
 
-| 取得 | /ACE/｛ACON_ID｝/拓撲/ v1/命名 空間 
+| 取得 | /Accounts /｛account_id｝/拓撲/ v1/命名 空間 
 |===
 
 

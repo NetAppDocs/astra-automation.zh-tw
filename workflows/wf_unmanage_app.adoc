@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: workflows/wf_unmanage_app.html 
 keywords:  
-summary:  
+summary: 您可以在不再需要的情況下移除託管應用程式。移除託管應用程式也會刪除相關的排程。 
 ---
 = 取消管理應用程式
 :hardbreaks:

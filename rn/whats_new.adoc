@@ -18,6 +18,40 @@ NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功�
 
 
 
+== 2022年11月22日（22.11）
+
+此版本包括REST API的擴充與更新、以及增強的命名空間與LDAP支援。
+
+
+
+=== 全新強化的Astra資源
+
+新增四種資源類型：*每個資源*、* LDAP群組*、* LDAP使用者*和*工作*。此外、多項現有資源和端點也已獲得增強。
+
+
+
+=== 監控對長期執行工作的支援
+
+新的工作端點可讓您存取受管理的工作資源、並可用來顯示內部長時間執行工作的狀態。
+
+
+
+=== 增強命名空間使用案例
+
+已新增對橫跨多個命名空間的應用程式、以及與命名空間合格資源相關聯的叢集資源的支援。
+
+
+
+=== 擴充雲端訂閱
+
+現在可為每個雲端供應商新增多個帳戶訂閱。
+
+.相關資訊
+* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center：最新消息"^]
+
+
+
+
 == 2022年8月10日（22.08）
 
 此版本包括REST API的擴充與更新、以及增強的安全性與管理功能。
@@ -54,8 +88,7 @@ Astra Control現在也能將相同的指令碼用於多個執行掛勾。
 您現在可以使用NetApp SnapMirror技術、在叢集之間複寫資料和應用程式變更。這項增強功能可用來改善您的業務持續運作和恢復功能。
 
 .相關資訊
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center：最新消息"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service：最新消息"^]
+* https://docs.netapp.com/us-en/astra-control-center-2208/release-notes/whats-new.html["Astra Control Center 22.08：最新消息"^]
 
 
 
@@ -103,8 +136,7 @@ Astra Control現在也能將相同的指令碼用於多個執行掛勾。
 請參閱Astra Control Center和Astra Control Service文件網站上的*新增功能*頁面。
 
 .相關資訊
-* https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center：最新消息"^]
-* https://docs.netapp.com/us-en/astra-control-service/release-notes/whats-new.html["Astra Control Service：最新消息"^]
+* https://docs.netapp.com/us-en/astra-control-center-2204/release-notes/whats-new.html["Astra Control Center 22.04：最新消息"^]
 
 
 
@@ -130,6 +162,10 @@ REST資源類型的數量持續增加、重點放在執行掛勾和儲存後端�
 === NetApp Astra Control Python SDK
 
 NetApp Astra Control Python SDK是開放原始碼套件、可讓您更輕鬆地為Astra Control環境開發自動化程式碼。核心是Astra SDK、其中包含一組類別、可抽象化REST API呼叫的複雜度。此外、還有一個工具組指令碼、可透過包裝和抽象化Python類別來執行特定的管理工作。請參閱 link:../python/astra_toolkits.html["NetApp Astra Control Python SDK"] 以取得更多資訊。
+
+.相關資訊
+* https://docs.netapp.com/us-en/astra-control-center-2112/release-notes/whats-new.html["Astra Control Center 21.12：最新消息"^]
+
 
 
 
@@ -157,6 +193,10 @@ NetApp Astra Control Python SDK是開放原始碼套件、可讓您更輕鬆地�
 
 OpenAPI支援:: OpenAPI端點可讓您存取目前的OpenAPI Json文件及其他相關資源。
 OpenMetrics支援:: OpenMetrics端點可透過OpenMetrics資源存取帳戶指標。
+
+
+.相關資訊
+* https://docs.netapp.com/us-en/astra-control-center-2108/release-notes/whats-new.html["Astra Control Center 21.08：最新消息"^]
 
 
 
