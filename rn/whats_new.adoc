@@ -46,6 +46,12 @@ NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功�
 
 現在可為每個雲端供應商新增多個帳戶訂閱。
 
+
+
+=== 其他工作流程
+
+已新增Astra Control REST API的其他工作流程。請參閱 link:../workflows_infra/workflows_infra_before.html["基礎架構工作流程"] 和 link:../workflows/workflows_before.html["管理工作流程"] 以取得更多資訊。
+
 .相關資訊
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center：最新消息"^]
 

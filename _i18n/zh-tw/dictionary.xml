@@ -80,8 +80,6 @@
   <block id="78ceba6718263592394adb03dc11471c" category="paragraph">您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。</block>
   <block id="f977fda19bbfe49b9346f60f532f0704" category="section-title">並未探索後端儲存節點中的所有儲存裝置</block>
   <block id="13595bcf3f8022567de41bcd09ef92b2" category="paragraph">發出REST API呼叫以擷取儲存節點中定義的儲存裝置時、只會探索Astra Data Store裝置。並非所有裝置都會歸還。</block>
-  <block id="fd341dfea170932946910997510c48e8" category="section-title">Astra Data Store儲存後端處於未知狀態</block>
-  <block id="e1c83179f57e62cb00fbb2646ef58e6e" category="paragraph">Astra Data Store儲存後端在發出API呼叫以擷取儲存後端後端後端後端時、會處於「未知」狀態。在這種情況下、儲存後端實際上仍然可用、可以與通訊。不過、儲存後端內的元件可能處於不正常狀態、因此需要將其恢復為正常狀態、以便儲存後端顯示為「可用」。</block>
   <block id="c93cc787737ceea532bea714170e32cf" category="doc">Astra Control REST API的新功能</block>
   <block id="638191aa40b01d59e16da3223262a2ae" category="section-title">2022年4月26日（22.04）</block>
   <block id="0e7874b5c73e32ebc1ff07cc0f74f4d2" category="paragraph">此版本包括REST API的擴充與更新、以及增強的安全性與管理功能。</block>
@@ -875,7 +873,6 @@
   <block id="255ac707ef7c398985c59f77208f8d50" category="paragraph">Astra Control現在也能將相同的指令碼用於多個執行掛勾。</block>
   <block id="4d3f5aacbe703c00b43aa62f3955f464" category="section-title">使用SnapMirror進行應用程式複寫</block>
   <block id="ecdbe161d2c7428016e927963a859b5c" category="paragraph">您現在可以使用NetApp SnapMirror技術、在叢集之間複寫資料和應用程式變更。這項增強功能可用來改善您的業務持續運作和恢復功能。</block>
-  <block id="0b7d1e8a8b66c054d1b104e700b7bd15" category="admonition">Astra Control REST API 22.08版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">設定LDAP伺服器</block>
   <block id="a941511c207017106c6b7b09e9dec884" category="summary">本網站的文件說明Astra Control REST API及Astra Control提供的相關自動化技術。</block>
   <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub貢獻者</block>
@@ -1104,4 +1101,7 @@
   <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">第一個API呼叫</block>
   <block id="013a127f643228c21ab6c9baf558cef5" category="sidebar">新增叢集</block>
   <block id="826f785c760529ceb6e978afdab2a9a7" category="sidebar">建立保護原則</block>
+  <block id="01d6bcac2686956739a4135c6248a7e0" category="admonition">Astra Control REST API 22.11版本沒有新的已知問題。以下所述問題已在先前版本中發現、目前版本仍適用。</block>
+  <block id="25742c79c197ce7f0982652ead3bd964" category="section-title">其他工作流程</block>
+  <block id="7494e7f70b31d89664784c20229e8098" category="paragraph">已新增Astra Control REST API的其他工作流程。請參閱 <block ref="fc2071d838ca44c08fca8ef5c62f2e8e" category="inline-link-macro-rx"></block> 和 <block ref="b729850dc33cbcb91b47d13a137b85a8" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
 </blocks>
