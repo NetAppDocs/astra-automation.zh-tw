@@ -25,12 +25,16 @@ NOTE: 除了直接使用Python存取Astra Control REST API之外、NetApp也提�
 
 執行Python指令碼的基本組態需求如下所述。
 
+.Python 3.
 您需要安裝最新版本的Python 3。
 
+.其他程式庫
 必須安裝*請求*和* urllib3*程式庫。您可以根據環境使用pip或其他Python管理工具。
 
+.網路存取
 執行指令碼的工作站必須具備網路存取權、而且必須能夠連線到Astra Control。使用Astra Control Service時、您必須連線至網際網路、才能連線至https://astra.netapp.io`上的服務。
 
+.身分識別資訊
 您需要具有帳戶識別碼和API權杖的有效Astra帳戶。請參閱 link:../get-started/get_api_token.html["取得API權杖"] 以取得更多資訊。
 
 
@@ -42,6 +46,7 @@ Python指令碼仰賴Json輸入檔中包含的組態資訊。範例檔案如下�
 
 NOTE: 您需要視環境的需求更新範例。
 
+.身分識別資訊
 下列檔案包含API權杖和Astra帳戶。您需要使用「-I」（或「-identity」）CLI參數、將此檔案傳遞給Python指令碼。
 
 [source, json]

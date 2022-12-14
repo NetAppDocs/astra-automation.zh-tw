@@ -19,6 +19,7 @@ summary: 您可以存取Astra Control REST API呼叫的詳細資料、包括HTTP
 
 NOTE: REST API參考文件目前已隨Astra Control提供、並可線上取得。
 
+.開始之前
 您需要Astra Control Center或Astra Control Service帳戶。
 
 .步驟

@@ -1104,4 +1104,63 @@
   <block id="7494e7f70b31d89664784c20229e8098" category="paragraph">已新增Astra Control REST API的其他工作流程。請參閱 <block ref="fc2071d838ca44c08fca8ef5c62f2e8e" category="inline-link-macro-rx"></block> 和 <block ref="b729850dc33cbcb91b47d13a137b85a8" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="7a95f2a4373ad29d744890f090214195" category="inline-link">Astra Control Center的已知問題</block>
   <block id="9fa80e5e6d07d73203692c1b2c6a3f1f" category="paragraph">請參閱<block ref="1748a923b17519fc41af247d5369ec47" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="1a615153bb2bd3389942d44023a8f4bb" category="paragraph-title">擁有Astra帳戶認證資料</block>
+  <block id="7e8def8db3d7d1cc38b119879791cb9b" category="paragraph-title">熟悉Kubernetes的基本概念</block>
+  <block id="0182974655f974e8429fb64bb3d15eb2" category="paragraph-title">檢視REST概念與實作</block>
+  <block id="bf07f432276ee2fe7e55f9ea12c2ba5a" category="paragraph-title">取得更多資訊</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完成後</block>
+  <block id="3c91a74236fab100f024452f6df13b5e" category="paragraph-title">Python 3.</block>
+  <block id="56fc4201e750acc72a0afd74dd68fbf7" category="paragraph-title">其他程式庫</block>
+  <block id="7a7bc312cecb8df7c0104f60400498da" category="paragraph-title">網路存取</block>
+  <block id="479ddc3e49067c67012525e145d88610" category="paragraph-title">身分識別資訊</block>
+  <block id="7a947a0e78de7f2a4b74b7420db98fc3" category="paragraph-title">Astra SDK</block>
+  <block id="042f2f95117cad397f19ae8bda1b2bbf" category="paragraph-title">工具套件指令碼</block>
+  <block id="f789019254e2d94578114761c04bb180" category="paragraph-title">Python套件</block>
+  <block id="0c9b6306d32fc8f44ff469ab235c5104" category="paragraph-title">GitHub原始程式碼</block>
+  <block id="a2c5d7f1ae59d7e25522b6b34ea1f27f" category="paragraph-title">安裝選項摘要</block>
+  <block id="1737ce95b71a7983a78611220c00300c" category="paragraph-title">Astra Control環境的需求</block>
+  <block id="dfbe44cf1815fe1873dd8a7c434bcda9" category="paragraph-title">NetApp Astra Control Python SDK的需求</block>
+  <block id="fc068ae597c9019f5d61b19badc39991" category="paragraph-title">要求及回應API交易</block>
+  <block id="54ba5d4469f49d79d837dd2472a96c36" category="paragraph-title">支援CRUD營運模式</block>
+  <block id="b6af2b8fdca63591236d48930018b8db" category="paragraph-title">資源類型</block>
+  <block id="515fc3276bd3187a4917ddf7d57db2be" category="paragraph-title">資源執行個體</block>
+  <block id="c63467857ced87bca573cc84332ea38e" category="paragraph-title">資源集合</block>
+  <block id="55920bcaefa36a6964fdc7020a835d5f" category="paragraph-title">執行個體識別碼</block>
+  <block id="2ed6f74fc82a2206a6fa7ea55363656c" category="paragraph-title">通用資料</block>
+  <block id="647f6448e005296f7ac5b882aa71a868" category="paragraph-title">中繼資料物件</block>
+  <block id="6cb8b958a36383ed1b7bacc626d0a5dd" category="paragraph-title">資源狀態</block>
+  <block id="6e84a7dae5ae82dd22a0ec6f456dbc8d" category="paragraph-title">帳戶為root</block>
+  <block id="faf17fd8415851163c880ffe0eee8b37" category="paragraph-title">端點資源類別</block>
+  <block id="1a13e0be61ce3aab0376745ec89773a0" category="paragraph-title">類別版本</block>
+  <block id="b59579c5294990b3465d2a6e5a853fc0" category="paragraph-title">資源執行個體或集合</block>
+  <block id="11509d3a68301ed377a3d4e05dcd020d" category="paragraph-title">僅Astra控制中心支援</block>
+  <block id="1c44f09ee73ed5762695177ad34b47a5" category="paragraph-title">使用REST API或Web使用者介面進行組態設定</block>
+  <block id="743f17b310d3349edb0c1f45cc81de25" category="paragraph-title">需要LDAP伺服器</block>
+  <block id="8dccbd929a8dad2beba58b2f79ba3436" category="paragraph-title">安全連線至LDAP伺服器</block>
+  <block id="84bc6bd3e8bef314de14969bdd159ece" category="paragraph-title">設定使用者或群組</block>
+  <block id="b42b70c1eeb08f4931a7765d41130fe7" category="paragraph-title">連結使用者或群組時的角色限制</block>
+  <block id="610559891957534380ce83e8c749ad4b" category="paragraph-title">LDAP認證</block>
+  <block id="a2a945099fa6ce86e287032c4a7995a0" category="paragraph-title">獨特的電子郵件地址</block>
+  <block id="0a6eb1c694ac34589f0bb421705552b0" category="paragraph-title">（可選）先定義LDAP使用者和群組</block>
+  <block id="b1237b8e9dcb5a28b7d8e23df54f6b0d" category="paragraph-title">在多個LDAP群組中定義的使用者</block>
+  <block id="197a73ee4a006ef52c4fbd2b948357d6" category="paragraph-title">定期帳戶同步</block>
+  <block id="70d08db9e31d103a9a98ae62d1f934cd" category="paragraph-title">停用及重設LDAP組態</block>
+  <block id="19050c1d965285490381eed739648de9" category="paragraph-title">REST API參數</block>
+  <block id="0e20371f2b50c1982ba88634480d8036" category="paragraph-title">將檔案從Yaml格式轉換為Json</block>
+  <block id="fb08278d28a518a351675c5e1706ae41" category="paragraph-title">在base64中編碼Json</block>
+  <block id="305f82eee427805e1142e3f58b3e6aff" category="paragraph-title">以REST技術為基礎</block>
+  <block id="9f58c2cc1c4a1a9d30320aec8702f1e5" category="paragraph-title">支援兩種Astra Control部署模式</block>
+  <block id="308e494b1e26dffecccd3503e87801ab" category="paragraph-title">清除REST端點資源與物件模型之間的對應</block>
+  <block id="5c4c20c54ea821de85f6857e32e28368" category="paragraph-title">豐富的查詢參數集</block>
+  <block id="807ccc731ac69ad871b23fef84f7a6a9" category="paragraph-title">與Astra Control網路UI對齊</block>
+  <block id="d92a4a4962077027ebae61f4c351e303" category="paragraph-title">強大的除錯與問題判斷資料</block>
+  <block id="04bff76b57babc7298f6780f4f20901e" category="paragraph-title">工作流程程序</block>
+  <block id="fcf3c3d757005a8b62346f06f3b393ff" category="paragraph-title">先進自動化技術的基礎</block>
+  <block id="d4f45c394127f6c3eb5c89e1eb467c9b" category="paragraph-title">Astra系列文件的一部分</block>
+  <block id="bf14a6bb5484aa858662864c8b0d062f" category="paragraph-title">選擇值</block>
+  <block id="9a588db8471730dbfebac65cd5467ad8" category="paragraph-title">篩選</block>
+  <block id="2808a34767e19b842d906ab8ab6264c6" category="paragraph-title">排序</block>
+  <block id="cbb81506a7fe3ef03f7a89c76c52131a" category="paragraph-title">分頁</block>
+  <block id="e93f994f01c537c4e2f7d8528c3eb5e9" category="paragraph-title">數</block>
 </blocks>

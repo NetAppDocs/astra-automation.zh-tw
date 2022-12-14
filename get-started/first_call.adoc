@@ -16,8 +16,10 @@ summary: 您可以在工作站的CLI上發出簡單的Curl命令、開始使用A
 [role="lead"]
 您可以在工作站的CLI上發出簡單的Curl命令、開始使用Astra Control REST API並確認其可用度。
 
+.開始之前
 Curl公用程式必須可在本機工作站上使用。您也必須擁有API權杖和相關的帳戶識別碼。請參閱 link:get_api_token.html["取得API權杖"] 以取得更多資訊。
 
+.Curl範例
 下列Curl命令會擷取Astra使用者清單。請依指示提供適當的<ACON_ID>和<API_Toke>。
 
 [source, curl]

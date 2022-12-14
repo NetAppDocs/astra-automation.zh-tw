@@ -43,24 +43,34 @@ NOTE: 雖然下列步驟依序顯示、但在某些情況下、您可以依照�
 
 您應該先檢閱下列Astra組態基本要點、包括限制和組態選項、再將Astra設定為使用LDAP進行驗證。
 
+.僅Astra控制中心支援
 Astra Control平台提供兩種部署模式。LDAP驗證僅支援Astra Control Center部署。
 
+.使用REST API或Web使用者介面進行組態設定
 目前版本的Astra Control Center支援使用Astra Control REST API和Astra網路使用者介面來組態LDAP驗證。
 
+.需要LDAP伺服器
 您必須擁有LDAP伺服器、才能接受及處理Astra驗證要求。Microsoft的Active Directory受目前Astra Control Center版本支援。
 
+.安全連線至LDAP伺服器
 在Astra中設定LDAP伺服器時、您可以選擇性地定義安全連線。在此情況下、LDAPS傳輸協定需要憑證。
 
+.設定使用者或群組
 您需要選取要使用LDAP驗證的使用者。您可以透過識別個別使用者或使用者群組來執行此作業。帳戶必須在LDAP伺服器上定義。也需要在Astra（類型LDAP）中識別這些驗證要求、以便將驗證要求轉送到LDAP。
 
+.連結使用者或群組時的角色限制
 目前Astra Control Center版本中、唯一支援的「roleConstraint」值是「*」。這表示使用者不受限於一組有限的命名空間、而且可以存取所有命名空間。請參閱 link:../workflows_infra/wf_ldap_add_entries.html["將LDAP項目新增至Astra"] 以取得更多資訊。
 
+.LDAP認證
 LDAP使用的認證資料包括使用者名稱（電子郵件地址）和相關密碼。
 
+.獨特的電子郵件地址
 Astra Control Center部署中所有以使用者名稱身分使用的電子郵件地址都必須是唯一的。您無法使用已定義為Astra的電子郵件地址新增LDAP使用者。如果存在重複的電子郵件、您必須先從Astra刪除。請參閱 https://docs.netapp.com/us-en/astra-control-center/use/manage-users.html#remove-users["移除使用者"^] 如需詳細資訊、請參閱Astra Control Center文件網站。
 
+.（可選）先定義LDAP使用者和群組
 您可以將LDAP使用者和群組新增至Astra Control Center、即使LDAP中尚未存在或LDAP伺服器尚未設定亦然。這可讓您在設定LDAP伺服器之前預先設定使用者和群組。
 
+.在多個LDAP群組中定義的使用者
 如果LDAP使用者屬於多個LDAP群組、且已在Astra中指派不同的角色、則使用者在驗證時的有效角色將是最具權限的角色。例如、如果使用者被指派群組1的「檢視者」角色、但在群組2中具有「成員」角色、則使用者的角色為「成員」。這是根據Astra（最高至最低）所使用的階層架構而定：
 
 * 擁有者
@@ -69,8 +79,11 @@ Astra Control Center部署中所有以使用者名稱身分使用的電子郵件
 * 檢視者
 
 
+.定期帳戶同步
 Astra大約每60秒將IT的使用者和群組與LDAP伺服器同步一次。因此、如果將使用者或群組新增至LDAP或從LDAP移除、可能需要一分鐘的時間才能在Astra中使用。
 
+.停用及重設LDAP組態
 在嘗試重設LDAP組態之前、您必須先停用LDAP驗證。此外、若要變更LDAP伺服器（「connectionHost」）、您必須執行這兩項作業。請參閱 link:../workflows_infra/wf_ldap_disable_reset.html["停用並重設LDAP"] 以取得更多資訊。
 
+.REST API參數
 LDAP組態工作流程會呼叫REST API來完成特定工作。每個API呼叫都可以包含輸入參數、如所提供的範例所示。請參閱 link:../reference/api_reference.html["API 參考"] 以取得如何找到參考文件的相關資訊。

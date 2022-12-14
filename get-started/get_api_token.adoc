@@ -39,8 +39,10 @@ API權杖可識別Astra的呼叫者、且必須包含在每個REST API呼叫中�
 
 下列步驟說明如何建立Astra API權杖。
 
+.開始之前
 您需要Astra帳戶的認證資料。
 
+.關於這項工作
 此工作會在Astra網路介面產生API權杖。您也應該擷取進行API呼叫時所需的帳戶ID。
 
 .步驟
@@ -54,4 +56,5 @@ API權杖可識別Astra的呼叫者、且必須包含在每個REST API呼叫中�
 . 複製並儲存相同頁面上的帳戶ID。
 
 
+.完成後
 當您透過Curl或程式設計語言存取Astra Control REST API時、必須在HTTP「授權」要求標頭中加入API承載權杖。

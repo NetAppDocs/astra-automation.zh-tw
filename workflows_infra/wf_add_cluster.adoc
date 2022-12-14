@@ -31,8 +31,10 @@ NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供
 
 在使用* kubeconfig *檔案之前、您應該先執行下列作業：
 
+.將檔案從Yaml格式轉換為Json
 如果您收到格式為Yaml的Kbeconfig檔案、則必須將其轉換為Json。
 
+.在base64中編碼Json
 您必須在base64中編碼Json檔案。例如：
 
 `yq -o=json ~/.kube/config | base64`

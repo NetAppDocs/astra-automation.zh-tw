@@ -19,20 +19,29 @@ Astra Control Center和Astra Control Service提供通用的REST API、可讓您�
 
 NOTE: 若要存取REST API、您必須先登入Astra網路使用者介面、然後產生API權杖。您必須在每個API要求中加入權杖。
 
+.以REST技術為基礎
 Astra Control API是使用REST技術和目前最佳實務做法所建立。核心技術包括HTTP、Json及RBAC。
 
+.支援兩種Astra Control部署模式
 Astra Control Service適用於公有雲環境、Astra Control Center則適用於內部部署。有一個REST API支援這兩種部署模式。
 
+.清除REST端點資源與物件模型之間的對應
 外部REST端點、用於存取資源對應至由Astra服務內部維護的一致物件模型。物件模型是使用實體關係（ER）模型設計、有助於清楚定義API動作和回應。
 
+.豐富的查詢參數集
 REST API提供一組豐富的查詢參數、可用來存取資源集合。部分支援的作業包括篩選、排序及分頁。
 
+.與Astra Control網路UI對齊
 Astra網路使用者介面的設計與REST API一致、因此兩種存取路徑和使用者體驗之間保持一致。
 
+.強大的除錯與問題判斷資料
 Astra Control REST API提供強大的除錯與問題判斷功能、包括系統事件與使用者通知。
 
+.工作流程程序
 我們提供一組工作流程、協助您開發自動化程式碼。工作流程分為兩大類：基礎架構與管理。
 
+.先進自動化技術的基礎
 除了直接存取REST API之外、您也可以使用其他以REST API為基礎的自動化技術。
 
+.Astra系列文件的一部分
 Astra Control Automation文件是Astra系列文件的一部分。請參閱 https://docs.netapp.com/us-en/astra-family/["Astra文件"^] 以取得更多資訊。

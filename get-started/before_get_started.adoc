@@ -16,10 +16,14 @@ summary: 您可以快速準備開始使用Astra Control REST API。
 [role="lead"]
 您可以檢閱下列步驟、快速準備開始使用Astra Control REST API。
 
+.擁有Astra帳戶認證資料
 您需要Astra認證資料才能登入Astra網路使用者介面並產生API權杖。使用Astra Control Center、您可以在本機管理這些認證資料。Astra Control Service可透過*驗證0*服務存取帳戶認證資料。
 
+.熟悉Kubernetes的基本概念
 您應該熟悉幾個基本的Kubernetes概念。請參閱 link:kubernetes_concepts.html["Kubernetes基本概念"] 以取得更多資訊。
 
+.檢視REST概念與實作
 請務必詳閱 link:../rest-core/rest_web_services.html["核心REST實作"] 如需REST概念的相關資訊、以及Astra Control REST API的設計細節。
 
+.取得更多資訊
 您應該瞭解中建議的其他資訊資源 link:../information/additional_resources.html["其他資源"]。

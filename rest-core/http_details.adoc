@@ -22,8 +22,10 @@ Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集
 
 Astra Control REST API實作交易模式、提供定義完善的作業和狀態轉換。
 
+.要求及回應API交易
 每個REST API呼叫都會以HTTP要求的形式執行、以供Astra服務使用。每個要求都會產生與用戶端相關的回應。此要求回應配對可視為API交易。
 
+.支援CRUD營運模式
 每個透過Astra Control REST API提供的資源執行個體和集合、都是根據* CRUD*模型來存取。共有四項作業、每項作業對應至單一HTTP方法。這些作業包括：
 
 * 建立
