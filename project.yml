@@ -31,8 +31,8 @@ homepage:
   tiles:
   - title: 開始使用
     links:
-    - title: 簡介
-      url: "/intro/introduction.html"
+    - title: 總覽
+      url: "/intro/overview.html"
     - title: 開始之前
       url: "/get-started/before_get_started.html"
     - title: 取得API權杖
