@@ -14,7 +14,7 @@ summary: 您可以新增叢集、以便由Astra管理。
 
 
 [role="lead"]
-您可以新增叢集、以便由Astra管理。從Astra 22.11開始、您可以使用Astra Control Center或Astra Control Service來新增叢集。
+您可以新增叢集、以便由Astra管理。從Astra 22.11版開始、您可以使用Astra Control Center和Astra Control Service來新增叢集。
 
 
 NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供的Kubernetes服務時、不需要新增叢集。
