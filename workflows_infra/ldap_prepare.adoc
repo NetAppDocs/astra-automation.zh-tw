@@ -86,4 +86,4 @@ Astra大約每60秒將IT的使用者和群組與LDAP伺服器同步一次。因�
 在嘗試重設LDAP組態之前、您必須先停用LDAP驗證。此外、若要變更LDAP伺服器（「connectionHost」）、您必須執行這兩項作業。請參閱 link:../workflows_infra/wf_ldap_disable_reset.html["停用並重設LDAP"] 以取得更多資訊。
 
 .REST API參數
-LDAP組態工作流程會呼叫REST API來完成特定工作。每個API呼叫都可以包含輸入參數、如所提供的範例所示。請參閱 link:../reference/api_reference.html["API 參考"] 以取得如何找到參考文件的相關資訊。
+LDAP組態工作流程會呼叫REST API來完成特定工作。每個API呼叫都可以包含輸入參數、如所提供的範例所示。請參閱 link:../get-started/online_api_ref.html["線上API參考"] 以取得如何找到參考文件的相關資訊。

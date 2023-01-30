@@ -34,7 +34,7 @@ Astra Control REST API實作交易模式、提供定義完善的作業和狀態�
 * 刪除
 
 
-對於部分Astra資源、僅支援其中一部分作業。您應該檢閱 link:../reference/api_reference.html["API 參考"] 以取得特定API呼叫的詳細資訊。
+對於部分Astra資源、僅支援其中一部分作業。您應該檢閱 link:../get-started/online_api_ref.html["線上API參考"] 以取得特定API呼叫的詳細資訊。
 
 
 
