@@ -346,7 +346,6 @@
   <block id="2fc537b9f7b2c95f698a1e045c1ca8c7" category="list-text">資源路徑</block>
   <block id="4c1c10477ca13145352fd9a92f9744f6" category="paragraph">根據上述結構、端點的典型路徑為：「/Accounts /｛Account _id｝/核心/ v1 /使用者」。</block>
   <block id="8a95104150e07b745de96037e7eb15b4" category="list-text">完整URL</block>
-  <block id="f39323c9cdd9d851595dba08fa974f82" category="paragraph">對應端點的完整URL為：「https://astra.netapp.io/accounts/{account_id}/core/v1/users`。</block>
   <block id="7ab91fd48b58ce1ea4cada1f1a4e1808" category="doc">HTTP詳細資料</block>
   <block id="deaf360f123e9392f769c7ceb4e01747" category="section-title">API交易與CRUD模式</block>
   <block id="01b7ef875c4a217845bac8e7ae38175b" category="paragraph">Astra Control REST API實作交易模式、提供定義完善的作業和狀態轉換。</block>
@@ -1185,4 +1184,5 @@
   <block id="e89fa43834d6738a939f8c7ecd4c28a4" category="paragraph">LDAP組態工作流程會呼叫REST API來完成特定工作。每個API呼叫都可以包含輸入參數、如所提供的範例所示。請參閱 <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 以取得如何找到參考文件的相關資訊。</block>
   <block id="b7ca8ec82a5eaa56c4cd485d10d4f8ff" category="admonition">用於存取Astra Control資源的路徑格式和完整URL是以數個值為基礎。請參閱 <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> 以取得更多資訊。另請參閱 <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 如需使用Astra資源和端點的詳細資訊、</block>
   <block id="943f70de346a2442881b356af65be85e" category="paragraph">對於部分Astra資源、僅支援其中一部分作業。您應該檢閱 <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 以取得特定API呼叫的詳細資訊。</block>
+  <block id="d01376790c7b0b81f92f0a93fe0d3fad" category="paragraph">對應端點的完整URL為：<block ref="889041d0c093d3ff7a84829871523416" prefix=" " category="inline-code"></block>。</block>
 </blocks>

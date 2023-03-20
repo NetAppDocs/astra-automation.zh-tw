@@ -42,6 +42,6 @@ Astra資源端點分為三種不同類別：
 
 * 完整URL
 +
-對應端點的完整URL為：「https://astra.netapp.io/accounts/{account_id}/core/v1/users`。
+對應端點的完整URL為： `\https://astra.netapp.io/accounts/{account_id}/core/v1/users`。
 
 
