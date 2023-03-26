@@ -36,6 +36,10 @@ summary: 您可以存取更多資源、以取得協助、並尋找更多有關Ne
 +
 集中位置、可存取內部部署和公有雲部署的所有Astra文件。
 
+* https://discord.gg/NetApp["不和"^]
++
+Astra Control及其他NetApp產品的社群支援。
+
 
 
 

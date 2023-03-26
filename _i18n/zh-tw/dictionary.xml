@@ -1185,4 +1185,8 @@
   <block id="b7ca8ec82a5eaa56c4cd485d10d4f8ff" category="admonition">用於存取Astra Control資源的路徑格式和完整URL是以數個值為基礎。請參閱 <block ref="d30352e41f8ff3b0c022e188e6d650e9" category="inline-link-macro-rx"></block> 以取得更多資訊。另請參閱 <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 如需使用Astra資源和端點的詳細資訊、</block>
   <block id="943f70de346a2442881b356af65be85e" category="paragraph">對於部分Astra資源、僅支援其中一部分作業。您應該檢閱 <block ref="bc3e5681b34d05fe80cb8ba4dac9f8c1" category="inline-link-macro-rx"></block> 以取得特定API呼叫的詳細資訊。</block>
   <block id="d01376790c7b0b81f92f0a93fe0d3fad" category="paragraph">對應端點的完整URL為：<block ref="889041d0c093d3ff7a84829871523416" prefix=" " category="inline-code"></block>。</block>
+  <block id="8f5cc6430613f1c12f36965050bb7197" category="inline-link">不和</block>
+  <block id="5f86a5c97c95f60e61c70ba77d7346ae" category="list-text"><block ref="5f86a5c97c95f60e61c70ba77d7346ae" category="inline-link-rx"></block></block>
+  <block id="0b5b4445b358715641cec74fe5aa74a5" category="paragraph">Astra Control及其他NetApp產品的社群支援。</block>
+  <block id="c216e952dc373af46e9e31e0b8bdcf89" category="sidebar">Astra Automation</block>
 </blocks>
