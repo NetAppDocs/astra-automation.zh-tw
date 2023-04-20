@@ -99,7 +99,7 @@ NOTE: 請參閱 https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232."^] 和 htt
 
 == 查詢參數
 
-下列查詢參數可用於資源集合。請參閱 link:../additional/working_with_collections.html["使用集合"] 以取得更多資訊。
+下列查詢參數可用於資源集合。請參閱 link:../additional/work_with_collections.html["使用集合"] 以取得更多資訊。
 
 [cols="20,80"]
 |===
@@ -130,7 +130,7 @@ NOTE: 請參閱 https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232."^] 和 htt
 Astra Control REST API使用的HTTP狀態代碼如下所述。
 
 
-NOTE: Astra Control REST API也使用*問題詳細資料做為HTTP API*標準。請參閱 link:diagnostics_support.html["診斷與支援"] 以取得更多資訊。
+NOTE: Astra Control REST API也使用*問題詳細資料做為HTTP API*標準。請參閱 link:../additional/diagnostics_support.html["診斷與支援"] 以取得更多資訊。
 
 [cols="15,20,65"]
 |===

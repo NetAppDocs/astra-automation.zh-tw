@@ -389,8 +389,6 @@
   <block id="ce5bf551379459c1c61d2a204061c455" category="cell">位置</block>
   <block id="cea5f66f37995fb196323018a31600fc" category="cell">包含新建立資源的完整URL。</block>
   <block id="6e2102ce7d7573c8b221194a86f7a48b" category="section-title">查詢參數</block>
-  <block id="7fec4843ebac2572cb7aba56b67d7ddb" category="inline-link-macro">使用集合</block>
-  <block id="b206801753ef0a6abfae5904e5c68a57" category="paragraph">下列查詢參數可用於資源集合。請參閱 <block ref="114f30b2f00431234237350f516a01cf" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="ce73e1ed10f91fd167ae3d5803ce8dff" category="cell">查詢參數</block>
   <block id="4d0d3b0c69167fef7204e14c4e946c15" category="cell">包含讀取集合時應傳回的欄位。</block>
   <block id="b2c97ae425dd751b0e48a3acae79cf4a" category="cell">篩選器</block>
@@ -405,7 +403,6 @@
   <block id="16bd6f56e0279353c2bf47e3b1d13c41" category="cell">指出中繼資料物件是否應傳回資源總數。</block>
   <block id="2974f783f17d54a41f4040c8daa90545" category="section-title">HTTP 狀態代碼</block>
   <block id="175b29f6f8dd1aa8a166427b6bcd061c" category="paragraph">Astra Control REST API使用的HTTP狀態代碼如下所述。</block>
-  <block id="ef69df9e80d5e1591d22bfe189aa737e" category="admonition">Astra Control REST API也使用*問題詳細資料做為HTTP API*標準。請參閱 <block ref="d9c154af7dec160f41ead610ccb970e9" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="ca0dbad92a874b2f69b549293387925e" category="cell">程式碼</block>
   <block id="7277de5f2ed6f17c61f1f25594591a82" category="cell">意義</block>
   <block id="3644a684f98ea8fe223c713b77189a77" category="cell">200</block>
@@ -1189,4 +1186,6 @@
   <block id="5f86a5c97c95f60e61c70ba77d7346ae" category="list-text"><block ref="5f86a5c97c95f60e61c70ba77d7346ae" category="inline-link-rx"></block></block>
   <block id="0b5b4445b358715641cec74fe5aa74a5" category="paragraph">Astra Control及其他NetApp產品的社群支援。</block>
   <block id="c216e952dc373af46e9e31e0b8bdcf89" category="sidebar">Astra Automation</block>
+  <block id="8d5b3dceacc1264c4bb5aed273137b7a" category="paragraph">下列查詢參數可用於資源集合。請參閱 <block ref="a72643cb6a22061c1930f2e30db11319" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="d9a8eedd670f58ed76d5ae881e6d4469" category="admonition">Astra Control REST API也使用*問題詳細資料做為HTTP API*標準。請參閱 <block ref="e560597744bc7b2711ae89c683c4035f" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
 </blocks>
