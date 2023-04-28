@@ -17,18 +17,18 @@ summary: 本網站的文件說明Astra Control REST API及Astra Control提供的
 本網站的文件說明Astra Control REST API及兩種Astra Control部署模式最新版本隨附的相關自動化技術。
 
 
-NOTE: 每個Astra版本都會指派* y.mm*格式的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、Astra Control Service 23.01於2023年1月發佈。
+NOTE: 每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、 Astra Control Center 23.04 於 2023 年 4 月發行。
 
 .發行步調
-一般而言、Astra Control Service和Astra Control Center的更新會同時進行。然而、Astra Control Service的發行速度加快、可能會導致一或多個遞增更新超出最近的Astra Control Center版本。
+一般而言、Astra Control Service和Astra Control Center的更新會同時進行。不過、 Astra Control Service 的發行速度加快、可能會導致一或多個遞增更新、而不只是最新的 Astra Control Center 版本而已。
 
 由於此站台記錄兩種部署模式的REST API、因此可能只有最近一次Astra Control Service版本才提供某些功能。這兩種部署模式之間的任何差異都會視需要記錄。
 
 .Astra Control部署
 本網站的文件適用於下列Astra Control版本：
 
-* Astra Control Service 23.01
-* Astra Control Center 22.11.
+* Astra Control Service 23.04
+* Astra Control Center 23.04
 
 
 .更多資訊
@@ -36,8 +36,8 @@ NOTE: 每個Astra版本都會指派* y.mm*格式的版本編號。此值會根�
 
 * link:../rn/whats_new.html["Astra Control REST API的新功能"]
 * link:../endpoints/resources.html["閒置資源和端點"]
-* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 22.11文件"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.01文件"^]
+* https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 23.04 文件"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.04 文件"^]
 * link:../aa-earlier-versions.html["舊版Astra Automation文件"]
 
 

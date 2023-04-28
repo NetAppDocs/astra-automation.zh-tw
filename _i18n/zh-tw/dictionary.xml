@@ -874,7 +874,6 @@
   <block id="e14d216616a4529ca008fe30d48b4bda" category="summary">Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API有幾項重要重點和優點。</block>
   <block id="48f085a79b3bd49f8180067c06092213" category="doc">功能與效益總覽</block>
   <block id="7128d9d8a839786105f002007172fbe5" category="summary">NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功能和錯誤修復。</block>
-  <block id="c03785645670327afbef79672d54b2df" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center和Astra Control Service在特定版本中共用相同的REST API。您可以使用REST API和其他相關的自動化技術來管理Astra Control部署。</block>
   <block id="d803102aaa79040d7acdf0fdfaf7f156" category="summary">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。本頁提供您可作為自動化部署一部分使用的REST資源簡介。</block>
   <block id="2cb4d33cb32e61ac40dcce4208d54e3c" category="paragraph">您可以透過Astra Control REST API存取所提供的資源、以自動化Astra部署。每個資源都可透過一或多個端點使用。以下是自動化部署中可用的REST資源簡介。</block>
   <block id="44dd27a5a91f4e2450789bd7e3f6c406" category="paragraph">SDK可從取得<block ref="8410061c73ca21d204619a04c32c035c" category="inline-link-rx"></block> 名稱* actooltooltool包*。套件已指派版本編號、並將視需要繼續更新。您必須使用*子母畫面*套件管理公用程式、將套件安裝到您的環境中。</block>
@@ -1004,7 +1003,6 @@
   <block id="4213c71e0f3bf4e29d847ed32a86c256" category="section-title">2.準備Kbeconfig檔案</block>
   <block id="2f01fc21d4fc91a63d214e05b58d1ae3" category="paragraph">在使用* kubeconfig *檔案之前、您應該先執行下列作業：</block>
   <block id="4439d3db8fedf30a9f782857c3ba84c1" category="paragraph">如果您收到格式為Yaml的Kbeconfig檔案、則必須將其轉換為Json。</block>
-  <block id="112883e671fe422a61b0c873364ccc63" category="paragraph">您必須在base64中編碼Json檔案。例如：</block>
   <block id="9413bfba8f719cfbad604b6dc31a25c7" category="paragraph"><block ref="c4fe76de412e2e8e625be88a4c8c0409" prefix="" category="inline-code"></block></block>
   <block id="179dae9c1238082df51d848f55149f2b" category="section-title">3.選擇雲端</block>
   <block id="a334c61bdbeeba71f0e5b3f6261056cf" category="paragraph">執行工作流程 <block ref="c4922000cf4edc9c6c02533eba85b458" category="inline-link-macro-rx"></block> 然後選取要新增叢集的雲端。</block>
@@ -1080,8 +1078,6 @@
   <block id="012c01c016d35f3bdc2e34a079b6cf0e" category="list-text"><block ref="012c01c016d35f3bdc2e34a079b6cf0e" category="inline-link-rx"></block></block>
   <block id="099195e2a0ecbb5b0569da7e9c28fbc0" category="inline-link">Astra Control Center 21.08：最新消息</block>
   <block id="70679aeca94d2b828ca1dc6cda2ac994" category="list-text"><block ref="70679aeca94d2b828ca1dc6cda2ac994" category="inline-link-rx"></block></block>
-  <block id="070b3d3a153094a5ee57ed5e75530780" category="inline-link">Astra Control Center 22.11文件</block>
-  <block id="bee8b0efee9e08520e8e0cb30b730adf" category="list-text"><block ref="bee8b0efee9e08520e8e0cb30b730adf" category="inline-link-rx"></block></block>
   <block id="165fa9bdd003d8079831262d0360efc1" category="inline-link">Astra Control Automation 22.08文件</block>
   <block id="94ed7ec7b9510cd1e4664fbfe8a08329" category="list-text"><block ref="94ed7ec7b9510cd1e4664fbfe8a08329" category="inline-link-rx"></block></block>
   <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">第一個API呼叫</block>
@@ -1160,18 +1156,12 @@
   <block id="750f48353ffad2f2dc8aaad3df0d9144" category="list-text"><block ref="750f48353ffad2f2dc8aaad3df0d9144" category="inline-link-rx"></block></block>
   <block id="b23a60ebc7020fe310d80180653261b7" category="paragraph-title">發行步調</block>
   <block id="ce2f654fe20c0aa5fa4ece0648021275" category="paragraph-title">Astra Control部署</block>
-  <block id="d92324a56dde3645b2b0ebf9145c93b8" category="list-text">Astra Control Service 23.01</block>
-  <block id="910e94624b00c7abc1675a19e1165204" category="list-text">Astra Control Center 22.11.</block>
   <block id="ab066b3292d8ab61ef3b5c77169cdd19" category="paragraph-title">更多資訊</block>
-  <block id="57568765d51dbdfa0a0799807a13dfc5" category="inline-link">Astra Control Service 23.01文件</block>
-  <block id="9905934fe9c85f338f46074487afd222" category="list-text"><block ref="9905934fe9c85f338f46074487afd222" category="inline-link-rx"></block></block>
   <block id="14f03db07d2c880fafbf7c4fdb9955bd" category="section-title">2023年1月17日（23.01）</block>
   <block id="055a27c4d72ac10e8bf363a70b1218a0" category="paragraph">此版本包含REST API的次要更新。</block>
   <block id="fd681e19859abac8a0d1df0703c54996" category="section-title">利用篩選器強化執行掛勾功能</block>
   <block id="03612c2b7f26bb15fe2a8f56732f28ad" category="paragraph">使用執行掛勾時、您現在可以新增篩選器、以控制掛勾所對應的容器。如果您為單一執行掛勾建立多個篩選器、這些篩選器會與邏輯和運算子結合使用。每個執行掛機最多可定義10個作用中篩選器。</block>
   <block id="3c59b55f9bf059f6664a2ad8c3b5ff06" category="paragraph">本網站的文件說明Astra Control REST API及兩種Astra Control部署模式最新版本隨附的相關自動化技術。</block>
-  <block id="49bc96321f81e28a39f08ecee5252838" category="admonition">每個Astra版本都會指派* y.mm*格式的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、Astra Control Service 23.01於2023年1月發佈。</block>
-  <block id="41aa8f23ab61278bcb0f5ac2fb49d28d" category="paragraph">一般而言、Astra Control Service和Astra Control Center的更新會同時進行。然而、Astra Control Service的發行速度加快、可能會導致一或多個遞增更新超出最近的Astra Control Center版本。</block>
   <block id="ce3f3db7878407d89bb9f3e42409287c" category="paragraph">由於此站台記錄兩種部署模式的REST API、因此可能只有最近一次Astra Control Service版本才提供某些功能。這兩種部署模式之間的任何差異都會視需要記錄。</block>
   <block id="fdd9fe55f1a01a1ad085e5d6ce35c93b" category="paragraph">本網站的文件適用於下列Astra Control版本：</block>
   <block id="06661ae837df4aebc82db4f943f32dd7" category="paragraph">請參閱下列頁面和網站、以取得有關目前和先前Astra Control版本的詳細資訊。</block>
@@ -1188,4 +1178,23 @@
   <block id="c216e952dc373af46e9e31e0b8bdcf89" category="sidebar">Astra Automation</block>
   <block id="8d5b3dceacc1264c4bb5aed273137b7a" category="paragraph">下列查詢參數可用於資源集合。請參閱 <block ref="a72643cb6a22061c1930f2e30db11319" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="d9a8eedd670f58ed76d5ae881e6d4469" category="admonition">Astra Control REST API也使用*問題詳細資料做為HTTP API*標準。請參閱 <block ref="e560597744bc7b2711ae89c683c4035f" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="b30ac06bf6c3102a84f420a5a1444360" category="paragraph">您必須在base64中編碼Json檔案。</block>
+  <block id="62a9da32071f678334a21060c67e7014" category="paragraph">以下是將 Kebeconfig 檔案從 YAML 轉換為 JSON 、然後在 base64 中編碼的範例：</block>
+  <block id="013e0c333b0775d95a5c6579724b4b45" category="inline-link">Astra Control Automation 22.11 文件</block>
+  <block id="52eabae058b28c969498b7a857c6879d" category="list-text"><block ref="52eabae058b28c969498b7a857c6879d" category="inline-link-rx"></block></block>
+  <block id="8f84a5e65a3efc01a0b185016179b60b" category="admonition">每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、 Astra Control Center 23.04 於 2023 年 4 月發行。</block>
+  <block id="c41bf5dc0ae334cb95d5c9af7e04effd" category="paragraph">一般而言、Astra Control Service和Astra Control Center的更新會同時進行。不過、 Astra Control Service 的發行速度加快、可能會導致一或多個遞增更新、而不只是最新的 Astra Control Center 版本而已。</block>
+  <block id="010fb6f5627b64ba23d67bf240d888f1" category="list-text">Astra Control Service 23.04</block>
+  <block id="20a97065ffc33c9c3dbdd1435b0a9fef" category="list-text">Astra Control Center 23.04</block>
+  <block id="e2345475f657a83bdb89f0d758173706" category="inline-link">Astra Control Center 23.04 文件</block>
+  <block id="806930774cd41dac9f96fae2a8f4bdd3" category="list-text"><block ref="806930774cd41dac9f96fae2a8f4bdd3" category="inline-link-rx"></block></block>
+  <block id="40e101808c19a51478d8108eed888560" category="inline-link">Astra Control Service 23.04 文件</block>
+  <block id="aff8f153110395d7fa2dad02e6fef700" category="list-text"><block ref="aff8f153110395d7fa2dad02e6fef700" category="inline-link-rx"></block></block>
+  <block id="cdfde9b3972928d07d0aa9787e6589c3" category="section-title">2023 年 4 月 25 日（ 23.04 ）</block>
+  <block id="05b8695ac535480ad4f4cf9e5bd4ecd2" category="paragraph">此版本包含 REST API 的選擇性更新。</block>
+  <block id="a1dba4846637919a02bf180b636f6229" category="section-title">選擇性還原作業</block>
+  <block id="8887f1f9ab842379c67e5e32f8dc87e0" category="paragraph">您可以在還原作業期間選擇性地加入或排除應用程式資源。這是使用以特定命名空間、名稱、標籤或 GroupVersionKind 值為基礎的篩選規則來完成的。</block>
+  <block id="fc39be20ea823e1b9e3d3a96c1cc1c4d" category="section-title">支援純資料應用程式</block>
+  <block id="060c77065349f3e6f9b971248729bf60" category="paragraph">管理應用程式的支援已延伸至純資料應用程式。</block>
+  <block id="b844ee2db8fd78557f753d0c04015c4a" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center 和 Astra Control Service 會根據版本而共用相同的 REST API 。您可以使用REST API和其他相關的自動化技術來管理Astra Control部署。</block>
 </blocks>

@@ -35,7 +35,10 @@ NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供
 如果您收到格式為Yaml的Kbeconfig檔案、則必須將其轉換為Json。
 
 .在base64中編碼Json
-您必須在base64中編碼Json檔案。例如：
+您必須在base64中編碼Json檔案。
+
+.範例
+以下是將 Kebeconfig 檔案從 YAML 轉換為 JSON 、然後在 base64 中編碼的範例：
 
 `yq -o=json ~/.kube/config | base64`
 
