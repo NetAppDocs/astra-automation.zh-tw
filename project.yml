@@ -25,7 +25,7 @@ settings:
   - name: Astra Automation
     url: https://docs.netapp.com/us-en/astra-automation-2112/
     version-number: '21.12'
-  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr
+  langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
   - title: Astra Control Automation文件
