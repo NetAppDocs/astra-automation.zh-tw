@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: get-started/online_api_call.html 
+keywords: reference, api reference, execute call 
+summary: 您可以從 API 參考文件頁面發出 Astra Control REST API 呼叫。 
+---
+= 發出 Astra REST API 呼叫
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以從 API 參考文件頁面發出 Astra Control REST API 呼叫。
+
+.開始之前
+您必須登入 Astra 並存取 API 參考頁面。請參閱 link:../get-started/online_api_ref.html["存取 Astra API 參考文件"] 以取得更多資訊。您也需要 Token 才能使用 REST API 。請參閱 link:../get-started/get_api_token.html["取得API權杖"] 以取得有關產生 API Token 的詳細資訊。
+
+.步驟
+. 在 API 參考頁面頂端、按一下 * 授權 * 。
+. 將您的 API 權杖值複製並貼到快顯視窗的欄位中、然後按一下 * 授權 * 、再按一下 * 關閉 * 。
+. 向下捲動頁面並開啟所需的 API 呼叫。
+. 按一下滑鼠右鍵 * 試用 * 。
+. 在相同的 API 呼叫中向下捲動、然後按一下 * 執行 * 。
+
+
+.結果
+執行 API 呼叫、並顯示 HTTP 狀態代碼。

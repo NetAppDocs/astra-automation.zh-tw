@@ -189,8 +189,6 @@
   <block id="a0aa3c13c7e155cdac2e684ed97bd329" category="section-title">管理工作流程</block>
   <block id="f2082cbd04c532123c4a60b265595268" category="paragraph">您需要取得Astra API權杖、才能使用Astra Control REST API。</block>
   <block id="e18812059a8d09f0f17ebcad797930df" category="paragraph">API權杖可識別Astra的呼叫者、且必須包含在每個REST API呼叫中。</block>
-  <block id="0e2c9374186101782c17c706d964b6ab" category="list-text">您可以使用Astra網路使用者介面來產生API權杖。</block>
-  <block id="dd1c8bab333b87721ef3d1780c9d2744" category="list-text">憑證隨附的使用者身分識別是由建立權杖的使用者所決定。</block>
   <block id="80c4d1da0ffc63fa594010f5c5541b4b" category="list-text">權杖必須包含在「授權」HTTP要求標頭中。</block>
   <block id="261bfb4842abd90ac7080375e1e3a342" category="list-text">權杖建立後永遠不會過期。</block>
   <block id="7d3bb36b2de41ab91073fa12ad3242f6" category="list-text">您可以在Astra網路使用者介面上撤銷權杖。</block>
@@ -199,10 +197,8 @@
   <block id="8d4eb0217153cb37c8687158d7067cfb" category="paragraph">下列步驟說明如何建立Astra API權杖。</block>
   <block id="646fd3c3d22d826a188a59c1bba8854b" category="paragraph">您需要Astra帳戶的認證資料。</block>
   <block id="af02d3e1ad157f1839fbba3f7e1fc763" category="paragraph">此工作會在Astra網路介面產生API權杖。您也應該擷取進行API呼叫時所需的帳戶ID。</block>
-  <block id="b329e0b224bc672c7032902e91459644" category="list-text">按一下頁面上的「*產生API權杖*」、然後在快顯視窗中按一下「*產生API權杖*」。</block>
   <block id="3040c02566f3d35a3b86a6ca9472dadd" category="list-text">按一下圖示、將權杖字串複製到剪貼簿、然後儲存到編輯器中。</block>
   <block id="df98c0b39730eeb3f14749ea1c0684c2" category="list-text">複製並儲存相同頁面上的帳戶ID。</block>
-  <block id="38ed0da570fd8c0b212e0f8dc6cdb8fc" category="paragraph">當您透過Curl或程式設計語言存取Astra Control REST API時、必須在HTTP「授權」要求標頭中加入API承載權杖。</block>
   <block id="9b355d9a0df5a5e777f4cd881f971a4e" category="paragraph">Curl公用程式必須可在本機工作站上使用。您也必須擁有API權杖和相關的帳戶識別碼。請參閱 <block ref="67af9ad396391bc7ade4b472f0b4f030" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="cbd2fd368381db0d8cdbdead253cf132" category="paragraph">下列Curl命令會擷取Astra使用者清單。請依指示提供適當的&lt;ACON_ID&gt;和&lt;API_Toke&gt;。</block>
   <block id="bff6b273561ec6570215c14bdba13a26" category="section-title">Json輸出範例</block>
@@ -571,11 +567,7 @@
   <block id="20cb526cb438c874dbc67eaf9ded63f0" category="paragraph">無論是直接使用Astra SDK中的Python類別、或是「toolkit.py」指令碼中的功能、最終都能在Astra Control部署中存取REST API。因此、您需要Astra帳戶和API權杖。請參閱 <block ref="6790e3b8b21e3717c59b764a5b68d086" category="inline-link-macro-rx"></block> 如需詳細資訊、請參閱本文件*入門*一節中的其他頁面。</block>
   <block id="2c3632f4f9feb6a54026be6d9c946d20" category="section-title">實用資源摘要</block>
   <block id="b455f4010eda9452a921d32bfc7e1318" category="list-text"><block ref="b455f4010eda9452a921d32bfc7e1318" category="inline-link-rx"></block></block>
-  <block id="2aedb1bdf28ee2f3357b9859cfa547c3" category="admonition">REST API參考文件目前已隨Astra Control提供、並可線上取得。</block>
-  <block id="18bfd97c33ffd64bcd077be2ff48cd45" category="paragraph">您需要Astra Control Center或Astra Control Service帳戶。</block>
-  <block id="1fb6c6816575c47391caa2d4408774f5" category="paragraph">存取Astra Control Service的下列站台： <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
   <block id="a242cf3d90ad638fe0e23d9477b74175" category="list-text">在頁面頂端、按一下「* API Documentation *（* API文件*）」下方顯示的URL。</block>
-  <block id="1cafd580155ad918d6c525c18cc8e5e6" category="list-text">出現提示時、請再次提供您的帳戶認證資料。</block>
   <block id="4bddbc6d61b2586c05f9efdf9aa7b5cd" category="paragraph">您可以從下列連結存取先前Astra Control版本的自動化文件。</block>
   <block id="d61b1a26306fd2300000d407ac76b0ca" category="inline-link">Astra Control Automation 21.12文件</block>
   <block id="f7fb8efb01216bddc5505f64c4c92bae" category="list-text"><block ref="f7fb8efb01216bddc5505f64c4c92bae" category="inline-link-rx"></block></block>
@@ -1184,12 +1176,9 @@
   <block id="52eabae058b28c969498b7a857c6879d" category="list-text"><block ref="52eabae058b28c969498b7a857c6879d" category="inline-link-rx"></block></block>
   <block id="8f84a5e65a3efc01a0b185016179b60b" category="admonition">每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、 Astra Control Center 23.04 於 2023 年 4 月發行。</block>
   <block id="c41bf5dc0ae334cb95d5c9af7e04effd" category="paragraph">一般而言、Astra Control Service和Astra Control Center的更新會同時進行。不過、 Astra Control Service 的發行速度加快、可能會導致一或多個遞增更新、而不只是最新的 Astra Control Center 版本而已。</block>
-  <block id="010fb6f5627b64ba23d67bf240d888f1" category="list-text">Astra Control Service 23.04</block>
   <block id="20a97065ffc33c9c3dbdd1435b0a9fef" category="list-text">Astra Control Center 23.04</block>
   <block id="e2345475f657a83bdb89f0d758173706" category="inline-link">Astra Control Center 23.04 文件</block>
   <block id="806930774cd41dac9f96fae2a8f4bdd3" category="list-text"><block ref="806930774cd41dac9f96fae2a8f4bdd3" category="inline-link-rx"></block></block>
-  <block id="40e101808c19a51478d8108eed888560" category="inline-link">Astra Control Service 23.04 文件</block>
-  <block id="aff8f153110395d7fa2dad02e6fef700" category="list-text"><block ref="aff8f153110395d7fa2dad02e6fef700" category="inline-link-rx"></block></block>
   <block id="cdfde9b3972928d07d0aa9787e6589c3" category="section-title">2023 年 4 月 25 日（ 23.04 ）</block>
   <block id="05b8695ac535480ad4f4cf9e5bd4ecd2" category="paragraph">此版本包含 REST API 的選擇性更新。</block>
   <block id="a1dba4846637919a02bf180b636f6229" category="section-title">選擇性還原作業</block>
@@ -1197,4 +1186,47 @@
   <block id="fc39be20ea823e1b9e3d3a96c1cc1c4d" category="section-title">支援純資料應用程式</block>
   <block id="060c77065349f3e6f9b971248729bf60" category="paragraph">管理應用程式的支援已延伸至純資料應用程式。</block>
   <block id="b844ee2db8fd78557f753d0c04015c4a" category="summary">Astra Control是NetApp軟體產品、可為Kubernetes應用程式提供資料生命週期管理功能。視您的環境而定、有兩種部署模式可供選擇。Astra Control Center 和 Astra Control Service 會根據版本而共用相同的 REST API 。您可以使用REST API和其他相關的自動化技術來管理Astra Control部署。</block>
+  <block id="e347b2f3a025e39e9b9b45d49ad72dab" category="summary">您可以從 API 參考文件頁面發出 Astra Control REST API 呼叫。</block>
+  <block id="d2d3bbdb180fea4732023aa385c2bcad" category="doc">發出 Astra REST API 呼叫</block>
+  <block id="53b4dbb805da489969e32d5e207f43af" category="inline-link-macro">存取 Astra API 參考文件</block>
+  <block id="ebe7080a642d0936cad4e377fe9b8401" category="paragraph">您必須登入 Astra 並存取 API 參考頁面。請參閱 <block ref="010c4a1892f0ae334c914939807b2734" category="inline-link-macro-rx"></block> 以取得更多資訊。您也需要 Token 才能使用 REST API 。請參閱 <block ref="949977ec887dbf77cf703083221524dc" category="inline-link-macro-rx"></block> 以取得有關產生 API Token 的詳細資訊。</block>
+  <block id="cbed555cdf913285d9275ccd1866519f" category="list-text">在 API 參考頁面頂端、按一下 * 授權 * 。</block>
+  <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">將您的 API 權杖值複製並貼到快顯視窗的欄位中、然後按一下 * 授權 * 、再按一下 * 關閉 * 。</block>
+  <block id="d77956bf312c489126fb210ac26e1560" category="list-text">向下捲動頁面並開啟所需的 API 呼叫。</block>
+  <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">按一下滑鼠右鍵 * 試用 * 。</block>
+  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">在相同的 API 呼叫中向下捲動、然後按一下 * 執行 * 。</block>
+  <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
+  <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">執行 API 呼叫、並顯示 HTTP 狀態代碼。</block>
+  <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">您需要認證才能登入 Astra 網路使用者介面進行部署。Astra Control Service 和 Astra Control Center 的參考文件存取程序相同。只有 URL 不同。存取和檢視參考文件不需要 API 權杖。</block>
+  <block id="c961cf856b145ed8b86b895597c0d1b6" category="list-text">使用您的帳戶認證登入 Astra 、如下所示：</block>
+  <block id="ffda91bc16561c140aa3a3293cb3373d" category="list-text">Astra Control 服務： <block ref="a7c1946d9e83ca7cb364e2283d9c1bfa" category="inline-link-macro-rx"></block></block>
+  <block id="b95e7570a853619e504ccb1e42b41457" category="list-text">Astra Control Center ：依照安裝期間所建立的 URL 、使用本機環境的 URL</block>
+  <block id="93a04a12da3b73c104f76110d28e439f" category="paragraph">Swagger 頁面會在新的視窗或索引標籤中啟動。請注意、 URL 包含您登入帳戶的帳戶 ID 。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">接下來呢？</block>
+  <block id="2e72d917f5fd43aa4a556d9db54a8b23" category="paragraph">您可以選擇從 Swagger 頁面執行 API 呼叫。請參閱 <block ref="d791a02ae369ca3bfa55295caf72fedd" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="7652ed5ca976b004d92eaaa78c376c9d" category="list-text">您需要使用 Astra Web 使用者介面來產生 API 權杖。</block>
+  <block id="3c8afa648b8d63ba3e2f942bec9ab73e" category="list-text">對於兩個 Astra 部署模型、產生權杖的程序相同。只有用於存取 Astra 的 URL 不同。</block>
+  <block id="19f3e619111d8d4c522de7221584fc6c" category="list-text">使用權杖及相關權限所攜帶的使用者身分、是由建立權杖的使用者所決定。</block>
+  <block id="69c0346ff6510c5ad7f7659ec6fd66be" category="list-text">按一下頁面上的 * 產生 API 權杖 * 、然後在快顯視窗中按一下 * 產生 API 權杖 * 。</block>
+  <block id="e720ccabcfbd213be97f4476ff0c5601" category="paragraph">當您透過 Curl 或程式設計語言存取 Astra Control REST API 時、必須在 HTTP 中加入 API 承載權杖<block ref="9cd8a2455b1839ff98ef70c05b9b5983" prefix=" " category="inline-code"></block> 要求標頭：</block>
+  <block id="9aba329f6bcfe3b8f1b0df8dd4c1e1fa" category="summary">在具有 ANF 儲存後端的私有內部部署叢集中備份受管理應用程式時、您必須啟用動態 ANF 集區功能。這是透過提供訂閱 ID 來完成、以便在擴充和承包容量資源池時使用。</block>
+  <block id="2d895ac3837ac459cbcdcd76339d84cd" category="doc">為自我管理的叢集啟用動態 anf 集區</block>
+  <block id="5eb0c12811f3c807e7fa3fce6fb5b38d" category="inline-link">Azure 應用程式備份</block>
+  <block id="d2f8ee1082b8b805ab4862d852412403" category="admonition">動態 anf 資源池是 Astra 託管應用程式的功能、使用 Azure NetApp Files （ anf ）儲存後端。在備份這些應用程式時、 Astra 會自動擴充並收縮持續磁碟區所屬的容量集區 1.5 倍。如此可確保有足夠的空間進行備份、而不會產生額外的永久性費用。請參閱<block ref="e77f243482d8cab01f119049bce61a15" category="inline-link-rx"></block> 以取得更多資訊。</block>
+  <block id="7d1e075c0879d28eb6f2e0dc2ca0c95d" category="section-title">1. 新增 Azure 訂閱識別碼</block>
+  <block id="842df53ed4115db6639f801f88098d30" category="admonition">您需要視環境而更新 JSON 輸入範例、包括服務主體的訂閱 ID 和 base64 值。</block>
+  <block id="e740ac68beb1aec839dcd6ebdf75bf51" category="section-title">2. 視需要新增貯體</block>
+  <block id="efdbcac27db1bf42436b1e2e15d5d0e5" category="paragraph">如有需要、您應將儲存庫新增至託管應用程式。</block>
+  <block id="31858496f01db3c4c122cda1f4614893" category="section-title">3. 備份託管應用程式</block>
+  <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">執行工作流程 <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>。原始持續磁碟區所在的容量集區將會自動擴充和縮小。</block>
+  <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4. 檢閱事件記錄</block>
+  <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">活動事件會在備份期間記錄。執行工作流程 <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> 以檢視訊息。</block>
+  <block id="2aeee044c45621f3427b4056855a973c" category="list-text">Astra Control Service 23.05</block>
+  <block id="a1a82e7175905cefa5377393fc5e0e4b" category="inline-link">Astra Control Service 23.05 文件</block>
+  <block id="87baaf02b03cc0785a4a9e2b89d4cdc4" category="list-text"><block ref="87baaf02b03cc0785a4a9e2b89d4cdc4" category="inline-link-rx"></block></block>
+  <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">2023 年 5 月 30 日（ 23.05 ）</block>
+  <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">您可以在還原或複製作業期間選取目的地儲存類別。</block>
+  <block id="5917ef890e9d60f9bf3cc41a2723766a" category="inline-link-macro">啟用動態 anf 集區</block>
+  <block id="10331a659c4281dea77fa4165e988593" category="paragraph">在具有 anf 儲存後端的私有內部部署叢集中備份受管理應用程式時、您現在可以提供訂閱 ID 來啟用動態 anf Pool 功能。請參閱 <block ref="0d6a3e3d7740d3989d225fce5dc1ad21" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
+  <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">存取參考文件</block>
 </blocks>

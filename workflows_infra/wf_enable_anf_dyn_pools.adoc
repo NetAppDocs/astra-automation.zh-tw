@@ -1,0 +1,89 @@
+---
+sidebar: sidebar 
+permalink: workflows_infra/wf_enable_anf_dyn_pools.html 
+keywords: Azure NetApp Files, ANF, dynamic ANF pools, subscription id 
+summary: 在具有 ANF 儲存後端的私有內部部署叢集中備份受管理應用程式時、您必須啟用動態 ANF 集區功能。這是透過提供訂閱 ID 來完成、以便在擴充和承包容量資源池時使用。 
+---
+= 為自我管理的叢集啟用動態 anf 集區
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在具有 ANF 儲存後端的私有內部部署叢集中備份受管理應用程式時、您必須啟用動態 ANF 集區功能。這是透過提供訂閱 ID 來完成、以便在擴充和承包容量資源池時使用。
+
+
+NOTE: 動態 anf 資源池是 Astra 託管應用程式的功能、使用 Azure NetApp Files （ anf ）儲存後端。在備份這些應用程式時、 Astra 會自動擴充並收縮持續磁碟區所屬的容量集區 1.5 倍。如此可確保有足夠的空間進行備份、而不會產生額外的永久性費用。請參閱 https://docs.netapp.com/us-en/astra-control-service/learn/azure-storage.html#application-backups["Azure 應用程式備份"^] 以取得更多資訊。
+
+
+
+=== 1. 新增 Azure 訂閱識別碼
+
+執行下列REST API呼叫。
+
+
+NOTE: 您需要視環境而更新 JSON 輸入範例、包括服務主體的訂閱 ID 和 base64 值。
+
+[cols="1,6"]
+|===
+| HTTP方法 | 路徑 
+
+
+| 貼文 | /Accounts /｛account_id｝/核心/ v1 /認證 
+|===
+.JSONN輸入範例
+[source, json]
+----
+{
+  "keyStore": {
+    "privKey": "SGkh",
+    "pubKey": "UGhpcyCpcyBhbiBleGFtcGxlLg==",
+    "base64": "fwogICAgJmFwcElkIjogIjY4ZmSiODFiLTY0YWYtNDdjNC04ZjUzLWE2NDdlZTUzMGZkZCIsCiAgICAiZGlzcGxheU5hbWUiOiAic3AtYXN0cmEtZGV2LXFhIiwKICAgICJuYW1lIjogImh0dHA6Ly9zcC1hc3RyYS1kZXYtcWEiLAogICAgInBhc3N3b3JkIjogIllLQThRfk9IVVJkZWZYM0pSTWJlLnpUeFBleVE0UnNwTG9DcUJjazAiLAogICAgInRlbmFudCI6ICIwMTFjZGY2Yy03NTEyLTQ3MDUtYjI0ZS03NzIxYWZkOGNhMzciLAogICAgInN1YnNjcmlwdGlvbklkIjogImIyMDAxNTVmLTAwMWEtNDNiZS04N2JlLTNlZGRlODNhY2VmNCIKfQ=="
+  },
+  "name": "myCert",
+  "type": "application/astra-credential",
+  "version": "1.1",
+  "metadata": {
+    "labels": [
+      {
+        "name": "astra.netapp.io/labels/read-only/credType",
+        "value": "service-account"
+      },
+      {
+        "name": "astra.netapp.io/labels/read-only/cloudName",
+        "value": "OCP"
+      },
+      {
+        "name": "astra.netapp.io/labels/read-only/azure/subscriptionID",
+        "value": "b212156f-001a-43be-87be-3edde83acef5"
+      }
+    ]
+  }
+}
+----
+.Curl範例
+[source, curl]
+----
+curl --location -i --request POST --data @JSONinput 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Content-Type: application/astra-credential+json'
+----
+
+
+=== 2. 視需要新增貯體
+
+如有需要、您應將儲存庫新增至託管應用程式。
+
+
+
+=== 3. 備份託管應用程式
+
+執行工作流程 link:../workflows/wf_create_backup.html["為應用程式建立備份"]。原始持續磁碟區所在的容量集區將會自動擴充和縮小。
+
+
+
+=== 4. 檢閱事件記錄
+
+活動事件會在備份期間記錄。執行工作流程 link:../workflows/wf_list_notifications.html["列出通知"] 以檢視訊息。

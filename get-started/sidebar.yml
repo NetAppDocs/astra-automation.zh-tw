@@ -13,4 +13,8 @@ entries:
 - title: Kubernetes基本概念
   url: "/get-started/kubernetes_concepts.html"
 - title: 線上API參考
-  url: "/get-started/online_api_ref.html"
+  entries:
+  - title: 存取參考文件
+    url: "/get-started/online_api_ref.html"
+  - title: 發出 Astra REST API 呼叫
+    url: "/get-started/online_api_call.html"
