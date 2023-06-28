@@ -27,7 +27,7 @@ NOTE: 每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號�
 .Astra Control部署
 本網站的文件適用於下列Astra Control版本：
 
-* Astra Control Service 23.05
+* Astra Control Service 23.06
 * Astra Control Center 23.04
 
 
@@ -37,7 +37,7 @@ NOTE: 每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號�
 * link:../rn/whats_new.html["Astra Control REST API的新功能"]
 * link:../endpoints/resources.html["閒置資源和端點"]
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center 23.04 文件"^]
-* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.05 文件"^]
+* https://docs.netapp.com/us-en/astra-control-service/["Astra Control Service 23.06 文件"^]
 * link:../aa-earlier-versions.html["舊版Astra Automation文件"]
 
 

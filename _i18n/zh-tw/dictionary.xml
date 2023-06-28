@@ -1141,7 +1141,6 @@
   <block id="ec23c88fbeb1dbd6e4036cbd90351825" category="paragraph">您可以新增叢集、以便由Astra管理。從Astra 22.11版開始、您可以使用Astra Control Center和Astra Control Service來新增叢集。</block>
   <block id="9f8189b17fcf187cb4416d8f8ee93490" category="cell">這些工作流程可透過Astra Control REST API存取可用的雲端。</block>
   <block id="80bcbd8aa7db0b3dfcedfd4388c73c17" category="paragraph">「*版本*」欄位會指出首次引進資源時的Astra版本。此欄位會以粗體顯示最近新增至REST API的資源。</block>
-  <block id="34d23ad383fb9597324019dc1045fabb" category="admonition">Astra Control REST API的23.01版本沒有新的已知問題。以下所述的任何問題均已在先前版本中發現、目前版本仍適用。</block>
   <block id="73e9416791f56a93d23840b6c27ae436" category="paragraph">請根據您的部署模式查看下列其中一頁。</block>
   <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Astra Control Service的已知問題</block>
   <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
@@ -1221,12 +1220,19 @@
   <block id="25e18fd10fb78e25d46577d809123272" category="paragraph">執行工作流程 <block ref="531c5c815f0a3a3ceb921ff9baf4d1b9" category="inline-link-macro-rx"></block>。原始持續磁碟區所在的容量集區將會自動擴充和縮小。</block>
   <block id="96422ff09af7e6fad796f820c7b0e17c" category="section-title">4. 檢閱事件記錄</block>
   <block id="5212b6690e36338eb93a0191226877d7" category="paragraph">活動事件會在備份期間記錄。執行工作流程 <block ref="0828f7558c056f6ee4409551e28d3465" category="inline-link-macro-rx"></block> 以檢視訊息。</block>
-  <block id="2aeee044c45621f3427b4056855a973c" category="list-text">Astra Control Service 23.05</block>
-  <block id="a1a82e7175905cefa5377393fc5e0e4b" category="inline-link">Astra Control Service 23.05 文件</block>
-  <block id="87baaf02b03cc0785a4a9e2b89d4cdc4" category="list-text"><block ref="87baaf02b03cc0785a4a9e2b89d4cdc4" category="inline-link-rx"></block></block>
   <block id="162c594ec970f3cd4eb2f6d6d2311381" category="section-title">2023 年 5 月 30 日（ 23.05 ）</block>
   <block id="3ecf6cf3aaad58d22b055973cbbae0d4" category="paragraph">您可以在還原或複製作業期間選取目的地儲存類別。</block>
   <block id="5917ef890e9d60f9bf3cc41a2723766a" category="inline-link-macro">啟用動態 anf 集區</block>
   <block id="10331a659c4281dea77fa4165e988593" category="paragraph">在具有 anf 儲存後端的私有內部部署叢集中備份受管理應用程式時、您現在可以提供訂閱 ID 來啟用動態 anf Pool 功能。請參閱 <block ref="0d6a3e3d7740d3989d225fce5dc1ad21" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
   <block id="157ecd713825d83c3595df6b4c0c11af" category="sidebar">存取參考文件</block>
+  <block id="33bb807546f543c0b9c58cf7b7e62a4c" category="section-title">2023 年 6 月 27 日（ 23.06 ）</block>
+  <block id="21e74b3c28d006317f38a2bc8eb1da3b" category="section-title">Azure Marketplace</block>
+  <block id="31553f2d81caf3af40330c67fcb7b3d6" category="inline-link">設定帳單</block>
+  <block id="58e46bdad56d44447c43649a3b5b4f7b" category="paragraph">Azure Marketplace 訂閱現在以每小時計費、而非每分鐘計費。另請參閱<block ref="633dc17422f08a9c882e1f52f9a90b82" category="inline-link-rx"></block>。</block>
+  <block id="8e926a216f6adb19574523270dec9729" category="section-title">還原最佳化</block>
+  <block id="a73241b184629bdaef0ee68446abeb15" category="paragraph">您可以使用旗標啟用重複備份的效能最佳化<block ref="6fb6e873ef6d6ac86ac763f089d95fa1" prefix=" " category="inline-code"></block> 全新的<block ref="4e513e9fe169e7733cdfe334575b2dec" prefix=" " category="inline-code"></block> 設定 API 資源。設定為時<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>的數量<block ref="47964ec30dfb028cc802262834e3577b" prefix=" " category="inline-code"></block> 將大型磁碟區備份至 Azure 容器時、這種重複使用會增加。對於 1TB 到 4TB 的磁碟區、則使用 128 個連線。若磁碟區大於 4TB 、則會使用 512 個後端連線。</block>
+  <block id="60bc44a6f8b10e394c8d7a408e94fecc" category="list-text">Astra Control Service 23.06</block>
+  <block id="3987948e759f27889fb63521255c084f" category="inline-link">Astra Control Service 23.06 文件</block>
+  <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
+  <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Astra Control REST API 的 23.06 版本沒有新的已知問題。以下所述的任何問題均已在先前版本中發現、目前版本仍適用。</block>
 </blocks>
