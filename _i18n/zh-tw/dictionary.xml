@@ -1193,7 +1193,6 @@
   <block id="f1fca9fdba2865f1e5e68171f8e501c8" category="list-text">將您的 API 權杖值複製並貼到快顯視窗的欄位中、然後按一下 * 授權 * 、再按一下 * 關閉 * 。</block>
   <block id="d77956bf312c489126fb210ac26e1560" category="list-text">向下捲動頁面並開啟所需的 API 呼叫。</block>
   <block id="640c9068a50bdac21a3ada93c538c020" category="list-text">按一下滑鼠右鍵 * 試用 * 。</block>
-  <block id="faa896405f051eeeb846ead40d365dcf" category="list-text">在相同的 API 呼叫中向下捲動、然後按一下 * 執行 * 。</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="5a698356ed60cc238c0048ecf6f15037" category="paragraph">執行 API 呼叫、並顯示 HTTP 狀態代碼。</block>
   <block id="e90840c9e835dabec4f6627d0ccddef2" category="paragraph">您需要認證才能登入 Astra 網路使用者介面進行部署。Astra Control Service 和 Astra Control Center 的參考文件存取程序相同。只有 URL 不同。存取和檢視參考文件不需要 API 權杖。</block>
@@ -1235,4 +1234,5 @@
   <block id="3987948e759f27889fb63521255c084f" category="inline-link">Astra Control Service 23.06 文件</block>
   <block id="8de8be2639041c77c0c0e3c2870c7446" category="list-text"><block ref="8de8be2639041c77c0c0e3c2870c7446" category="inline-link-rx"></block></block>
   <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Astra Control REST API 的 23.06 版本沒有新的已知問題。以下所述的任何問題均已在先前版本中發現、目前版本仍適用。</block>
+  <block id="db21e6fd52879394e8294f15387580ad" category="list-text">在相同的 API 呼叫中向下捲動。提供任何必要的參數值、然後按一下 * 執行 * 以發出呼叫。</block>
 </blocks>
