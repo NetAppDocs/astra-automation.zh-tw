@@ -18,6 +18,34 @@ NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功�
 
 
 
+== 2023 年 7 月 27 日（ 23.07 ）
+
+此版本包含 REST API 的選擇性增強功能。Astra Control Service 和 Astra Control Center 都已更新為 23.07 版本。
+
+
+
+=== 複製與複寫作業
+
+複製作業現在僅支援即時複製（託管應用程式的目前狀態）。若要從快照或備份複製、您需要使用還原作業。此外、應用程式現在也可以在同一個 Kubernetes 叢集內的 ONTAP 儲存後端之間複寫。
+
+
+
+=== 擴充儲存設備後端
+
+現在可以將額外的儲存後端與 Astra Control Center 搭配使用、包括：
+
+* 彈性配置中的 NetApp MetroCluster
+* https://longhorn.io/["Longhorn"^] 1.5.0 及更新版本
+
+
+
+
+=== 新的執行掛鉤類型
+
+Astra Control Center 提供新的執行掛鉤類型 * 容錯移轉後 * 。
+
+
+
 == 2023 年 6 月 27 日（ 23.06 ）
 
 此版本包含 REST API 的選擇性更新。
