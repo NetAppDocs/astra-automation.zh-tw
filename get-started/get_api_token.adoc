@@ -18,7 +18,7 @@ summary: 您需要取得Astra API權杖、才能使用Astra Control REST API。
 
 
 
-== 簡介
+== 總覽
 
 API權杖可識別Astra的呼叫者、且必須包含在每個REST API呼叫中。
 

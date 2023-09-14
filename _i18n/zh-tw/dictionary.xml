@@ -28,12 +28,9 @@
   <block id="18ea4b625687c7be99c38ace25c075e1" category="cell">系統會指定標籤、並允許存取所有相符的命名空間。</block>
   <block id="99910604d292e8754daf25a401bb8857" category="doc">撤銷API權杖</block>
   <block id="0f20f78dc9e61210d9143c555c8e2db8" category="paragraph">您可以在Astra Web介面上撤銷不再需要的API權杖。</block>
-  <block id="1e035d8ab99dbf14a530ceac5ef93e74" category="paragraph">您需要Astra帳戶。您也應該識別要撤銷的權杖。</block>
   <block id="c4f78d9edffd445c660b4325747b976a" category="paragraph">撤銷權杖之後、權杖會立即且永久地無法使用。</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">步驟</block>
-  <block id="c7937dcfe6d6141d399008b7df375246" category="list-text">使用您的帳戶認證登入Astra。</block>
   <block id="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link"><block ref="c3cd4b6e8352817aeaab7114fc20ee4d" category="inline-link-rx"></block></block>
-  <block id="6f38ef059f4b592ce26b99012c9d756d" category="paragraph">存取Astra Control Service的下列站台：<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
   <block id="7d88293618d45c51062ebb23f7a5777d" category="list-text">按一下頁面右上角的圖示、然後選取「* API access*（* API存取*）」。</block>
   <block id="6aec476981db1f529613506dbaf170dd" category="list-text">選取您要撤銷的權杖。</block>
   <block id="ae4a6c751a5ef4ed21296977cde2b309" category="list-text">在「*動作*」下拉式方塊下、按一下「*撤銷權杖*」。</block>
@@ -74,9 +71,7 @@
   <block id="c4fabb35d8b386aaa673c94aee7e69f2" category="inline-link-macro">閒置資源和端點</block>
   <block id="d8c5d8ee32fcd828c5197ddcb0a431b2" category="list-text"><block ref="d8c5d8ee32fcd828c5197ddcb0a431b2" category="inline-link-macro-rx"></block></block>
   <block id="fdd081f1598a50889ba0720484271938" category="inline-link-macro">舊版Astra Automation文件</block>
-  <block id="0cc206202c15e68cf39519791ed593a1" category="list-text"><block ref="0cc206202c15e68cf39519791ed593a1" category="inline-link-macro-rx"></block></block>
   <block id="95dc0391ce7b396d7dd5622284e8fc3e" category="doc">已知問題</block>
-  <block id="78ceba6718263592394adb03dc11471c" category="paragraph">您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。</block>
   <block id="c93cc787737ceea532bea714170e32cf" category="doc">Astra Control REST API的新功能</block>
   <block id="638191aa40b01d59e16da3223262a2ae" category="section-title">2022年4月26日（22.04）</block>
   <block id="0e7874b5c73e32ebc1ff07cc0f74f4d2" category="paragraph">此版本包括REST API的擴充與更新、以及增強的安全性與管理功能。</block>
@@ -205,15 +200,11 @@
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="summary">法律聲明提供版權聲明、商標、專利等存取權限。</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">法律聲明</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">版權</block>
-  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">商標</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp 標誌及 NetApp 商標頁面上列出的標章均為 NetApp 、 Inc. 的商標。其他公司與產品名稱可能為其各自所有者的商標。</block>
-  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
   <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">專利</block>
   <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">如需最新的 NetApp 擁有專利清單、請參閱：</block>
-  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">隱私權政策</block>
-  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="e81b0f8fae224ca0c3d3258b75a989dd" category="section-title">Astra Control API授權</block>
   <block id="f7c79ca7f13fd9da78390d5a97db7042" category="paragraph"><block ref="f7c79ca7f13fd9da78390d5a97db7042" category="inline-link-rx"></block></block>
   <block id="31862872c35b9509755103831963a7ff" category="paragraph">您可以存取更多資源、以取得協助、並尋找更多有關NetApp雲端服務與支援、以及一般REST與雲端概念的資訊。</block>
@@ -692,14 +683,12 @@
   <block id="1045f2798351223896fdab281a8307eb" category="sidebar">Astra Control Automation文件</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">舊版</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
-  <block id="d58b759501469292f5d0464d265c376c" category="sidebar">REST實作</block>
   <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">閒置資源與收藏</block>
   <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Astra API資源摘要</block>
   <block id="e6b088db24ebe67ed0e9567d309387ec" category="sidebar">工作流程</block>
   <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">準備</block>
   <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
   <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">以原生方式使用Python</block>
-  <block id="d75a5043a76ca76174481f399b106691" category="sidebar">其他使用考量</block>
   <block id="36b64aad8a26246fe3ad4116a2b6f289" category="sidebar">診斷</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
@@ -855,7 +844,6 @@
   <block id="4d3f5aacbe703c00b43aa62f3955f464" category="section-title">使用SnapMirror進行應用程式複寫</block>
   <block id="ecdbe161d2c7428016e927963a859b5c" category="paragraph">您現在可以使用NetApp SnapMirror技術、在叢集之間複寫資料和應用程式變更。這項增強功能可用來改善您的業務持續運作和恢復功能。</block>
   <block id="b0df0cbb0d80fcf4a587effd8b8f3f6a" category="sidebar">設定LDAP伺服器</block>
-  <block id="a941511c207017106c6b7b09e9dec884" category="summary">本網站的文件說明Astra Control REST API及Astra Control提供的相關自動化技術。</block>
   <block id="3f4fc4220755866f399810fee47c7884" category="inline-link-macro">GitHub貢獻者</block>
   <block id="2d388ce46646f517f31092dee87e1af6" category="paragraph">您可以在工作站的CLI上發出簡單的Curl命令、開始使用Astra Control REST API並確認其可用度。</block>
   <block id="35ae08a314ffffc02580e3c3fbfad924" category="sidebar">功能與優勢</block>
@@ -1141,7 +1129,6 @@
   <block id="ec23c88fbeb1dbd6e4036cbd90351825" category="paragraph">您可以新增叢集、以便由Astra管理。從Astra 22.11版開始、您可以使用Astra Control Center和Astra Control Service來新增叢集。</block>
   <block id="9f8189b17fcf187cb4416d8f8ee93490" category="cell">這些工作流程可透過Astra Control REST API存取可用的雲端。</block>
   <block id="80bcbd8aa7db0b3dfcedfd4388c73c17" category="paragraph">「*版本*」欄位會指出首次引進資源時的Astra版本。此欄位會以粗體顯示最近新增至REST API的資源。</block>
-  <block id="73e9416791f56a93d23840b6c27ae436" category="paragraph">請根據您的部署模式查看下列其中一頁。</block>
   <block id="eb6a5d80177fc44f1a834a5fac76b612" category="inline-link">Astra Control Service的已知問題</block>
   <block id="1a8244f3a147b8df7de50e9d16df07ac" category="list-text"><block ref="1a8244f3a147b8df7de50e9d16df07ac" category="inline-link-rx"></block></block>
   <block id="750f48353ffad2f2dc8aaad3df0d9144" category="list-text"><block ref="750f48353ffad2f2dc8aaad3df0d9144" category="inline-link-rx"></block></block>
@@ -1152,7 +1139,6 @@
   <block id="055a27c4d72ac10e8bf363a70b1218a0" category="paragraph">此版本包含REST API的次要更新。</block>
   <block id="fd681e19859abac8a0d1df0703c54996" category="section-title">利用篩選器強化執行掛勾功能</block>
   <block id="03612c2b7f26bb15fe2a8f56732f28ad" category="paragraph">使用執行掛勾時、您現在可以新增篩選器、以控制掛勾所對應的容器。如果您為單一執行掛勾建立多個篩選器、這些篩選器會與邏輯和運算子結合使用。每個執行掛機最多可定義10個作用中篩選器。</block>
-  <block id="ce3f3db7878407d89bb9f3e42409287c" category="paragraph">由於此站台記錄兩種部署模式的REST API、因此可能只有最近一次Astra Control Service版本才提供某些功能。這兩種部署模式之間的任何差異都會視需要記錄。</block>
   <block id="fdd9fe55f1a01a1ad085e5d6ce35c93b" category="paragraph">本網站的文件適用於下列Astra Control版本：</block>
   <block id="06661ae837df4aebc82db4f943f32dd7" category="paragraph">請參閱下列頁面和網站、以取得有關目前和先前Astra Control版本的詳細資訊。</block>
   <block id="6dbfc88df6a1c21e55d3430850d3bd1c" category="paragraph-title">協助我們改善文件</block>
@@ -1172,7 +1158,6 @@
   <block id="62a9da32071f678334a21060c67e7014" category="paragraph">以下是將 Kebeconfig 檔案從 YAML 轉換為 JSON 、然後在 base64 中編碼的範例：</block>
   <block id="013e0c333b0775d95a5c6579724b4b45" category="inline-link">Astra Control Automation 22.11 文件</block>
   <block id="52eabae058b28c969498b7a857c6879d" category="list-text"><block ref="52eabae058b28c969498b7a857c6879d" category="inline-link-rx"></block></block>
-  <block id="c41bf5dc0ae334cb95d5c9af7e04effd" category="paragraph">一般而言、Astra Control Service和Astra Control Center的更新會同時進行。不過、 Astra Control Service 的發行速度加快、可能會導致一或多個遞增更新、而不只是最新的 Astra Control Center 版本而已。</block>
   <block id="cdfde9b3972928d07d0aa9787e6589c3" category="section-title">2023 年 4 月 25 日（ 23.04 ）</block>
   <block id="05b8695ac535480ad4f4cf9e5bd4ecd2" category="paragraph">此版本包含 REST API 的選擇性更新。</block>
   <block id="a1dba4846637919a02bf180b636f6229" category="section-title">選擇性還原作業</block>
@@ -1225,7 +1210,6 @@
   <block id="58e46bdad56d44447c43649a3b5b4f7b" category="paragraph">Azure Marketplace 訂閱現在以每小時計費、而非每分鐘計費。另請參閱<block ref="633dc17422f08a9c882e1f52f9a90b82" category="inline-link-rx"></block>。</block>
   <block id="8e926a216f6adb19574523270dec9729" category="section-title">還原最佳化</block>
   <block id="a73241b184629bdaef0ee68446abeb15" category="paragraph">您可以使用旗標啟用重複備份的效能最佳化<block ref="6fb6e873ef6d6ac86ac763f089d95fa1" prefix=" " category="inline-code"></block> 全新的<block ref="4e513e9fe169e7733cdfe334575b2dec" prefix=" " category="inline-code"></block> 設定 API 資源。設定為時<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>的數量<block ref="47964ec30dfb028cc802262834e3577b" prefix=" " category="inline-code"></block> 將大型磁碟區備份至 Azure 容器時、這種重複使用會增加。對於 1TB 到 4TB 的磁碟區、則使用 128 個連線。若磁碟區大於 4TB 、則會使用 512 個後端連線。</block>
-  <block id="529552afdc21e1a01b8e807df92fe719" category="admonition">Astra Control REST API 的 23.06 版本沒有新的已知問題。以下所述的任何問題均已在先前版本中發現、目前版本仍適用。</block>
   <block id="db21e6fd52879394e8294f15387580ad" category="list-text">在相同的 API 呼叫中向下捲動。提供任何必要的參數值、然後按一下 * 執行 * 以發出呼叫。</block>
   <block id="7b36f358be6830020f92c7a96bc9ebb7" category="section-title">2023 年 7 月 27 日（ 23.07 ）</block>
   <block id="32b0cbc34ea58967e6c353f6c878e408" category="paragraph">此版本包含 REST API 的選擇性增強功能。Astra Control Service 和 Astra Control Center 都已更新為 23.07 版本。</block>
@@ -1238,7 +1222,6 @@
   <block id="1d64e26fe87f8846d60010aa3270a37f" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block> 1.5.0 及更新版本</block>
   <block id="e6ae92bcba1e3a36ef0b12b0f1ed5c53" category="section-title">新的執行掛鉤類型</block>
   <block id="00b87f63b5ab2f631053ae22c2cbadbd" category="paragraph">Astra Control Center 提供新的執行掛鉤類型 * 容錯移轉後 * 。</block>
-  <block id="6184061dd3b1b99309800d9a0000c740" category="paragraph">本網站的文件說明兩種 Astra Control 部署模式所隨附的 Astra Control REST API 和相關自動化技術、如下所述。</block>
   <block id="809951d75a5959408aaef7facffe73f1" category="admonition">每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、 Astra Control Center 23.07 於 2023 年 7 月發行。</block>
   <block id="685fab4e0f4afbe567f9410e426cf33b" category="list-text">Astra Control Service 23.07</block>
   <block id="20e97def7e9adb5021f4a28abe844ccf" category="list-text">Astra Control Center 23.07</block>
@@ -1248,4 +1231,25 @@
   <block id="119edfca8dd05a2365b25f221a07fa7d" category="list-text"><block ref="119edfca8dd05a2365b25f221a07fa7d" category="inline-link-rx"></block></block>
   <block id="43a62b176f718092748cfb8e6a9afa19" category="inline-link">Astra Control Automation 23.04 文件</block>
   <block id="da054b04f4f9b4f05d91fce1501f15ef" category="list-text"><block ref="da054b04f4f9b4f05d91fce1501f15ef" category="inline-link-rx"></block></block>
+  <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
+  <block id="a1a9afcf552a769c282769271829889a" category="paragraph"><block ref="a1a9afcf552a769c282769271829889a" category="inline-link-macro-rx"></block></block>
+  <block id="f99aa604031e5049799e73b5c3748a98" category="inline-link-macro"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
+  <block id="5d545fe5152641e2ebe654e336e520e5" category="paragraph"><block ref="5d545fe5152641e2ebe654e336e520e5" category="inline-link-macro-rx"></block></block>
+  <block id="88e5eabd3917048b6927c42496b98f86" category="inline-link-macro"><block ref="88e5eabd3917048b6927c42496b98f86" category="inline-link-rx"></block></block>
+  <block id="dd38f906b37d412de7d1c1dcf4cbf31c" category="paragraph"><block ref="dd38f906b37d412de7d1c1dcf4cbf31c" category="inline-link-macro-rx"></block></block>
+  <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
+  <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
+  <block id="561b378328b0d2bb9add930467a2bffd" category="paragraph">您需要認證才能登入 Astra 網路使用者介面進行部署。  您也應該識別要撤銷的權杖。</block>
+  <block id="f3cc9a8807405c26d51d9df37d490dd7" category="list-text">Astra Control 服務：<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
+  <block id="4bdd2ccefb2f03cc6285395d8c1ae399" category="summary">本網站的文件說明兩種 Astra Control 部署模式所隨附的 Astra Control REST API 和相關自動化技術。</block>
+  <block id="f61369f881218faa68ada1128b5d5854" category="paragraph-title">版本管理</block>
+  <block id="0dde93985fcf355fdbe3950194c0dd60" category="paragraph">Astra Control Service 和 Astra Control Center 的更新通常會同時進行。然而、過去 Astra Control Service 的發行速度加快了。這導致一或多個增量更新、超出最新的 Astra Control Center 版本。</block>
+  <block id="80eee0325102cbbe5624dd825f288da6" category="paragraph">由於此網站記錄了兩種部署模式的 REST API 、因此可能只有一種部署模式或另一種模式才能使用某些功能。這兩者之間的任何重大差異都會視需要記錄。</block>
+  <block id="d33e3df86964bc9c994984b08fd48e76" category="list-text"><block ref="d33e3df86964bc9c994984b08fd48e76" category="inline-link-macro-rx"></block></block>
+  <block id="5ef64ef4145885449a36757ad3925285" category="summary">您應該檢閱 Astra Control 目前版本的所有已知問題、以及相關的 REST API 。已知問題可識別可能導致您無法成功使用產品的問題。</block>
+  <block id="0158322c4aa7f21160a8bc5298e211b1" category="paragraph">您應該檢閱 Astra Control 目前版本的所有已知問題、以及相關的 REST API 。已知問題可識別可能導致您無法成功使用產品的問題。請根據您的部署模式、參閱下列其中一頁：</block>
+  <block id="90a5fcdce1500ecacc854f6c87061ce9" category="sidebar">Astra REST 實作</block>
+  <block id="4beba69037bd14812e726a2a137a8c7f" category="sidebar">核心 REST 設計</block>
+  <block id="43659ebbefa72dddc0bf81f83ff3645d" category="sidebar">資源摘要</block>
+  <block id="f8de52ebe15fa6f74d720087c5ea48fb" category="sidebar">核心設計</block>
 </blocks>

@@ -1,6 +1,6 @@
 ---
 section: rest-core
-title: 核心REST實作
+title: 核心設計
 entries:
 - title: REST Web服務
   url: "/rest-core/rest_web_services.html"

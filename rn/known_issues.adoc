@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: rn/known_issues.html 
 keywords: known issues, issues, bugs, fixes 
-summary: 您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。 
+summary: 您應該檢閱 Astra Control 目前版本的所有已知問題、以及相關的 REST API 。已知問題可識別可能導致您無法成功使用產品的問題。 
 ---
 = 已知問題
 :hardbreaks:
@@ -14,12 +14,7 @@ summary: 您應該檢閱Astra Control REST API目前版本的所有已知問題�
 
 
 [role="lead"]
-您應該檢閱Astra Control REST API目前版本的所有已知問題。已知問題可識別可能導致您無法成功使用產品的問題。
-
-
-NOTE: Astra Control REST API 的 23.06 版本沒有新的已知問題。以下所述的任何問題均已在先前版本中發現、目前版本仍適用。
-
-請根據您的部署模式查看下列其中一頁。
+您應該檢閱 Astra Control 目前版本的所有已知問題、以及相關的 REST API 。已知問題可識別可能導致您無法成功使用產品的問題。請根據您的部署模式、參閱下列其中一頁：
 
 * https://docs.netapp.com/us-en/astra-control-service/release-notes/known-issues.html["Astra Control Service的已知問題"^]
 * https://docs.netapp.com/us-en/astra-control-center/release-notes/known-issues.html["Astra Control Center的已知問題"^]
