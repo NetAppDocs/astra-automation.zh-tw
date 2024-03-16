@@ -10,8 +10,10 @@ settings:
     api_enabled: true
   rss_page: rn/whats_new.html
   versions:
-  - version-number: '23.10'
+  - version-number: '24.02'
     url: "/astra-automation"
+  - version-number: '23.10'
+    url: "/astra-automation-2310"
   - version-number: '23.07'
     url: "/astra-automation-2307"
   - version-number: '23.04'
@@ -46,56 +48,6 @@ sidebar:
   - section: information
   - title: 法律聲明
     url: "/legal-notices.html"
-homepage:
-  tiles:
-  - title: 開始使用
-    links:
-    - title: 總覽
-      url: "/intro/overview.html"
-    - title: 開始之前
-      url: "/get-started/before_get_started.html"
-    - title: 取得API權杖
-      url: "/get-started/get_api_token.html"
-    - title: 第一個API呼叫
-      url: "/get-started/first_call.html"
-  - title: 核心 REST 設計
-    links:
-    - title: REST Web服務
-      url: "/rest-core/rest_web_services.html"
-    - title: HTTP詳細資料
-      url: "/rest-core/http_details.html"
-    - title: URL格式
-      url: "/rest-core/url_format.html"
-  - title: 其他考量
-    links:
-    - title: RBAC安全性
-      url: "/additional/rbac.html"
-    - title: 使用集合
-      url: "/additional/work_with_collections.html"
-    - title: 診斷與支援
-      url: "/additional/diagnostics_support.html"
-    - title: 撤銷API權杖
-      url: "/additional/revoke_token.html"
-  - title: 資源
-    links:
-    - title: 閒置資源與收藏
-      url: "/rest-core/resources_collections.html"
-    - title: Astra API資源摘要
-      url: "/endpoints/resources.html"
-  - title: 工作流程
-    links:
-    - title: 準備
-      url: "/get-started/prepare_to_use_workflows.html"
-    - title: 基礎架構工作流程
-      url: "/workflows_infra/workflows_infra_before.html"
-    - title: 管理工作流程
-      url: "/workflows/workflows_before.html"
-  - title: Python
-    links:
-    - title: NetApp Astra Control Python SDK
-      url: "/python/astra_toolkits.html"
-    - title: 以原生方式使用Python
-      url: "/python/python_before.html"
 product-family:
   name: Astra
   repo: astra-family

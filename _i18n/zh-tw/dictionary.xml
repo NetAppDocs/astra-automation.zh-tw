@@ -683,12 +683,6 @@
   <block id="1045f2798351223896fdab281a8307eb" category="sidebar">Astra Control Automation文件</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">舊版</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
-  <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">閒置資源與收藏</block>
-  <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Astra API資源摘要</block>
-  <block id="e6b088db24ebe67ed0e9567d309387ec" category="sidebar">工作流程</block>
-  <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">準備</block>
-  <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
-  <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">以原生方式使用Python</block>
   <block id="36b64aad8a26246fe3ad4116a2b6f289" category="sidebar">診斷</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">版本資訊</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
@@ -1058,7 +1052,6 @@
   <block id="70679aeca94d2b828ca1dc6cda2ac994" category="list-text"><block ref="70679aeca94d2b828ca1dc6cda2ac994" category="inline-link-rx"></block></block>
   <block id="165fa9bdd003d8079831262d0360efc1" category="inline-link">Astra Control Automation 22.08文件</block>
   <block id="94ed7ec7b9510cd1e4664fbfe8a08329" category="list-text"><block ref="94ed7ec7b9510cd1e4664fbfe8a08329" category="inline-link-rx"></block></block>
-  <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">第一個API呼叫</block>
   <block id="013a127f643228c21ab6c9baf558cef5" category="sidebar">新增叢集</block>
   <block id="826f785c760529ceb6e978afdab2a9a7" category="sidebar">建立保護原則</block>
   <block id="25742c79c197ce7f0982652ead3bd964" category="section-title">其他工作流程</block>
@@ -1219,7 +1212,6 @@
   <block id="1d64e26fe87f8846d60010aa3270a37f" category="list-text"><block ref="1752f949f63eb1f41cea70be24a2a732" category="inline-link-rx"></block> 1.5.0 及更新版本</block>
   <block id="e6ae92bcba1e3a36ef0b12b0f1ed5c53" category="section-title">新的執行掛鉤類型</block>
   <block id="00b87f63b5ab2f631053ae22c2cbadbd" category="paragraph">Astra Control Center 提供新的執行掛鉤類型 * 容錯移轉後 * 。</block>
-  <block id="809951d75a5959408aaef7facffe73f1" category="admonition">每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號。此值會根據可用的年份（_Y__）和月份（_mm_）來識別版本。例如、 Astra Control Center 23.07 於 2023 年 7 月發行。</block>
   <block id="43a62b176f718092748cfb8e6a9afa19" category="inline-link">Astra Control Automation 23.04 文件</block>
   <block id="da054b04f4f9b4f05d91fce1501f15ef" category="list-text"><block ref="da054b04f4f9b4f05d91fce1501f15ef" category="inline-link-rx"></block></block>
   <block id="52009bb7ee17227f566cd26a02caee56" category="inline-link-macro"><block ref="52009bb7ee17227f566cd26a02caee56" category="inline-link-rx"></block></block>
@@ -1234,13 +1226,11 @@
   <block id="f3cc9a8807405c26d51d9df37d490dd7" category="list-text">Astra Control 服務：<block ref="0045c0d6f22ad59c53fc1e6d3b91c771" category="inline-link-rx"></block></block>
   <block id="4bdd2ccefb2f03cc6285395d8c1ae399" category="summary">本網站的文件說明兩種 Astra Control 部署模式所隨附的 Astra Control REST API 和相關自動化技術。</block>
   <block id="f61369f881218faa68ada1128b5d5854" category="paragraph-title">版本管理</block>
-  <block id="0dde93985fcf355fdbe3950194c0dd60" category="paragraph">Astra Control Service 和 Astra Control Center 的更新通常會同時進行。然而、過去 Astra Control Service 的發行速度加快了。這導致一或多個增量更新、超出最新的 Astra Control Center 版本。</block>
   <block id="80eee0325102cbbe5624dd825f288da6" category="paragraph">由於此網站記錄了兩種部署模式的 REST API 、因此可能只有一種部署模式或另一種模式才能使用某些功能。這兩者之間的任何重大差異都會視需要記錄。</block>
   <block id="d33e3df86964bc9c994984b08fd48e76" category="list-text"><block ref="d33e3df86964bc9c994984b08fd48e76" category="inline-link-macro-rx"></block></block>
   <block id="5ef64ef4145885449a36757ad3925285" category="summary">您應該檢閱 Astra Control 目前版本的所有已知問題、以及相關的 REST API 。已知問題可識別可能導致您無法成功使用產品的問題。</block>
   <block id="0158322c4aa7f21160a8bc5298e211b1" category="paragraph">您應該檢閱 Astra Control 目前版本的所有已知問題、以及相關的 REST API 。已知問題可識別可能導致您無法成功使用產品的問題。請根據您的部署模式、參閱下列其中一頁：</block>
   <block id="90a5fcdce1500ecacc854f6c87061ce9" category="sidebar">Astra REST 實作</block>
-  <block id="4beba69037bd14812e726a2a137a8c7f" category="sidebar">核心 REST 設計</block>
   <block id="43659ebbefa72dddc0bf81f83ff3645d" category="sidebar">資源摘要</block>
   <block id="f8de52ebe15fa6f74d720087c5ea48fb" category="sidebar">核心設計</block>
   <block id="b2753ac117117258ce5ba22aebd3a8a8" category="cell">22.1.</block>
@@ -1256,12 +1246,22 @@
   <block id="621ca655e0daef2645ca8111b3c531cc" category="paragraph">Astra Control 現在支援不可更改的唯讀備份、作為防範惡意軟體和其他威脅的額外安全層。</block>
   <block id="74e32fa10752727786230542db6f5350" category="section-title">增強對執行掛鉤的控制能力</block>
   <block id="2f2999f047197765442c0c74117bb5be" category="paragraph">從此版本開始、執行攔截功能可啟用或停用、以提高安全性（預設為停用）。如果您尚未建立與 Astra Control 搭配使用的執行攔截器、則需要啟用執行攔截器功能、才能開始建立攔截器。如果您在此版本之前建立了執行攔截器、則執行攔截器功能會保持啟用狀態、您可以像平常一樣使用攔截器。</block>
-  <block id="64d97a20d86a4938bc2f0ca6487991bf" category="list-text">Astra Control Service 23.10</block>
-  <block id="4646da7b1b74b708dde12727beab50a2" category="list-text">Astra Control Center 23.10</block>
-  <block id="fa73c4158a31e3bf65319a4cd45bd936" category="inline-link">Astra Control Center 23.10 文件</block>
-  <block id="5dcdce741516a1f5d54bd302aa84737e" category="list-text"><block ref="5dcdce741516a1f5d54bd302aa84737e" category="inline-link-rx"></block></block>
-  <block id="7d2e6602b95dd5d4d056964dea6dea4c" category="inline-link">Astra Control Service 23.10 文件</block>
-  <block id="5ef5b3f51e13355494fcdf46ca82fde4" category="list-text"><block ref="5ef5b3f51e13355494fcdf46ca82fde4" category="inline-link-rx"></block></block>
   <block id="319cbcbe823e54bc4431c0aeca14c9d6" category="inline-link">Astra Control Automation 23.07 文件</block>
   <block id="bff628185da3389d42f4449fd249480c" category="list-text"><block ref="bff628185da3389d42f4449fd249480c" category="inline-link-rx"></block></block>
+  <block id="8053414eb52e1996818bee3317a4c80b" category="section-title">2024 年 3 月 14 日（ 24.02 ）</block>
+  <block id="a5f2459676ba50b9da6c058ccbd5bc76" category="paragraph">Astra Control Service 和 Astra Control Center 都已隨 24.02 版本更新。</block>
+  <block id="35255425bea0e5bb9b43d5c6806d0df8" category="section-title">小錯誤修正</block>
+  <block id="39424c31b4c5741354b6ec5bfd9f110e" category="paragraph">24.02 版本主要著重於修正數個小錯誤。Astra Control API 未新增任何資源類型。</block>
+  <block id="88273195e6bf6e2b8a0e13648e5047ae" category="section-title">技術預覽：宣告式 Kubernetes 工作流程</block>
+  <block id="830f012ca90773e40cbe1216d249795b" category="paragraph">Astra Control Center 24.02 包含宣告式 Kubernetes 功能、可讓您從原生 Kubernetes 自訂資源（ CR ）執行資料管理。此功能尚未普遍提供。請參閱<block ref="b0515e8b7b46d83fe943d8f3ca4602ba" category="inline-link-rx"></block> 如有需要、可取得更多資訊。</block>
+  <block id="5b6906a11af67ab437cebb35ce37666a" category="paragraph">每個 Astra Control 版本都會指派格式為 *YY.mm* 的版本編號。一般而言、此值會根據可用的年份（ _YY_ ）和月份（ _mm_ ）來識別 Astra 版本。例如、 Astra Control Center 23.07 於 2023 年 7 月發行。</block>
+  <block id="60da41e76ad106913eecb1da9106bd42" category="paragraph">Astra Control Service 和 Astra Control Center 的更新通常會同時進行。然而、過去 Astra Control Service 的發行速度加快了。這導致主要 Astra Control Center 版本之間有一或多個遞增更新。</block>
+  <block id="ee4417330da16f81921d54a408aae37b" category="list-text">Astra Control Service 24.02</block>
+  <block id="984b3f2546572ca2b1fd8de4013c1882" category="list-text">Astra Control Center 24.02</block>
+  <block id="5ab109fbab91ad9ade1835c318286e64" category="inline-link">Astra Control Center 24.02 文件</block>
+  <block id="9ec89e483777b281c0d114e1ed0c8c8f" category="list-text"><block ref="9ec89e483777b281c0d114e1ed0c8c8f" category="inline-link-rx"></block></block>
+  <block id="ee89a8c8a8c4124e1c47b50f7d6c8420" category="inline-link">Astra Control Service 24.02 文件</block>
+  <block id="ad688d9042062312f59460f99f7f7881" category="list-text"><block ref="ad688d9042062312f59460f99f7f7881" category="inline-link-rx"></block></block>
+  <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Astra Control Automation 23.10 文件</block>
+  <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
 </blocks>

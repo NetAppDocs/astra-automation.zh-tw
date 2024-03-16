@@ -18,6 +18,24 @@ NetApp會定期更新Astra Control REST API、為您帶來新功能、增強功�
 
 
 
+== 2024 年 3 月 14 日（ 24.02 ）
+
+Astra Control Service 和 Astra Control Center 都已隨 24.02 版本更新。
+
+
+
+=== 小錯誤修正
+
+24.02 版本主要著重於修正數個小錯誤。Astra Control API 未新增任何資源類型。
+
+
+
+=== 技術預覽：宣告式 Kubernetes 工作流程
+
+Astra Control Center 24.02 包含宣告式 Kubernetes 功能、可讓您從原生 Kubernetes 自訂資源（ CR ）執行資料管理。此功能尚未普遍提供。請參閱 https://docs.netapp.com/us-en/astra-control-center/release-notes/whats-new.html["Astra Control Center：最新消息"^] 如有需要、可取得更多資訊。
+
+
+
 == 2023 年 11 月 7 日（ 23.10 ）
 
 Astra Control Service 和 Astra Control Center 都已更新為 23.10 版本。REST API 有選擇性的增強功能、可支援新功能。
