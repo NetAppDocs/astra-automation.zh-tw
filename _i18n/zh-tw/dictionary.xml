@@ -52,7 +52,6 @@
   <block id="b9df3bfca1810fb5992aadc53d6c5f6e" category="cell">被視為重要的事件子集、足以呈現給使用者。</block>
   <block id="3d74270bce6df5c461068acd3992d1bd" category="cell">未讀取通知</block>
   <block id="0f15555c27239decf2cb19f7c4f55045" category="cell">使用者尚未讀取或擷取的通知。</block>
-  <block id="1a0ca7f0a5aea880c24d544b4655d6ed" category="doc">Astra Control Automation文件</block>
   <block id="640575a1239211b2cdac8d24cbd8fe4e" category="paragraph">Astra Control Center和Astra Control Service提供通用的REST API、可讓您直接透過編程語言或Curl等公用程式存取。API的主要重點和優點如下所示。</block>
   <block id="351df3aa3706c8ed2199a8019e815c0c" category="admonition">若要存取REST API、您必須先登入Astra網路使用者介面、然後產生API權杖。您必須在每個API要求中加入權杖。</block>
   <block id="6c38ead9bdb25d09c6e504c53fc268a5" category="paragraph">Astra Control API是使用REST技術和目前最佳實務做法所建立。核心技術包括HTTP、Json及RBAC。</block>
@@ -1264,4 +1263,5 @@
   <block id="ad688d9042062312f59460f99f7f7881" category="list-text"><block ref="ad688d9042062312f59460f99f7f7881" category="inline-link-rx"></block></block>
   <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Astra Control Automation 23.10 文件</block>
   <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
+  <block id="0b11ef934b0c996ff94917743f4e7c1c" category="doc">Astra Control Automation 24.02 文件</block>
 </blocks>
