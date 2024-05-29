@@ -1264,4 +1264,12 @@
   <block id="2ce5679e796a226301682da2e8eb77f6" category="inline-link">Astra Control Automation 23.10 文件</block>
   <block id="b59949e755b5f42564828ce536cb3b96" category="list-text"><block ref="b59949e755b5f42564828ce536cb3b96" category="inline-link-rx"></block></block>
   <block id="0b11ef934b0c996ff94917743f4e7c1c" category="doc">Astra Control Automation 24.02 文件</block>
+  <block id="547abae9d6ca9df339ec4543e220ab8e" category="sidebar">第一個API呼叫</block>
+  <block id="4beba69037bd14812e726a2a137a8c7f" category="sidebar">核心 REST 設計</block>
+  <block id="b4ec6b7393a41bf5e5870f1ce48009e5" category="sidebar">閒置資源與收藏</block>
+  <block id="f38713c0367843938a57ef219a3bfbfc" category="sidebar">Astra API資源摘要</block>
+  <block id="e6b088db24ebe67ed0e9567d309387ec" category="sidebar">工作流程</block>
+  <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="sidebar">準備</block>
+  <block id="a7f5f35426b927411fc9231b56382173" category="sidebar">Python</block>
+  <block id="ea1c0b8e4018f75659e26eb720b206e5" category="sidebar">以原生方式使用Python</block>
 </blocks>
