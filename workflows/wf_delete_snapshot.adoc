@@ -18,7 +18,7 @@ summary: 您可以刪除與應用程式相關的快照。
 
 
 
-=== 開始之前
+== 開始之前
 
 您必須具備下列條件：
 
@@ -28,9 +28,12 @@ summary: 您可以刪除與應用程式相關的快照。
 
 
 
-=== 1.刪除快照
+== 刪除快照
 
 執行下列REST API呼叫。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -39,10 +42,7 @@ summary: 您可以刪除與應用程式相關的快照。
 
 | 刪除 | /accounts/{aper_id}/k8s/v1/apps/｛app_id｝/應用程式快照/｛appsnap_id｝ 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="25,10,10,55"]
@@ -55,11 +55,12 @@ summary: 您可以刪除與應用程式相關的快照。
 
 | Snapshot ID | 路徑 | 是的 | 識別要刪除的快照。 
 |===
-
-
-===== Curl範例：刪除應用程式的單一快照
-
+.Curl範例：刪除應用程式的單一快照
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps/<SNAPSHOT_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps/<SNAPSHOT_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

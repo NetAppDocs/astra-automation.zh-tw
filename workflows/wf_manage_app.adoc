@@ -18,21 +18,24 @@ summary: 您可以在特定命名空間中、根據Astra已知的應用程式來
 
 
 
-=== 1.選取命名空間
+== 步驟 1 ：選取命名空間
 
 執行工作流程 link:../workflows/wf_list_namespaces.html["列出命名空間"] 然後選取命名空間。
 
 
 
-=== 2.選取叢集
+== 步驟 2 ：選取叢集
 
 執行工作流程 link:../workflows_infra/wf_list_clusters.html["列出叢集"] 然後選取叢集。
 
 
 
-=== 3.管理應用程式
+== 步驟 3 ：管理應用程式
 
 執行下列REST API呼叫來管理應用程式。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -41,10 +44,7 @@ summary: 您可以在特定命名空間中、根據Astra已知的應用程式來
 
 | 貼文 | /Accounts /｛account_id｝/k8s/v2/apps 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="25,10,10,55"]
@@ -54,10 +54,18 @@ summary: 您可以在特定命名空間中、根據Astra已知的應用程式來
 
 | JSON | 本文 | 是的 | 提供識別要管理之應用程式所需的參數。請參閱以下範例。 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例：管理應用程式
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -67,12 +75,4 @@ summary: 您可以在特定命名空間中、根據Astra已知的應用程式來
   "type": "application/astra-app",
   "version": "2.0"
 }
-----
-
-
-===== Curl範例：管理應用程式
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'  --data @JSONinput
 ----

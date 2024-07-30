@@ -18,7 +18,7 @@ summary: 您可以從備份複製新的應用程式、以建立新的應用程�
 
 
 
-=== 開始之前
+== 開始之前
 
 請注意下列關於此工作流程的資訊：
 
@@ -31,21 +31,24 @@ NOTE: 若要將應用程式複製到不同的叢集、您必須視環境的需�
 
 
 
-=== 1.選取要複製的應用程式
+== 步驟 1 ：選取要複製的應用程式
 
 執行工作流程 link:wf_list_man_apps.html["列出應用程式"] 並選取您要複製的應用程式。用於複製應用程式的REST呼叫需要幾個資源值。
 
 
 
-=== 2.選取要使用的備份
+== 步驟 2 ：選取要使用的備份
 
 執行工作流程 link:wf_list_backups.html["列出備份"] 並選取您要使用的備份。
 
 
 
-=== 3.複製應用程式
+== 步驟 3 ：複製應用程式
 
 執行下列REST API呼叫。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -54,10 +57,7 @@ NOTE: 若要將應用程式複製到不同的叢集、您必須視環境的需�
 
 | 貼文 | /Accounts /｛account_id｝/k8s/v2/qpps 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="25,10,10,55"]
@@ -67,10 +67,18 @@ NOTE: 若要將應用程式複製到不同的叢集、您必須視環境的需�
 
 | JSON | 本文 | 是的 | 提供複製應用程式的參數。請參閱以下範例。 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例：從備份複製應用程式
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v2/apps" \
+--include \
+--header "Content-Type: application/astra-app+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -82,12 +90,4 @@ NOTE: 若要將應用程式複製到不同的叢集、您必須視環境的需�
   "namespace": "mysql",
   "backupID": "e24515bd-a28e-4b28-b832-f3c74dbf32fb"
 }
-----
-
-
-===== Curl範例：從備份複製應用程式
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v2/apps' --header 'Content-Type: application/astra-app+json' --header '*/*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

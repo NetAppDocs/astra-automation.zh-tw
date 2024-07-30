@@ -18,13 +18,13 @@ summary: 您可以管理Kubernetes叢集、以便執行資料保護作業。
 
 
 
-=== 1.選取要管理的叢集
+== 步驟 1 ：選取要管理的叢集
 
 執行工作流程 link:../workflows_infra/wf_list_clusters.html["列出叢集"] 然後選取所需的叢集。屬性 `managedState` 叢集必須是 `unmanaged`。
 
 
 
-=== 2.（可選）選擇儲存類別
+== 步驟 2 ：選擇性地選取儲存類別
 
 （可選）執行工作流程 link:../workflows_infra/wf_list_storage_classes.html["列出儲存類別"] 並選擇所需的儲存類別。
 
@@ -33,9 +33,12 @@ NOTE: 如果您未在通話中提供儲存類別來管理叢集、將會使用�
 
 
 
-=== 3.管理叢集
+== 步驟 3 ：管理叢集
 
 執行下列REST API呼叫來管理叢集。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -44,10 +47,17 @@ NOTE: 如果您未在通話中提供儲存類別來管理叢集、將會使用�
 
 | 貼文 | /Accounts /｛account_id｝/拓撲/ v1/managedClusters 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -55,12 +65,4 @@ NOTE: 如果您未在通話中提供儲存類別來管理叢集、將會使用�
   "version": "1.0",
   "id": "d0fdf455-4330-476d-bb5d-4d109714e07d"
 }
-----
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

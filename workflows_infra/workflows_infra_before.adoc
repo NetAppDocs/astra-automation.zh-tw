@@ -4,7 +4,7 @@ permalink: workflows_infra/workflows_infra_before.html
 keywords: workflows, infrastructure workflows, preparation 
 summary: 您可以使用這些工作流程來建立及維護Astra Control Center部署所使用的基礎架構。在許多情況下、工作流程也可搭配Astra Control Service使用。 
 ---
-= 開始之前
+= 準備使用基礎架構工作流程
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

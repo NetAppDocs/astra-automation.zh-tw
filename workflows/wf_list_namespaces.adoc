@@ -16,11 +16,10 @@ summary: 您可以列出可用的命名空間。
 [role="lead"]
 您可以列出可用的命名空間。
 
-
-
-=== 1.列出命名空間
-
 執行下列REST API呼叫、以列出命名空間。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -29,27 +28,26 @@ summary: 您可以列出可用的命名空間。
 
 | 取得 | /Accounts /｛account_id｝/拓撲/ v1/命名 空間 
 |===
-
-
-===== Curl範例：傳回所有命名空間的所有資料
-
+.Curl範例：傳回所有命名空間的所有資料
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/namespaces' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/namespaces" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Curl範例：所有命名空間的傳回名稱、狀態和叢集ID
-
+.Curl範例：所有命名空間的傳回名稱、狀態和叢集ID
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/namespaces?include=name,namespaceState,clusterID' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/namespaces?include=name,namespaceState,clusterID" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Json輸出範例
-
-[source, json]
+.Json輸出範例
+[listing]
 ----
 {
     "items": [

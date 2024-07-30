@@ -18,15 +18,18 @@ summary: 您可以為特定應用程式建立備份、然後使用備份來還�
 
 
 
-=== 開始之前
+== 開始之前
 
 您必須擁有要備份的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
-=== 1.建立備份
+== 建立備份
 
 執行下列REST API呼叫。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 您可以為特定應用程式建立備份、然後使用備份來還�
 
 | 貼文 | /Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="25,10,10,55"]
@@ -51,10 +51,18 @@ summary: 您可以為特定應用程式建立備份、然後使用備份來還�
 
 | JSON | 本文 | 是的 | 提供備份參數。請參閱以下範例。 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例：為應用程式建立備份
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include \
+--header "Content-Type: application/astra-appBackup+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -62,12 +70,4 @@ summary: 您可以為特定應用程式建立備份、然後使用備份來還�
   "version": "1.1",
   "name": "backup-david-1"
 }
-----
-
-
-===== Curl範例：為應用程式建立備份
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Content-Type: application/astra-appBackup+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

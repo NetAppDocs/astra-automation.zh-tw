@@ -16,11 +16,10 @@ summary: 您可以列出已定義的雲端、以及可用的特定Astra帳戶。
 [role="lead"]
 您可以列出已定義的雲端、以及可用的特定Astra帳戶。
 
-
-
-=== 1.列出雲端
-
 執行下列REST API呼叫、以列出雲端。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ summary: 您可以列出已定義的雲端、以及可用的特定Astra帳戶。
 
 | 取得 | /Accounts /｛account_id｝/拓撲/ v1/v雲端 
 |===
-
-
-===== Curl範例：傳回所有雲端的所有資料
-
+.Curl範例：傳回所有雲端的所有資料
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

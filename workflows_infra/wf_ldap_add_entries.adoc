@@ -33,9 +33,12 @@ NOTE: LDAP認證資料的形式為使用者名稱、電子郵件地址及相關�
 
 
 
-=== 1.新增使用者
+=== 步驟 1 ：新增使用者
 
 執行下列REST API呼叫、將使用者新增至Astra、並指出LDAP為驗證提供者。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -44,10 +47,18 @@ NOTE: LDAP認證資料的形式為使用者名稱、電子郵件地址及相關�
 
 | 貼文 | /Accounts /｛account_id｝/核心/ v1 /使用者 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/users" \
+--include \
+--header "Content-Type: application/astra-user+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -75,19 +86,8 @@ NOTE: LDAP認證資料的形式為使用者名稱、電子郵件地址及相關�
 
 如果「電子郵件」值並非唯一、則會發生錯誤、並傳回回應中的409 HTTP狀態代碼。
 
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/users' --header 'Content-Type: application/astra-user+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSONN回應範例
-
-[source, json]
+.Json輸出範例
+[listing]
 ----
 {
   "metadata": {
@@ -123,9 +123,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2.新增使用者的角色繫結
+=== 步驟 2 ：新增使用者的角色繫結
 
 執行下列REST API呼叫、將使用者繫結至特定角色。您必須擁有上一步建立的使用者UUID。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -134,10 +137,18 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 | 貼文 | /Accounts /｛account_id｝/核心/ v1/roleBindings 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Content-Type: application/astra-roleBinding+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -154,19 +165,8 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 * 上述「RoleConstraint」的值是目前Astra版本唯一可用的選項。這表示使用者不受限於一組有限的命名空間、而且可以全部存取。
 
 
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSONN回應範例
-
-[source, json]
+.JSONN回應範例
+[listing]
 ----
 {
   "metadata": {
@@ -199,9 +199,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 
 
-=== 1.新增群組
+=== 步驟 1 ：新增群組
 
 執行下列REST API呼叫、將群組新增至Astra、並指出LDAP為驗證提供者。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -210,10 +213,18 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 | 貼文 | /Accounts /｛account_id｝/核心/ v1/Groups 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/groups" \
+--include \
+--header "Content-Type: application/astra-group+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -234,19 +245,8 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 
 
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/groups' --header 'Content-Type: application/astra-group+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSONN回應範例
-
-[source, json]
+.JSONN回應範例
+[listing]
 ----
 {
   "type": "application/astra-group",
@@ -265,9 +265,12 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 ----
 
 
-=== 2.新增群組的角色繫結
+=== 步驟 2 ：新增群組的角色繫結
 
 執行下列REST API呼叫、將群組繫結至特定角色。您必須擁有上一步建立的群組UUID。在LDAP執行驗證之後、屬於群組成員的使用者將能夠登入Astra。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -276,10 +279,18 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 
 | 貼文 | /Accounts /｛account_id｝/核心/ v1/roleBindings 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/roleBindings" \
+--include \
+--header "Content-Type: application/astra-roleBinding+json" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -296,19 +307,8 @@ curl --location -i --request POST --data @JSONinput 'https://astra.example.com/a
 * 上述「RoleConstraint」的值是目前Astra版本唯一可用的選項。這表示使用者不受限於特定命名空間、而且可以全部存取。
 
 
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/roleBindings' --header 'Content-Type: application/astra-roleBinding+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-
-
-===== JSONN回應範例
-
-[source, json]
+.JSONN回應範例
+[listing]
 ----
 {
   "metadata": {

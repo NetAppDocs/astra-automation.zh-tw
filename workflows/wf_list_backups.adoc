@@ -18,15 +18,18 @@ summary: 您可以列出已為特定應用程式建立的備份。
 
 
 
-=== 開始之前
+== 開始之前
 
 您必須擁有想要列出備份的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
-=== 1.列出備份
+== 列出備份
 
 執行下列REST API呼叫。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 您可以列出已為特定應用程式建立的備份。
 
 | 取得 | /Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/appBackups 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="25,10,10,55"]
@@ -48,19 +48,17 @@ summary: 您可以列出已為特定應用程式建立的備份。
 
 | 應用程式ID | 路徑 | 是的 | 識別擁有所列備份的託管應用程式。 
 |===
-
-
-===== Curl範例：傳回應用程式的所有備份
-
+.Curl範例：傳回應用程式的所有備份
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups" \
+--include  \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Json輸出範例
-
-[source, json]
+.Json輸出範例
+[listing]
 ----
 {
     "items": [

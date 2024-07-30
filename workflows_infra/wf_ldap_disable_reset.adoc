@@ -28,6 +28,9 @@ summary: 您可以視需要執行兩項選用的相關管理工作、以進行As
 
 您可以執行下列REST API呼叫、以全域停用特定Astra部署的LDAP驗證。通話會更新「Astra帳戶.LDAP」設定、而「isEnabled」值則會設為「假」。
 
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
+
 [cols="1,6"]
 |===
 | HTTP方法 | 路徑 
@@ -35,10 +38,17 @@ summary: 您可以視需要執行兩項選用的相關管理工作、以進行As
 
 | 放入 | /Accounts /｛account_id｝/核心/ v1/settings /｛setting_id｝ 
 |===
-
-
-===== JSONN輸入範例
-
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Content-Type: application/astra-setting+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -57,10 +67,6 @@ summary: 您可以視需要執行兩項選用的相關管理工作、以進行As
     }
 }
 ----
-[source, curl]
-----
-curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
 如果通話成功、就會傳回「HTTP 204」回應。您可以選擇再次擷取組態設定以確認變更。
 
 
@@ -74,6 +80,9 @@ curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/ac
 
 CAUTION: 這是一項顛覆性的作業、您應該謹慎進行。它會刪除所有匯入的LDAP使用者和群組。它也會刪除您在Astra Control Center中建立的所有相關Astra使用者、群組和角色繫結（LDAP類型）。
 
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
+
 [cols="1,6"]
 |===
 | HTTP方法 | 路徑 
@@ -81,10 +90,17 @@ CAUTION: 這是一項顛覆性的作業、您應該謹慎進行。它會刪除�
 
 | 放入 | /Accounts /｛account_id｝/核心/ v1/settings /｛setting_id｝ 
 |===
-
-
-===== JSONN輸入範例
-
+[source, curl]
+----
+curl --request PUT \
+--location "https://astra.example.com/accounts/$ACCOUNT_ID/core/v1/settings/<SETTING_ID>" \
+--include \
+--header "Content-Type: application/astra-setting+json"
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -106,10 +122,5 @@ CAUTION: 這是一項顛覆性的作業、您應該謹慎進行。它會刪除�
 請注意下列事項：
 
 * 若要變更LDAP伺服器、您必須停用並重設LDAP、將「connectHost」變更為null值、如上例所示。
+* 如果通話成功、就會傳回「HTTP 204」回應。您可以選擇再次擷取組態以確認變更。
 
-
-[source, curl]
-----
-curl --location -i --request PUT --data @JSONinput 'https://astra.example.com/accounts/<ACCOUNT_ID>/core/v1/settings/<SETTING_ID>' --header 'Content-Type: application/astra-setting+json' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
-----
-如果通話成功、就會傳回「HTTP 204」回應。您可以選擇再次擷取組態以確認變更。

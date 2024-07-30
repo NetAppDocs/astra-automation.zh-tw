@@ -18,15 +18,18 @@ summary: 您可以在特定雲端中列出可用的叢集。
 
 
 
-=== 1.選取雲端
+== 步驟 1 ：選擇雲端
 
 執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 然後選取包含叢集的雲端。
 
 
 
-=== 2.列出叢集
+== 步驟 2 ：列出叢集
 
 執行下列REST API呼叫、以列出特定雲端中的叢集。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -35,19 +38,17 @@ summary: 您可以在特定雲端中列出可用的叢集。
 
 | 取得 | /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集 
 |===
-
-
-===== Curl範例：傳回所有叢集的所有資料
-
+.Curl範例：傳回所有叢集的所有資料
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Json輸出範例
-
-[source, json]
+.Json輸出範例
+[listing]
 ----
 {
     "items": [

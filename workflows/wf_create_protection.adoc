@@ -18,15 +18,18 @@ summary: 您可以根據一或多個排程來建立資料保護原則。
 
 
 
-=== 1.選取應用程式
+== 步驟 1 ：選取應用程式
 
 執行工作流程 link:../workflows/wf_list_man_apps.html["列出應用程式"] 並選取所需的應用程式。
 
 
 
-=== 2.建立保護機制
+== 步驟 2 ：建立保護
 
 執行下列REST API呼叫、為特定應用程式建立保護原則。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -35,10 +38,17 @@ summary: 您可以根據一或多個排程來建立資料保護原則。
 
 | 貼文 | /Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/排程 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
+[source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/schedules" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
 [source, json]
 ----
 {
@@ -53,12 +63,4 @@ summary: 您可以根據一或多個排程來建立資料保護原則。
   "snapshotRetention": "12",
   "backupRetention": "12"
 }
-----
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/schedules' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

@@ -16,11 +16,10 @@ summary: 您可以列出針對特定Astra帳戶所定義的S3儲存區。
 [role="lead"]
 您可以列出針對特定Astra帳戶所定義的S3儲存區。
 
-
-
-=== 1.列出庫存箱
-
 執行下列REST API呼叫、以列出儲存區。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -29,11 +28,12 @@ summary: 您可以列出針對特定Astra帳戶所定義的S3儲存區。
 
 | 取得 | /Accounts /｛account_id｝/拓撲/ v1/buckets 
 |===
-
-
-===== Curl範例：傳回所有儲存區的所有資料
-
+.Curl範例：傳回所有儲存區的所有資料
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/buckets' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/buckets" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

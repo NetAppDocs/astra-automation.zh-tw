@@ -18,21 +18,24 @@ summary: 您可以列出可用的儲存類別。
 
 
 
-=== 1.選取雲端
+== 步驟 1 ：選擇雲端
 
 執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 並選擇您要使用的雲端。
 
 
 
-=== 2.選取叢集
+== 步驟 2 ：選取叢集
 
 執行工作流程 link:../workflows_infra/wf_list_clusters.html["列出叢集"] 然後選取叢集。
 
 
 
-=== 3.列出特定叢集的儲存類別
+== 步驟 3 ：列出特定叢集的儲存類別
 
 執行下列REST API呼叫、列出特定叢集和雲端的儲存類別。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -41,19 +44,17 @@ summary: 您可以列出可用的儲存類別。
 
 | 取得 | /accounts/{account_id}/topology / v1/ves/setf/setles/wes/sets/wese/storageClasses <CLUSTER_ID> <CLOUD_ID> 
 |===
-
-
-===== Curl範例：傳回所有儲存類別的所有資料
-
+.Curl範例：傳回所有儲存類別的所有資料
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters/<CLUSTER_ID>/storageClasses" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Json輸出範例
-
-[source, json]
+.Json輸出範例
+[listing]
 ----
 {
     "items": [

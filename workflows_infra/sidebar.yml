@@ -2,7 +2,7 @@
 section: workflows_infra
 title: 基礎架構工作流程
 entries:
-- title: 開始之前
+- title: 準備使用基礎架構工作流程
   url: "/workflows_infra/workflows_infra_before.html"
 - title: 身分識別與存取
   entries:

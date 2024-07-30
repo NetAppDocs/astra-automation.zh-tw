@@ -18,15 +18,18 @@ summary: 您可以列出針對特定應用程式所拍攝的快照。
 
 
 
-=== 開始之前
+== 開始之前
 
 您必須擁有要列出快照的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
-=== 1.列出快照
+== 列出快照
 
 執行下列REST API呼叫、以列出快照。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -35,10 +38,7 @@ summary: 您可以列出針對特定應用程式所拍攝的快照。
 
 | 取得 | /Accounts /｛account_id｝/k8s/v1/apps/｛app_id｝/應用程式快照 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="15,10,10,65"]
@@ -51,27 +51,26 @@ summary: 您可以列出針對特定應用程式所拍攝的快照。
 
 | 數 | 查詢 | 否 | 如果是「count=true」、快照數量會包含在回應的中繼資料區段中。 
 |===
-
-
-===== Curl範例：傳回應用程式的所有快照
-
+.Curl範例：傳回應用程式的所有快照
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Curl範例：傳回應用程式和計數的所有快照
-
+.Curl範例：傳回應用程式和計數的所有快照
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appSnaps?count=true' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appSnaps?count=true" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Json輸出範例
-
-[source, json]
+.Json輸出範例
+[listing]
 ----
 {
     "items": [

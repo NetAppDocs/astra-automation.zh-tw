@@ -16,11 +16,10 @@ summary: 您可以列出目前由Astra管理的Kubernetes叢集。
 [role="lead"]
 您可以列出目前由Astra管理的Kubernetes叢集。
 
-
-
-=== 1.列出託管叢集
-
 執行下列REST API呼叫。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="1,6"]
 |===
@@ -29,11 +28,12 @@ summary: 您可以列出目前由Astra管理的Kubernetes叢集。
 
 | 取得 | /Accounts /｛account_id｝/拓撲/ v1/managedClusters 
 |===
-
-
-===== Curl範例：傳回所有叢集的所有資料
-
+.Curl範例：傳回所有叢集的所有資料
 [source, curl]
 ----
-curl --location -i --request GET 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/managedClusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request GET \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/managedClusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----

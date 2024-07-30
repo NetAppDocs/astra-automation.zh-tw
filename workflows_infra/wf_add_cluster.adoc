@@ -21,21 +21,25 @@ NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供
 
 
 
-=== 1.取得Kbeconfig檔案
+== 步驟 1 ：取得 kubeconfig 檔案
 
 您需要向Kubernetes系統管理員或服務取得* kubconfig*檔案的複本。
 
 
 
-=== 2.準備Kbeconfig檔案
+== 步驟 2 ：準備 kubeconfig 檔案
 
 在使用* kubeconfig *檔案之前、您應該先執行下列作業：
 
-.將檔案從Yaml格式轉換為Json
+. 將檔案從 YAML 格式轉換為 JSON ：
++
 如果您收到格式為Yaml的Kbeconfig檔案、則必須將其轉換為Json。
 
-.在base64中編碼Json
+. 在 base64 中編碼 JSON ：
++
 您必須在base64中編碼Json檔案。
+
+
 
 .範例
 以下是將 Kebeconfig 檔案從 YAML 轉換為 JSON 、然後在 base64 中編碼的範例：
@@ -44,7 +48,7 @@ NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供
 
 
 
-=== 3.選擇雲端
+== 步驟 3 ：選擇雲端
 
 執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 然後選取要新增叢集的雲端。
 
@@ -53,9 +57,12 @@ NOTE: 您唯一可以選擇的雲端是*私有*雲端。
 
 
 
-=== 4.建立認證資料
+== 步驟 4 ：建立認證
 
 執行下列REST API呼叫、以使用Kbeconfig檔案建立認證。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -64,11 +71,18 @@ NOTE: 您唯一可以選擇的雲端是*私有*雲端。
 
 | 貼文 | /Accounts /｛account_id｝/核心/ v1 /認證 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/core/v1/credentials" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
+[source, json]
 ----
 {
   "type" :  "application/astra-credential",
@@ -83,17 +97,12 @@ NOTE: 您唯一可以選擇的雲端是*私有*雲端。
 ----
 
 
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/core/v1/credentials' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
-----
-
-
-=== 5.新增叢集
+== 步驟 5 ：新增叢集
 
 執行下列REST API呼叫、將叢集新增至雲端。的值 `credentialID` 輸入欄位可從上一步的REST API呼叫取得。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -102,23 +111,22 @@ curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>
 
 | 貼文 | /Accounts /｛account_id｝/拓撲/ v1/v雲端/｛雲端_id｝/叢集 
 |===
-
-
-===== JSONN輸入範例
-
+.Curl範例
 [source, curl]
+----
+curl --request POST \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/topology/v1/clouds/<CLOUD_ID>/clusters" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN" \
+--data  @JSONinput
+----
+.JSONN輸入範例
+[source, json]
 ----
 {
   "type" :  "application/astra-cluster",
   "version" : "1.1",
   "credentialID": credential_id
 }
-----
-
-
-===== Curl範例
-
-[source, curl]
-----
-curl --location -i --request POST 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/topology/v1/clouds/<CLOUD_ID>/clusters' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --data @JSONinput
 ----

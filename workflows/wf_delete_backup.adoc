@@ -18,7 +18,7 @@ summary: 您可以刪除與應用程式相關的備份。
 
 
 
-=== 開始之前
+== 開始之前
 
 您必須具備下列條件：
 
@@ -28,12 +28,15 @@ summary: 您可以刪除與應用程式相關的備份。
 
 
 
-=== 1.刪除備份
+== 刪除備份
 
 執行下列REST API呼叫。
 
 
 NOTE: 您可以使用選用的要求標頭強制刪除失敗的備份、如下所述。
+
+.HTTP 方法和端點
+此 REST API 呼叫使用下列方法和端點。
 
 [cols="25,75"]
 |===
@@ -42,10 +45,7 @@ NOTE: 您可以使用選用的要求標頭強制刪除失敗的備份、如下�
 
 | 刪除 | /accounts/{aper_id}/k8s/v1/apps/｛app_id｝/appBackups/{appBackup _id} 
 |===
-
-
-===== 其他輸入參數
-
+.其他輸入參數
 除了所有REST API呼叫通用的參數之外、此步驟的Curl範例也會使用下列參數。
 
 [cols="25,10,10,55"]
@@ -61,19 +61,22 @@ NOTE: 您可以使用選用的要求標頭強制刪除失敗的備份、如下�
 
 | 強制刪除 | 標頭 | 否 | 用於強制刪除失敗的備份。 
 |===
-
-
-===== Curl範例：刪除應用程式的單一備份
-
+.Curl範例：刪除應用程式的單一備份
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups/<BACKUP_ID>" \
+--include \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
-
-
-===== Curl範例：使用force選項刪除應用程式的單一備份
-
+.Curl範例：使用force選項刪除應用程式的單一備份
 [source, curl]
 ----
-curl --location -i --request DELETE 'https://astra.netapp.io/accounts/<ACCOUNT_ID>/k8s/v1/apps/<APP_ID>/appBackups/<BACKUP_ID>' --header 'Accept: */*' --header 'Authorization: Bearer <API_TOKEN>' --header 'Force-Delete: true'
+curl --request DELETE \
+--location "https://astra.netapp.io/accounts/$ACCOUNT_ID/k8s/v1/apps/$APP_ID/appBackups/<BACKUP_ID>" \
+--include \
+--header "Force-Delete: true" \
+--header "Accept: */*" \
+--header "Authorization: Bearer $API_TOKEN"
 ----
