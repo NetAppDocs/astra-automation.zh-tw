@@ -1,0 +1,554 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces-.html 
+summary: 擷取雲端的命名空間 
+---
+= 擷取雲端的命名空間
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces/{namespace_id}`#
+
+在 JSON 回應本文中傳回已儲存的 Namespace API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| cloud_id | 字串 | 路徑 | True  a| 
+包含雲端資源的 ID
+
+
+
+| 叢集 ID | 字串 | 路徑 | True  a| 
+包含叢集資源的 ID
+
+
+
+| namespace_id | 字串 | 路徑 | True  a| 
+要列出的命名空間集合的 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Namespace API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-namespace"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 連結 | 陣列[link:#type_astra_link["type_astra_link"]] | True  a| 
+描述針對資源所支援作業的連結。
+
+
+
+| 姓名 | 字串 | True  a| 
+包含指示命名空間名稱值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：255
+
+
+
+
+| namespaceState | 字串 | True  a| 
+JSON 字串包含指示命名空間狀態的值。已定義的值包括：
+
+* 「已發現」- 已在叢集中找到該命名空間
+* 「已移除」- 命名空間已從叢集中刪除，或叢集未受管理，但可能有資源引用該命名空間
+
+
+
+
+| namespaceStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+JSON 物件的 JSON 陣列，列出「state」轉換為「state a」、「state b」或「state c」原因的其他詳細資訊。如果沒有可用的詳細資訊，此陣列將為空白。定義的值為：
+
+* 最少項目數：0
+
+
+
+
+| kubernetesLabels | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，每個物件包含與命名空間相關聯的 Kubernetes 標籤。定義的值為：
+
+* 符合 Kubernetes 標籤陣列架構
+
+
+
+
+| kubernetesUID | 字串 | True  a| 
+包含 Kubernetes 產生的命名空間資源 UID 的 JSON 字串
+
+
+
+| clusterID | 字串 | True  a| 
+包含命名空間所在叢集的全域唯一識別碼的 JSON 字串。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| systemType | 字串 | 錯誤  a| 
+JSON 字串，表示命名空間是系統命名空間的類型。此欄位標識命名空間是什麼類型的系統命名空間（如果有的話）（僅限 1.1 版）。定義的值為：
+
+* "kubernetes" - 一個通用的 Kubernetes（K8s）系統命名空間，例如 "kube-system"
+* 「netapp」－NetApp 系統命名空間，例如「trident」或「netapp-monitoring」
+* 「openshift」－一個 OpenShift 系統命名空間，例如「openshift-monitoring」
+* 「rke」- Rancher 命名空間，例如「cattle-logging」
+* 「其他」- 不一定適合放在其他位置的常見系統命名空間，例如「ingress-nginx」、「tekton-system」
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-namespace",
+  "version": "1.2",
+  "id": "214dc2eb-19a6-5444-b156-f4b6b551a81a",
+  "links": [
+    {
+      "rel": "canonical",
+      "href": "/accounts/0b311ae7-d89a-4a11-a52c-1349ca090415/topology/v1/namespaces/7d451d2f-196e-4234-aee9-7e2376047e63",
+      "type": "application/vnd.netapp.astra.namespace"
+    },
+    {
+      "rel": "collection",
+      "href": "/accounts/0b311ae7-d89a-4a11-a52c-1349ca090415/topology/v1/clouds/e0490197-872e-4de8-9287-b04a938e801f/clusters/0f284377-e5dc-4dcd-bacd-3197f2b8a347/namespaces",
+      "type": "application/vnd.netapp.astra.namespaces"
+    }
+  ],
+  "name": "kube-system",
+  "namespaceState": "discovered",
+  "namespaceStateDetails": [
+    {
+      "type": "https://astra.netapp.io/stateDetails/9",
+      "title": "Namespace Discovered",
+      "detail": "The namespace was discovered in the indicated managed cluster"
+    }
+  ],
+  "kubernetesLabels": [
+    {
+      "name": "app.kubernetes.io/environment",
+      "value": "dev"
+    }
+  ],
+  "clusterID": "0f284377-e5dc-4dcd-bacd-3197f2b8a347",
+  "kubernetesUID": "4f28c377-e5dc-4dcd-b7cd-319cf2b8a345",
+  "systemType": "kubernetes",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+targetSchema
+
+[role="api-collapsible-fifth-title"]
+接受 POST
+
+[role="api-collapsible-fifth-title"]
+接受放置
+
+[role="api-collapsible-fifth-title"]
+提示
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 狀態 | 字串 | 錯誤  a| 
+
+
+
+| 允許 | 陣列［string］ | 錯誤  a| 
+
+
+
+| 接受 POST | link:#accept-post["接受 POST"] | 錯誤  a| 
+
+
+
+| 權限 | 陣列［string］ | 錯誤  a| 
+
+
+
+| 接受放置 | link:#accept-put["接受放置"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_link
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| rel | 字串 | True  a| 
+
+
+
+| href | 字串 | True  a| 
+
+
+
+| 類型 | 字串 | 錯誤  a| 
+
+
+
+| targetSchema | link:#targetSchema["targetSchema"] | 錯誤  a| 
+
+
+
+| 標題 | 字串 | 錯誤  a| 
+
+
+
+| 提示 | link:#hints["提示"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

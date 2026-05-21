@@ -1,0 +1,1047 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-core-v1-packages.html 
+summary: 建立新套件 
+---
+= 建立新套件
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
+
+指示要建立的 Package API 資源的期望值。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+|===
+
+
+== 請求本文
+
+指示要建立的 Package API 資源的期望值。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-package"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+
+
+
+
+| packageName | 字串 | True  a| 
+包含套件名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：31 範例值如下：
+* "acc"
+* "acs"
+* "Trident"
+
+
+
+
+| packageVersion | 字串 | True  a| 
+包含套件 SemVer 的 JSON 字串。已定義的值包括：
+
+* 符合 SemVer 模式
+
+
+
+
+| packageType | 字串 | True  a| 
+包含套件類型的 JSON 字串，指示這是完整安裝套件還是修補程式。已定義的值包括：
+
+* 「安裝」
+* 「patch」
+
+
+
+
+| bundleName | 陣列［string］ | 錯誤  a| 
+包含套件所在套裝組合名稱的 JSON 字串 JSON 陣列。
+
+
+
+| severityLevel | 字串 | True  a| 
+描述此修補程式或安裝嚴重性層級的 JSON 字串。定義的值為：
+
+* 「建議」- 建議安裝 - 預設值
+* 「關鍵」 - 強烈建議安裝，以修復關鍵錯誤和 / 或安全修補程式
+
+
+
+
+| 映像 | 陣列[link:#images["映像"]] | 錯誤  a| 
+JSON 陣列，包含 JSON 物件，每個物件都包含一個屬於該套件的 Docker 映像。
+
+
+
+| 成品 | 陣列[link:#artifacts["成品"]] | 錯誤  a| 
+描述與此套件相關的其他成品（二進位檔案和其他檔案）的 JSON 物件 JSON 陣列。
+
+
+
+| 檔案 | 陣列[link:#files["檔案"]] | 錯誤  a| 
+JSON 陣列，包含 JSON 物件，每個物件代表與此套件相關聯的非映像成品。
+
+
+
+| upgradableVersions | link:#upgradableVersions["upgradableVersions"] | 錯誤  a| 
+JSON 物件，包含可升級至套件版本的最低和最高版本。
+
+
+
+| 相依性 | 陣列[link:#dependencies["相依性"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，描述安裝此套件所需的指定相依性最低版本
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | 錯誤  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+|===
+.範例請求
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-package",
+  "version": "1.0",
+  "packageName": "acc",
+  "packageVersion": "22.09.1",
+  "packageType": "patch",
+  "severityLevel": "recommended",
+  "images": [
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "storage-provider",
+      "imageTag": "1.3.116",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e3364456781a161f1be239853dae33deafc"
+    },
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "storage-backend-metrics",
+      "imageTag": "1.3.45",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e3364456781a161f1be239853dae33deafc"
+    },
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "credentials",
+      "imageTag": "1.3.45",
+      "imageDigest": "sha256:2e04d178815537b0ad8c322445654e33642da781a161f1be239853dae33deafc"
+    }
+  ],
+  "files": [
+    {
+      "fileName": "astra_control_center_min.yaml",
+      "fileIdentifier": "astra_min",
+      "fileMediaType": "application/x-yaml",
+      "fileContents": "VGhpcyBpcyBzdXBwb3NlZCB0byBiZSBhIGNvbXByZXNzZWQgZmlsZSBjb250ZW50"
+    }
+  ],
+  "dependencies": [
+    {
+      "componentName": "acc",
+      "componentMinVersion": "22.04.29"
+    },
+    {
+      "componentName": "kubernetes",
+      "componentMinVersion": "v1.19.7",
+      "componentMaxVersion": "v1.22"
+    },
+    {
+      "componentName": "trident",
+      "componentMinVersion": "v21.01.1"
+    }
+  ]
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 201, Returns the newly created package resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-package"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| packageName | 字串 | True  a| 
+包含套件名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：31 範例值如下：
+* "acc"
+* "acs"
+* "Trident"
+
+
+
+
+| packageVersion | 字串 | True  a| 
+包含套件 SemVer 的 JSON 字串。已定義的值包括：
+
+* 符合 SemVer 模式
+
+
+
+
+| packageType | 字串 | True  a| 
+包含套件類型的 JSON 字串，指示這是完整安裝套件還是修補程式。已定義的值包括：
+
+* 「安裝」
+* 「patch」
+
+
+
+
+| bundleName | 陣列［string］ | 錯誤  a| 
+包含套件所在套裝組合名稱的 JSON 字串 JSON 陣列。
+
+
+
+| severityLevel | 字串 | True  a| 
+描述此修補程式或安裝嚴重性層級的 JSON 字串。定義的值為：
+
+* 「建議」- 建議安裝 - 預設值
+* 「關鍵」 - 強烈建議安裝，以修復關鍵錯誤和 / 或安全修補程式
+
+
+
+
+| packageState | 字串 | True  a| 
+JSON 字串，包含指示套件運作狀態的值。套件驗證並匯入後，狀態將顯示為「complete」。否則，狀態將顯示為「incomplete」。定義的值為：
+
+* 「正在驗證」—套件正在驗證程序中
+* 「corrupt」- 套件已損毀
+* 「不完整」- 套件缺少元素
+* 「available」- 與該套件相關的所有元素均已可用，且該套件已準備就緒，可供使用
+
+
+
+
+| packageStateTransitions | 陣列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | True  a| 
+JSON 物件的 JSON 陣列，每個物件代表從給定已定義狀態允許的狀態轉換集。每個 JSON 物件包含「from」和「to」欄位，其中「from」值是狀態名稱，「to」值是允許的目標狀態陣列。已定義的值為：
+
+* 符合狀態轉換架構
+
+
+
+
+| packageStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+JSON 物件的 JSON 陣列，其中列出有關目前「狀態」的其他詳細資料。如果沒有可用的詳細資料，此陣列將為空白。
+
+* 最低項目數：0
+
+
+
+
+| 映像 | 陣列[link:#images["映像"]] | 錯誤  a| 
+JSON 陣列，包含 JSON 物件，每個物件都包含一個屬於該套件的 Docker 映像。
+
+
+
+| 成品 | 陣列[link:#artifacts["成品"]] | 錯誤  a| 
+描述與此套件相關的其他成品（二進位檔案和其他檔案）的 JSON 物件 JSON 陣列。
+
+
+
+| 檔案 | 陣列[link:#files["檔案"]] | 錯誤  a| 
+JSON 陣列，包含 JSON 物件，每個物件代表與此套件相關聯的非映像成品。
+
+
+
+| upgradableVersions | link:#upgradableVersions["upgradableVersions"] | 錯誤  a| 
+JSON 物件，包含可升級至套件版本的最低和最高版本。
+
+
+
+| 相依性 | 陣列[link:#dependencies["相依性"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，描述安裝此套件所需的指定相依性最低版本
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-package",
+  "version": "1.0",
+  "id": "54edc2b3-18c5-5371-904b-ebcd04d88bdc",
+  "packageName": "acc",
+  "packageVersion": "22.09.1",
+  "packageType": "patch",
+  "packageState": "available",
+  "packageStateTransitions": [
+    {
+      "from": "verifying",
+      "to": [
+        "corrupt",
+        "incomplete",
+        "available"
+      ]
+    },
+    {
+      "from": "corrupt",
+      "to": [
+        "incomplete",
+        "available"
+      ]
+    },
+    {
+      "from": "incomplete",
+      "to": [
+        "corrupt",
+        "available"
+      ]
+    },
+    {
+      "from": "available",
+      "to": [
+        "corrupt",
+        "available"
+      ]
+    }
+  ],
+  "packageStateDetails": [],
+  "severityLevel": "recommended",
+  "images": [
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "storage-provider",
+      "imageTag": "1.3.116",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e33642da781a161f1be239853dae33deafc"
+    },
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "storage-backend-metrics",
+      "imageTag": "1.3.45",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e33642da781a161f1be239853dae33deafc"
+    },
+    {
+      "imagePath": "/globalcicd/acc",
+      "imageName": "credentials",
+      "imageTag": "1.3.45",
+      "imageDigest": "sha256:2e04d178815537b0ad8c3224e8754e33642da781a161f1be239853dae33deafc"
+    }
+  ],
+  "files": [
+    {
+      "fileName": "astra_control_center_min.yaml",
+      "fileIdentifier": "astra_min",
+      "fileMediaType": "application/x-yaml",
+      "fileContents": "VGhpcyBpcyBzdXBwb3NlZCB0byBiZSBhIGNvbXByZXNzZWQgZmlsZSBjb250ZW50"
+    }
+  ],
+  "dependencies": [
+    {
+      "componentName": "acc",
+      "componentMinVersion": "22.04.29"
+    },
+    {
+      "componentName": "kubernetes",
+      "componentMinVersion": "v1.19.7",
+      "componentMaxVersion": "v1.20"
+    },
+    {
+      "componentName": "trident",
+      "componentMinVersion": "v21.01.1"
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidFields | 陣列[link:#invalidFields["invalidFields"]] | 錯誤  a| 
+無效請求本文欄位清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidFields | 陣列[link:#invalidFields["invalidFields"]] | 錯誤  a| 
+無效請求本文欄位清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+dependsOnImages
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| imagePath | 字串 | True  a| 
+包含此 Docker 映像路徑的 JSON 字串。它不能包含登錄名稱，只能包含從根目錄到映像的絕對路徑。範例：/globalcicd/acc 已定義的值包括：
+
+* 最短長度：1
+* 最大長度：1023
+
+
+
+
+| imageName | 字串 | True  a| 
+包含 Docker 映像名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| imageTag | 字串 | True  a| 
+代表此映像標籤 / 版本的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：31
+
+
+|===
+[role="api-collapsible-fifth-title"]
+映像
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| imageName | 字串 | True  a| 
+包含 Docker 映像名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| imagePath | 字串 | True  a| 
+包含此 Docker 映像路徑的 JSON 字串。它不能包含登錄名稱，只能包含從根目錄到映像的絕對路徑。範例：/globalcicd/acc 已定義的值包括：
+
+* 最短長度：1
+* 最大長度：1023
+
+
+
+
+| imageTag | 字串 | True  a| 
+代表此映像標籤 / 版本的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：31
+
+
+
+
+| imageDigest | 字串 | True  a| 
+代表此映像摘要的 JSON 字串。定義的值為：
+
+* 定義的正規表示式為："^(sha256:)[0-9a-f]{64}$"
+
+
+
+
+| dependsOnImages | 陣列[link:#dependsOnImages["dependsOnImages"]] | 錯誤  a| 
+描述安裝或升級目前映像所需映像的 JSON 物件 JSON 陣列。
+
+|===
+[role="api-collapsible-fifth-title"]
+dependsOnComponents
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| componentName | 字串 | True  a| 
+描述元件名稱的 JSON 字串。定義的值為：
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| 版本 | 陣列［string］ | True  a| 
+定義安裝目前映像所需元件版本的 JSON 字串 JSON 陣列。
+
+|===
+[role="api-collapsible-fifth-title"]
+成品
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| artifactName | 字串 | True  a| 
+包含檔案名稱的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| artifactIdentifier | 字串 | True  a| 
+包含此檔案識別碼的 JSON 字串。在同一套件類型的不同版本之間，檔案名稱可能會變更，但識別碼通常保持不變。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：511
+
+
+
+
+| artifactPath | 字串 | True  a| 
+JSON 字串，包含從已知 Astra Control Center 資料儲存區/位置的根目錄到此成品的路徑。範例：/vmware/1.0/ 定義的值為：
+
+* 最短長度：1
+* 最大長度：1023
+
+
+
+
+| artifactVersion | 字串 | 錯誤  a| 
+JSON 字串，包含該成品的版本（如果有提供）。定義的值為：
+
+* 符合 SemVer 模式
+* 最短長度：1
+* 最大長度：31
+
+
+
+
+| dependsOnComponents | 陣列[link:#dependsOnComponents["dependsOnComponents"]] | 錯誤  a| 
+描述安裝 / 升級目前映像所需的已安裝元件的 JSON 物件 JSON 陣列。
+
+|===
+[role="api-collapsible-fifth-title"]
+檔案
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| fileName | 字串 | True  a| 
+包含檔案名稱的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| fileIdentifier | 字串 | True  a| 
+包含此檔案識別碼的 JSON 字串。在同一套件類型的不同版本之間，檔案名稱可能會變更，但識別碼通常保持不變。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：511
+
+
+
+
+| fileMediaType | 字串 | True  a| 
+包含檔案媒體類型的 JSON 字串。定義的值可以是任何已定義的媒體類型 https://www.iana.org/assignments/media-types/media-types.xhtml["IANA"]。此外，也支援 application/x-yaml 或 application/x-yaml（用於 yaml 檔案）。
+
+* 最短長度：1
+* 最大長度:211
+
+
+
+
+| fileContents | 字串 | True  a| 
+包含檔案內容的 JSON 字串。已定義的值包括：
+
+* 符合 Base64 Schema FIXME - 如何指定這是壓縮格式？使用什麼演算法等等？
+
+
+|===
+[role="api-collapsible-fifth-title"]
+upgradableVersions
+
+JSON 物件，包含可升級至套件版本的最低和最高版本。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| minVersion | 字串 | 錯誤  a| 
+描述可升級到套件版本的最低版本的 JSON 字串。定義的值為：
+
+* 符合 SemVer 模式
+
+
+
+
+| maxVersion | 字串 | 錯誤  a| 
+描述可升級到套件版本的最高版本的 JSON 字串。已定義的值包括：
+
+* 符合 SemVer 模式
+
+
+|===
+[role="api-collapsible-fifth-title"]
+相依性
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| componentName | 字串 | True  a| 
+描述元件名稱的 JSON 字串。定義的值為：
+
+* "acc"
+* "acs"
+* "Trident"
+* "kubernetes"
+
+
+
+
+| componentMinVersion | 字串 | 錯誤  a| 
+描述該元件所需最低版本的 JSON 字串。已定義的值包括：
+
+* 符合 SemVer 模式
+
+
+
+
+| componentMaxVersion | 字串 | 錯誤  a| 
+描述該元件所需最高版本的 JSON 字串。已定義的值包括：
+
+* 符合 SemVer 模式
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 從 | 字串 | True  a| 
+
+
+
+| 到 | 陣列［string］ | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效請求內文欄位的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+請求本文欄位無效的原因
+
+|===
+====

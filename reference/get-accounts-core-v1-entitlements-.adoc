@@ -1,0 +1,425 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-entitlements-.html 
+summary: 擷取權利 
+---
+= 擷取權利
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements/{entitlement_id}`#
+
+在 JSON 回應本文中傳回已儲存的 Entitlement API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| entitlement_id | 字串 | 路徑 | True  a| 
+要列出的權利集合 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Entitlement API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-entitlement"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 分配 | 字串 | 錯誤  a| 
+包含授權所分配物件 ID 的 JSON 字串。僅在分配授權時存在。字串內容未經架構驗證。
+
+
+
+| 產品 | 字串 | 錯誤  a| 
+包含從授權或訂閱中提取的產品字串的 JSON 字串。字串內容未經架構驗證。
+
+
+
+| productVersion | 字串 | 錯誤  a| 
+包含從授權或訂閱中提取的版本字串的 JSON 字串。字串內容未經架構驗證。
+
+
+
+| entitlementType | 字串 | True  a| 
+包含授權類型的 JSON 字串。此資訊提取自授權或訂閱資訊。字串內容未經架構驗證。
+
+
+
+| entitlementValue | 字串 | True  a| 
+包含與授權相關容量的 JSON 字串。架構不會驗證字串內容。
+
+
+
+| entitlementConsumption | 字串 | 錯誤  a| 
+包含目前正在使用的授權相關容量的 JSON 字串。字串內容未經架構驗證。
+
+
+
+| sourceLicense | 字串 | 錯誤  a| 
+包含授權來源許可證物件 ID 的 JSON 字串。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| sourceSubscription | 字串 | 錯誤  a| 
+包含授權來源訂閱物件 ID 的 JSON 字串。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| validFromTimestamp | 字串 | 錯誤  a| 
+包含時間戳記的 JSON 字串，指示授權何時生效。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| validUntilTimestamp | 字串 | 錯誤  a| 
+包含時間戳記的 JSON 字串，指示授權何時不再有效。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-entitlement",
+  "version": "1.0",
+  "id": "8bdafc19-bde6-5f45-9808-4893c845c9f5",
+  "product": "Astra SDS",
+  "productVersion": "1.0",
+  "entitlementType": "capacity",
+  "entitlementValue": "2",
+  "entitlementConsumption": "1",
+  "sourceLicense": "c8aa757a-5318-489f-8134-a2a1a6956a3e",
+  "validFromTimestamp": "2020-08-06T00:00:00.000000Z",
+  "validUntilTimestamp": "2021-08-06T00:00:00.000000Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

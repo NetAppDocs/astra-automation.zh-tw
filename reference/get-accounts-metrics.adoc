@@ -1,0 +1,129 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-metrics.html 
+summary: 擷取帳戶的所有指標 
+---
+= 擷取帳戶的所有指標
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/metrics`#
+
+傳回該帳戶的所有指標
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a OpenMetrics text document containing all metrics for the account.
+----
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====

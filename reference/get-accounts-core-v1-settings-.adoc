@@ -1,0 +1,525 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-settings-.html 
+summary: 擷取設定 
+---
+= 擷取設定
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+在 JSON 回應本文中傳回已儲存的 Setting API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 設定 ID | 字串 | 路徑 | True  a| 
+要列出的設定集合 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Setting API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-setting"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含設定名稱的 JSON 字串，採用分層點號表示法（.）。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 此字串經過內部驗證，可防止 XSS、Unicode、目錄遍歷和 SQL 注入攻擊。此值由執行階段載入的 configmap 所指定，使用者無法更新。
+
+
+
+
+| currentConfig | link:#type_json["type_json"] | True  a| 
+包含鍵值對的 JSON 物件，這些鍵值對構成此設定的目前組態。此物件的內容必須符合 configSchema 欄位中包含的 JSON Schema。預設值由 configmap 提供。使用者變更預設值後，這些預設值不會被覆寫。
+
+
+
+| desiredConfig | link:#type_json["type_json"] | 錯誤  a| 
+包含鍵值對的 JSON 物件，用於指定此設定的配置。該物件的內容必須符合 configSchema 欄位中包含的 JSON 模式。該物件在指定之前不存在。指定後，功能服務會通知對應的服務請求套用所需的設定。相應的服務隨後可以執行驗證並將所需的配置套用到目前配置。
+
+
+
+| configSchema | link:#type_json_schema["type_json_schema"] | True  a| 
+此 JSON 物件包含此資源中 config 屬性的 JSON 模式。必須符合 JSON Schema Draft 7。如果資源中存在 config 值，則必須根據指定的 configSchema 進行驗證。通常建議在適當的情況下，配置項中包含一個 "isEnabled" 欄位。"isEnabled" 欄位包含一個值，指示設定是啟用（"true"）還是停用（"false"）。
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示應用程式運作狀態的值的 JSON 字串。已定義的值包括：
+
+* 「valid」- 目前組態與所需組態相符。
+* 「pending」- 正在套用所需的組態。
+* 「錯誤」- 無法套用所需的配置。
+
+
+
+
+| stateUnready | 陣列［string］ | True  a| 
+JSON 字串的 JSON 陣列，每個字串表示設定未成功套用的原因。已定義的值為：
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-setting",
+  "version": "1.1",
+  "id": "ea510866-47d3-5130-8468-563df4cd6a28",
+  "name": "astra.account.smtp",
+  "currentConfig": {
+    "credential": "",
+    "isEnabled": "false",
+    "port": 587,
+    "relayServer": "smtp.sendgrid.net"
+  },
+  "configSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "astra.account.smtp",
+    "type": "object",
+    "properties": {
+      "credential": {
+        "type": "string",
+        "description": "The credential ID for SMTP authentication."
+      },
+      "isEnabled": {
+        "type": "string",
+        "description": "This property determines if this setting is enabled or not."
+      },
+      "port": {
+        "type": "integer",
+        "description": "The SMTP port. For an unencrypted or a TLS connection, use port 25, 2525, or 587."
+      },
+      "relayServer": {
+        "type": "string",
+        "description": "This setting is sometimes referred to as the external SMTP server or the SMTP relay."
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "relayServer",
+      "port",
+      "isEnabled"
+    ]
+  },
+  "state": "valid",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_json
+
+包含鍵值對的 JSON 物件，這些鍵值對構成此設定的目前組態。此物件的內容必須符合 configSchema 欄位中包含的 JSON Schema。預設值由 configmap 提供。使用者變更預設值後，這些預設值不會被覆寫。
+
+[role="api-collapsible-fifth-title"]
+type_json
+
+包含鍵值對的 JSON 物件，用於指定此設定的配置。該物件的內容必須符合 configSchema 欄位中包含的 JSON 模式。該物件在指定之前不存在。指定後，功能服務會通知對應的服務請求套用所需的設定。相應的服務隨後可以執行驗證並將所需的配置套用到目前配置。
+
+[role="api-collapsible-fifth-title"]
+屬性
+
+[role="api-collapsible-fifth-title"]
+type_json_schema
+
+此 JSON 物件包含此資源中 config 屬性的 JSON 模式。必須符合 JSON Schema Draft 7。如果資源中存在 config 值，則必須根據指定的 configSchema 進行驗證。通常建議在適當的情況下，配置項中包含一個 "isEnabled" 欄位。"isEnabled" 欄位包含一個值，指示設定是啟用（"true"）還是停用（"false"）。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| $schema | 字串 | True  a| 
+
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 屬性 | link:#properties["屬性"] | True  a| 
+
+
+
+| additionalProperties | 布林值 | True  a| 
+
+
+
+| 必要 | 陣列［string］ | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

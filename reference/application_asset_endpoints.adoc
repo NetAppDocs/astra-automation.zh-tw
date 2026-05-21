@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/application_asset_endpoints.html 
+summary: Astra API（ACC）應用程式資產端點 
+---
+= Astra API（ACC）應用程式資產端點
+:allow-uri-read: 
+
+
+應用程式資產 API 提供對用於管理應用程式的內部狀態資訊集合的存取。

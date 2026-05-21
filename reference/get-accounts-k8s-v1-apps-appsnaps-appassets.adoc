@@ -1,0 +1,573 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/get-accounts-k8s-v1-apps-appsnaps-appassets.html 
+summary: 列出應用程式快照的應用程式資產 
+---
+= 列出應用程式快照的應用程式資產
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}/appAssets`#
+
+傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| app_id | 字串 | 路徑 | True  a| 
+包含應用程式資源的 ID
+
+
+
+| appSnap_id | 字串 | 路徑 | True  a| 
+包含 appSnap 資源的 ID
+
+
+
+| 包括 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時應傳回哪些欄位。
+
+URL 範例：「include=id」、「include=id,name」
+
+OpenAPI 範例："id"
+
+* 例如： assetType、assetName
+
+
+
+
+| 限制 | 字串 | 查詢 | 錯誤  a| 
+表示列出集合時要傳回的資源數量上限。
+
+URL 範例：「limit=2」
+
+OpenAPI 範例：「2」
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 項目 | array[任何一個： link:#appAsset_1_1_get_response_body["appAsset_1.1_get_response_body"]、array[]] | True  a| 
+
+
+
+| 中繼資料 | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appAssets",
+  "version": "1.1",
+  "items": [
+    [
+      "Pod",
+      "mediawiki-69c6fcf864-2wx6l"
+    ],
+    [
+      "ReplicaSet",
+      "mediawiki-69c6fcf864"
+    ],
+    [
+      "Service",
+      "mediawiki"
+    ],
+    [
+      "Deployment",
+      "mediawiki"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+GVK
+
+包含 Kubernetes 群組 / 版本 / 類型的 JSON 物件。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 群組 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的群組識別碼的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 種類 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的類型識別碼的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 版本 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的版本識別碼的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_json
+
+包含 Kubernetes 資源定義全部內容的 JSON 物件。
+
+[role="api-collapsible-fifth-title"]
+標籤
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+包含標籤名稱的 JSON 字串定義值如下：
+
+* 最短長度：1
+* 最大長度：63
+* 定義的正規表示式為："^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| 值 | 字串 | True  a| 
+包含標籤值的 JSON 字串定義值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 定義的正規表示式為："^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+appAsset_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-appAsset"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| assetType | 字串 | True  a| 
+JSON 字串，包含一個值，指示從 Kubernetes 取得的所描述資產類型。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+包含時間戳記的 JSON 字串，指示 Kubernetes 元資料的建立時間。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| GVK | link:#GVK["GVK"] | True  a| 
+包含 Kubernetes 群組 / 版本 / 類型的 JSON 物件。
+
+
+
+| 資源 | link:#type_json["type_json"] | 錯誤  a| 
+包含 Kubernetes 資源定義全部內容的 JSON 物件。
+
+
+
+| assetID | 字串 | True  a| 
+包含 Kubernetes 指派的識別碼的 JSON 字串。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 標籤 | 陣列[link:#labels["標籤"]] | True  a| 
+JSON 物件的 JSON 陣列，每個物件都包含與該資產關聯的 Kubernetes 標籤。如果沒有可用的詳細資訊，則此陣列為空。
+
+* 最少項目數：0
+
+
+
+
+| assetName | 字串 | True  a| 
+包含 Kubernetes 指派的名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 命名空間 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的命名空間的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 繼續 | 字串 | 錯誤  a| 
+
+
+
+| 數 | 數字 | 錯誤  a| 
+
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

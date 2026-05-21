@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: 'reference/astra_api_(acc)_overview.html' 
+summary: Astra API（ACC）概述 
+---
+= Astra API（ACC）概述
+:allow-uri-read: 
+
+
+Astra Control REST API 參考文件包含所有 REST API 呼叫的詳細資訊，包括端點、HTTP 方法、輸入參數和回應。這份完整的參考文件在使用 API 開發自動化應用程式時非常有幫助。Astra REST API 提供對所有 Astra Control 資源的 CRUD（建立 - 讀取 - 更新 - 刪除）存取，但特定資源類別另有註明者除外。本參考文件適用於 Astra Control REST API 的 24.02 版本。

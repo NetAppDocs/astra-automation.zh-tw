@@ -1,0 +1,556 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-asups.html 
+summary: 列出所有 AutoSupport 資源 
+---
+= 列出所有 AutoSupport 資源
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups`#
+
+傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 包括 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時應傳回哪些欄位。
+
+URL 範例：「include=id」、「include=id,name」
+
+OpenAPI 範例："id"
+
+
+
+| 限制 | 字串 | 查詢 | 錯誤  a| 
+表示列出集合時要傳回的資源數量上限。
+
+URL 範例：「limit=2」
+
+OpenAPI 範例：「2」
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 項目 | 陣列 [ 任何一項： link:#asup_1_0_get_response_body["asup_1.0_get_response_body"]、陣列 []] | True  a| 
+
+
+
+| 中繼資料 | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-asups",
+  "version": "1.0",
+  "items": [
+    {
+      "type": "application/astra-asup",
+      "version": "1.0",
+      "id": "80796606-79ba-480b-966c-e4c600fbf623",
+      "creationState": "completed",
+      "creationStateDetails": [],
+      "upload": "true",
+      "uploadState": "running",
+      "uploadStateDetails": [],
+      "triggerType": "manual",
+      "dataWindowStart": "2020-08-05T12:24:00.000000Z",
+      "dataWindowEnd": "2020-08-06T12:24:52.000000Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "modificationTimestamp": "2020-08-06T12:24:52.256624Z",
+        "createdBy": "1b32a508-cc6f-4f1b-809f-c42fd91b4848"
+      }
+    },
+    {
+      "type": "application/astra-asup",
+      "version": "1.0",
+      "id": "6503131d-8b36-4434-b34f-73661ae8100b",
+      "creationState": "completed",
+      "creationStateDetails": [],
+      "upload": "true",
+      "uploadState": "completed",
+      "uploadStateDetails": [],
+      "triggerType": "scheduled",
+      "dataWindowStart": "2020-08-04T13:30:00.000000Z",
+      "dataWindowEnd": "2020-08-05T13:30:00.000000Z",
+      "metadata": {
+        "labels": [],
+        "creationTimestamp": "2020-08-05T13:30:00.012321Z",
+        "modificationTimestamp": "2020-08-05T13:30:00.012321Z",
+        "createdBy": "1b32a508-cc6f-4f1b-809f-c42fd91b4848"
+      }
+    }
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+asup_1.0_get_response_body
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-asup"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| creationState | 字串 | True  a| 
+JSON 字串，包含指示 AutoSupport 套裝組合建立狀態的值。對於「completed」和「partial」狀態，可以透過對資源 URI 執行 GET 請求，並在 Accept 標頭中包含「_/_」或「application/gzip」來下載套裝組合。已定義的值如下：
+
+* 「運作中」－ AutoSupport 套裝組合產生正在正常運作。
+* 「已完成」- AutoSupport 套裝組合產生已完成。
+* 「部分」－ AutoSupport 資料包產生已完成，但部分資料未包含在資料包中。
+* 「失敗」- AutoSupport 套裝組合產生處於永久失敗狀態。
+
+
+
+
+| creationStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+JSON 物件的 JSON 陣列，其中列出了有關「creationState」為何轉換為「partial」或「failed」的更多詳細資訊。如果沒有可用的詳細資訊，則此陣列為空白。
+
+* 最少項目數：0
+
+
+
+
+| 上傳 | 字串 | True  a| 
+JSON 字串包含一個值，指示在成功建立後是否上傳 AutoSupport 套裝組合。已定義的值為：
+
+* "true" - 上傳 AutoSupport 套裝組合。
+* "false" - 請勿上傳該 AutoSupport 套件組合。
+
+
+
+
+| uploadState | 字串 | 錯誤  a| 
+JSON 字串包含一個值，該值指示 AutoSupport 套裝組合上傳的狀態（如果已要求）。定義的值包括：
+
+* 「pending」- AutoSupport 套裝組合上傳已排程在 AutoSupport 套裝組合建立完成時執行（「creationState」為「running」）。
+* 「blocked」 - 未嘗試上傳 AutoSupport 套裝組合，因為未建立套裝組合（「creationState」為「failed」），或因為沒有授權而封鎖上傳。
+* 「running」- AutoSupport 套裝組合上傳正常執行（「creationState」為「completed」或「partial」）。
+* 「已完成」- AutoSupport 套裝組合上傳已完成。
+* 「失敗」- AutoSupport 套裝組合上傳處於永久失敗狀態。
+
+
+
+
+| uploadStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，列出有關「uploadState」為何轉換為「failed」的其他詳細資訊。如果沒有可用的詳細資訊，此陣列將為空白。
+
+* 最少項目數：0
+
+
+
+
+| triggerType | 字串 | True  a| 
+包含一個值的 JSON 字串，該值指示觸發 ASUP 資源建立的原因。已定義的值包括：
+
+* 「手動」 - ASUP 資源和相關 AutoSupport 套裝組合是手動建立的。
+* 「已排程」 - ASUP 資源和相關 AutoSupport 套件是根據配置的排程建立的。
+
+
+
+
+| dataWindowStart | 字串 | True  a| 
+包含時間戳記的 JSON 字串，指示 AutoSupport 套裝組合資料收集視窗的開始時間。預設值為 "dataWindowEnd" 鍵值前 24 小時。必須早於 "dataWindowEnd" 鍵值。最大值為請求當前時間前 7 天。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| dataWindowEnd | 字串 | True  a| 
+包含時間戳記的 JSON 字串，指示 AutoSupport 套裝組合資料收集時間範圍的結束時間。預設為要求的目前時間。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 繼續 | 字串 | 錯誤  a| 
+
+
+
+| 數 | 數字 | 錯誤  a| 
+
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

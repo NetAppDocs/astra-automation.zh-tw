@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/execution_hook_endpoints.html 
+summary: Astra API（ACC）執行掛勾端點 
+---
+= Astra API（ACC）執行掛勾端點
+:allow-uri-read: 
+
+
+Execution Hook API 可簡化 execution hook 的管理。Execution hook 包含額外的組態資訊以及對 hook 來源資源的參考。

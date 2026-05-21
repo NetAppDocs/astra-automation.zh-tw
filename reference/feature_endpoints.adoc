@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/feature_endpoints.html 
+summary: Astra API（ACC）功能端點 
+---
+= Astra API（ACC）功能端點
+:allow-uri-read: 
+
+
+功能 API 提供對功能標誌資源的唯讀存取，以決定系統中啟用或停用了哪些功能。

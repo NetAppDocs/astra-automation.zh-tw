@@ -1,0 +1,611 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-appbackups.html 
+summary: 列出所有應用程式備份 
+---
+= 列出所有應用程式備份
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups`#
+
+傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 包括 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時應傳回哪些欄位。
+
+URL 範例：「include=id」、「include=id,name」
+
+OpenAPI 範例："id"
+
+* 範例：id、name、state
+
+
+
+
+| 限制 | 字串 | 查詢 | 錯誤  a| 
+表示列出集合時要傳回的資源數量上限。
+
+URL 範例：「limit=2」
+
+OpenAPI 範例：「2」
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 項目 | array[任一：link:#appBackup_1_2_get_response_body["appBackup_1.2_get_response_body"]、array[]] | True  a| 
+
+
+
+| 中繼資料 | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appBackups",
+  "version": "1.2",
+  "items": [
+    [
+      "5cb608f9-571b-492e-a520-5bfb900a9b9c",
+      "app-name-245",
+      "pending"
+    ],
+    [
+      "f8faa690-7e09-48a4-b33c-7965712acd0c",
+      "app-name-244",
+      "completed"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 500, Internal server error
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/96",
+  "title": "Backups not listed",
+  "detail": "The backups didn't list because of an internal server issue.",
+  "status": "500"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+appBackup_1.2_get_response_body
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-appBackup"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含使用者指定的備份名稱的 JSON 字串。如果未指定，或備份由排程啟動時，系統會為備份指派名稱。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| bucketID | 字串 | True  a| 
+JSON 字串，包含選用的儲存貯體 ID，用於指示建立備份時備份檔案的儲存位置。如果未指定，則使用系統選擇的儲存貯體。如果沒有可用的儲存貯體，則在建立時將傳回錯誤。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| snapshotID | 字串 | 錯誤  a| 
+包含用於建立備份的快照的 JSON 字串。建立備份時，可以指定與被備份應用程式關聯的快照 ID。如果未指定，則會為備份建立一個新的快照。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| scheduleID | 字串 | 錯誤  a| 
+包含選用排程 ID 的 JSON 字串，用於指示備份是否由排程觸發以及觸發備份的排程是哪一個。僅在由排程啟動的備份中出現。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示備份運作狀態的值的 JSON 字串。已定義的值包括：
+
+* 「pending」- 應用程式備份已排程進行探索
+* 「正在發現」— 應用程式備份正在被發現過程中
+* 「running」— 應用程式備份正在正常運行
+* 「已完成」— 應用程式備份已成功完成
+* 「失敗」— 應用程式備份處於永久失敗狀態
+* 「已移除」- 應用程式備份目前無法存取
+* 「未知」- 無法確定應用程式備份狀態
+* 「deleting」- 應用程式備份已排程刪除
+
+
+
+
+| stateUnready | 陣列［string］ | True  a| 
+包含多個 JSON 字串的 JSON 陣列，每個字串指示應用程式備份無法轉換為「運行中」狀態、轉換為「失敗」或「已移除」狀態的原因。定義的值包括：
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| stateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，列出有關目前狀態的其他詳細資訊，包括達到目前狀態的原因。如果沒有可用的詳細資訊，此陣列將為空白。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| hookState | 字串 | 錯誤  a| 
+JSON 字串，包含一個值，該值指示作為快照一部分執行的任何執行鉤子的狀態。已定義的值包括：
+
+* 「failed」— 一個或多個執行掛鉤失敗
+* 「success」- 存在零個或多個適用的 hook，且所有 hook 都成功
+
+
+
+
+| hookStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，其中列出了有關「hookState」為何轉換為「failed」的其他詳細資訊。如果沒有詳細資訊，則此陣列為空白。
+
+* 最少項目數：0
+
+
+
+
+| backupCreationTimestamp | 字串 | 錯誤  a| 
+包含時間戳記的 JSON 字串，指示備份時間。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| totalBytes | 數字 | 錯誤  a| 
+JSON 數字，包含備份中的總位元組數。
+
+
+
+| bytesDone | 數字 | 錯誤  a| 
+包含正在進行的備份已備份位元組數的 JSON 數字。備份完成後，該數字將與 totalBytes 欄位的值相符。
+
+
+
+| percentDone | 數字 | 錯誤  a| 
+包含正在進行的備份完成百分比的 JSON 數字。備份完成後，該值將設定為 "100"。
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 繼續 | 字串 | 錯誤  a| 
+
+
+
+| 數 | 數字 | 錯誤  a| 
+
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

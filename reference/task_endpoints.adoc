@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/task_endpoints.html 
+summary: Astra API（ACC）工作端點 
+---
+= Astra API（ACC）工作端點
+:allow-uri-read: 
+
+
+Task App API 提供對託管任務資源的存取，以便表示長時間執行的任務。

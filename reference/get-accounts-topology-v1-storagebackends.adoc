@@ -1,0 +1,640 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-storagebackends.html 
+summary: 列出所有儲存後端 
+---
+= 列出所有儲存後端
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
+
+傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 包括 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時應傳回哪些欄位。
+
+URL 範例：「include=id」、「include=id,name」
+
+OpenAPI 範例："id"
+
+* 範例：id、name、state
+
+
+
+
+| 限制 | 字串 | 查詢 | 錯誤  a| 
+表示列出集合時要傳回的資源數量上限。
+
+URL 範例：「limit=2」
+
+OpenAPI 範例：「2」
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 項目 | array[任何一項： link:#storageBackend_1_3_get_response_body["storageBackend_1.3_get_response_body"]、array[]] | True  a| 
+
+
+
+| 中繼資料 | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageBackends",
+  "version": "1.3",
+  "items": [
+    [
+      "d6ee1e51-d65f-415a-a3d4-6d7fa8b64943",
+      "st1-45",
+      "running"
+    ],
+    [
+      "a5c508b7-aacd-4d19-9455-53c0d183ab4e",
+      "st2-67",
+      "discovered"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+功能
+
+包含此 Storage Backend 功能的 JSON 物件。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| flexClone | 字串 | True  a| 
+JSON 字串，指示此儲存後端是否支援 FlexClone。
+
+
+
+| snapMirror | 字串 | True  a| 
+JSON 字串，指示此儲存後端是否支援 SnapMirror。
+
+
+
+| s3 | 字串 | True  a| 
+JSON 字串，指示此儲存後端是否支援 s3。
+
+|===
+[role="api-collapsible-fifth-title"]
+ONTAP
+
+包含與 ONTAP 叢集相關之特定資訊的 JSON 物件。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| authenticationStyle | 字串 | True  a| 
+JSON 字串，指示 ONTAP 驗證是使用使用者名稱/密碼組合還是憑證執行。定義的值為：
+
+* 「基本」- 使用使用者名稱/密碼
+* "certificate" - 使用憑證
+* 列舉：［「basic」「certificate」］
+* 範例：基本
+
+
+
+
+| 後端管理 IP | 字串 | 錯誤  a| 
+包含用於連線至此 ONTAP 叢集的 IP 位址的 JSON 字串。
+
+
+
+| manag理 IP | 陣列［string］ | 錯誤  a| 
+包含所有可能用於連接到此 ONTAP 叢集的管理 IP 位址清單的 JSON 字串陣列。此數組用於關聯透過 Trident 偵測到的後端和 Astra 中的儲存後端。
+
+* uniqueItems：1
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+storageBackend_1.3_get_response_body
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-storageBackend"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| backendName | 字串 | True  a| 
+包含使用者指定的儲存後端名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| backendType | 字串 | True  a| 
+包含一個值的 JSON 字串，該值指示所表示的儲存後端類型。已定義的值包括：
+
+* 「ontap」－儲存後端代表一個 NetApp ONTAP 系統
+* 列舉：["ontap"]
+* 例如：ONTAP
+
+
+
+
+| backendVersion | 字串 | True  a| 
+包含一個值的 JSON 字串，該值指示所代表的儲存後端版本。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| backendCredentialsName | 字串 | True  a| 
+JSON 字串包含一個值，指示用於儲存後端的一個或多個認證資源的名稱。允許認證輪替，其中多個認證物件具有相同的名稱。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| configVersion | 字串 | 錯誤  a| 
+包含值的 JSON 字串，該值指示儲存後端要使用的作用中組態。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示儲存後端運作狀態值的 JSON 字串。已定義的值包括：
+
+* 「已發現」- 已從託管叢集中發現儲存後端
+* 「running」- 儲存後端運作正常
+* 「未知」- 無法判斷儲存後端的狀態
+* 「失敗」- 儲存後端處於無法使用的狀態
+
+
+
+
+| stateDesired | 字串 | 錯誤  a| 
+包含一個值的 JSON 字串，該值指示儲存後端所需的運作狀態。已定義的值包括：
+
+* 「running」- 儲存後端將處於正常運作狀態
+
+
+
+
+| stateUnready | 陣列［string］ | True  a| 
+JSON 字串的 JSON 陣列，每個字串分別指示儲存後端無法轉換到「執行中」狀態、已轉換為「失敗」或「未知」狀態，以及 / 或存在轉換到「失敗」狀態風險的原因。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| managedState | 字串 | True  a| 
+JSON 字串包含指示儲存後端管理狀態的值。定義的值為：
+
+* 「pending」- 儲存後端已排程進行探索或新增
+* 「未託管」 - 儲存後端處於「已發現」狀態，未受管理，且符合管理資格
+* 「已託管」 - 儲存後端處於「執行中」或「未知」狀態，並且正在管理中
+
+
+
+
+| managedStateUnready | 陣列［string］ | True  a| 
+JSON 字串的 JSON 陣列，每個字串表示儲存後端不符合管理條件的原因。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| healthState | 字串 | 錯誤  a| 
+JSON 字串，包含指示儲存後端健全狀況的值。定義的值包括：
+
+* 「不確定」- 無法判斷資源的健全狀況 （例如，由於缺乏連線能力）
+* 「normal」- 資源沒有已知問題，可依據介面規格提供服務
+* 「警告」- 該資源有已知問題，但這並不妨礙其依照介面規範提供服務
+* 「critical」- 此資源有已知問題，導致其無法依照介面規格提供服務
+
+
+
+
+| healthStateUnready | 陣列［string］ | 錯誤  a| 
+JSON 字串的 JSON 陣列，每個字串表示儲存後端不處於正常健全狀態的原因。定義的值為：
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| protectionState | 字串 | True  a| 
+包含指示儲存後端保護狀態值的 JSON 字串。對於 ONTAP 為 "unknown"。已定義的值包括：
+
+* 「受保護」 - 儲存後端已定義保護原則，並且符合該原則
+* 「部分」- 儲存後端已定義保護原則，但不符合該原則
+* 「none」- 儲存後端未受保護
+* 「未知」- 無法判斷儲存後端保護原則一致性
+* 列舉：［「protected」「partial」「none」「unknown」］
+* 範例：受保護
+
+
+
+
+| protectionStateUnready | 陣列［string］ | True  a| 
+JSON 字串的 JSON 陣列,每個字串表示保護原則不符合規範的原因。定義的值為:
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| 功能 | link:#capabilities["功能"] | True  a| 
+包含此 Storage Backend 功能的 JSON 物件。
+
+
+
+| ONTAP | link:#ontap["ONTAP"] | 錯誤  a| 
+包含與 ONTAP 叢集相關之特定資訊的 JSON 物件。
+
+* additionalProperties：false
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 繼續 | 字串 | 錯誤  a| 
+
+
+
+| 數 | 數字 | 錯誤  a| 
+
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

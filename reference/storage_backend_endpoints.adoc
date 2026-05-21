@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/storage_backend_endpoints.html 
+summary: 'Astra API (ACC) 儲存後端端點' 
+---
+= Astra API (ACC) 儲存後端端點
+:allow-uri-read: 
+
+
+Storage Backend API 可存取儲存服務供應商（儲存後端）的呈現方式，供受管理叢集和應用程式使用。

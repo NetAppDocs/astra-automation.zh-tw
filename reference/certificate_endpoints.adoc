@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/certificate_endpoints.html 
+summary: Astra API（ACC）憑證端點 
+---
+= Astra API（ACC）憑證端點
+:allow-uri-read: 
+
+
+憑證 API 代表管理員信任的憑證，用於建立傳出連線。

@@ -1,0 +1,596 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-k8s-v1-apps-appsnaps.html 
+summary: 為應用程式建立新的應用程式快照 
+---
+= 為應用程式建立新的應用程式快照
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
+
+指示要建立的應用程式快照 API 資源的期望值。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| app_id | 字串 | 路徑 | True  a| 
+包含應用程式資源的 ID
+
+|===
+
+
+== 請求本文
+
+指示要建立的應用程式快照 API 資源的期望值。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-appSnap"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| 姓名 | 字串 | 錯誤  a| 
+包含使用者指定快照名稱的 JSON 字串。如果未指定，或當快照由排程啟動時，系統會為快照指派名稱。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| bucketID | 字串 | 錯誤  a| 
+包含可選儲存桶 ID 的 JSON 字串，用於指示快照建立時將儲存到的位置。如果未指定，則使用叢集上的預設儲存桶。如果叢集上未指定預設儲存桶，則使用對應的雲端預設儲存桶。如果雲端預設儲存桶不可用，則建立時將傳回錯誤。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | 錯誤  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+|===
+.範例請求
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.3",
+  "name": "app-name-245"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 201, Returns the newly created appSnap resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-appSnap"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含使用者指定快照名稱的 JSON 字串。如果未指定，或當快照由排程啟動時，系統會為快照指派名稱。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| bucketID | 字串 | 錯誤  a| 
+包含可選儲存桶 ID 的 JSON 字串，用於指示快照建立時將儲存到的位置。如果未指定，則使用叢集上的預設儲存桶。如果叢集上未指定預設儲存桶，則使用對應的雲端預設儲存桶。如果雲端預設儲存桶不可用，則建立時將傳回錯誤。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| scheduleID | 字串 | 錯誤  a| 
+包含選用排程 ID 的 JSON 字串，用於指示快照是由排程觸發的，並指定觸發快照的排程。僅當快照由排程啟動時才存在。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| snapshotAppAsset | 字串 | 錯誤  a| 
+包含與快照對應的應用程式資產 ID 的 JSON 字串。當應用程式快照狀態為「已完成」時，將傳回此欄位。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示快照運作狀態的值的 JSON 字串。已定義的值包括：
+
+* 「pending」—應用程式快照已安排進行探索。
+* 「正在發現」——應用程式快照正在被發現過程中
+* 「running」- 應用程式快照運作正常
+* 「已完成」— 應用程式快照已完成
+* 「失敗」- 應用程式快照處於永久失敗狀態
+* 「已移除」- 應用程式快照目前無法存取
+* 「正在刪除」— 應用程式快照正在刪除
+* 「未知」— 無法判斷應用程式快照狀態
+
+
+
+
+| stateUnready | 陣列［string］ | True  a| 
+JSON 字串的 JSON 陣列，每個字串指示應用程式快照無法轉換為「running」狀態或已轉換為「failed」狀態的原因。定義的值包括：
+
+* 最短長度：1
+* 最大長度：127
+
+
+
+
+| stateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，列出有關目前狀態的其他詳細資訊，包括達到目前狀態的原因。如果沒有可用的詳細資訊，此陣列將為空白。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| hookState | 字串 | 錯誤  a| 
+JSON 字串，包含一個值，該值指示作為快照一部分執行的任何執行掛鉤的狀態。已定義的值包括：
+
+* 「failed」— 一個或多個執行掛鉤失敗
+* 「success」- 存在零個或多個適用的 hook，且所有 hook 都成功
+
+
+
+
+| hookStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，其中列出了有關「hookState」為何轉換為「failed」的其他詳細資訊。如果沒有詳細資訊，則此陣列為空白。
+
+* 最少項目數：0
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-appSnap",
+  "version": "1.3",
+  "id": "c2cc5c22-ed0e-5c2b-8b7e-0fb81727f617",
+  "name": "app-name-245",
+  "bucketID": "0afbe357-a717-4c7a-8b3d-d0368959c8de",
+  "scheduleID": "1fe83650-9b3c-41ef-bb25-a2910c19c33e",
+  "state": "pending",
+  "stateUnready": [],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra Metadata Schema。如果在建立時未指定、則會建立沒有標籤的中繼資料物件。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效請求內文欄位的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+請求本文欄位無效的原因
+
+|===
+====

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/volume_endpoints.html 
+summary: Astra API（ACC）Volume 端點 
+---
+= Astra API（ACC）Volume 端點
+:allow-uri-read: 
+
+
+Volume API 可讓您檢視與應用程式相關的 Kubernetes 磁碟區。

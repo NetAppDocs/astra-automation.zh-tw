@@ -1,0 +1,639 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-certificates.html 
+summary: 列出所有憑證 
+---
+= 列出所有憑證
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates`#
+
+傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 繼續 |  | 查詢 | 錯誤  a| 
+指示要從哪個權杖繼續列出。
+
+URL 範例：「continue=+++<continue token="" from="" collection="" metadata="">+++」+++</continue>+++
+
+OpenAPI 範例："+++<continue token="" from="" collection="" metadata="">+++"+++</continue>+++</continue>
+
+
+
+| 篩選器 | 字串 | 查詢 | 錯誤  a| 
+指示在列出集合時，為了傳回資源而應符合哪些欄位。
+
+支援的運算子包括：
+
+* eq - 等式
+* lt/gt - 小於/大於
+* lte/gte - 小於或等於/大於或等於
+
+
+URL 範例：「filter=field%20eq%20%27value%27」
+
+OpenAPI 範例："field eq 'value'"
+
+* 例如：certUse%20eq%20'rootCA'
+
+
+
+
+| 包括 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時應傳回哪些欄位。
+
+URL 範例：「include=id」、「include=id,name」
+
+OpenAPI 範例："id"
+
+* 範例：id、cn、isSelfSigned
+
+
+
+
+| 限制 | 字串 | 查詢 | 錯誤  a| 
+表示列出集合時要傳回的資源數量上限。
+
+URL 範例：「limit=2」
+
+OpenAPI 範例：「2」
+
+
+
+| 訂單者 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時資源的排序順序。
+
+URL 範例：「orderBy=name」、「orderBy=name%20desc」
+
+OpenAPI 範例："name desc"
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 項目 | 陣列 [ 任何： link:#certificate_1_1_get_response_body["certificate_1.1_get_response_body"]、陣列 []] | True  a| 
+
+
+
+| 中繼資料 | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-certificates",
+  "version": "1.1",
+  "items": [
+    [
+      "f97f3441-075e-4f9b-9d1e-47f9f62a3fc4",
+      "prod.region-1.example.com",
+      "true"
+    ],
+    [
+      "5e365b4d-034f-4f13-95ef-d3a7fbc0df3d",
+      "prod.region-2.example.com",
+      "false"
+    ],
+    [
+      "11ceb350-1999-4b79-80a6-46a980a27856",
+      "prod.example.com",
+      "false"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 503, Service unavailable
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/41",
+  "title": "Service not ready",
+  "detail": "Currently, the service can't respond to this request.",
+  "status": "503"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/164",
+  "title": "Requested resource in unexpected state",
+  "detail": "The requested resource can't be returned because it isn't in the expected state. Wait for the conflict to be resolved and retry the request.",
+  "status": "409"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 從 | 字串 | True  a| 
+
+
+
+| 到 | 陣列［string］ | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+certificate_1.1_get_response_body
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* 「application/astra-certificate」
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| certUse | 字串 | True  a| 
+指示憑證用途的 JSON 字串。如果未指定，則預設為 "rootCA"。已定義的值包括：
+
+* 「rootCA」- 憑證是憑證授權單位（CA）憑證，用於信任由該 CA 簽署的任何憑證。
+* 「intermediateCA」- 此憑證是由根 CA 所頒發的中間 CA 憑證。
+
+
+
+
+| 憑證 | 字串 | True  a| 
+包含經過 base64 編碼的 PKCS-11 格式憑證（PEM）的 JSON 字串。定義值包括：
+
+* 符合 base64 編碼資料架構
+
+
+
+
+| cn | 字串 | True  a| 
+包含從憑證中擷取的通用名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：511
+
+
+
+
+| expiryTimestamp | 字串 | True  a| 
+包含時間戳記的 JSON 字串，指示憑證的過期時間。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| isSelfSigned | 字串 | True  a| 
+指示憑證是否為自簽名憑證的 JSON 字串。如果在建立時未提供，則預設值為 "false"。更新時：
+
+* 如果提供了值，則會使用該值。
+* 如果未提供該值，且更新中包含「cert」欄位，則該值將設定為「false」。
+* 如果未提供該值，且更新中未包含「cert」欄位，則將保留現有值。已定義的值包括：
+* 「true」- 憑證為自我簽署。
+* "false" - 此憑證不是自簽名憑證。
+
+
+
+
+| trustState | 字串 | True  a| 
+包含一組列舉值之一的 JSON 字串，指示憑證是否受信任。定義的值包括：
+
+* 「untrusted」- 憑證不受信任。
+* 「trusted」- 憑證標記為受信任。
+* 「已過期」- 憑證已過期，因此既不受信任也不不受信任。
+
+
+
+
+| trustStateTransitions | 陣列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | True  a| 
+JSON 物件的 JSON 陣列，每個物件代表從給定已定義狀態出發的允許狀態轉換集。每個 JSON 物件包含「from」和「to」欄位，其中「from」值是狀態名稱，「to」值是允許的目標狀態陣列。
+
+
+
+| trustStateDesired | 字串 | 錯誤  a| 
+JSON 字串包含一個值，指示憑證是否受信任。如果在建立時未指定，則預設值為 "trusted"。已定義的值包括：
+
+* 「untrusted」- 憑證不受信任。
+* 「trusted」- 憑證標記為受信任。
+
+
+
+
+| trustStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+包含 JSON 物件的 JSON 陣列，其中列出了憑證信任狀態的其他詳細資料。如果沒有可用的詳細資料，則此陣列為空白。
+
+* 最低項目數：0
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 繼續 | 字串 | 錯誤  a| 
+
+
+
+| 數 | 數字 | 錯誤  a| 
+
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

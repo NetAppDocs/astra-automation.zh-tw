@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cloud_endpoints.html 
+summary: Astra API （ACC） 雲端端點 
+---
+= Astra API （ACC） 雲端端點
+:allow-uri-read: 
+
+
+Cloud API 可存取雲端資源、讓用戶端連線至特定雲端、以管理叢集和應用程式。

@@ -1,0 +1,618 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-notifications-.html 
+summary: 擷取通知 
+---
+= 擷取通知
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications/{notification_id}`#
+
+在 JSON 回應本文中傳回已儲存的 Notification API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| notification_id | 字串 | 路徑 | True  a| 
+要列出的通知集合 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Notification API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-notification"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含事件階層名稱（以點號 (.) 表示）的 JSON 字串。已定義的值包括：
+
+* 最短長度：3
+* 最大長度：127
+* 定義的正規表示式為："^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| sequenceCount | 數字 | True  a| 
+包含序列計數的 JSON 數字。每當收到新事件時，系統都會遞增此數字。
+
+
+
+| 摘要 | 字串 | True  a| 
+包含事件簡短摘要（少於 40 個字元）的 JSON 字串。定義的值包括：
+
+* 最短長度：3
+* 最大長度：79
+
+
+
+
+| eventTime | 字串 | True  a| 
+包含時間戳記的 JSON 字串，用於指示事件發生的時間。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| 來源 | 字串 | True  a| 
+包含產生事件的服務名稱（小寫）的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：19
+* 定義的正規表示式為："^([a-z-])*$"
+
+
+
+
+| resourceID | 字串 | True  a| 
+包含與事件相關聯之資源 ID 的 JSON 字串。定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 其他資源 ID | 陣列［string］ | True  a| 
+JSON 陣列，包含 JSON 字串，每個字串都包含與事件相關聯的其他資源的資源 ID。雖然「resourceID」欄位包含與此事件相關聯的主要資源，但此欄位包含與相同事件相關聯的任意數量的其他資源 ID。如果沒有其他資源與事件相關聯，則陣列將為空白。定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| resourceType | 字串 | True  a| 
+包含與事件相關聯之資源媒體類型的 JSON 字串。已定義的值為：
+
+* 最短長度：4
+* 最大長度：79
+* 定義的正規表示式為："^application\/astra-([a-zA-Z])+$"
+
+
+
+
+| correlationID | 字串 | True  a| 
+包含 UUIDv4 關聯 ID 的 JSON 字串，可將相關事件分組在一起。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 嚴重性 | 字串 | True  a| 
+包含以下值之一的 JSON 字串，用於指示事件的嚴重程度。已定義的值包括：
+
+* 「已清除」- 表示先前報告的描述某種狀況的事件已不再處於活動狀態。嚴重等級為「已清除」的事件將使用相同的摘要和關聯 ID，以便進行配對。
+* 「不確定」—表示無法確定嚴重性。
+* 「資訊性」- 表示狀態的變化是預期的，也是正常的（未在 X.733 中定義）。
+* 「警告」－表示在產生任何重大影響之前，偵測到潛在或即將發生的服務影響故障。
+* 「嚴重」- 表示已發生影響服務狀況的故障，需要立即採取糾正措施。「已清除」、「不確定」、「警告」和「嚴重」的定義是基於 CCITT X.733 第 8.1.2.3 條的定義。
+
+
+
+
+| 類別 | 字串 | True  a| 
+包含以下值之一的 JSON 字串，用於指示事件的類別。已定義的值包括：
+
+* 「system」- 該事件與內部事件或請求相關。
+* 「user」- 該事件與使用者發起的事件或請求有關。
+* 「安全性」- 此事件與安全性問題相關。
+
+
+
+
+| 描述 | 字串 | True  a| 
+包含事件詳細描述文字的 JSON 字串。已定義的值包括：
+
+* 最短長度：3
+* 最大長度：1023
+
+
+
+
+| 描述 URL | 字串 | 錯誤  a| 
+包含 URL 的 JSON 字串，該 URL 用於啟用橫幅中的按鈕並將其連結到外部文件。已定義的值包括：
+
+* 最短長度：3
+* 最大長度：4095
+
+
+
+
+| correctiveAction | 字串 | 錯誤  a| 
+包含詳細描述文字的 JSON 字串，用於說明針對該事件應採取的糾正措施。已定義的值包括：
+
+* 最短長度：3
+* 最大長度：1023
+
+
+
+
+| correctiveActionURL | 字串 | 錯誤  a| 
+包含 URL 的 JSON 字串，該 URL 將橫幅中的按鈕連結到 UI 中的頁面以修復問題。已定義的值包括：
+
+* 最短長度：3
+* 最大長度：4095
+
+
+
+
+| 可見度 | 陣列［string］ | 錯誤  a| 
+JSON 字串的 JSON 陣列，每個字串指示允許檢視事件的 RBAC 角色。角色以 OR 定義在一起。選用。如果省略，具有任何 RBAC 角色的使用者都可以檢視事件。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| 目的地 | 陣列［string］ | 錯誤  a| 
+包含多個 JSON 字串的 JSON 陣列，每個字串指示事件的另一個目標位置。除了 Activity 服務的活動日誌之外，這些字串還能為服務提供事件路由提示。此參數為可選。已定義的值包括：
+
+* 「notification」- 該事件被標記為通知，可透過 notification API 端點存取。
+* 「banner」—該事件被標記為 banner。
+* 「support」－該事件被標記為支援相關事件。
+
+
+
+
+| resourceURI | 字串 | 錯誤  a| 
+包含與事件相關聯之 URI 的 JSON 字串。僅包含與 API 作業相關的事件。定義的值為：
+
+* 最短長度：3
+* 最大長度：4095
+
+
+
+
+| resourceCollectionURL | 陣列［string］ | 錯誤  a| 
+包含多個 JSON 字串的 JSON 陣列，每個字串表示與該事件關聯的資源的完整存取 URL。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：1023
+
+
+
+
+| resourceMethod | 字串 | 錯誤  a| 
+包含所呼叫 HTTP 方法的 JSON 字串。僅當事件與 API 操作相關時才會包含。已定義的值包括：
+
+* "options" - OPTIONS API 操作
+* "post" - POST API 作業
+* "get" - GET API 操作
+* "put" - PUT API 操作
+* 「刪除」- DELETE API 操作
+
+
+
+
+| resourceMethodResult | 字串 | 錯誤  a| 
+包含所呼叫 HTTP 方法結果的 JSON 字串。僅包含與 API 操作相關的事件。已定義的值包括：
+
+* 定義的正規表示式為："^[1-5][0-9]{2}$"
+
+
+
+
+| userID | 字串 | 錯誤  a| 
+包含與事件相關聯之使用者 ID 的 JSON 字串。僅包含與使用者發起之動作相關聯的事件。定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| accountID | 字串 | 錯誤  a| 
+包含與事件相關聯之帳戶 ID 的 JSON 字串。僅包含與帳戶相關聯的事件。定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 資料 | link:#data["資料"] | 錯誤  a| 
+包含其他事件特定資訊的 JSON 物件。
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-notification",
+  "version": "1.3",
+  "id": "03c645d6-75f0-59b0-95f2-862ae344ea27",
+  "name": "astra.app.discovery.failed",
+  "sequenceCount": 48923,
+  "summary": "Application Discovery Failed",
+  "eventTime": "2020-08-06T12:24:51.846543Z",
+  "source": "composite-compute",
+  "resourceID": "f670bf11-8850-44bd-b330-815af6186a06",
+  "additionalResourceIDs": [
+    "84dfee99-b7b2-46d2-9021-0a1a9a5df1d6",
+    "abb32003-07b9-49b1-9938-1cf6d2f33566"
+  ],
+  "resourceType": "application/astra-app",
+  "correlationID": "3c603442-cfca-4af9-9f1b-40dde5c7a806",
+  "severity": "warning",
+  "class": "user",
+  "description": "Discovering the application 'mysql' was unsuccessful. K8s error 442. Application marked in state 'error'.",
+  "destinations": [
+    "notification"
+  ],
+  "resourceURI": "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/managedClusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/apps/f670bf11-8850-44bd-b330-815af6186a06",
+  "resourceCollectionURL": [
+    "https://www.astra.io/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/f8b58091-4b9c-4c64-9b40-018dbaf7c5de/apps/f670bf11-8850-44bd-b330-815af6186a06",
+    "https://www.astra.io/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/923708f8-0435-45b5-8c00-fbdef3ffaf25/apps/f670bf11-8850-44bd-b330-815af6186a06"
+  ],
+  "userID": "abda967f-cd2c-4237-908e-99266648c553",
+  "accountID": "f126d214-bccf-4558-86b4-2137a41e734f",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+資料
+
+包含其他事件特定資訊的 JSON 物件。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| ttl | 數字 | 錯誤  a| 
+JSON 數字，表示事件將保留的秒數（自 eventTime 起）。只有當事件在指定秒數後自動刪除時，才會包含此欄位。刪除時，如果事件有通知目標，則所有關聯的通知也會被刪除。刪除時，如果事件有橫幅目標，則橫幅也會被移除。如果此欄位不存在（或值為「0」），則表示事件不會自動刪除。
+
+
+
+| isAcknowledgeable | 字串 | 錯誤  a| 
+指示橫幅是否可關閉的 JSON 字串。定義的值為：
+
+* 「true」- 橫幅可關閉
+* 「false」- 橫幅無法關閉
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

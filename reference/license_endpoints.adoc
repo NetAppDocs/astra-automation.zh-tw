@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/license_endpoints.html 
+summary: Astra API（ACC）授權端點 
+---
+= Astra API（ACC）授權端點
+:allow-uri-read: 
+
+
+授權 API 代表載入帳戶的授權。

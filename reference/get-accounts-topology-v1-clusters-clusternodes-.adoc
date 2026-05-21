@@ -1,0 +1,529 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-clusters-clusternodes-.html 
+summary: 為叢集擷取叢集節點 
+---
+= 為叢集擷取叢集節點
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+在 JSON 回應本文中傳回已儲存的叢集節點 API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 叢集 ID | 字串 | 路徑 | True  a| 
+包含叢集資源的 ID
+
+
+
+| clusterNode_id | 字串 | 路徑 | True  a| 
+要列出的 clusterNode 集合的 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Cluster Node API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-clusterNode"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含節點 Kubernetes 名稱值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 角色 | 字串 | True  a| 
+包含節點 Kubernetes 角色值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 標籤 | 陣列[link:#labels["標籤"]] | True  a| 
+JSON 物件的 JSON 陣列，每個物件都包含與節點關聯的 Kubernetes 標籤。如果沒有可用的詳細資訊，此陣列將為空白。
+
+* 最少項目數：0
+
+
+
+
+| creationTime | 字串 | True  a| 
+包含 ISO 8601 時間戳記的 JSON 字串，用於指示節點的建立時間。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| externalIP | 字串 | True  a| 
+包含節點內部 IP 位址值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| internalIP | 字串 | True  a| 
+包含節點外部 IP 位址值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| 區域 | 字串 | True  a| 
+包含節點 Kubernetes 區域值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 區域 | 字串 | True  a| 
+包含節點 Kubernetes 區域值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| instanceType | 字串 | True  a| 
+JSON 字串包含一個值，該值指示節點的 Kubernetes 執行個體類型。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| kernelVersion | 字串 | True  a| 
+JSON 字串，包含指出節點所使用核心版本的值。定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| osImage | 字串 | True  a| 
+包含節點所用作業系統映像值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| numCpus | 字串 | True  a| 
+JSON 字串包含一個值，該值指示指派給節點的 CPU 數量。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 記憶體 | 字串 | True  a| 
+JSON 字串包含一個值，該值指示分配給節點的記憶體量。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：254
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示節點運作狀態值的 JSON 字串。定義的值為：
+
+* 「running」— 節點運作正常
+* 「provisioning」—節點正在配置過程中
+* 「discovering」- 節點的各個面向正在被發現的過程中
+* 「pending」- 節點已排程進行探索
+* 「失敗」- 節點處於故障狀態
+* 「未知」- 無法確定節點的狀態
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-clusterNode",
+  "version": "1.0",
+  "id": "5df0e09f-2c30-5b8a-b6b6-4fb4063525e4",
+  "name": "test-0",
+  "role": "node-role.kubernetes.io/worker",
+  "labels": [],
+  "creationTime": "2020-09-06T04:35:23.593845Z",
+  "externalIP": "192.168.12.44",
+  "internalIP": "10.0.1.1",
+  "zone": "us-west1-c",
+  "region": "us-east1",
+  "instanceType": "e2-medium",
+  "kernelVersion": "4.18.0-147.0.3.el8_1.x86_64",
+  "osImage": "Red Hat Enterprise Linux CoreOS 42.81.20191203.0",
+  "numCpus": "2",
+  "memory": "67108864Ki",
+  "state": "running",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+標籤
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+包含標籤名稱的 JSON 字串定義值如下：
+
+* 最短長度：1
+* 最大長度：63
+* 定義的正規表示式為："^([\S.]{1,253}\/)?([a-z0-9A-Z_.-]){1,63}$"
+
+
+
+
+| 值 | 字串 | True  a| 
+包含標籤值的 JSON 字串定義值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 定義的正規表示式為："^([a-z0-9A-Z_.-]){1,63}$"
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

@@ -1,0 +1,507 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/put-accounts-core-v1-groups-users-rolebindings-.html 
+summary: 修改群組中使用者的角色繫結 
+---
+= 修改群組中使用者的角色繫結
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 群組 ID | 字串 | 路徑 | True  a| 
+包含群組資源的 ID
+
+
+
+| user_id | 字串 | 路徑 | True  a| 
+包含使用者資源的 ID
+
+
+
+| roleBinding_id | 字串 | 路徑 | True  a| 
+要列出的 roleBinding 集合的 ID
+
+|===
+
+
+== 請求本文
+
+將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-roleBinding"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | 字串 | 錯誤  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| userID | 字串 | 錯誤  a| 
+包含使用者資源 ID 的 JSON 字串。已定義的值包括：
+
+* 遵循 Astra Identifier Schema。如果在建立時未指定，則將使用 nil UUID。建立時只能指定 userID 或 groupID。
+
+
+
+
+| groupID | 字串 | 錯誤  a| 
+包含群組資源 ID 的 JSON 字串。已定義的值包括：
+
+* 遵循 Astra Identifier Schema。如果在建立時未指定，則將使用 nil UUID。建立時只能指定 userID 或 groupID。
+
+
+
+
+| accountID | 字串 | 錯誤  a| 
+包含帳戶資源 ID 的 JSON 字串。建立帳戶時，此 ID 必須與請求 URI 中的帳戶 ID 相符。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 角色 | 字串 | True  a| 
+包含四個已定義角色之一的 JSON 字串。已定義的值包括：
+
+* 「viewer」
+* 「成員」
+* "admin"
+* "擁有者"
+
+
+
+
+| roleConstraints | 陣列［string］ | 錯誤  a| 
+指定角色指派範圍的 JSON 字串 JSON 陣列。定義的值為：
+
+* 符合 Astra 角色限制架構。如果在建立時未指定，則該值將設定為大小為 1 的陣列，其中包含字串 "*"，表示「完整範圍」。如果在更新時未指定，則該值將保持不變。空陣列表示「無範圍」。範例：
+* 
++
+= 允許存取任何資源："roleConstraints": ["*"]
+
+* 
++
+= 拒絕存取所有資源："roleConstraints": []
+
+* 
++
+= 僅允許存取特定命名空間資源："roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'" ]
+
+* 
++
+= 允許存取特定命名空間及其下的所有命名空間："roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'.*"]
+
+* 
++
+= 允許存取任何雲端中任何叢集中所有標記為「dev」的命名空間及其下的所有資源："roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+
+* 
++
+= 僅允許存取所有命名空間資源："roleConstraints": [ "namespaces:*" ]
+
+* 
++
+= 允許存取所有命名空間資源及其下的所有資源："roleConstraints": [ "namespaces:__.__" ]
+
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | 錯誤  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+.範例請求
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-roleBinding",
+  "version": "1.1",
+  "role": "member",
+  "roleConstraints": [
+    "namespaces:id='c832e1dc-d7c3-464e-9c62-47bf91c46ce8'"
+  ]
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 204, Indicates if the roleBinding resource was updated.
+----
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidFields | 陣列[link:#invalidFields["invalidFields"]] | 錯誤  a| 
+無效請求本文欄位清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidFields | 陣列[link:#invalidFields["invalidFields"]] | 錯誤  a| 
+無效請求本文欄位清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效請求內文欄位的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+請求本文欄位無效的原因
+
+|===
+====

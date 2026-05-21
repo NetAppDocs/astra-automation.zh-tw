@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/managed_cluster_endpoints.html 
+summary: Astra API（ACC）管理的叢集端點 
+---
+= Astra API（ACC）管理的叢集端點
+:allow-uri-read: 
+
+
+託管叢集 API 代表託管的 Kubernetes 叢集。

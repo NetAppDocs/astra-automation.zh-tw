@@ -1,0 +1,578 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-core-v1-tasks-.html 
+summary: 擷取任務 
+---
+= 擷取任務
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks/{task_id}`#
+
+在 JSON 回應本文中傳回已儲存的 Task API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| task_id | 字串 | 路徑 | True  a| 
+要列出的任務集合 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Task API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-task"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含任務點標記法 (.) 階層名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：3
+* 最大長度：127
+* 定義的正規表示式為："^(([a-z])_(\.))_([a-z])+$"
+
+
+
+
+| 摘要 | 字串 | True  a| 
+包含任務簡短摘要的 JSON 字串。定義的值為：
+
+* 最短長度：3
+* 最大長度：63
+
+
+
+
+| 描述 | 字串 | True  a| 
+包含任務說明的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：511
+
+
+
+
+| 服務 | 字串 | 錯誤  a| 
+包含管理工作的服務名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：31
+
+
+
+
+| parentTaskID | 字串 | 錯誤  a| 
+包含任務父任務全域唯一識別碼的 JSON 字串。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| userID | 字串 | 錯誤  a| 
+包含與任務相關聯之使用者 ID 的 JSON 字串。僅包含與使用者啟動之動作相關聯的任務。定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| resourceID | 字串 | True  a| 
+JSON 字串，包含與任務關聯的資源的全域唯一識別碼。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| resourceURI | 字串 | True  a| 
+包含與任務相關聯之 URI 的 JSON 字串。已定義的值為：
+
+* 最短長度：3
+* 最大長度：4095
+
+
+
+
+| resourceCollectionURI | 陣列［string］ | True  a| 
+JSON 字串的 JSON 陣列，每個字串表示與任務相關聯之資源的完整展開存取 URL。已定義的值為：
+
+* 最短長度：3
+* 最大長度：4095
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示任務運作狀態的值的 JSON 字串。已定義的值包括：
+
+* 「notStarted」- 任務尚未開始執行。
+* 「running」- 工作正在執行中。
+* 「completed」- 工作已完成。
+* 「暫停」- 該任務被請求暫停。
+* 「已暫停」- 任務已暫停。
+* 「取消」- 該任務被要求取消。
+* 「cancelled」- 任務已取消。
+* 「failed」——任務失敗。
+* 最短長度：1
+* 最大長度：31
+
+
+
+
+| stateTransitions | 陣列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | True  a| 
+JSON 物件的 JSON 陣列，每個物件代表從給定已定義狀態出發的允許狀態轉換集。每個 JSON 物件包含「from」和「to」欄位，其中「from」值是狀態名稱，「to」值是允許的目標狀態陣列。
+
+* 最短長度：1
+* 最大長度：31 例如："stateTransitions" : [ { "from": "running", "to": ["paused", "cancelled"] }, { "from": "paused", "to": ["running", "cancelled"] }, ]
+
+
+
+
+| stateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+包含 JSON 物件的 JSON 陣列，其中列出了有關目前「狀態」的其他詳細資訊。此欄位指示是否存在阻止實際狀態與預期狀態相符的條件或錯誤。如果沒有可用的詳細資訊，則此陣列為空白。
+
+* 最低項目數：0
+
+
+
+
+| orderHint | 數字 | 錯誤  a| 
+表示子任務順序的 JSON 數字。客戶端可以使用此欄位按從小到大的順序對子任務進行排序。
+
+
+
+| percentDone | 數字 | 錯誤  a| 
+包含正在執行的任務完成百分比的 JSON 數字。任務完成後，此值將設定為 "100"。
+
+
+
+| startTime | 字串 | 錯誤  a| 
+包含指示任務開始時間戳記的 JSON 字串。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| endTime | 字串 | 錯誤  a| 
+包含任務結束時間戳記的 JSON 字串。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| cancelTime | 字串 | 錯誤  a| 
+包含指示任務取消時間戳記的 JSON 字串。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-task",
+  "version": "1.1",
+  "id": "26e8e8ef-5549-5928-98dd-2c3d43a608e8",
+  "name": "astra.backup.prep",
+  "summary": "Backup preparation",
+  "description": "Task to prepare for the application backup",
+  "service": "nautilus",
+  "userID": "abda967f-cd2c-4237-908e-99266648c553",
+  "parentTaskID": "9cc8c321-6af1-406c-8158-2c6582c247f8",
+  "resourceID": "626a0978-d55f-4841-8b7c-dc0c0f592c6f",
+  "resourceURI": "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/k8s/v1/apps/7c8bef49-697e-4fb4-810c-675cef4cf6c9/appSnaps/2b6dafc3-2172-4431-a482-6306b2703130",
+  "resourceCollectionURI": [
+    "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/f8b58091-4b9c-4c64-9b40-018dbaf7c5de/apps/f670bf11-8850-44bd-b330-815af6186a06/appSnaps/2b6dafc3-2172-4431-a482-6306b2703130",
+    "/accounts/fdaa655c-15ab-4d34-aa61-1e9098e67be0/topology/v1/clouds/0df3f1a0-7203-4c12-aabf-a7bee6302671/clusters/dfd9de2d-6f0b-437b-a737-c8f7f176cd14/namespaces/923708f8-0435-45b5-8c00-fbdef3ffaf25/apps/f670bf11-8850-44bd-b330-815af6186a06/appSnaps/2b6dafc3-2172-4431-a482-6306b2703130"
+  ],
+  "state": "running",
+  "stateTransitions": [
+    {
+      "from": "running",
+      "to": [
+        "paused",
+        "cancelled"
+      ]
+    },
+    {
+      "from": "paused",
+      "to": [
+        "running",
+        "cancelled"
+      ]
+    }
+  ],
+  "stateDetails": [],
+  "orderHint": 0,
+  "percentDone": 20.25,
+  "startTime": "2020-08-06T12:24:52.256624Z",
+  "endTime": "2020-08-06T12:26:52.256624Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/1",
+  "title": "Resource not found",
+  "detail": "The resource specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 從 | 字串 | True  a| 
+
+
+
+| 到 | 陣列［string］ | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

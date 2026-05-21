@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/bucket_endpoints.html 
+summary: Astra API（ACC）儲存區端點 
+---
+= Astra API（ACC）儲存區端點
+:allow-uri-read: 
+
+
+Bucket API 提供對用於在 Astra 中儲存應用程式備份的儲存桶的存取。

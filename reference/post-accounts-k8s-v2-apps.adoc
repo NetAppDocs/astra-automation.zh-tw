@@ -1,0 +1,1136 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/post-accounts-k8s-v2-apps.html 
+summary: 建立新應用程式 
+---
+= 建立新應用程式
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps`#
+
+指示要建立的 App API 資源的期望值。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+|===
+
+
+== 請求本文
+
+指示要建立的 App API 資源的期望值。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-app"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "2.0"
+* "2.1"
+* "2.2"
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含應用程式名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 此字串經過內部驗證，可防止 XSS、Unicode、目錄遍歷和 SQL 注入攻擊。
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| clusterScopedResources | 陣列[link:#clusterScopedResources["clusterScopedResources"]] | 錯誤  a| 
+描述此應用程式所屬叢集範圍資源的 JSON 物件 JSON 陣列
+
+
+
+| namespaceScopedResources | 陣列[link:#namespaceScopedResources["namespaceScopedResources"]] | 錯誤  a| 
+描述此應用程式所包含資源的 JSON 物件 JSON 陣列
+
+
+
+| namespaceMapping | 陣列[link:#namespaceMapping["namespaceMapping"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，每個物件將來源命名空間對應到複製操作的目的地命名空間。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| storageClassMapping | 陣列[link:#storageClassMapping["storageClassMapping"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，每個物件將來源儲存類別對應至還原作業的目的地儲存類別。如果沒有元素或不存在，將使用原始來源儲存類別名稱。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| clusterID | 字串 | 錯誤  a| 
+包含應用程式執行所在叢集 ID 的 JSON 字串。如果應用程式目前未執行，則不會傳回此值。在建立時指定時，clusterID 會指示應用程式必須複製到哪個叢集。如果指定的叢集不存在，或指定的叢集與請求 URI 中指定的 clusterID 不符，則複製將失敗。已定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 來源應用程式 ID | 字串 | 錯誤  a| 
+包含來源應用程式 ID 的 JSON 字串。只有當應用程式是從另一個應用程式複製而來，或從備份或快照還原而來時才會返回。在建立時指定 sourceAppID 時，它會與 sourceClusterID 結合使用，以指示要複製哪個正在執行的應用程式。如果指定的應用程式不存在於指定的來源叢集上，則複製將失敗。建立應用程式時，只能指定 sourceAppID、backupID 或 snapshotID 中的一個。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| sourceClusterID | 字串 | 錯誤  a| 
+包含應用程式先前執行所在叢集 ID 的 JSON 字串。僅當應用程式是從另一個叢集複製而來時才會傳回。在建立時指定 sourceClusterID 時，它會與 sourceAppID 結合使用，指示要複製的應用程式的來源叢集。如果指定的來源叢集不存在，則複製將失敗。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| backupID | 字串 | 錯誤  a| 
+包含應用程式還原來源備份 ID 的 JSON 字串。僅當應用程式是從備份還原時返回。在建立應用程式時指定 backupID 時，表示應用程式將從現有備份複製。如果指定的備份不存在，則複製將失敗。建立應用程式時，只能指定 sourceAppID、backupID 或 snapshotID 中的一個。在替換應用程式時指定 backupID 時，表示應用程式將從該應用程式備份就地還原。如果指定的備份不存在，則還原將會失敗。更新應用程式時，只能指定 backupID 或 snapshotID 中的一個。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| snapshotID | 字串 | 錯誤  a| 
+包含應用程式還原來源快照 ID 的 JSON 字串。僅當應用程式是從快照還原時返回。在建立應用程式時指定 snapshotID 時，表示應用程式將從現有快照複製。如果指定的快照不存在，則複製將失敗。建立應用程式時，只能指定 sourceAppID、backupID 或 snapshotID 中的一個。在替換應用程式時指定 snapshotID 時，表示應用程式將從應用程式快照中就地還原。如果指定的快照不存在，則還原將失敗。更新應用程式時，只能指定 backupID 或 snapshotID 中的一個。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| restoreFilter | link:#restoreFilter["restoreFilter"] | 錯誤  a| 
+包含篩選器清單的 JSON 物件，用於描述選擇性還原作業中包含或排除哪些資源。包含和排除是互斥的，選擇性還原只能使用一種篩選器。
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | 錯誤  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+.範例請求
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.2",
+  "name": "jenkins",
+  "clusterID": "0f284377-e5dc-4dcd-bacd-3197f2b8a347",
+  "namespaceScopedResources": [
+    {
+      "namespace": "production"
+    }
+  ]
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 201, Returns the newly created app resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-app"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "2.0"
+* "2.1"
+* "2.2"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 連結 | 陣列[link:#type_astra_link["type_astra_link"]] | True  a| 
+描述針對資源所支援作業的連結。
+
+
+
+| 姓名 | 字串 | True  a| 
+包含應用程式名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 此字串經過內部驗證，可防止 XSS、Unicode、目錄遍歷和 SQL 注入攻擊。
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| clusterScopedResources | 陣列[link:#clusterScopedResources["clusterScopedResources"]] | 錯誤  a| 
+描述此應用程式所屬叢集範圍資源的 JSON 物件 JSON 陣列
+
+
+
+| namespaceScopedResources | 陣列[link:#namespaceScopedResources["namespaceScopedResources"]] | True  a| 
+描述此應用程式所包含資源的 JSON 物件 JSON 陣列
+
+
+
+| lastResourceCollectionTimestamp | 字串 | 錯誤  a| 
+包含上次資源收集時間戳記的 JSON 字串。如果此應用程式尚未執行任何資源收集，則此欄位為空。已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示應用程式運作狀態的值的 JSON 字串。已定義的值包括：
+
+* 「pending」- 應用程式已排程進行探索
+* 「discovering」—application 正在被探索的過程中
+* 「provisioning」—應用程式正在配置過程中
+* 「ready」—應用程式正在正常運作
+* 「failed」— 應用程式處於永久失敗狀態
+* 「正在還原」— 應用程式正在從備份或快照中還原
+* 「不可用」—該應用程式目前無法存取
+* 「未知」— 無法確定應用程式狀態
+* 「正在刪除」— application 正在刪除中
+
+
+
+
+| stateTransitions | 陣列[link:#type_astra_stateTransition["type_astra_stateTransition"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，每個物件代表從給定已定義狀態出發的允許狀態轉換集。每個 JSON 物件包含「from」和「to」欄位，其中「from」值是狀態名稱，「to」值是允許的目標狀態陣列。
+
+
+
+| stateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+JSON 物件的 JSON 陣列，列出有關目前狀態的其他詳細資訊，包括達到目前狀態的原因。如果沒有可用的詳細資訊，此陣列將為空白。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| protectionState | 字串 | True  a| 
+包含一個值的 JSON 字串，該值指示應用程式的保護狀態。已定義的值包括：
+
+* 「受保護」－該應用程式已定義保護原則，並且符合該原則
+* 「部分」— 應用程式已定義保護原則，但不符合該原則
+* 「none」- 應用程式未定義保護原則
+* "atRisk" - 叢集上的預設儲存類別不支援快照，應用程式有取得不支援磁碟區的風險。
+
+
+
+
+| protectionStateDetails | 陣列[link:#type_astra_stateDetail["type_astra_stateDetail"]] | True  a| 
+JSON 物件的 JSON 陣列，其中列出有關目前保護狀態的其他詳細資料，包括達到目前狀態的原因。如果沒有可用的詳細資料，此陣列將為空白。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| appDetectedType | 字串 | 錯誤  a| 
+用於唯一標識所偵測到的特定應用程式類型的 JSON 字串。已定義的值包括：
+
+* 「系統」- 應用程式包含一個資源，該資源將其識別為 Kubernetes 環境的一部分
+* 「acc」 - 此應用程式包含用於將其識別為 Astra Control Center 執行個體的資源
+
+
+
+
+| 命名空間 | 陣列［string］ | True  a| 
+包含應用程式執行所在命名空間名稱的 JSON 字串 JSON 陣列。已定義的值為：
+
+* 最短長度：1
+* 最大長度：253
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| namespaceMapping | 陣列[link:#namespaceMapping["namespaceMapping"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，每個物件將來源命名空間對應到複製操作的目的地命名空間。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| storageClassMapping | 陣列[link:#storageClassMapping["storageClassMapping"]] | 錯誤  a| 
+JSON 物件的 JSON 陣列，每個物件將來源儲存類別對應至還原作業的目的地儲存類別。如果沒有元素或不存在，將使用原始來源儲存類別名稱。定義的值為：
+
+* 最低項目數：0
+
+
+
+
+| clusterName | 字串 | 錯誤  a| 
+包含應用程式執行所在叢集名稱的 JSON 字串。如果應用程式目前未執行，則不傳回此字串。
+
+
+
+| clusterID | 字串 | 錯誤  a| 
+包含應用程式執行所在叢集 ID 的 JSON 字串。如果應用程式目前未執行，則不會傳回此值。在建立時指定時，clusterID 會指示應用程式必須複製到哪個叢集。如果指定的叢集不存在，或指定的叢集與請求 URI 中指定的 clusterID 不符，則複製將失敗。已定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| clusterType | 字串 | 錯誤  a| 
+包含指示叢集類型值的 JSON 字串。定義的值為：
+
+* "gke" - 託管在 Google Kubernetes Engine（GKE）上的 Kubernetes
+* 「aks」- 託管在 Microsoft Azure Kubernetes Service（AKS）上的 Kubernetes
+* 「eks」- 託管在 Amazon Elastic Kubernetes Service（Amazon EKS）上的 Kubernetes
+* 「openshift」- 該叢集的類型為 OpenShift
+* 「kubernetes」- 叢集為一般 Kubernetes
+
+
+
+
+| 來源應用程式 ID | 字串 | 錯誤  a| 
+包含來源應用程式 ID 的 JSON 字串。只有當應用程式是從另一個應用程式複製而來，或從備份或快照還原而來時才會返回。在建立時指定 sourceAppID 時，它會與 sourceClusterID 結合使用，以指示要複製哪個正在執行的應用程式。如果指定的應用程式不存在於指定的來源叢集上，則複製將失敗。建立應用程式時，只能指定 sourceAppID、backupID 或 snapshotID 中的一個。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| sourceClusterName | 字串 | 錯誤  a| 
+包含應用程式先前執行所在叢集名稱的 JSON 字串。僅當應用程式是從另一個叢集複製而來時才會傳回。
+
+
+
+| sourceClusterID | 字串 | 錯誤  a| 
+包含應用程式先前執行所在叢集 ID 的 JSON 字串。僅當應用程式是從另一個叢集複製而來時才會傳回。在建立時指定 sourceClusterID 時，它會與 sourceAppID 結合使用，指示要複製的應用程式的來源叢集。如果指定的來源叢集不存在，則複製將失敗。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| backupID | 字串 | 錯誤  a| 
+包含應用程式還原來源備份 ID 的 JSON 字串。僅當應用程式是從備份還原時返回。在建立應用程式時指定 backupID 時，表示應用程式將從現有備份複製。如果指定的備份不存在，則複製將失敗。建立應用程式時，只能指定 sourceAppID、backupID 或 snapshotID 中的一個。在替換應用程式時指定 backupID 時，表示應用程式將從該應用程式備份就地還原。如果指定的備份不存在，則還原將會失敗。更新應用程式時，只能指定 backupID 或 snapshotID 中的一個。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| snapshotID | 字串 | 錯誤  a| 
+包含應用程式還原來源快照 ID 的 JSON 字串。僅當應用程式是從快照還原時返回。在建立應用程式時指定 snapshotID 時，表示應用程式將從現有快照複製。如果指定的快照不存在，則複製將失敗。建立應用程式時，只能指定 sourceAppID、backupID 或 snapshotID 中的一個。在替換應用程式時指定 snapshotID 時，表示應用程式將從應用程式快照中就地還原。如果指定的快照不存在，則還原將失敗。更新應用程式時，只能指定 backupID 或 snapshotID 中的一個。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| replicationSourceAppID | 字串 | 錯誤  a| 
+包含要複製到此應用程式的應用程式 ID 的 JSON 字串。僅當該應用程式目前是 AppMirror 關係中的目標，且該關係未處於 failedOver 狀態時才傳回此欄位。當關係處於 failedOver 狀態時，不會傳回此欄位。已定義的值包括：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| restoreFilter | link:#restoreFilter["restoreFilter"] | 錯誤  a| 
+包含篩選器清單的 JSON 物件，用於描述選擇性還原作業中包含或排除哪些資源。包含和排除是互斥的，選擇性還原只能使用一種篩選器。
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-app",
+  "version": "2.2",
+  "id": "39c1c79f-efab-5357-88fb-20e628c4dd96",
+  "links": [],
+  "name": "jenkins",
+  "namespaceScopedResources": [
+    {
+      "namespace": "production",
+      "labelSelectors": []
+    }
+  ],
+  "state": "pending",
+  "stateDetails": [],
+  "protectionState": "none",
+  "protectionStateDetails": [],
+  "namespaces": [
+    "production"
+  ],
+  "clusterName": "GKE-22",
+  "clusterID": "0f284377-e5dc-4dcd-bacd-3197f2b8a347",
+  "clusterType": "kubernetes",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 409, Conflict
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/10",
+  "title": "JSON resource conflict",
+  "detail": "The request body JSON contains a field that conflicts with an idempotent value.",
+  "status": "409"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+GVK
+
+包含 Kubernetes 群組 / 版本 / 類型的 JSON 物件。
+
+* 此物件會根據 Astra /apiResources 進行內部驗證。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 群組 | 字串 | True  a| 
+包含 Kubernetes 指派的群組識別碼的 JSON 字串。
+
+* 該字串已通過內部驗證，符合 Astra /apiResources
+
+
+
+
+| 種類 | 字串 | True  a| 
+包含 Kubernetes 指派的 kind 識別碼的 JSON 字串。
+
+* 該字串已通過內部驗證，符合 Astra /apiResources
+
+
+
+
+| 版本 | 字串 | True  a| 
+包含 Kubernetes 指派的版本識別碼的 JSON 字串。
+
+* 該字串已通過內部驗證，符合 Astra /apiResources
+
+
+|===
+[role="api-collapsible-fifth-title"]
+clusterScopedResources
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| GVK | link:#GVK["GVK"] | True  a| 
+包含 Kubernetes 群組 / 版本 / 類型的 JSON 物件。
+
+* 此物件會根據 Astra /apiResources 進行內部驗證。
+
+
+
+
+| labelSelectors | 陣列［string］ | 錯誤  a| 
+此 JSON 陣列包含多個 JSON 字串，表示叢集範圍 GroupVersionKinds（GVK）在叢集內的標籤選擇器。如果此陣列為空，則包含叢集上的所有 GVK 實例。陣列中的每個元素都是一個 Kubernetes 標籤選擇器字串，並且這些值遵循相同的語法。範例：
+
+* [ "app=mysql" ] -- 選取所有標籤名稱為 app 且值為 mysql 的資源。更多範例請參閱此處： https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement[]
+
+
+|===
+[role="api-collapsible-fifth-title"]
+namespaceScopedResources
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 命名空間 | 字串 | True  a| 
+包含應用程式所在命名空間名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：253
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| labelSelectors | 陣列［string］ | 錯誤  a| 
+一個 JSON 陣列，其中包含表示命名空間內標籤選擇器的 JSON 字串。如果此陣列為空，則包含命名空間中的所有資源。陣列中的每個元素都是一個 Kubernetes 標籤選擇器字串，並遵循對應的語法。範例：
+
+* [ "app=mysql" ] -- 選取所有標籤名稱為 app 且值為 mysql 的資源
+* [ "app != mysql" ] -- 選取所有標籤名稱為 app 且值不為 mysql 的資源
+* [ "app in (mysql, mariadb)" ] -- 選取所有標籤名稱為 app 且值為 mysql 或 mariadb 的資源
+* [ "app notin (nginx, wordpress)" ] -- 選取所有沒有名稱為 app 且值為 nginx 或 wordpress 標籤的資源
+* [ "app" ] -- 選擇所有標籤名為 app 的資源
+* [ "!app" ] -- 選擇所有沒有名為 app 標籤的資源。請注意，單一選擇器中可以包含多個選擇運算子，並以逗號分隔。在這種情況下，各個選擇運算子的結果將進行「與」運算：
+* [ "app=mysql,version=2" ] -- 選取所有標籤名稱為 app 且值為 mysql，同時標籤名稱為 version 且值為 2 的資源
+
+
+|===
+[role="api-collapsible-fifth-title"]
+namespaceMapping
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 來源 | 字串 | True  a| 
+包含來源叢集上命名空間名稱的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：253
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| 目的地 | 字串 | True  a| 
+包含目的地叢集上命名空間名稱的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：253
+* 符合 DNS 1123 Label Schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+storageClassMapping
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 來源 | 字串 | True  a| 
+包含來源儲存類別名稱的 JSON 字串。也可以使用 '*' 來指定所有來源儲存類別。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 如果使用 Storage Class 名稱，則符合 DNS 1123 Label Schema
+* 使用 '*' 表示所有儲存類別
+
+
+
+
+| 目的地 | 字串 | True  a| 
+包含目的地儲存類別名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 符合 DNS 1123 Label Schema
+
+
+|===
+[role="api-collapsible-fifth-title"]
+GVKN
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 群組 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的群組識別碼的 JSON 字串。
+
+* 該字串已通過內部驗證，符合 Astra /apiResources
+
+
+
+
+| 版本 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的版本識別碼的 JSON 字串。
+
+* 該字串已通過內部驗證，符合 Astra /apiResources
+
+
+
+
+| 種類 | 字串 | 錯誤  a| 
+包含 Kubernetes 指派的 kind 識別碼的 JSON 字串。
+
+* 該字串已通過內部驗證，符合 Astra /apiResources
+
+
+
+
+| 命名空間 | 陣列［string］ | 錯誤  a| 
+JSON 字串的 JSON 陣列，用於描述要包含或排除資源的命名空間。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| 名稱 | 陣列［string］ | 錯誤  a| 
+JSON 字串的 JSON 陣列，描述要包含在選擇性還原中或排除的 Kubernetes 資源名稱。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：253
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| labelSelectors | 陣列［string］ | 錯誤  a| 
+JSON 陣列，包含描述 Kubernetes 標籤選擇器的 JSON 字串，用於在選擇性還原中包含或排除資源。此陣列中的每個元素都是 Kubernetes 標籤選擇器字串，並遵循這些值的相同語法。範例：
+
+* [ "app=mysql" ] -- 選取所有標籤名稱為 app 且值為 mysql 的資源。更多範例請參閱此處： https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/#set-based-requirement[]
+
+
+|===
+[role="api-collapsible-fifth-title"]
+restoreFilter
+
+包含篩選器清單的 JSON 物件，用於描述選擇性還原作業中包含或排除哪些資源。包含和排除是互斥的，選擇性還原只能使用一種篩選器。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| resourceSelectionCriteria | 字串 | True  a| 
+JSON 字串包含一個值，該值指示資源篩選器如何選取資源。有效值為 include 或 exclude。
+
+
+
+| GVKN | 陣列[link:#GVKN["GVKN"]] | True  a| 
+包含 JSON 物件的 JSON 陣列，用於描述選擇性還原期間要篩選的資源。如果所有指定的篩選欄位都與相應的資源欄位相符，則該資源與單一 GVKN 篩選元素相符。篩選欄位（例如命名空間和名稱）如果是陣列，則只要其任何元素與相應的資源欄位相符即可相符。labelSelectors 欄位要求所有選擇器都相符。與 GVKN 篩選物件陣列中任何篩選器相符的資源將根據 resourceSelectionCriteria 值包含在還原中或從還原中排除。指定空的 GVKN 物件會導致驗證錯誤。
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+targetSchema
+
+[role="api-collapsible-fifth-title"]
+接受 POST
+
+[role="api-collapsible-fifth-title"]
+接受放置
+
+[role="api-collapsible-fifth-title"]
+提示
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 狀態 | 字串 | 錯誤  a| 
+
+
+
+| 允許 | 陣列［string］ | 錯誤  a| 
+
+
+
+| 接受 POST | link:#accept-post["接受 POST"] | 錯誤  a| 
+
+
+
+| 權限 | 陣列［string］ | 錯誤  a| 
+
+
+
+| 接受放置 | link:#accept-put["接受放置"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_link
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| rel | 字串 | True  a| 
+
+
+
+| href | 字串 | True  a| 
+
+
+
+| 類型 | 字串 | 錯誤  a| 
+
+
+
+| targetSchema | link:#targetSchema["targetSchema"] | 錯誤  a| 
+
+
+
+| 標題 | 字串 | 錯誤  a| 
+
+
+
+| 提示 | link:#hints["提示"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+namespaceScopedResources
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 命名空間 | 字串 | True  a| 
+包含應用程式所在命名空間名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：253
+* 符合 DNS 1123 Label Schema
+
+
+
+
+| labelSelectors | 陣列［string］ | True  a| 
+一個 JSON 陣列，其中包含表示命名空間內標籤選擇器的 JSON 字串。如果此陣列為空，則包含命名空間中的所有資源。陣列中的每個元素都是一個 Kubernetes 標籤選擇器字串，並遵循對應的語法。範例：
+
+* [ "app=mysql" ] -- 選取所有標籤名稱為 app 且值為 mysql 的資源
+* [ "app != mysql" ] -- 選取所有標籤名稱為 app 且值不為 mysql 的資源
+* [ "app in (mysql, mariadb)" ] -- 選取所有標籤名稱為 app 且值為 mysql 或 mariadb 的資源
+* [ "app notin (nginx, wordpress)" ] -- 選取所有沒有名稱為 app 且值為 nginx 或 wordpress 標籤的資源
+* [ "app" ] -- 選擇所有標籤名為 app 的資源
+* [ "!app" ] -- 選擇所有沒有名為 app 標籤的資源。請注意，單一選擇器中可以包含多個選擇運算子，並以逗號分隔。在這種情況下，各個選擇運算子的結果將進行「與」運算：
+* [ "app=mysql,version=2" ] -- 選取所有標籤名稱為 app 且值為 mysql，同時標籤名稱為 version 且值為 2 的資源
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_stateTransition
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 從 | 字串 | True  a| 
+
+
+
+| 到 | 陣列［string］ | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+additionalDetails
+
+[role="api-collapsible-fifth-title"]
+type_astra_stateDetail
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+restoreFilter
+
+包含篩選器清單的 JSON 物件，用於描述選擇性還原作業中包含或排除哪些資源。包含和排除是互斥的，選擇性還原只能使用一種篩選器。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| resourceSelectionCriteria | 字串 | 錯誤  a| 
+JSON 字串包含一個值，該值指示資源篩選器如何選取資源。有效值為 include 或 exclude。
+
+
+
+| GVKN | 陣列[link:#GVKN["GVKN"]] | 錯誤  a| 
+包含 JSON 物件的 JSON 陣列，用於描述選擇性還原期間要篩選的資源。如果所有指定的篩選欄位都與相應的資源欄位相符，則該資源與單一 GVKN 篩選元素相符。篩選欄位（例如命名空間和名稱）如果是陣列，則只要其任何元素與相應的資源欄位相符即可相符。labelSelectors 欄位要求所有選擇器都相符。與 GVKN 篩選物件陣列中任何篩選器相符的資源將根據 resourceSelectionCriteria 值包含在還原中或從還原中排除。指定空的 GVKN 物件會導致驗證錯誤。
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidFields
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效請求內文欄位的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+請求本文欄位無效的原因
+
+|===
+====

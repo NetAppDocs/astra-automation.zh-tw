@@ -1,0 +1,539 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-k8s-v1-apps-schedules.html 
+summary: 列出應用程式的排程 
+---
+= 列出應用程式的排程
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
+
+傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| app_id | 字串 | 路徑 | True  a| 
+包含應用程式資源的 ID
+
+
+
+| 包括 | 字串 | 查詢 | 錯誤  a| 
+指示列出集合時應傳回哪些欄位。
+
+URL 範例：「include=id」、「include=id,name」
+
+OpenAPI 範例："id"
+
+* 範例：id、name、granularity
+
+
+
+
+| 限制 | 字串 | 查詢 | 錯誤  a| 
+表示列出集合時要傳回的資源數量上限。
+
+URL 範例：「limit=2」
+
+OpenAPI 範例：「2」
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns a JSON array of all matching resources in the collection. If individual fields are specified in the request, the items JSON array will contain the fields requested for each matching resource in the order specified.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 項目 | array[任何一項： link:#schedule_1_3_get_response_body["schedule_1.3_get_response_body"]、array[]] | True  a| 
+
+
+
+| 中繼資料 | link:#type_astra_metadata_list["type_astra_metadata_list"] | True  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-schedules",
+  "version": "1.3",
+  "items": [
+    [
+      "0d6d20d6-8b7c-498a-b57b-5734210c209a",
+      "Backup Schedule",
+      "monthly"
+    ]
+  ],
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+schedule_1.3_get_response_body
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-schedule"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+* "1.3"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含排程名稱的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| 已啟用 | 字串 | True  a| 
+指示排程是否處於作用中狀態的 JSON 字串。定義的值為：
+
+* 「true」- 排程處於作用中狀態
+* 「 false 」 - 排程未啟動。如果未指定，則預設值為「 true 」。
+
+
+
+
+| 精細度 | 字串 | True  a| 
+指示排程精細度的 JSON 字串。已定義的值包括：
+
+* 「每小時」
+* 「daily」
+* 「每週」
+* 「每月」
+* "自訂"
+
+
+
+
+| 分鐘 | 字串 | True  a| 
+包含數值的 JSON 字串，該數值指示要執行排程任務的分鐘數（0 - 59）。已定義的值包括：
+
+* 定義的正規表示式為："^[0-9]|[1-5][0-9]$" 如果粒度設定為 "hourly"、"daily"、"weekly" 或 "monthly"，則此欄位存在。對於自訂排程，它將返回值 "0"。
+
+
+
+
+| 小時 | 字串 | 錯誤  a| 
+包含數值的 JSON 字串，該數值指示執行排程任務的小時數（0 - 23）。已定義的值包括：
+
+* 定義的正規表示式為："^[0-9]|[1][0-9]|[2][0-3]$" 如果粒度設定為 "daily"、"weekly" 或 "monthly"，則存在此欄位。
+
+
+
+
+| dayOfWeek | 字串 | 錯誤  a| 
+包含數值的 JSON 字串，該數值指示要執行排程的星期幾（0-7）。已定義的值包括：
+
+* 定義的正規表示式為："^[0-7]$" 僅當粒度設定為 "weekly" 時，此欄位才會出現。
+
+
+
+
+| dayOfMonth | 字串 | 錯誤  a| 
+包含數值的 JSON 字串，指示執行排程任務的日期（1-31）。已定義的值包括：
+
+* 定義的正規表示式為："^[1-9]|[1-2][0-9]|[3][0-1]$"。僅當粒度設定為 "monthly" 時，此欄位才會出現。
+
+
+
+
+| recurrenceRule | 字串 | 錯誤  a| 
+包含 RFC-5545 第 3.8.5.3 節的 JSON 字串。重複規則。對於 DTSTART 參數,僅支援 UTC 時間戳記（以「Z」後綴表示）,且僅支援目前時間之前的時間戳記。對於 RECUR 規則部分,僅支援「FREQ」和「INTERVAL」兩種規則部分。對於 FREQ 規則部分,僅支援「MINUTELY」和「HOURLY」兩種值。僅當粒度設定為「custom」時,此欄位才會出現。
+
+
+
+| snapshotRetention | 字串 | True  a| 
+包含正數值的 JSON 字串，指示要保留的快照數量。零表示備份後應刪除快照。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 定義的正規表示式為："^(0|([1-9][0-9]*))$"
+
+
+
+
+| backupRetention | 字串 | True  a| 
+包含正數值的 JSON 字串，指示要保留的備份數量。零表示不建立任何備份。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+* 定義的正規表示式為："^(0|([1-9][0-9]*))$"
+
+
+
+
+| bucketID | 字串 | 錯誤  a| 
+JSON 字串，包含選用的儲存貯體 ID，指出建立時必須儲存備份的位置。如果未指定，將使用系統選取的儲存貯體。定義的值為：
+
+* 符合 Astra 識別符架構
+
+
+
+
+| 複寫 | 字串 | 錯誤  a| 
+JSON 字串，指示排程是否為每個快照觸發 AppMirror 複寫。僅當應用程式定義了 AppMirror 關係時才生效。已定義的值包括：
+
+* 「true」- 排程會觸發 AppMirror 複寫
+* 「false」- 排程不會觸發 AppMirror 複寫。如果未指定，則預設值為「false」。
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_list
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 繼續 | 字串 | 錯誤  a| 
+
+
+
+| 數 | 數字 | 錯誤  a| 
+
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/schedule_endpoints.html 
+summary: 'Astra API (ACC) 排程端點' 
+---
+= Astra API (ACC) 排程端點
+:allow-uri-read: 
+
+
+Schedule API 允許定義各種排程的資料保護作業。

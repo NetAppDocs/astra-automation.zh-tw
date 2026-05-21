@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/token_endpoints.html 
+summary: Astra API（ACC）權杖端點 
+---
+= Astra API（ACC）權杖端點
+:allow-uri-read: 
+
+
+Token API 使用戶能夠建立和管理 API 存取權杖。

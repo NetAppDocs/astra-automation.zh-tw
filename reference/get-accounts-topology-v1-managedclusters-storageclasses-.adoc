@@ -1,0 +1,474 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/get-accounts-topology-v1-managedclusters-storageclasses-.html 
+summary: 為託管叢集擷取儲存類別 
+---
+= 為託管叢集擷取儲存類別
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/storageClasses/{storageClass_id}`#
+
+在 JSON 回應本文中傳回已儲存的 Storage Class API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| managedCluster_id | 字串 | 路徑 | True  a| 
+包含 managedCluster 資源的 ID
+
+
+
+| storageClass_id | 字串 | 路徑 | True  a| 
+要列出的 storageClass 集合的 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored Storage Class API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "應用程式/astra-storageClass"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 姓名 | 字串 | True  a| 
+包含儲存類別名稱值的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：255
+
+
+
+
+| 配置器 | 字串 | True  a| 
+JSON 字串包含指示與儲存類別相關聯之佈建程式的值。已定義的值為：
+
+* 最短長度：1
+* 最大長度：255
+
+
+
+
+| 可用 | 字串 | True  a| 
+JSON 字串，指示儲存類別是否可用於叢集，或者在管理狀態下是否可以新增至叢集。定義值包括：
+
+* 「available」- 儲存類別可供使用
+* 「符合資格」- 當叢集處於管理狀態時，儲存類別符合叢集使用的資格
+* 「不符合條件」- 當儲存類別處於管理狀態時，叢集無法使用該儲存類別
+
+
+
+
+| allowVolumeExpansion | 字串 | True  a| 
+JSON 字串，指示儲存類別是否允許磁碟區擴充。定義的值為：
+
+* 「true」- 儲存類別允許磁碟區擴充
+* 「false」- 儲存類別不允許磁碟區擴充
+* 「unavailable」- 尚不清楚該儲存類別是否允許磁碟區擴充
+
+
+
+
+| reclaimPolicy | 字串 | True  a| 
+包含雲端平台特定值的 JSON 字串，該值指示儲存類別的保留策略。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：255
+
+
+
+
+| volumeBindingMode | 字串 | True  a| 
+包含雲端特定值的 JSON 字串，指示儲存類別的綁定模式。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：255
+
+
+
+
+| isDefault | 字串 | 錯誤  a| 
+JSON 字串，指示儲存類別是否包含預設註解。定義的值為：
+
+* "true" - 儲存類別包含預設註解
+
+
+
+
+| maxSnapshotCount | 數字 | 錯誤  a| 
+JSON 數字，指示支援的快照數量。此資訊附加到由 NetApp 提供的儲存類別。
+
+
+
+| maxBackupCount | 數字 | 錯誤  a| 
+JSON 數字，表示支援的備份數量。此資訊附加到由 NetApp 提供的儲存類別中。
+
+
+
+| 價格 | 字串 | 錯誤  a| 
+JSON 字串，指示儲存類別每單位時間的貨幣單位。此資訊附加到由 NetApp 提供的儲存類別。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| 貨幣 | 字串 | 錯誤  a| 
+JSON 字串，表示價格所用貨幣的 ISO 4217 三字母代碼。此資訊附加到由 NetApp 提供的儲存類別中。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：255
+
+
+
+
+| 效能 | 數字 | 錯誤  a| 
+JSON 數值，表示以 MBps 為單位的效能服務等級目標（SLO）。此資訊附加到由 NetApp 提供的儲存類別。
+
+
+
+| 恢復能力 | 字串 | 錯誤  a| 
+指示儲存彈性配置的 JSON 字串。此資訊附加到由 NetApp 提供的儲存類別。已定義的值包括：
+
+* 「區域性」 - 如果指定區域不可用，則該磁碟區也將不可用
+* 「multisite」- 即使某個特定區域不可用，該磁碟區仍將繼續可用
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata["type_astra_metadata"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-storageClass",
+  "version": "1.1",
+  "id": "ad9be22b-53c7-540c-8647-76afe2878952",
+  "name": "my-storage-class",
+  "provisioner": "csi.trident.netapp.io",
+  "available": "eligible",
+  "allowVolumeExpansion": "true",
+  "reclaimPolicy": "recycle",
+  "volumeBindingMode": "immediate",
+  "isDefault": "true",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 符合 Astra 中繼資料架構
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | True  a| 
+
+
+
+| 建立時間戳記 | 字串 | True  a| 
+
+
+
+| 修改時間戳記 | 字串 | True  a| 
+
+
+
+| 建立者 | 字串 | True  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====

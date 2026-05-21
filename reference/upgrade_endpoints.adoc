@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/upgrade_endpoints.html 
+summary: Astra API（ACC）升級端點 
+---
+= Astra API（ACC）升級端點
+:allow-uri-read: 
+
+
+Upgrade App API 提供對符合升級條件的軟體元件的存取，並允許啟動升級。升級的可用性取決於已在 Packages API 中註冊的軟體包。

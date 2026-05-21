@@ -1,0 +1,12 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: false 
+permalink: reference/cluster_endpoints.html 
+summary: Astra API（ACC）叢集端點 
+---
+= Astra API（ACC）叢集端點
+:allow-uri-read: 
+
+
+叢集 API 代表非託管 Kubernetes 叢集。

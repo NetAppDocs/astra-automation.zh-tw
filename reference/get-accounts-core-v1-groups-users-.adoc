@@ -1,0 +1,550 @@
+---
+sidebar: sidebar 
+api: true 
+explorer: true 
+permalink: reference/get-accounts-core-v1-groups-users-.html 
+summary: 擷取群組的使用者 
+---
+= 擷取群組的使用者
+:allow-uri-read: 
+
+
+[.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}`#
+
+在 JSON 回應本文中傳回已儲存的使用者 API 資源。
+
+
+
+== 參數
+
+[cols="5*"]
+|===
+| Name | 類型 | 在 | 必要 | 說明 
+
+
+| account_id | 字串 | 路徑 | True  a| 
+包含帳戶資源的 ID
+
+* 範例：{{.Account}}
+
+
+
+
+| 群組 ID | 字串 | 路徑 | True  a| 
+包含群組資源的 ID
+
+
+
+| user_id | 字串 | 路徑 | True  a| 
+要列出的使用者集合 ID
+
+|===
+
+
+== 回應
+
+[source]
+----
+Status: 200, Returns the stored User API resource in the JSON response body.
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+資源的媒體類型。定義的值為：
+
+* "application/astra-user"
+
+
+
+
+| 版本 | 字串 | True  a| 
+資源版本。已定義值包括：
+
+* "1.0"
+* "1.1"
+* "1.2"
+
+
+
+
+| ID | 字串 | True  a| 
+資源的全域唯一識別碼。定義的值為：
+
+* 符合 UUIDv4 架構
+
+
+
+
+| 狀態 | 字串 | True  a| 
+包含指示使用者操作狀態值的 JSON 字串。已定義的值包括：
+
+* 「 pending 」—使用者帳戶正在建立中。使用者只能讀取和修改使用者資源（預設值）。
+* 此狀態對於「authProvider」為「local」的使用者無效
+* 「active」- 使用者帳戶處於運作狀態（如果帳戶設定「isEnabled」為「true」，則使用者可以登入）。
+* 這是使用者「authProvider」設定為「local」時的預設值。
+* 「suspended」 - 使用者帳戶已暫停（無論帳戶「isEnabled」設定為何，使用者都無法登入）。
+
+
+
+
+| isEnabled | 字串 | True  a| 
+JSON 字串，指示使用者是否被允許登入。定義的值包括：
+
+* "true" - 允許使用者登入；建立時的預設值。
+* 「false」- 不允許使用者登入。
+
+
+
+
+| authID | 字串 | 錯誤  a| 
+包含與外部身分提供者相關聯之識別碼的 JSON 字串。此字串的內容取決於指定的 authProvider。對於 "authProvider" 為 "local" 的使用者，"authID" 會設定為 "email" 的值。對於 "authProvider" 為 "ldap" 的使用者，"authID" 會設定為其 LDAP 伺服器的辨別名稱 (DN)。
+
+
+
+| authProvider | 字串 | 錯誤  a| 
+指示 idAuth 識別碼內容的 JSON 字串。已定義的值包括：
+
+* 「cloud-central」－使用者驗證來自 NetApp Cloud Central 服務
+* 「 local 」- 使用者驗證來自本機使用者 / 密碼儲存區
+* "ldap" - 使用者驗證來自外部 LDAP 伺服器。在 Astra Control Center 中，所有使用者都必須指定一個值為 "local" 或 "ldap"。如果未指定值，則預設值為 "local"。在 Astra Control Service 中，不支援將 "authProvider" 設定為 "local" 或 "ldap"。如果未指定值，則預設值為 "cloud-central"。
+
+
+
+
+| firstName | 字串 | True  a| 
+包含使用者指定完整名字的 JSON 字串。定義的值為：
+
+* 最短長度：0
+* 最大長度：63
+* 此字串經過內部驗證，可防止 XSS、Unicode、目錄遍歷和 SQL 注入攻擊
+
+
+
+
+| lastName | 字串 | True  a| 
+包含使用者指定的完整姓氏的 JSON 字串。定義的值為：
+
+* 最短長度：0
+* 最大長度：63
+* 此字串經過內部驗證，可防止 XSS、Unicode、目錄遍歷和 SQL 注入攻擊
+
+
+
+
+| companyName | 字串 | 錯誤  a| 
+包含與使用者相關聯之公司名稱的 JSON 字串。如果此金鑰不存在，表示尚未提供公司名稱。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+* 此字串經過內部驗證，可防止 XSS、Unicode、目錄遍歷和 SQL 注入攻擊
+
+
+
+
+| 電子郵件 | 字串 | True  a| 
+包含使用者指定電子郵件地址的 JSON 字串。
+
+
+
+| 電話 | 字串 | 錯誤  a| 
+包含使用者電話號碼的 JSON 字串。如果此金鑰不存在，則表示尚未提供電話號碼。
+
+
+
+| postalAddress | link:#postalAddress["postalAddress"] | 錯誤  a| 
+包含一系列欄位的 JSON 物件，用於指定地址。如果此金鑰不存在，則表示尚未提供地址。如果此金鑰存在，則包含的所有六個欄位都將存在。如果使用者未提供任何內容，則字串為空白。
+
+
+
+| sendWelcomeEmail | 字串 | True  a| 
+JSON 字串，指示驗證後是否會傳送歡迎電子郵件。如果在建立時未指定，ACS 的值將設為 "true"，Astra Control Center 的值將設為 "false"。定義的值為：
+
+* "true" - 將發送一封歡迎電子郵件；建立時的預設值
+* "false" - 不會傳送歡迎電子郵件。對於 "authProvider" 為 "local" 或 "ldap" 的使用者，此值會被忽略並設定為 "false"。
+
+
+
+
+| enableTimestamp | 字串 | 錯誤  a| 
+包含 ISO-8601 格式時間戳記的 JSON 字串，指示使用者上次啟用的時間。定義的值為：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| lastActTimestamp | 字串 | 錯誤  a| 
+包含 ISO-8601 格式時間戳記的 JSON 字串，指示上次代表該使用者呼叫身分 API 的時間。（注意：此操作開銷較大。）已定義的值包括：
+
+* 符合 ISO-8601 日期時間架構
+
+
+
+
+| 中繼資料 | link:#type_astra_metadata_update["type_astra_metadata_update"] | True  a| 
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "application/astra-user",
+  "version": "1.2",
+  "id": "5bad8e04-e2fd-5c43-98d7-300580993f49",
+  "state": "active",
+  "isEnabled": "true",
+  "authID": "HteLK3hk28sdbDLKHReB",
+  "authProvider": "cloud-central",
+  "firstName": "John",
+  "lastName": "Doe",
+  "companyName": "NetApp, Inc.",
+  "email": "jdoe@example.com",
+  "phone": "408-555-22222",
+  "postalAddress": {
+    "addressCountry": "US",
+    "addressLocality": "Sunnyvale",
+    "addressRegion": "California",
+    "postalCode": "94089",
+    "streetAddress1": "495 East Java Drive"
+  },
+  "sendWelcomeEmail": "true",
+  "enableTimestamp": "2020-08-05T14:24:54.128427Z",
+  "lastActTimestamp": "2020-08-05T14:24:54.128427Z",
+  "metadata": {
+    "labels": [],
+    "creationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "modificationTimestamp": "2022-10-06T20:58:16.305662Z",
+    "createdBy": "8f84cf09-8036-51e4-b579-bd30cb07b269"
+  }
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 401, Unauthorized
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/3",
+  "title": "Missing bearer token",
+  "detail": "The request is missing the required bearer token.",
+  "status": "401"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 400, Bad request
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+
+
+| invalidParams | 陣列[link:#invalidParams["invalidParams"]] | 錯誤  a| 
+無效查詢參數清單
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/5",
+  "title": "Invalid query parameters",
+  "detail": "The supplied query parameters are invalid.",
+  "status": "400"
+}
+----
+====
+
+
+== 回應
+
+[source]
+----
+Status: 403, Forbidden
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/11",
+  "title": "Operation not permitted",
+  "detail": "The requested operation isn't permitted.",
+  "status": "403"
+}
+----
+====
+
+
+== 錯誤
+
+[source]
+----
+Status: 404, Not found
+----
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 類型 | 字串 | True  a| 
+
+
+
+| 標題 | 字串 | True  a| 
+
+
+
+| 詳細資料 | 字串 | True  a| 
+
+
+
+| 狀態 | 字串 | True  a| 
+
+
+
+| correlationID | 字串 | 錯誤  a| 
+
+|===
+.範例錯誤回應
+[%collapsible]
+====
+[source, json, subs="+macros"]
+----
+{
+  "type": "https://astra.netapp.io/problems/2",
+  "title": "Collection not found",
+  "detail": "The collection specified in the request URI wasn't found.",
+  "status": "404"
+}
+----
+====
+
+
+== 定義
+
+.請參閱定義
+[%collapsible]
+====
+[role="api-collapsible-fifth-title"]
+postalAddress
+
+包含一系列欄位的 JSON 物件，用於指定地址。如果此金鑰不存在，則表示尚未提供地址。如果此金鑰存在，則包含的所有六個欄位都將存在。如果使用者未提供任何內容，則字串為空白。
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| addressCountry | 字串 | True  a| 
+包含與郵政地址關聯的國家/地區名稱或國家/地區代碼的 JSON 字串，如 ISO 3166 Alpha-2 中所指定。定義的值為：
+
+* 最短長度：2
+* 最大長度：2
+
+
+
+
+| addressLocality | 字串 | True  a| 
+包含與郵寄地址相關聯的地區（例如城市）的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| addressRegion | 字串 | True  a| 
+包含與郵寄地址關聯的區域（例如，州/省）的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| postalCode | 字串 | True  a| 
+包含與郵遞地址相關聯之郵遞區號的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| streetAddress1 | 字串 | True  a| 
+包含與郵寄地址相關聯之街道地址的 JSON 字串。定義的值為：
+
+* 最短長度：1
+* 最大長度：63
+
+
+
+
+| streetAddress2 | 字串 | 錯誤  a| 
+包含選用輔助街道地址資訊、郵政信箱等的 JSON 字串。已定義的值包括：
+
+* 最短長度：1
+* 最大長度：63
+
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_label
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+
+
+
+| 值 | 字串 | True  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+type_astra_metadata_update
+
+與資源相關聯的用戶端和服務指定中繼資料。定義的值為：
+
+* 遵循 Astra Metadata Schema。如果在建立時未指定，則建立的元資料物件將不帶任何標籤。如果在更新時未指定，元資料物件的標籤、creationTimestamp 和 createdBy 將保持不變。
+
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 標籤 | 陣列[link:#type_astra_label["type_astra_label"]] | 錯誤  a| 
+
+
+
+| 建立時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 修改時間戳記 | 字串 | 錯誤  a| 
+
+
+
+| 建立者 | 字串 | 錯誤  a| 
+
+
+
+| modifiedBy | 字串 | 錯誤  a| 
+
+|===
+[role="api-collapsible-fifth-title"]
+invalidParams
+
+[cols="4*"]
+|===
+| Name | 類型 | 必要 | 說明 
+
+
+| 姓名 | 字串 | True  a| 
+無效查詢參數的名稱
+
+
+
+| 原因 | 字串 | True  a| 
+查詢參數無效的原因
+
+|===
+====
