@@ -7,6 +7,7 @@ summary: 列出所有應用程式備份
 ---
 = 列出所有應用程式備份
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups`#
@@ -15,6 +16,7 @@ summary: 列出所有應用程式備份
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -52,6 +54,7 @@ OpenAPI 範例：「2」
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -101,6 +104,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -146,6 +150,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -196,6 +201,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -241,6 +247,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -286,6 +293,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -331,14 +339,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -362,6 +373,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -377,6 +389,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -409,6 +422,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[appBackup_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 appBackup_1.2_get_response_body
 
@@ -556,6 +570,7 @@ JSON 數字，包含備份中的總位元組數。
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -591,6 +606,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,6 +18,7 @@ Astra Control REST API提供多項支援功能、可用於診斷與偵錯。
 
 
 
+[[api-resources]]
 == API資源
 
 API資源提供多項Astra功能、可提供診斷資訊和支援。

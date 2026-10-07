@@ -7,6 +7,7 @@ summary: 刪除執行掛鉤覆寫資源
 ---
 = 刪除執行掛鉤覆寫資源
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
@@ -23,6 +24,7 @@ CAUTION: 此操作已棄用。
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -49,6 +51,7 @@ CAUTION: 此操作已棄用。
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -57,6 +60,7 @@ Status: 204, Indicates if the executionHookOverride resource was deleted.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -102,6 +106,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -152,6 +157,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -197,6 +203,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -242,11 +249,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

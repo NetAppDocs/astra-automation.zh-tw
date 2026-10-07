@@ -7,6 +7,7 @@ summary: Astra API（ACC）權利端點
 ---
 = Astra API（ACC）權利端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 權利 API 代表帳戶的有效授權和訂閱所啟用的功能或容量。

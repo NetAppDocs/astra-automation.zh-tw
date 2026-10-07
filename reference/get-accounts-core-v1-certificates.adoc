@@ -7,6 +7,7 @@ summary: 列出所有憑證
 ---
 = 列出所有憑證
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates`#
@@ -15,6 +16,7 @@ summary: 列出所有憑證
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -89,6 +91,7 @@ OpenAPI 範例："name desc"
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -143,6 +146,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -188,6 +192,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -238,6 +243,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -283,6 +289,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -328,6 +335,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -373,11 +381,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -393,9 +403,11 @@ type_astra_stateTransition
 | 到 | 陣列［string］ | True  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -419,6 +431,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -434,6 +447,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -466,6 +480,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[certificate_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 certificate_1.1_get_response_body
 
@@ -584,6 +599,7 @@ JSON 字串包含一個值，指示憑證是否受信任。如果在建立時未
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -619,6 +635,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -18,6 +18,7 @@ summary: 您可以刪除與應用程式相關的備份。
 
 
 
+[[before-you-begin]]
 == 開始之前
 
 您必須具備下列條件：
@@ -28,6 +29,7 @@ summary: 您可以刪除與應用程式相關的備份。
 
 
 
+[[delete-the-backup]]
 == 刪除備份
 
 執行下列REST API呼叫。

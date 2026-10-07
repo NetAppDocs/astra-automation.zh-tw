@@ -24,6 +24,7 @@ summary: 您可以視需要執行兩項選用的相關管理工作、以進行As
 
 
 
+[[disable-ldap-authentication]]
 == 停用LDAP驗證
 
 您可以執行下列REST API呼叫、以全域停用特定Astra部署的LDAP驗證。通話會更新「Astra帳戶.LDAP」設定、而「isEnabled」值則會設為「假」。
@@ -71,6 +72,7 @@ curl --request PUT \
 
 
 
+[[reset-the-ldap-authentication-configuration]]
 == 重設LDAP驗證組態
 
 您可以執行下列REST API呼叫、以中斷Astra與LDAP伺服器的連線、並在Astra中重設LDAP組態。通話會更新「Astra帳戶.LDAP」設定、並清除「connectionHost」的值。

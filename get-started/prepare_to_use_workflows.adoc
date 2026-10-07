@@ -18,6 +18,7 @@ summary: 您應該先熟悉Astra工作流程的組織和格式、再將其用於
 
 
 
+[[introduction]]
 == 簡介
 
 工作流程_是完成特定管理工作或目標所需的一或多個步驟順序。Astra Control工作流程的每個步驟都是下列其中一個步驟：
@@ -34,6 +35,7 @@ NOTE: 工作流程只能包含一個步驟。這些單一步驟工作流程的�
 
 
 
+[[workflow-categories]]
 == 工作流程類別
 
 根據您的部署模式、Astra工作流程分為兩大類。如果您使用Astra Control Center、則應從基礎架構工作流程開始、然後繼續進行管理工作流程。使用Astra Control Service時、您通常可以直接前往管理工作流程。
@@ -43,18 +45,21 @@ NOTE: 工作流程中的捲髮樣本使用 Astra Control Service 的 URL 。當�
 
 
 
+[[infrastructure-workflows]]
 === 基礎架構工作流程
 
 這些工作流程適用於Astra基礎架構、包括認證、儲存庫和儲存後端。Astra Control Center需要這些工具、但在大多數情況下、也可搭配Astra Control Service使用。工作流程著重於建立及維護Astra託管叢集所需的工作。
 
 
 
+[[management-workflows]]
 === 管理工作流程
 
 您可以在設定託管叢集之後使用這些工作流程。管理工作流程著重於應用程式保護及支援作業、例如備份、還原及複製應用程式。
 
 
 
+[[common-input-parameters]]
 == 通用輸入參數
 
 以下所述的輸入參數適用於用來說明REST API呼叫的所有Curl範例。
@@ -64,6 +69,7 @@ NOTE: 由於這些輸入參數是通用需求、因此不會在個別工作流�
 
 
 
+[[path-parameters]]
 === 路徑參數
 
 每次REST API呼叫所使用的端點路徑包括下列參數。另請參閱 link:../rest-core/url_format.html["URL格式"] 以取得更多資訊。
@@ -73,6 +79,7 @@ NOTE: 由於這些輸入參數是通用需求、因此不會在個別工作流�
 
 
 
+[[request-headers]]
 === 要求標頭
 
 視REST API呼叫而定、您可能需要包含數個要求標頭。
@@ -84,6 +91,7 @@ NOTE: 由於這些輸入參數是通用需求、因此不會在個別工作流�
 
 
 
+[[presentation-of-tokens-and-identifiers]]
 == 呈現權杖和識別碼
 
 與捲動範例搭配使用的API權杖和其他ID值不透明、沒有明顯的意義。因此為了改善範例的讀取性、不會使用實際的權杖和ID值。而是使用較小的保留關鍵字、其優點如下：
@@ -112,6 +120,7 @@ NOTE: 由於這些輸入參數是通用需求、因此不會在個別工作流�
 |===
 
 
+[[using-the-examples-with-bash]]
 == 使用範例搭配 Bash
 
 如果您直接使用工作流程捲曲範例、則必須使用適合您環境的值來更新這些範例所包含的變數。您可以手動編輯範例、或是仰賴 Bash Shell 為您進行替代、如下所述。

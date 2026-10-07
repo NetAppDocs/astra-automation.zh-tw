@@ -7,6 +7,7 @@ summary: 列出所有設定
 ---
 = 列出所有設定
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings`#
@@ -15,6 +16,7 @@ summary: 列出所有設定
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -92,6 +94,7 @@ OpenAPI 範例：「1」
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -181,6 +184,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -226,6 +230,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -276,6 +281,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -321,6 +327,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -366,6 +373,7 @@ Status: 503, Service unavailable
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -411,24 +419,29 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 包含鍵值對的 JSON 物件，這些鍵值對構成此設定的目前組態。此物件的內容必須符合 configSchema 欄位中包含的 JSON Schema。預設值由 configmap 提供。使用者變更預設值後，這些預設值不會被覆寫。
 
+[[type_json]]
 [role="api-collapsible-fifth-title"]
 type_json
 
 包含鍵值對的 JSON 物件，用於指定此設定的配置。該物件的內容必須符合 configSchema 欄位中包含的 JSON 模式。該物件在指定之前不存在。指定後，功能服務會通知對應的服務請求套用所需的設定。相應的服務隨後可以執行驗證並將所需的配置套用到目前配置。
 
+[[properties]]
 [role="api-collapsible-fifth-title"]
 屬性
 
+[[type_json_schema]]
 [role="api-collapsible-fifth-title"]
 type_json_schema
 
@@ -458,6 +471,7 @@ type_json_schema
 | 必要 | 陣列［string］ | True  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -473,6 +487,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -505,6 +520,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[setting_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 setting_1.1_get_response_body
 
@@ -589,6 +605,7 @@ JSON 字串的 JSON 陣列，每個字串表示設定未成功套用的原因。
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -624,6 +641,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

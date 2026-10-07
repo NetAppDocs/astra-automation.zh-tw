@@ -7,6 +7,7 @@ summary: Astra API（ACC）事件端點
 ---
 = Astra API（ACC）事件端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Event API 可存取系統中發生的事件。

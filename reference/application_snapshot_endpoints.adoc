@@ -7,6 +7,7 @@ summary: Astra API（ACC）應用程式 Snapshot 端點
 ---
 = Astra API（ACC）應用程式 Snapshot 端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 應用程式快照 API 可讓使用者建立及檢視受管理應用程式的快照。

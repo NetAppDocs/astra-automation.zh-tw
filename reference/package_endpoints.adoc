@@ -7,6 +7,7 @@ summary: Astra API（ACC）套件端點
 ---
 = Astra API（ACC）套件端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Package API 代表可安裝的軟體套件。

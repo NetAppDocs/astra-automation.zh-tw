@@ -7,6 +7,7 @@ summary: 為叢集擷取儲存類別
 ---
 = 為叢集擷取儲存類別
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
@@ -15,6 +16,7 @@ summary: 為叢集擷取儲存類別
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -41,6 +43,7 @@ summary: 為叢集擷取儲存類別
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -217,6 +220,7 @@ JSON 數值，表示以 MBps 為單位的效能服務等級目標（SLO）。此
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -262,6 +266,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -312,6 +317,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -357,6 +363,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -402,11 +409,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -422,6 +431,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -454,6 +464,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

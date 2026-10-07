@@ -7,6 +7,7 @@ summary: Astra API（ACC）帳戶端點
 ---
 = Astra API（ACC）帳戶端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Account API 代表多租戶系統中的隔離租戶。

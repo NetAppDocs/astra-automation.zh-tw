@@ -7,6 +7,7 @@ summary: Astra API（ACC）叢集端點
 ---
 = Astra API（ACC）叢集端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 叢集 API 代表非託管 Kubernetes 叢集。

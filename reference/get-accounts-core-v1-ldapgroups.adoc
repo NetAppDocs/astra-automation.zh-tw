@@ -7,6 +7,7 @@ summary: 列出所有 LDAP 群組
 ---
 = 列出所有 LDAP 群組
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapGroups`#
@@ -15,6 +16,7 @@ summary: 列出所有 LDAP 群組
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -77,6 +79,7 @@ OpenAPI 範例："+++<continue token="" from="" collection="" metadata="">+++"++
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -126,6 +129,7 @@ Status: 200, Returns a JSON array of JSON objects containing the results of the 
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -176,6 +180,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -221,6 +226,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -266,6 +272,7 @@ Status: 406, Not acceptable
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -311,6 +318,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -356,11 +364,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -376,6 +386,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -408,6 +419,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[ldapGroup_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 ldapGroup_1.0_get_response_body
 
@@ -464,6 +476,7 @@ ldapGroup_1.0_get_response_body
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -499,6 +512,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

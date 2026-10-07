@@ -7,6 +7,7 @@ summary: Astra API（ACC）儲存類別端點
 ---
 = Astra API（ACC）儲存類別端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Storage Class API 描述了給定叢集已知的儲存類別。

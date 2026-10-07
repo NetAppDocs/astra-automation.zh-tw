@@ -7,6 +7,7 @@ summary: 修改帳戶
 ---
 = 修改帳戶
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}`#
@@ -20,6 +21,7 @@ summary: 修改帳戶
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: 修改帳戶
 |===
 
 
+[[request-body]]
 == 請求本文
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
@@ -137,6 +140,7 @@ JSON 字串包含指示帳戶運作狀態的值。定義的值為：
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -145,6 +149,7 @@ Status: 204, Indicates if the account resource was updated.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -190,6 +195,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -240,6 +246,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -290,6 +297,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -335,6 +343,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -380,11 +389,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[postalAddress]]
 [role="api-collapsible-fifth-title"]
 postalAddress
 
@@ -448,6 +459,7 @@ postalAddress
 
 
 |===
+[[accountContact]]
 [role="api-collapsible-fifth-title"]
 accountContact
 
@@ -510,6 +522,7 @@ accountContact
 包含一組 JSON 字串的 JSON 物件，用於指定位址。如果此金鑰不存在，則表示尚未提供位址。如果此金鑰存在，則包含的所有六個 JSON 字串都將存在。如果未提供任何內容，則字串為空。
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -525,6 +538,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -557,6 +571,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -574,6 +589,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

@@ -7,6 +7,7 @@ summary: 列出使用者的權杖
 ---
 = 列出使用者的權杖
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens`#
@@ -15,6 +16,7 @@ summary: 列出使用者的權杖
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -109,6 +111,7 @@ OpenAPI 範例："+++<continue token="" from="" collection="" metadata="">+++"++
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -160,6 +163,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -205,6 +209,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -255,6 +260,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -300,6 +306,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -345,11 +352,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -365,6 +374,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -397,6 +407,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[token_1_0_get_response_body]]
 [role="api-collapsible-fifth-title"]
 token_1.0_取得回應主體
 
@@ -454,6 +465,7 @@ token_1.0_取得回應主體
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -489,6 +501,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

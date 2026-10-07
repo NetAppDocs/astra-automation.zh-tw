@@ -7,6 +7,7 @@ summary: 列出所有通知
 ---
 = 列出所有通知
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/notifications`#
@@ -15,6 +16,7 @@ summary: 列出所有通知
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -110,6 +112,7 @@ OpenAPI 範例："+++<continue token="" from="" collection="" metadata="">+++"++
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -165,6 +168,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -210,6 +214,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -260,6 +265,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -305,6 +311,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -350,11 +357,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[data]]
 [role="api-collapsible-fifth-title"]
 資料
 
@@ -378,6 +387,7 @@ JSON 數字，表示事件將保留的秒數（自 eventTime 起）。只有當�
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -393,6 +403,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -425,6 +436,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[notification_1_3_get_response_body]]
 [role="api-collapsible-fifth-title"]
 notification_1.3_get_response_body
 
@@ -679,6 +691,7 @@ JSON 字串的 JSON 陣列，每個字串指示允許檢視事件的 RBAC 角色
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -714,6 +727,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

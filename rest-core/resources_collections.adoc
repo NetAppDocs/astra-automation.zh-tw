@@ -21,6 +21,7 @@ NOTE: 從概念上來說、REST *資源*類似於以物件導向程式設計（O
 
 
 
+[[attributes-of-the-astra-resources]]
 == Astra資源的屬性
 
 Astra Control REST API符合RESTful設計原則。每個Astra資源執行個體都是根據明確定義的資源類型來建立。一組相同類型的資源執行個體稱為*集合*。API呼叫會對個別資源或資源集合起作用。
@@ -58,6 +59,7 @@ NOTE: 資源識別碼是用於集合的主要金鑰。
 
 
 
+[[common-structure-for-astra-resources]]
 == Astra資源的通用架構
 
 每個Astra Control資源都是使用通用結構來定義。

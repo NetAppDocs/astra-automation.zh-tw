@@ -7,6 +7,7 @@ summary: 建立新群組
 ---
 = 建立新群組
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups`#
@@ -15,6 +16,7 @@ summary: 建立新群組
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -31,6 +33,7 @@ summary: 建立新群組
 |===
 
 
+[[request-body]]
 == 請求本文
 
 指示要建立的 Group API 資源所需的值。
@@ -108,6 +111,7 @@ LDAP 群組的辨別名稱（DN）。定義的值為：
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -202,6 +206,7 @@ LDAP 群組的辨別名稱（DN）。定義的值為：
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -252,6 +257,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -297,6 +303,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -342,6 +349,7 @@ Status: 406, Not acceptable
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -387,6 +395,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -437,11 +446,13 @@ Status: 400, Bad request
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -457,6 +468,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -489,6 +501,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -506,6 +519,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

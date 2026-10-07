@@ -27,12 +27,14 @@ NOTE: LDAP認證資料的形式為使用者名稱、電子郵件地址及相關�
 
 
 
+[[add-and-bind-an-individual-user]]
 == 新增及連結個別使用者
 
 您可以指派角色給LDAP驗證後所使用的每個Astra使用者。當使用者人數不多、而且每個使用者可能具有不同的管理特性時、這是適當的做法。
 
 
 
+[[step-1-add-a-user]]
 === 步驟 1 ：新增使用者
 
 執行下列REST API呼叫、將使用者新增至Astra、並指出LDAP為驗證提供者。
@@ -123,6 +125,7 @@ curl --request POST \
 ----
 
 
+[[step-2-add-a-role-binding-for-the-user]]
 === 步驟 2 ：新增使用者的角色繫結
 
 執行下列REST API呼叫、將使用者繫結至特定角色。您必須擁有上一步建立的使用者UUID。
@@ -193,12 +196,14 @@ curl --request POST \
 
 
 
+[[add-and-bind-a-group]]
 == 新增及繫結群組
 
 您可以將角色指派給Astra群組、此群組在LDAP驗證之後使用。當使用者數量眾多、而且每個使用者可能具有類似的管理特性時、這是適當的做法。
 
 
 
+[[step-1-add-a-group]]
 === 步驟 1 ：新增群組
 
 執行下列REST API呼叫、將群組新增至Astra、並指出LDAP為驗證提供者。
@@ -265,6 +270,7 @@ curl --request POST \
 ----
 
 
+[[step-2-add-a-role-binding-for-the-group]]
 === 步驟 2 ：新增群組的角色繫結
 
 執行下列REST API呼叫、將群組繫結至特定角色。您必須擁有上一步建立的群組UUID。在LDAP執行驗證之後、屬於群組成員的使用者將能夠登入Astra。

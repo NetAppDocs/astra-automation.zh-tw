@@ -7,6 +7,7 @@ summary: 刪除群組中使用者的權杖
 ---
 = 刪除群組中使用者的權杖
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
@@ -20,6 +21,7 @@ summary: 刪除群組中使用者的權杖
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -51,6 +53,7 @@ summary: 刪除群組中使用者的權杖
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -59,6 +62,7 @@ Status: 204, Indicates if the token resource was deleted.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -104,6 +108,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -154,6 +159,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -199,6 +205,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -244,11 +251,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

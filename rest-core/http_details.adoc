@@ -18,6 +18,7 @@ Astra Control REST API使用HTTP和相關參數來處理資源執行個體和集
 
 
 
+[[api-transactions-and-the-crud-model]]
 == API交易與CRUD模式
 
 Astra Control REST API實作交易模式、提供定義完善的作業和狀態轉換。
@@ -38,6 +39,7 @@ Astra Control REST API實作交易模式、提供定義完善的作業和狀態�
 
 
 
+[[http-methods]]
 == HTTP方法
 
 下表顯示API支援的HTTP方法或動詞。
@@ -60,6 +62,7 @@ Astra Control REST API實作交易模式、提供定義完善的作業和狀態�
 |===
 
 
+[[request-and-response-headers]]
 == 要求和回應標頭
 
 下表摘要說明Astra Control REST API所使用的HTTP標頭。
@@ -97,6 +100,7 @@ NOTE: 請參閱 https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232."^] 和 htt
 |===
 
 
+[[query-parameters]]
 == 查詢參數
 
 下列查詢參數可用於資源集合。請參閱 link:../additional/work_with_collections.html["使用集合"] 以取得更多資訊。
@@ -125,6 +129,7 @@ NOTE: 請參閱 https://www.rfc-editor.org/rfc/rfc7232.txt["RFC 7232."^] 和 htt
 |===
 
 
+[[http-status-codes]]
 == HTTP 狀態代碼
 
 Astra Control REST API使用的HTTP狀態代碼如下所述。

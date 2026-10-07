@@ -21,12 +21,14 @@ NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供
 
 
 
+[[step-1-obtain-the-kubeconfig-file]]
 == 步驟 1 ：取得 kubeconfig 檔案
 
 您需要向Kubernetes系統管理員或服務取得* kubconfig*檔案的複本。
 
 
 
+[[step-2-prepare-the-kubeconfig-file]]
 == 步驟 2 ：準備 kubeconfig 檔案
 
 在使用* kubeconfig *檔案之前、您應該先執行下列作業：
@@ -48,6 +50,7 @@ NOTE: 使用其中一家主要雲端供應商（包括：KS、EKS、GKE）提供
 
 
 
+[[step-3-select-the-cloud]]
 == 步驟 3 ：選擇雲端
 
 執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 然後選取要新增叢集的雲端。
@@ -57,6 +60,7 @@ NOTE: 您唯一可以選擇的雲端是*私有*雲端。
 
 
 
+[[step-4-create-a-credential]]
 == 步驟 4 ：建立認證
 
 執行下列REST API呼叫、以使用Kbeconfig檔案建立認證。
@@ -97,6 +101,7 @@ curl --request POST \
 ----
 
 
+[[step-5-add-the-cluster]]
 == 步驟 5 ：新增叢集
 
 執行下列REST API呼叫、將叢集新增至雲端。的值 `credentialID` 輸入欄位可從上一步的REST API呼叫取得。

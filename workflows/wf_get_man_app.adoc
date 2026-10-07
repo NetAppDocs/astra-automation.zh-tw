@@ -18,12 +18,14 @@ summary: 您可以擷取所有描述單一應用程式的資源變數。
 
 
 
+[[before-you-begin]]
 == 開始之前
 
 您必須擁有想要擷取的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
+[[step-1-get-the-application]]
 == 步驟 1 ：取得應用程式
 
 執行下列REST API呼叫。

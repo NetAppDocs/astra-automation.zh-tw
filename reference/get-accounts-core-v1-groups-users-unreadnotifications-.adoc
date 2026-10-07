@@ -7,6 +7,7 @@ summary: 擷取群組中使用者的未讀通知
 ---
 = 擷取群組中使用者的未讀通知
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
@@ -15,6 +16,7 @@ summary: 擷取群組中使用者的未讀通知
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -46,6 +48,7 @@ summary: 擷取群組中使用者的未讀通知
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -136,6 +139,7 @@ JSON 數字，包含與通知 ID 所指定通知相關聯的序列計數。
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -181,6 +185,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -231,6 +236,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -276,6 +282,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -321,11 +328,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -341,6 +350,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -373,6 +383,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

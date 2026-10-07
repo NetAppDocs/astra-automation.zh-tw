@@ -7,6 +7,7 @@ summary: Astra API（ACC）儲存區端點
 ---
 = Astra API（ACC）儲存區端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Bucket API 提供對用於在 Astra 中儲存應用程式備份的儲存桶的存取。

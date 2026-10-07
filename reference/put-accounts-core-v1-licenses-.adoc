@@ -7,6 +7,7 @@ summary: 修改授權
 ---
 = 修改授權
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
@@ -20,6 +21,7 @@ summary: 修改授權
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -41,6 +43,7 @@ summary: 修改授權
 |===
 
 
+[[request-body]]
 == 請求本文
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
@@ -214,6 +217,7 @@ JSON 字串，包含從 NetApp 授權系統取得的授權 JSON 的 base64 編�
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -222,6 +226,7 @@ Status: 204, Indicates if the license resource was updated.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -267,6 +272,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -312,6 +318,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -362,6 +369,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -407,6 +415,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -452,11 +461,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[addons]]
 [role="api-collapsible-fifth-title"]
 附加元件
 
@@ -504,6 +515,7 @@ Status: 404, Not found
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -519,6 +531,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -551,6 +564,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -568,6 +582,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

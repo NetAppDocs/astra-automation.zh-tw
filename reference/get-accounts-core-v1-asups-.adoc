@@ -7,6 +7,7 @@ summary: 擷取 ASUP 資源
 ---
 = 擷取 ASUP 資源
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups/{asup_id}`#
@@ -15,6 +16,7 @@ summary: 擷取 ASUP 資源
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: 擷取 ASUP 資源
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -177,6 +180,7 @@ JSON 物件的 JSON 陣列，列出有關「uploadState」為何轉換為「fail
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -222,6 +226,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -272,6 +277,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -317,6 +323,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -362,14 +369,17 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -393,6 +403,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -408,6 +419,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -440,6 +452,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

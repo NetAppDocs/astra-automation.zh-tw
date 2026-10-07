@@ -7,6 +7,7 @@ summary: 刪除應用程式的應用程式備份
 ---
 = 刪除應用程式的應用程式備份
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}`#
@@ -20,6 +21,7 @@ summary: 刪除應用程式的應用程式備份
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -46,6 +48,7 @@ summary: 刪除應用程式的應用程式備份
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -54,6 +57,7 @@ Status: 204, Indicates if the appBackup resource was deleted.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -99,6 +103,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -149,6 +154,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -194,6 +200,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -239,6 +246,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -284,6 +292,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -329,11 +338,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

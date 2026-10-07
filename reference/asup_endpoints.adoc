@@ -7,6 +7,7 @@ summary: Astra API（ACC）AutoSupport 端點
 ---
 = Astra API（ACC）AutoSupport 端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 ASUP API 提供對 ASUP 資源的存取、以便建立並選擇性上傳 AutoSupport 套裝組合。

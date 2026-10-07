@@ -7,6 +7,7 @@ summary: Astra API（ACC）群組端點
 ---
 = Astra API（ACC）群組端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Group API 可存取 Astra 群組資源。

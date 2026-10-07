@@ -7,6 +7,7 @@ summary: Astra API（ACC）功能端點
 ---
 = Astra API（ACC）功能端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 功能 API 提供對功能標誌資源的唯讀存取，以決定系統中啟用或停用了哪些功能。

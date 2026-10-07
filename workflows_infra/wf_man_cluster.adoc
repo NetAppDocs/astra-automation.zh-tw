@@ -18,12 +18,14 @@ summary: 您可以管理Kubernetes叢集、以便執行資料保護作業。
 
 
 
+[[step-1-select-the-cluster-to-manage]]
 == 步驟 1 ：選取要管理的叢集
 
 執行工作流程 link:../workflows_infra/wf_list_clusters.html["列出叢集"] 然後選取所需的叢集。屬性 `managedState` 叢集必須是 `unmanaged`。
 
 
 
+[[step-2-optionally-select-the-storage-class]]
 == 步驟 2 ：選擇性地選取儲存類別
 
 （可選）執行工作流程 link:../workflows_infra/wf_list_storage_classes.html["列出儲存類別"] 並選擇所需的儲存類別。
@@ -33,6 +35,7 @@ NOTE: 如果您未在通話中提供儲存類別來管理叢集、將會使用�
 
 
 
+[[step-3-manage-the-cluster]]
 == 步驟 3 ：管理叢集
 
 執行下列REST API呼叫來管理叢集。

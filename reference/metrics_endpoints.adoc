@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) 指標端點'
 ---
 = Astra API (ACC) 指標端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Metrics API 代表與指定帳戶相關聯的指標。

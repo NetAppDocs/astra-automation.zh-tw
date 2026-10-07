@@ -7,6 +7,7 @@ summary: 列出所有儲存後端
 ---
 = 列出所有儲存後端
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
@@ -15,6 +16,7 @@ summary: 列出所有儲存後端
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -52,6 +54,7 @@ OpenAPI 範例：「2」
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -101,6 +104,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -146,6 +150,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -196,6 +201,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -241,6 +247,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -286,11 +293,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[capabilities]]
 [role="api-collapsible-fifth-title"]
 功能
 
@@ -315,6 +324,7 @@ JSON 字串，指示此儲存後端是否支援 SnapMirror。
 JSON 字串，指示此儲存後端是否支援 s3。
 
 |===
+[[ontap]]
 [role="api-collapsible-fifth-title"]
 ONTAP
 
@@ -348,6 +358,7 @@ JSON 字串，指示 ONTAP 驗證是使用使用者名稱/密碼組合還是憑�
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -363,6 +374,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -395,6 +407,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[storageBackend_1_3_get_response_body]]
 [role="api-collapsible-fifth-title"]
 storageBackend_1.3_get_response_body
 
@@ -585,6 +598,7 @@ JSON 字串的 JSON 陣列,每個字串表示保護原則不符合規範的原�
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -620,6 +634,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -7,6 +7,7 @@ summary: Astra API（ACC）LDAP 使用者端點
 ---
 = Astra API（ACC）LDAP 使用者端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 LDAP 使用者 API 可對已設定 LDAP 伺服器中的 LDAP 使用者進行唯讀存取。

@@ -18,12 +18,14 @@ summary: 您可以列出針對特定應用程式所拍攝的快照。
 
 
 
+[[before-you-begin]]
 == 開始之前
 
 您必須擁有要列出快照的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
+[[list-the-snapshots]]
 == 列出快照
 
 執行下列REST API呼叫、以列出快照。

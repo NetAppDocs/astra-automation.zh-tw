@@ -7,6 +7,7 @@ summary: 列出叢集的命名空間
 ---
 = 列出叢集的命名空間
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces`#
@@ -15,6 +16,7 @@ summary: 列出叢集的命名空間
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -73,6 +75,7 @@ OpenAPI 範例："field eq 'value'"
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -132,6 +135,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -177,6 +181,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -227,6 +232,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -272,6 +278,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -317,20 +324,25 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[targetSchema]]
 [role="api-collapsible-fifth-title"]
 targetSchema
 
+[[accept-post]]
 [role="api-collapsible-fifth-title"]
 接受 POST
 
+[[accept-put]]
 [role="api-collapsible-fifth-title"]
 接受放置
 
+[[hints]]
 [role="api-collapsible-fifth-title"]
 提示
 
@@ -358,6 +370,7 @@ targetSchema
 | 接受放置 | link:#accept-put["接受放置"] | 錯誤  a| 
 
 |===
+[[type_astra_link]]
 [role="api-collapsible-fifth-title"]
 type_astra_link
 
@@ -389,9 +402,11 @@ type_astra_link
 | 提示 | link:#hints["提示"] | 錯誤  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -415,6 +430,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -430,6 +446,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -462,6 +479,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[namespace_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 namespace_1.2_get_response_body
 
@@ -567,6 +585,7 @@ JSON 字串，表示命名空間是系統命名空間的類型。此欄位標識
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -602,6 +621,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

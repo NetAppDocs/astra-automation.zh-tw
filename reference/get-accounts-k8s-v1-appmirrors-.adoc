@@ -7,6 +7,7 @@ summary: 擷取 AppMirror 資源
 ---
 = 擷取 AppMirror 資源
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/appMirrors/{appMirror_id}`#
@@ -15,6 +16,7 @@ summary: 擷取 AppMirror 資源
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: 擷取 AppMirror 資源
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -373,6 +376,7 @@ Status: 200, Returns the stored AppMirror API resource in the JSON response body
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -418,6 +422,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -468,6 +473,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -513,6 +519,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -558,11 +565,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -597,6 +606,7 @@ namespaceMapping
 
 
 |===
+[[storageClasses]]
 [role="api-collapsible-fifth-title"]
 storageClasses
 
@@ -630,6 +640,7 @@ storageClasses
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -645,9 +656,11 @@ type_astra_stateTransition
 | 到 | 陣列［string］ | True  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -671,6 +684,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -686,6 +700,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -718,6 +733,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

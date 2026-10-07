@@ -18,18 +18,21 @@ summary: 您可以在特定命名空間中、根據Astra已知的應用程式來
 
 
 
+[[step-1-select-the-namespace]]
 == 步驟 1 ：選取命名空間
 
 執行工作流程 link:../workflows/wf_list_namespaces.html["列出命名空間"] 然後選取命名空間。
 
 
 
+[[step-2-select-the-cluster]]
 == 步驟 2 ：選取叢集
 
 執行工作流程 link:../workflows_infra/wf_list_clusters.html["列出叢集"] 然後選取叢集。
 
 
 
+[[step-3-manage-the-application]]
 == 步驟 3 ：管理應用程式
 
 執行下列REST API呼叫來管理應用程式。

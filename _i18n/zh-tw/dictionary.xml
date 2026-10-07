@@ -1997,8 +1997,6 @@
   <block id="c6315795e738e99ced713e4f7b2f8926" category="paragraph">= 拒絕存取所有資源："roleConstraints": []</block>
   <block id="06f0747bf28aeaab9771d856df954934" category="paragraph">= 僅允許存取特定命名空間資源："roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'" ]</block>
   <block id="356b7d6593004f1f778c138d4cdd571d" category="paragraph">= 允許存取特定命名空間及其下的所有命名空間："roleConstraints": [ "namespaces:id='6fa2f917-f730-41b8-9c15-17f531843b31'.*"]</block>
-  <block id="e62c9bd713c24db48169d82c5aee2eeb" category="inline-link">dev.example.com/appname=dev'.*</block>
-  <block id="0c2c7e64bf1edf96de8fd43ebfbbbaee" category="paragraph">= 允許存取任何雲端中任何叢集中所有標記為「dev」的命名空間及其下的所有資源："roleConstraints": [ "namespaces:kubernetesLabels=<block ref="9fc9455e9176eac6491a29e3ea4726fc" category="inline-link-rx"></block>" ]</block>
   <block id="0d1e72c704cfca0a51ea7527bef5bb39" category="paragraph">= 僅允許存取所有命名空間資源："roleConstraints": [ "namespaces:*" ]</block>
   <block id="6b1597430ccd0ec87e2a3956c2f4d53d" category="paragraph">= 允許存取所有命名空間資源及其下的所有資源："roleConstraints": [ "namespaces:__.__" ]</block>
   <block id="df9afdeac8399139809d618d655d5000" category="summary">列出群組的角色繫結</block>
@@ -3656,4 +3654,5 @@
   <block id="270c8bf869414e00cdbccc50053ff69b" category="sidebar">應用程式 Snapshot</block>
   <block id="737bc377487d23f0154efaa2567b0ce5" category="sidebar">Kubernetes API 資源</block>
   <block id="f32c3edaacea72c0ddb30ecf0135c4de" category="sidebar">指標</block>
+  <block id="0e67fb376700a4be55101af1471c0ad4" category="paragraph">= 允許存取任何雲端中任何叢集內標記為 "dev" 的所有命名空間及其下的所有項目："roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*"]</block>
 </blocks>

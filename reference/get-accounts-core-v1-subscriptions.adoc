@@ -7,6 +7,7 @@ summary: 列出所有訂閱
 ---
 = 列出所有訂閱
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
@@ -15,6 +16,7 @@ summary: 列出所有訂閱
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -101,6 +103,7 @@ OpenAPI 範例：「1」
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -194,6 +197,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -239,6 +243,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -289,6 +294,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -334,6 +340,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -379,11 +386,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -399,6 +408,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -431,6 +441,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[subscription_1_2_get_response_body]]
 [role="api-collapsible-fifth-title"]
 subscription_1.2_get_response_body
 
@@ -591,6 +602,7 @@ JSON 數字，表示每個命名空間單位的成本。試用版的值為 0。�
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -626,6 +638,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

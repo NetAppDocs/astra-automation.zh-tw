@@ -18,12 +18,14 @@ summary: 您可以為特定應用程式建立備份、然後使用備份來還�
 
 
 
+[[before-you-begin]]
 == 開始之前
 
 您必須擁有要備份的應用程式ID。如有需要、您可以使用工作流程 link:wf_list_man_apps.html["列出應用程式"] 以找出應用程式。
 
 
 
+[[create-a-backup]]
 == 建立備份
 
 執行下列REST API呼叫。

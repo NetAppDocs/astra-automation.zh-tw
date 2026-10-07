@@ -7,6 +7,7 @@ summary: Astra API（ACC）設定端點
 ---
 = Astra API（ACC）設定端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 帳戶設定是一組鍵值對，對於 Astra 帳戶中的已知功能至關重要。設定 API 提供對帳戶設定重要資訊的存取。

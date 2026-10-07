@@ -7,6 +7,7 @@ summary: 擷取 LDAP 使用者
 ---
 = 擷取 LDAP 使用者
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/ldapUsers/{ldapUser_id}`#
@@ -15,6 +16,7 @@ summary: 擷取 LDAP 使用者
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: 擷取 LDAP 使用者
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -147,6 +150,7 @@ Status: 200, Returns a JSON object representing the stored LDAP resource.
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -192,6 +196,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -242,6 +247,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -287,6 +293,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -332,11 +339,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -352,6 +361,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -384,6 +394,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

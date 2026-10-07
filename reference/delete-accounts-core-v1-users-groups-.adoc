@@ -7,6 +7,7 @@ summary: 刪除使用者的群組
 ---
 = 刪除使用者的群組
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
@@ -21,6 +22,7 @@ summary: 刪除使用者的群組
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -47,6 +49,7 @@ summary: 刪除使用者的群組
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -55,6 +58,7 @@ Status: 204, Indicates if the group resource was deleted.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -100,6 +104,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -145,6 +150,7 @@ Status: 500, Internal server error
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -190,11 +196,13 @@ Status: 403, Forbidden
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -7,6 +7,7 @@ summary: Astra API（ACC）Kubernetes API 資源端點
 ---
 = Astra API（ACC）Kubernetes API 資源端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Kubernetes API 資源 API 提供對 Kubernetes API 資源的唯讀存取，用於篩選 Astra 在給定叢集上支援的資源。

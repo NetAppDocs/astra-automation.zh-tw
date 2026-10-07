@@ -7,6 +7,7 @@ summary: 'Astra API (ACC) 儲存後端端點'
 ---
 = Astra API (ACC) 儲存後端端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Storage Backend API 可存取儲存服務供應商（儲存後端）的呈現方式，供受管理叢集和應用程式使用。

@@ -21,6 +21,7 @@ NOTE: 用於存取Astra Control資源的路徑格式和完整URL是以數個值�
 
 
 
+[[summary-of-astra-control-rest-resources]]
 == Astra Control REST資源摘要
 
 Astra Control REST API中提供的主要資源端點分為三類。每個資源都可以使用CRUD作業的完整集合（建立、讀取、更新、刪除）存取、除非另有說明。
@@ -29,6 +30,7 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 
 
 
+[[core-resources]]
 === 核心資源
 
 核心資源端點提供建立及維護Astra執行時間環境所需的基礎服務。
@@ -114,6 +116,7 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 |===
 
 
+[[managed-application-resources]]
 === 託管應用程式資源
 
 託管應用程式資源端點可讓您存取託管的Kubernetes應用程式。
@@ -139,6 +142,7 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 |===
 
 
+[[topology-resources]]
 === 拓撲資源
 
 拓撲資源端點可讓您存取未受管理的應用程式和儲存資源。
@@ -185,6 +189,7 @@ Astra Control REST API中提供的主要資源端點分為三類。每個資源�
 |===
 
 
+[[additional-resources-and-endpoints]]
 == 其他資源和端點
 
 您可以使用數種額外的資源和端點來支援Astra部署。

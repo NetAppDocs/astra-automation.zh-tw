@@ -18,18 +18,21 @@ summary: 您可以列出可用的儲存類別。
 
 
 
+[[step-1-select-the-cloud]]
 == 步驟 1 ：選擇雲端
 
 執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 並選擇您要使用的雲端。
 
 
 
+[[step-2-select-the-cluster]]
 == 步驟 2 ：選取叢集
 
 執行工作流程 link:../workflows_infra/wf_list_clusters.html["列出叢集"] 然後選取叢集。
 
 
 
+[[step-3-list-the-storage-classes-for-a-specific-cluster]]
 == 步驟 3 ：列出特定叢集的儲存類別
 
 執行下列REST API呼叫、列出特定叢集和雲端的儲存類別。

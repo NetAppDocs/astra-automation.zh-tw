@@ -7,6 +7,7 @@ summary: 建立新套件
 ---
 = 建立新套件
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
@@ -15,6 +16,7 @@ summary: 建立新套件
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -31,6 +33,7 @@ summary: 建立新套件
 |===
 
 
+[[request-body]]
 == 請求本文
 
 指示要建立的 Package API 資源的期望值。
@@ -191,6 +194,7 @@ JSON 物件的 JSON 陣列，描述安裝此套件所需的指定相依性最低
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -428,6 +432,7 @@ JSON 物件的 JSON 陣列，描述安裝此套件所需的指定相依性最低
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -473,6 +478,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -523,6 +529,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -573,6 +580,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -618,6 +626,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -663,11 +672,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[dependsOnImages]]
 [role="api-collapsible-fifth-title"]
 dependsOnImages
 
@@ -702,6 +713,7 @@ dependsOnImages
 
 
 |===
+[[images]]
 [role="api-collapsible-fifth-title"]
 映像
 
@@ -749,6 +761,7 @@ dependsOnImages
 描述安裝或升級目前映像所需映像的 JSON 物件 JSON 陣列。
 
 |===
+[[dependsOnComponents]]
 [role="api-collapsible-fifth-title"]
 dependsOnComponents
 
@@ -772,6 +785,7 @@ dependsOnComponents
 定義安裝目前映像所需元件版本的 JSON 字串 JSON 陣列。
 
 |===
+[[artifacts]]
 [role="api-collapsible-fifth-title"]
 成品
 
@@ -821,6 +835,7 @@ JSON 字串，包含該成品的版本（如果有提供）。定義的值為：
 描述安裝 / 升級目前映像所需的已安裝元件的 JSON 物件 JSON 陣列。
 
 |===
+[[files]]
 [role="api-collapsible-fifth-title"]
 檔案
 
@@ -863,6 +878,7 @@ JSON 字串，包含該成品的版本（如果有提供）。定義的值為：
 
 
 |===
+[[upgradableVersions]]
 [role="api-collapsible-fifth-title"]
 upgradableVersions
 
@@ -888,6 +904,7 @@ JSON 物件，包含可升級至套件版本的最低和最高版本。
 
 
 |===
+[[dependencies]]
 [role="api-collapsible-fifth-title"]
 相依性
 
@@ -922,6 +939,7 @@ JSON 物件，包含可升級至套件版本的最低和最高版本。
 
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -937,6 +955,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata
 
@@ -969,6 +988,7 @@ type_astra_metadata
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -984,9 +1004,11 @@ type_astra_stateTransition
 | 到 | 陣列［string］ | True  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -1010,6 +1032,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -1027,6 +1050,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

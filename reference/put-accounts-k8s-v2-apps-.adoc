@@ -7,6 +7,7 @@ summary: 修改應用程式
 ---
 = 修改應用程式
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
@@ -15,6 +16,7 @@ summary: 修改應用程式
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -44,6 +46,7 @@ summary: 修改應用程式
 |===
 
 
+[[request-body]]
 == 請求本文
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
@@ -287,6 +290,7 @@ JSON 物件的 JSON 陣列，每個物件將來源儲存類別對應至還原作
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -295,6 +299,7 @@ Status: 204, Indicates if the app resource was updated.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -340,6 +345,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -385,6 +391,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -430,6 +437,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -475,6 +483,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -520,11 +529,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[GVK]]
 [role="api-collapsible-fifth-title"]
 GVK
 
@@ -561,6 +572,7 @@ GVK
 
 
 |===
+[[clusterScopedResources]]
 [role="api-collapsible-fifth-title"]
 clusterScopedResources
 
@@ -584,6 +596,7 @@ clusterScopedResources
 
 
 |===
+[[namespaceScopedResources]]
 [role="api-collapsible-fifth-title"]
 namespaceScopedResources
 
@@ -615,6 +628,7 @@ namespaceScopedResources
 
 
 |===
+[[type_astra_stateTransition]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateTransition
 
@@ -630,9 +644,11 @@ type_astra_stateTransition
 | 到 | 陣列［string］ | True  a| 
 
 |===
+[[additionalDetails]]
 [role="api-collapsible-fifth-title"]
 additionalDetails
 
+[[type_astra_stateDetail]]
 [role="api-collapsible-fifth-title"]
 type_astra_stateDetail
 
@@ -656,6 +672,7 @@ type_astra_stateDetail
 | additionalDetails | link:#additionalDetails["additionalDetails"] | 錯誤  a| 
 
 |===
+[[namespaceMapping]]
 [role="api-collapsible-fifth-title"]
 namespaceMapping
 
@@ -683,6 +700,7 @@ namespaceMapping
 
 
 |===
+[[storageClassMapping]]
 [role="api-collapsible-fifth-title"]
 storageClassMapping
 
@@ -711,6 +729,7 @@ storageClassMapping
 
 
 |===
+[[GVKN]]
 [role="api-collapsible-fifth-title"]
 GVKN
 
@@ -770,6 +789,7 @@ JSON 陣列，包含描述 Kubernetes 標籤選擇器的 JSON 字串，用於在
 
 
 |===
+[[restoreFilter]]
 [role="api-collapsible-fifth-title"]
 restoreFilter
 
@@ -789,6 +809,7 @@ JSON 字串包含一個值，該值指示資源篩選器如何選取資源。有
 包含 JSON 物件的 JSON 陣列，用於描述選擇性還原期間要篩選的資源。如果所有指定的篩選欄位都與相應的資源欄位相符，則該資源與單一 GVKN 篩選元素相符。篩選欄位（例如命名空間和名稱）如果是陣列，則只要其任何元素與相應的資源欄位相符即可相符。labelSelectors 欄位要求所有選擇器都相符。與 GVKN 篩選物件陣列中任何篩選器相符的資源將根據 resourceSelectionCriteria 值包含在還原中或從還原中排除。指定空的 GVKN 物件會導致驗證錯誤。
 
 |===
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -804,6 +825,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -836,6 +858,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -853,6 +876,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

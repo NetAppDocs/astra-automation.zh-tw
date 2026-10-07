@@ -7,6 +7,7 @@ summary: 為應用程式建立新排程
 ---
 = 為應用程式建立新排程
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules`#
@@ -15,6 +16,7 @@ summary: 為應用程式建立新排程
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -36,6 +38,7 @@ summary: 為應用程式建立新排程
 |===
 
 
+[[request-body]]
 == 請求本文
 
 指示要建立的 Schedule API 資源的所需值。
@@ -196,6 +199,7 @@ JSON 字串，指示排程是否為每個快照觸發 AppMirror 複寫。僅當�
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -373,6 +377,7 @@ JSON 字串，指示排程是否為每個快照觸發 AppMirror 複寫。僅當�
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -418,6 +423,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -468,6 +474,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -513,6 +520,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -558,6 +566,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -603,11 +612,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -623,6 +634,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -655,6 +667,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -672,6 +685,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

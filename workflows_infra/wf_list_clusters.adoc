@@ -18,12 +18,14 @@ summary: 您可以在特定雲端中列出可用的叢集。
 
 
 
+[[step-1-select-the-cloud]]
 == 步驟 1 ：選擇雲端
 
 執行工作流程 link:../workflows_infra/wf_list_clouds.html["列出雲端"] 然後選取包含叢集的雲端。
 
 
 
+[[step-2-list-the-clusters]]
 == 步驟 2 ：列出叢集
 
 執行下列REST API呼叫、以列出特定雲端中的叢集。

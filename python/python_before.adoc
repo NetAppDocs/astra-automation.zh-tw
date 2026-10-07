@@ -21,6 +21,7 @@ NOTE: 除了直接使用Python存取Astra Control REST API之外、NetApp也提�
 
 
 
+[[prepare-the-environment]]
 == 準備環境
 
 執行Python指令碼的基本組態需求如下所述。
@@ -39,6 +40,7 @@ NOTE: 除了直接使用Python存取Astra Control REST API之外、NetApp也提�
 
 
 
+[[create-the-json-input-files]]
 == 建立Json輸入檔
 
 Python指令碼仰賴Json輸入檔中包含的組態資訊。範例檔案如下所示。

@@ -7,6 +7,7 @@ summary: 刪除託管叢集的應用程式
 ---
 = 刪除託管叢集的應用程式
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
@@ -21,6 +22,7 @@ summary: 刪除託管叢集的應用程式
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -47,6 +49,7 @@ summary: 刪除託管叢集的應用程式
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -55,6 +58,7 @@ Status: 204, Indicates if the app resource was deleted.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -100,6 +104,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -150,6 +155,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -195,6 +201,7 @@ Status: 403, Forbidden
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -240,6 +247,7 @@ Status: 500, Internal server error
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -285,6 +293,7 @@ Status: 409, Conflict
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -330,11 +339,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

@@ -7,6 +7,7 @@ summary: Astra API（ACC）叢集節點端點
 ---
 = Astra API（ACC）叢集節點端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Cluster Node API 可存取與叢集相關聯的節點。

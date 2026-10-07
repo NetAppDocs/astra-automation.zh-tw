@@ -18,6 +18,7 @@ Astra REST API支援角色型存取控制（RBAC）、以授予及限制系統�
 
 
 
+[[astra-roles]]
 == Astra角色
 
 每位Astra使用者都會被指派到單一角色、以決定可執行的動作。這些角色會依照下表所述的階層架構來排列。
@@ -40,6 +41,7 @@ Astra REST API支援角色型存取控制（RBAC）、以授予及限制系統�
 |===
 
 
+[[enhanced-rbac-with-namespace-granularity]]
 == 增強的RBAC與命名空間精細度
 
 

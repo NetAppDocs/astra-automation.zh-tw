@@ -7,6 +7,7 @@ summary: 刪除訂閱
 ---
 = 刪除訂閱
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
@@ -20,6 +21,7 @@ summary: 刪除訂閱
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -41,6 +43,7 @@ summary: 刪除訂閱
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -49,6 +52,7 @@ Status: 204, Indicates if the subscription resource was deleted.
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -94,6 +98,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -144,6 +149,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -189,6 +195,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -234,11 +241,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

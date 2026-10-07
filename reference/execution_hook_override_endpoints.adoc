@@ -7,6 +7,7 @@ summary: Astra API （ ACC ）執行掛鉤覆寫端點
 ---
 = Astra API （ ACC ）執行掛鉤覆寫端點
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 Execution Hook Override API 允許使用者停用特定應用程式預先載入的「netapp」execution hooks。（*請注意以下 API 已棄用*）

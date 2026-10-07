@@ -7,6 +7,7 @@ summary: 建立新的儲存後端
 ---
 = 建立新的儲存後端
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
@@ -15,6 +16,7 @@ summary: 建立新的儲存後端
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -31,6 +33,7 @@ summary: 建立新的儲存後端
 |===
 
 
+[[request-body]]
 == 請求本文
 
 指示要建立的 Storage Backend API 資源的期望值。
@@ -119,6 +122,7 @@ JSON 字串包含一個值，指示用於儲存後端的一個或多個認證資
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -358,6 +362,7 @@ JSON 字串的 JSON 陣列,每個字串表示保護原則不符合規範的原�
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -403,6 +408,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -453,6 +459,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -503,6 +510,7 @@ Status: 409, Conflict
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -548,6 +556,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -593,11 +602,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -613,6 +624,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -645,6 +657,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[capabilities]]
 [role="api-collapsible-fifth-title"]
 功能
 
@@ -669,6 +682,7 @@ JSON 字串，指示此儲存後端是否支援 SnapMirror。
 JSON 字串，指示此儲存後端是否支援 s3。
 
 |===
+[[ontap]]
 [role="api-collapsible-fifth-title"]
 ONTAP
 
@@ -702,6 +716,7 @@ JSON 字串，指示 ONTAP 驗證是使用使用者名稱/密碼組合還是憑�
 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 
@@ -719,6 +734,7 @@ invalidParams
 查詢參數無效的原因
 
 |===
+[[invalidFields]]
 [role="api-collapsible-fifth-title"]
 invalidFields
 

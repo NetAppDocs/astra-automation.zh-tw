@@ -18,12 +18,14 @@ summary: 您可以建立具有特定認證和預先定義角色的使用者。�
 
 
 
+[[step-1-select-a-user-name]]
 == 步驟 1 ：選取使用者名稱
 
 執行工作流程 link:../workflows_infra/wf_list_users.html["列出使用者"] 並選取目前未使用的可用名稱。
 
 
 
+[[step-2-create-the-user]]
 == 步驟 2 ：建立使用者
 
 執行下列REST API呼叫以建立使用者。成功完成通話之後、新使用者將無法使用。
@@ -96,12 +98,14 @@ curl --request POST \
 ----
 
 
+[[step-3-optionally-select-the-allowed-namespaces]]
 == 步驟 3 ：選擇性地選取允許的命名空間
 
 執行工作流程 link:../workflows/wf_list_namespaces.html["列出命名空間"] 然後選取您要限制存取的命名空間。
 
 
 
+[[step-4-bind-the-user-to-a-role]]
 == 步驟 4 ：將使用者繫結至角色
 
 執行下列REST API呼叫、將使用者繫結至角色。以下範例對命名空間存取沒有任何限制。請參閱 link:../additional/rbac.html#enhanced-rbac-with-namespace-granularity["增強的RBAC與命名空間精細度"] 以取得更多資訊。
@@ -140,6 +144,7 @@ curl --request POST \
 ----
 
 
+[[step-5-create-a-credential]]
 == 步驟 5 ：建立認證
 
 執行下列REST API呼叫、以建立認證並將其與使用者建立關聯。此範例使用以base64值提供的密碼。。 `name` 內容應包含上一步傳回的使用者ID。輸入內容 `change` 也必須以base64編碼、並決定使用者是否必須在第一次登入時變更密碼 (`true` 或 `false`）。

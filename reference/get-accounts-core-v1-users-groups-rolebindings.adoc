@@ -7,6 +7,7 @@ summary: 列出與使用者相關聯之群組的角色繫結
 ---
 = 列出與使用者相關聯之群組的角色繫結
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings`#
@@ -15,6 +16,7 @@ summary: 列出與使用者相關聯之群組的角色繫結
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -114,6 +116,7 @@ OpenAPI 範例："+++<continue token="" from="" collection="" metadata="">+++"++
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -168,6 +171,7 @@ Status: 200, Returns a JSON array of all matching resources in the collection. I
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -213,6 +217,7 @@ Status: 401, Unauthorized
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -263,6 +268,7 @@ Status: 400, Bad request
 ====
 
 
+[[response]]
 == 回應
 
 [source]
@@ -308,6 +314,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
@@ -353,11 +360,13 @@ Status: 404, Not found
 ====
 
 
+[[definitions]]
 == 定義
 
 .請參閱定義
 [%collapsible]
 ====
+[[type_astra_label]]
 [role="api-collapsible-fifth-title"]
 type_astra_label
 
@@ -373,6 +382,7 @@ type_astra_label
 | 值 | 字串 | True  a| 
 
 |===
+[[type_astra_metadata_update]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_update
 
@@ -405,6 +415,7 @@ type_astra_metadata_update
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[roleBinding_1_1_get_response_body]]
 [role="api-collapsible-fifth-title"]
 roleBinding_1.1_get_response_body
 
@@ -504,7 +515,7 @@ roleBinding_1.1_get_response_body
 
 * 
 +
-= 允許存取任何雲端中任何叢集中所有標記為「dev」的命名空間及其下的所有資源："roleConstraints": [ "namespaces:kubernetesLabels='http://dev.example.com/appname=dev["dev.example.com/appname=dev'.*"]" ]
+= 允許存取任何雲端中任何叢集內標記為 "dev" 的所有命名空間及其下的所有項目："roleConstraints": [ "namespaces:kubernetesLabels='dev.example.com/appname=dev'.*"]
 
 * 
 +
@@ -525,6 +536,7 @@ roleBinding_1.1_get_response_body
 
 
 |===
+[[type_astra_metadata_list]]
 [role="api-collapsible-fifth-title"]
 type_astra_metadata_list
 
@@ -560,6 +572,7 @@ type_astra_metadata_list
 | modifiedBy | 字串 | 錯誤  a| 
 
 |===
+[[invalidParams]]
 [role="api-collapsible-fifth-title"]
 invalidParams
 

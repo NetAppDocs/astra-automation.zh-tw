@@ -23,6 +23,7 @@ summary: 您可以選擇性地將Astra Control Center與輕量型目錄存取傳
 
 
 
+[[overview-of-the-implementation-process]]
 == 實作程序總覽
 
 在高層級上、您需要執行幾個步驟來設定LDAP伺服器、以便為Astra使用者提供驗證。
@@ -39,6 +40,7 @@ NOTE: 雖然下列步驟依序顯示、但在某些情況下、您可以依照�
 
 
 
+[[requirements-and-limitations]]
 == 要求與限制
 
 您應該先檢閱下列Astra組態基本要點、包括限制和組態選項、再將Astra設定為使用LDAP進行驗證。

@@ -21,12 +21,14 @@ NOTE: NetApp可隨時擴充及強化這些工作流程、因此您應定期檢�
 
 
 
+[[general-preparation]]
 == 一般準備
 
 使用任何Astra工作流程之前、請務必先檢閱 link:../get-started/prepare_to_use_workflows.html["準備好使用工作流程"]。
 
 
 
+[[workflow-categories]]
 == 工作流程類別
 
 管理工作流程會依不同類別進行組織、以便更容易找到您想要的工作流程。
@@ -49,12 +51,14 @@ NOTE: NetApp可隨時擴充及強化這些工作流程、因此您應定期檢�
 |===
 
 
+[[additional-considerations]]
 == 其他考量
 
 使用管理工作流程時、還有幾項額外考量。
 
 
 
+[[cloning-an-app]]
 === 複製應用程式
 
 複製應用程式時、需要考量一些事項。下列參數是Json輸入的一部分。

@@ -18,6 +18,7 @@ summary: 您可以存取更多資源、以取得協助、並尋找更多有關Ne
 
 
 
+[[astra]]
 == Astra
 
 * https://docs.netapp.com/us-en/astra-control-center/["Astra Control Center文件"^]
@@ -44,6 +45,7 @@ Astra Control及其他NetApp產品的社群支援。
 
 
 
+[[netapp-cloud-resources]]
 == NetApp雲端資源
 
 * https://bluexp.netapp.com/["NetApp BlueXP"^]
@@ -62,6 +64,7 @@ NetApp雲端解決方案的中央網站。
 
 
 
+[[rest-and-cloud-concepts]]
 == REST與雲端概念
 
 * 博士 https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm["論文"^] 作者：Roy Fielding

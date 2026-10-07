@@ -7,6 +7,7 @@ summary: 擷取帳戶的所有指標
 ---
 = 擷取帳戶的所有指標
 :allow-uri-read: 
+:imagesdir: ../media/
 
 
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/metrics`#
@@ -15,6 +16,7 @@ summary: 擷取帳戶的所有指標
 
 
 
+[[parameters]]
 == 參數
 
 [cols="5*"]
@@ -31,6 +33,7 @@ summary: 擷取帳戶的所有指標
 |===
 
 
+[[response]]
 == 回應
 
 [source]
@@ -39,6 +42,7 @@ Status: 200, Returns a OpenMetrics text document containing all metrics for the 
 ----
 
 
+[[response]]
 == 回應
 
 [source]
@@ -84,6 +88,7 @@ Status: 403, Forbidden
 ====
 
 
+[[error]]
 == 錯誤
 
 [source]
