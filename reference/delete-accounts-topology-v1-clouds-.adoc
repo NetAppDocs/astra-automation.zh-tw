@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-clouds-.html 
+keywords: cloud instance,deletion,non-managed clusters,non-managed volumes,cloud id 
 summary: 刪除雲端 
 ---
 = 刪除雲端
@@ -10,7 +11,20 @@ summary: 刪除雲端
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除要求的雲端執行個體，以及與其相關聯的任何非代管叢集和磁碟區。使用此作業來移除不再需要的雲端資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 刪除所要求的雲端執行個體以及與該特定雲端相關聯的任何非託管叢集和磁碟區。
 

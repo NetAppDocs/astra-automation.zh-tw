@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-unreadnotifications.html 
+keywords: unread notifications,account notifications,user notifications,notification list,resource collection,notification fields 
 summary: 列出使用者的未讀通知 
 ---
 = 列出使用者的未讀通知
@@ -10,7 +11,20 @@ summary: 列出使用者的未讀通知
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索使用者未讀的通知，為您提供需要注意的最新警報和更新。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

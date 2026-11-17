@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-.html 
+keywords: replace resource,user management,account update,user collection,modify user,user replace 
 summary: 修改使用者 
 ---
 = 修改使用者
@@ -10,7 +11,20 @@ summary: 修改使用者
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過將整個儲存的資源替換為提供的 JSON 請求主體來修改使用者，同時保留使用者不可修改的鍵值。使用此端點可有效地更新使用者詳細資料，而不會影響不可變的屬性。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

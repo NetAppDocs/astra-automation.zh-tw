@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v1-storagebackends-.html 
+keywords: storage backend,remove storage backend,delete storage backend,backend config removal,backend node removal,remove backend resources 
 summary: 刪除儲存後端 
 ---
 = 刪除儲存後端
@@ -10,7 +11,20 @@ summary: 刪除儲存後端
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除儲存設備後端。使用此行動從系統中移除所有關聯的 backendConfig 和 backendNode 資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends/{storageBackend_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的儲存後端 API 資源。
 

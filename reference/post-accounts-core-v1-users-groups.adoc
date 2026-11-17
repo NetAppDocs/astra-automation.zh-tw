@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-users-groups.html 
+keywords: create group,user groups,group resource,user account,group creation 
 summary: 為使用者建立新群組 
 ---
 = 為使用者建立新群組
@@ -10,7 +11,20 @@ summary: 為使用者建立新群組
 :imagesdir: ../media/
 
 
+[role="lead"]
+為使用者建立新群組，並指定群組資源的所需值。使用此端點可將使用者組織成群組，以便更好地管理和存取控制。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Group API 資源所需的值。
 

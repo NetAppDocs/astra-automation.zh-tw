@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/license_endpoints.html 
+keywords: licenses,license management,account licenses,load licenses,licensing 
 summary: Astra API（ACC）授權端點 
 ---
 = Astra API（ACC）授權端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理載入到 Astra Control 帳戶中的授權。
 
 授權 API 代表載入帳戶的授權。

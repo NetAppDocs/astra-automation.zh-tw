@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-groups-.html 
+keywords: remove group,group resource,delete group,role binding removal,group deletion 
 summary: 刪除群組 
 ---
 = 刪除群組
@@ -10,7 +11,20 @@ summary: 刪除群組
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除指定的群組資源。使用此指令可從系統中移除群組及其關聯的角色綁定。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 Group API 資源。
 

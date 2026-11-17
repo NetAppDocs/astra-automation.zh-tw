@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/ldap_user_endpoints.html 
+keywords: ldap users,directory users,ldap server,read-only access,user lookup 
 summary: Astra API（ACC）LDAP 使用者端點 
 ---
 = Astra API（ACC）LDAP 使用者端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+檢視已設定的輕量級目錄存取協定（LDAP）伺服器上的使用者。這些端點為唯讀。
 
 LDAP 使用者 API 可對已設定 LDAP 伺服器中的 LDAP 使用者進行唯讀存取。

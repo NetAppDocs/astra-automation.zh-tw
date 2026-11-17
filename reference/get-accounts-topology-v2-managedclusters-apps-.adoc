@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v2-managedclusters-apps-.html 
+keywords: stored app,app resource,managed cluster,app collection,account resource 
 summary: 為託管叢集擷取應用程式 
 ---
 = 為託管叢集擷取應用程式
@@ -10,7 +11,20 @@ summary: 為託管叢集擷取應用程式
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取代管叢集的應用程式，並在 JSON 回應主體中提供儲存的應用程式 API 資源詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的應用程式 API 資源。
 

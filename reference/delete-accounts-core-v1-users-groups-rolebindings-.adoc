@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-users-groups-rolebindings-.html 
+keywords: role binding removal,user deletion,group role bindings,account management,local auth provider,cloud central provider 
 summary: 刪除與使用者相關聯之群組的角色繫結 
 ---
 = 刪除與使用者相關聯之群組的角色繫結
@@ -10,7 +11,20 @@ summary: 刪除與使用者相關聯之群組的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除與使用者關聯的群組的角色綁定。使用此功能可有效地管理系統中的存取和權限。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的角色繫結 API 資源。
 

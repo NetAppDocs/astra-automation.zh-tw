@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-storagebackends.html 
+keywords: storage backend,account storage,create storage,backend creation,topology storage 
 summary: 建立新的儲存後端 
 ---
 = 建立新的儲存後端
@@ -10,7 +11,20 @@ summary: 建立新的儲存後端
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立一個新的儲存設備後端，並指定資源所需的組態值。使用此端點可以設定滿足您需求的儲存設備後端。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/storageBackends`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Storage Backend API 資源的期望值。
 

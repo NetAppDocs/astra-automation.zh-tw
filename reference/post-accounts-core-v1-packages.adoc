@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-packages.html 
+keywords: package creation,core packages,account package,create package,package resource 
 summary: 建立新套件 
 ---
 = 建立新套件
@@ -10,7 +11,20 @@ summary: 建立新套件
 :imagesdir: ../media/
 
 
+[role="lead"]
+在 Astra API 中建立一個套件，並指定 Package API 資源所需的值。使用此方法可以定義套件的屬性和組態。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/packages`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Package API 資源的期望值。
 

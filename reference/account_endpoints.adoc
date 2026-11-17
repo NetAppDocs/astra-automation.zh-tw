@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/account_endpoints.html 
+keywords: astra accounts,tenant accounts,multitenant,account management,account creation 
 summary: Astra API（ACC）帳戶端點 
 ---
 = Astra API（ACC）帳戶端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+在多租戶 Astra Control 環境中管理隔離租戶的帳戶。
 
 Account API 代表多租戶系統中的隔離租戶。

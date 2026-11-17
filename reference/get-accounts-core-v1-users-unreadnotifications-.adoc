@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-unreadnotifications-.html 
+keywords: unread notifications,user notifications,notification list,account notifications,user unread,notification resource 
 summary: 擷取未讀通知 
 ---
 = 擷取未讀通知
@@ -10,7 +11,20 @@ summary: 擷取未讀通知
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索未讀通知，提供已儲存的通知詳細資訊以供審查或行動。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的未讀通知 API 資源。
 

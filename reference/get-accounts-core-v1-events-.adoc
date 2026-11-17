@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-events-.html 
+keywords: stored event,account resource,event collection,response body,event id 
 summary: 擷取事件 
 ---
 = 擷取事件
@@ -10,7 +11,20 @@ summary: 擷取事件
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索事件，傳回儲存的事件資源以進行分析或監控。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/events/{event_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應內文中傳回已儲存的 Event API 資源。
 

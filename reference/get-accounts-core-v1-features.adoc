@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-features.html 
+keywords: account features,resource collection,field filtering,sort order,resource count,skip resources 
 summary: 列出所有功能 
 ---
 = 列出所有功能
@@ -10,7 +11,20 @@ summary: 列出所有功能
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索 Astra API 中所有可用的功能，提供集合中資源的完整清單。您可以使用此功能根據您的請求條件檢視每個功能的特定欄位。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

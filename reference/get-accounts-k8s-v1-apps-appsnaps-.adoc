@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appsnaps-.html 
+keywords: application snapshot,k8s apps,stored snapshot,account resource,appSnap collection 
 summary: 取得應用程式快照 
 ---
 = 取得應用程式快照
@@ -10,7 +11,20 @@ summary: 取得應用程式快照
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索應用程式快照，提供儲存的快照資料以供審查或分析。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps/{appSnap_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的 Application Snapshot API 資源。
 

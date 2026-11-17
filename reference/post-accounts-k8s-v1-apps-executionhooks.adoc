@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhooks.html 
+keywords: execution hooks,k8s apps,create execution hook,account resource,app resource 
 summary: 為應用程式建立新的執行掛鉤 
 ---
 = 為應用程式建立新的執行掛鉤
@@ -10,7 +11,20 @@ summary: 為應用程式建立新的執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+為應用程式建立一個新的執行鉤子，以指定自動化流程或整合所需的值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Execution Hook API 資源的期望值。
 

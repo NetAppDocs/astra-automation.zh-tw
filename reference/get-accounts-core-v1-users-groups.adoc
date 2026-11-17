@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups.html 
+keywords: account groups,users groups,user fields,resource collection,matching resources 
 summary: 列出使用者的群組 
 ---
 = 列出使用者的群組
@@ -10,7 +11,20 @@ summary: 列出使用者的群組
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索與使用者關聯的群組列表，提供詳細群組資訊的存取，以便管理或分析。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/entitlement_endpoints.html 
+keywords: entitlements,licensed features,enabled capacities,active subscriptions,account entitlements 
 summary: Astra API（ACC）權利端點 
 ---
 = Astra API（ACC）權利端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+查看作用中授權和訂閱為您的帳戶啟用了哪些功能或容量。
 
 權利 API 代表帳戶的有效授權和訂閱所啟用的功能或容量。

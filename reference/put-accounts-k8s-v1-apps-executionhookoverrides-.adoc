@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,hook override,replace resource,app execution,netapp hook,execution enable 
 summary: 修改執行掛鉤覆寫資源 
 ---
 = 修改執行掛鉤覆寫資源
@@ -10,7 +11,20 @@ summary: 修改執行掛鉤覆寫資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過將整個儲存的資源替換為提供的 JSON 請求主體來修改執行掛鉤置換資源。使用此操作可更新套用於指定應用程式的執行掛鉤。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

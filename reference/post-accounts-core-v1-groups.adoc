@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-groups.html 
+keywords: group creation,core groups,account group,group resource,ontap group 
 summary: 建立新群組 
 ---
 = 建立新群組
@@ -10,7 +11,20 @@ summary: 建立新群組
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立一個新群組，並定義群組 API 資源所需的值。使用此功能可以有效地組織和管理環境中的資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Group API 資源所需的值。
 

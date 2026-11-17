@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/storage_backend_endpoints.html 
+keywords: storage backends,storage providers,storage services,managed clusters,backend management 
 summary: 'Astra API (ACC) 儲存後端端點' 
 ---
 = Astra API (ACC) 儲存後端端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理儲存設備後端，這些是您的代管叢集和應用程式可使用的儲存設備服務提供者。
 
 Storage Backend API 可存取儲存服務供應商（儲存後端）的呈現方式，供受管理叢集和應用程式使用。

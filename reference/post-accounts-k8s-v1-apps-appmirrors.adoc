@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-appmirrors.html 
+keywords: appmirror,app mirrors,k8s apps,app resource,account resource 
 summary: 為應用程式建立新的 AppMirror 資源 
 ---
 = 為應用程式建立新的 AppMirror 資源
@@ -10,7 +11,20 @@ summary: 為應用程式建立新的 AppMirror 資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+為應用程式建立 AppMirror 資源，指定所需的鏡射組態值。使用此功能可建立符合應用程式需求的鏡射設定。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 AppMirror API 資源的所需值。
 

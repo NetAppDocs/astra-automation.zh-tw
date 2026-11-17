@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides.html 
+keywords: execution hook,resource collection,kubernetes apps,account resources,app resources 
 summary: 列出應用程式的執行掛鉤覆寫資源 
 ---
 = 列出應用程式的執行掛鉤覆寫資源
@@ -10,7 +11,20 @@ summary: 列出應用程式的執行掛鉤覆寫資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索應用程式的執行掛鉤置換資源，提供對自訂組態的存取，這些組態可在特定操作期間修改應用程式的行為。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

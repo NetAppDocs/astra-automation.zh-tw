@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-clusters-.html 
+keywords: replace resource,cluster update,managed cluster,cluster collection,account resource 
 summary: 修改叢集 
 ---
 = 修改叢集
@@ -10,7 +11,20 @@ summary: 修改叢集
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過以提供的 JSON 請求主體取代整個儲存的資源來修改叢集。如果叢集處於代管狀態，對 credentialID 的任何更新最終都會觸發另一次收集叢集的嘗試。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

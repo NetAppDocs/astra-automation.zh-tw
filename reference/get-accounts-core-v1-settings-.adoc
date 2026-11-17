@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-settings-.html 
+keywords: settings retrieval,account settings,stored settings,setting collection,resource settings 
 summary: 擷取設定 
 ---
 = 擷取設定
@@ -10,7 +11,20 @@ summary: 擷取設定
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取設定，提供儲存的組態詳細資訊以供參考或修改。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Setting API 資源。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-tokens-.html 
+keywords: replace resource,modify token,user resource,account resource,token collection 
 summary: 修改權杖 
 ---
 = 修改權杖
@@ -10,7 +11,20 @@ summary: 修改權杖
 :imagesdir: ../media/
 
 
+[role="lead"]
+藉由以提供的 JSON 要求主體取代儲存的資源來修改權杖，同時保留使用者無法修改的鍵值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

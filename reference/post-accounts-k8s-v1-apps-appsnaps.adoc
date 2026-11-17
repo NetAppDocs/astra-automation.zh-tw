@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-appsnaps.html 
+keywords: application snapshot,create snapshot,k8s apps,account resource,app resource 
 summary: 為應用程式建立新的應用程式快照 
 ---
 = 為應用程式建立新的應用程式快照
@@ -10,7 +11,20 @@ summary: 為應用程式建立新的應用程式快照
 :imagesdir: ../media/
 
 
+[role="lead"]
+為應用程式建立新的應用程式快照，擷取應用程式的目前狀態，以用於備份或恢復目的。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appSnaps`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的應用程式快照 API 資源的期望值。
 

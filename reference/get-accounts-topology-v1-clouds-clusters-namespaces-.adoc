@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-namespaces-.html 
+keywords: namespace resource,stored namespace,namespace collection,cloud resource,cluster resource 
 summary: 擷取雲端的命名空間 
 ---
 = 擷取雲端的命名空間
@@ -10,7 +11,20 @@ summary: 擷取雲端的命名空間
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索雲端的命名空間，為雲端操作提供儲存的命名空間 API 資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/namespaces/{namespace_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Namespace API 資源。
 

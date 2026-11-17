@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-executionhooks.html 
+keywords: execution hooks,account resources,matching resources,collection fields,resource filter 
 summary: 列出所有執行掛鉤 
 ---
 = 列出所有執行掛鉤
@@ -10,7 +11,20 @@ summary: 列出所有執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取所有執行掛鉤，提供符合指定條件的資源 JSON 陣列。使用此功能來檢視集合中每個掛鉤的詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

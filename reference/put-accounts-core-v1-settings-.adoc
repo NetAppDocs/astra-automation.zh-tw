@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-settings-.html 
+keywords: account settings,replace resource,modify settings,stored resource,setting collection 
 summary: 修改設定 
 ---
 = 修改設定
@@ -10,7 +11,20 @@ summary: 修改設定
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過將儲存的資源替換為提供的 JSON 請求主體來修改設定，同時保留使用者不可修改的鍵值。使用此端點可有效率地更新組態設定，同時維持必要的系統參數。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/settings/{setting_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

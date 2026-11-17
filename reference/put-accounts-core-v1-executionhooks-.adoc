@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,resource update,account management,application impact,json request 
 summary: 修改執行掛鉤 
 ---
 = 修改執行掛鉤
@@ -10,7 +11,20 @@ summary: 修改執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+修改執行掛鉤，使其儲存的資源更新為新的組態值。使用此功能可確保使用該執行掛鉤的應用程式的後續操作反映更新後的設定。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

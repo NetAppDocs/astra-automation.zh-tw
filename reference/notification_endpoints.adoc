@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/notification_endpoints.html 
+keywords: notifications,user notifications,notification destinations,event notifications,notification management 
 summary: 'Astra API (ACC) 通知端點' 
 ---
 = Astra API (ACC) 通知端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+檢視每個使用者路由至通知目的地的事件。
 
 Notification API 提供對具有通知目的地之事件的每位使用者存取。

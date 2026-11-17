@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/schedule_endpoints.html 
+keywords: protection schedules,scheduled operations,backup schedules,snapshot schedules,schedule management 
 summary: 'Astra API (ACC) 排程端點' 
 ---
 = Astra API (ACC) 排程端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+為您的應用程式定義資料保護作業的排程。
 
 Schedule API 允許定義各種排程的資料保護作業。

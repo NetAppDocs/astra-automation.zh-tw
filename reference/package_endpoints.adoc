@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/package_endpoints.html 
+keywords: software packages,package registration,installable packages,upgrade packages,package management 
 summary: Astra API（ACC）套件端點 
 ---
 = Astra API（ACC）套件端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理已在 Astra Control 中註冊的可安裝軟體套件。您註冊的套件決定了哪些升級可用。
 
 Package API 代表可安裝的軟體套件。

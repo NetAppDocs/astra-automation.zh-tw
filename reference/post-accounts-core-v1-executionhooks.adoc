@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-executionhooks.html 
+keywords: execution hook,account resource,execution values,create execution,execution setup 
 summary: 建立新的執行掛鉤 
 ---
 = 建立新的執行掛鉤
@@ -10,7 +11,20 @@ summary: 建立新的執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立新的 execution hook，並指定 Execution Hook API 資源的值。使用此功能為您的工作流程定義自訂自動化任務。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Execution Hook API 資源的期望值。
 

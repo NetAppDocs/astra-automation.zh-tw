@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-.html 
+keywords: remove user,delete user,delete account user,remove account user,user role bindings,user notification marks 
 summary: 刪除使用者 
 ---
 = 刪除使用者
@@ -10,7 +11,20 @@ summary: 刪除使用者
 :imagesdir: ../media/
 
 
+[role="lead"]
+從 Astra API 刪除使用者，移除相關聯的資源，例如通知標記、權杖和角色繫結。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 User API 資源。
 

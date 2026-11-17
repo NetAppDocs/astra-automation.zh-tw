@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-asups-.html 
+keywords: autosupport download,asup resource,autosupport bundle,creation state,asup collection 
 summary: 擷取 ASUP 資源 
 ---
 = 擷取 ASUP 資源
@@ -10,7 +11,20 @@ summary: 擷取 ASUP 資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索 ASUP 資源，允許存取儲存的 AutoSupport 資料以進行監控和診斷。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups/{asup_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的 ASUP API 資源。如果 AutoSupport 套裝組合「creationState」為「completed」或「partial」，則可以透過指定包含「_/_」或「application/gzip」的 Accept 標頭來下載 AutoSupport 套裝組合。
 

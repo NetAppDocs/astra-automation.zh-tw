@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-volumes-.html 
+keywords: volume resource,volume collection,stored volume,account id,topology volumes 
 summary: 擷取磁碟區 
 ---
 = 擷取磁碟區
@@ -10,7 +11,20 @@ summary: 擷取磁碟區
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索 Volume，提供指定 Volume 資源的已儲存組態詳細資訊。使用此功能可檢查儲存環境中 Volume 的目前狀態。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Volume API 資源。
 

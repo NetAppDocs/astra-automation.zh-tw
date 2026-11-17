@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-tokens-.html 
+keywords: account resource,group resource,user resource,token collection,stored token 
 summary: 擷取群組中使用者的權杖 
 ---
 = 擷取群組中使用者的權杖
@@ -10,7 +11,20 @@ summary: 擷取群組中使用者的權杖
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得群組中使用者的權杖，並傳回已儲存的 API 權杖資源。使用此權杖可安全地驗證並存取群組專屬的資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應內文中傳回已儲存的 Token API 資源。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-k8s-v1-apps-appbackups-appassets.html 
+keywords: account resources,k8s apps,app backups,collection fields,resource limit 
 summary: 列出應用程式備份中的應用程式資產 
 ---
 = 列出應用程式備份中的應用程式資產
@@ -10,7 +11,20 @@ summary: 列出應用程式備份中的應用程式資產
 :imagesdir: ../media/
 
 
+[role="lead"]
+從應用程式備份擷取應用程式資產。使用此功能可存取備份中包含的資源的詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups/{appBackup_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

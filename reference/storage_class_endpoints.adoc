@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/storage_class_endpoints.html 
+keywords: storage classes,kubernetes storage,cluster storage classes,storage class details,persistent storage 
 summary: Astra API（ACC）儲存類別端點 
 ---
 = Astra API（ACC）儲存類別端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+查看叢集上可用的儲存設備類別。
 
 Storage Class API 描述了給定叢集已知的儲存類別。

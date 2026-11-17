@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-upgrades-.html 
+keywords: upgrade resource,upgrade details,upgrade collection,account upgrade,upgrade json 
 summary: 擷取升級 
 ---
 = 擷取升級
@@ -10,7 +11,20 @@ summary: 擷取升級
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索升級資源，提供已儲存的升級組態以供審查或管理。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/upgrades/{upgrade_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Upgrade API 資源。
 

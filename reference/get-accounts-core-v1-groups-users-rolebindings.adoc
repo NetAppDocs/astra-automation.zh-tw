@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-groups-users-rolebindings.html 
+keywords: role bindings,resource collection,user role,group resource,account resource 
 summary: 列出群組中使用者的角色繫結 
 ---
 = 列出群組中使用者的角色繫結
@@ -10,7 +11,20 @@ summary: 列出群組中使用者的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得使用者在群組內的角色綁定資訊。使用此功能可以檢視指派給使用者的角色，並有效地管理存取權限。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

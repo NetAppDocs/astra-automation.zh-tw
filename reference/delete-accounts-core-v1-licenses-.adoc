@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-licenses-.html 
+keywords: license removal,account license,license deletion,remove license,license entitlements,entitlement recalculation 
 summary: 刪除授權 
 ---
 = 刪除授權
@@ -10,7 +11,20 @@ summary: 刪除授權
 :imagesdir: ../media/
 
 
+[role="lead"]
+從系統中刪除指定的授權。使用此端點可有效管理您的授權權益。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的授權 API 資源。無法刪除自動安裝的評估授權。
 

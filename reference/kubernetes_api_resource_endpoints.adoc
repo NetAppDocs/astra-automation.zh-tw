@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/kubernetes_api_resource_endpoints.html 
+keywords: kubernetes api resources,supported resources,cluster resources,resource filtering,read-only api 
 summary: Astra API（ACC）Kubernetes API 資源端點 
 ---
 = Astra API（ACC）Kubernetes API 資源端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+瀏覽叢集上的 Kubernetes API 資源，查看 Astra Control 支援哪些資源。這些端點是唯讀的。
 
 Kubernetes API 資源 API 提供對 Kubernetes API 資源的唯讀存取，用於篩選 Astra 在給定叢集上支援的資源。

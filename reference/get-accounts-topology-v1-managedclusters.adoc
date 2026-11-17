@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters.html 
+keywords: managed clusters,account topology,resource collection,field filter,field limit 
 summary: 列出所有託管叢集 
 ---
 = 列出所有託管叢集
@@ -10,7 +11,20 @@ summary: 列出所有託管叢集
 :imagesdir: ../media/
 
 
+[role="lead"]
+從 Astra API 中擷取所有代管叢集，並提供符合指定條件的叢集清單。使用此功能可以檢視和管理環境中的叢集。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-topology-v2-managedclusters-apps-.html 
+keywords: remove app,delete application,cluster management,app resource removal,application state deletion,snapshot deletion 
 summary: 刪除託管叢集的應用程式 
 ---
 = 刪除託管叢集的應用程式
@@ -10,7 +11,20 @@ summary: 刪除託管叢集的應用程式
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除代管叢集的應用程式，將該應用程式從管理中移除，並移除排程與備份等相關資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 App API 資源。
 

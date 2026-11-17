@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/token_endpoints.html 
+keywords: api tokens,access tokens,token creation,token management,authentication 
 summary: Astra API（ACC）權杖端點 
 ---
 = Astra API（ACC）權杖端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+建立和管理用於向 Astra Control 進行驗證的 API 存取權杖。
 
 Token API 使用戶能夠建立和管理 API 存取權杖。

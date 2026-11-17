@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/unread_notification_endpoints.html 
+keywords: unread notifications,notification status,mark as read,user notifications,notification tracking 
 summary: Astra API（ACC）未讀通知端點 
 ---
 = Astra API（ACC）未讀通知端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+尋找使用者尚未讀取的通知，並將其標記為讀取。
 
 未讀通知 API 提供有關指定使用者尚未閱讀之通知的資訊，並允許將其標記為已讀。

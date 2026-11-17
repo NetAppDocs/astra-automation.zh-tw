@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-namespaces.html 
+keywords: account topology,managed cluster,namespaces list,resource collection,field filter 
 summary: 列出託管叢集的命名空間 
 ---
 = 列出託管叢集的命名空間
@@ -10,7 +11,20 @@ summary: 列出託管叢集的命名空間
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索代管叢集的命名空間。使用此功能可以檢視與叢集關聯的命名空間並有效管理它們。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

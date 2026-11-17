@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-subscriptions-.html 
+keywords: subscription management,account update,resource replacement,status inactive,zuora integration 
 summary: 修改訂閱 
 ---
 = 修改訂閱
@@ -10,7 +11,20 @@ summary: 修改訂閱
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過將儲存的資源替換為提供的 JSON 請求主體來修改訂閱，同時保留使用者無法變更的鍵值。如果您需要更新訂閱詳細資料，同時確保某些值保持不變，請使用此端點。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions/{subscription_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

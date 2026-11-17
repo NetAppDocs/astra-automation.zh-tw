@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-hooksources.html 
+keywords: hook source,create resource,account id,core hook,hook values,source creation 
 summary: 建立新的掛鉤來源 
 ---
 = 建立新的掛鉤來源
@@ -10,7 +11,20 @@ summary: 建立新的掛鉤來源
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立新的掛鉤來源，指定 Hook Source API 資源的值以啟動建立程序。當您需要為自動化或整合任務建立掛鉤來源時，請使用此端點。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Hook Source API 資源所需的值。
 

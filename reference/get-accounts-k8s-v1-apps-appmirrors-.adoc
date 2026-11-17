@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-appmirrors-.html 
+keywords: account resource,app resource,appMirror collection,appMirror resource,k8s apps 
 summary: 為應用程式擷取 AppMirror 資源 
 ---
 = 為應用程式擷取 AppMirror 資源
@@ -10,7 +11,20 @@ summary: 為應用程式擷取 AppMirror 資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索應用程式的 AppMirror 資源，提供對儲存的組態詳細資訊的存取，以便進行應用程式鏡射。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appMirrors/{appMirror_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回 JSON 回應正文中儲存的 AppMirror API 資源。
 

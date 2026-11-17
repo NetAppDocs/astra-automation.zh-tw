@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,execution removal,delete execution,remove execution hook,account resource,execution collection 
 summary: 刪除執行掛鉤 
 ---
 = 刪除執行掛鉤
@@ -10,7 +11,20 @@ summary: 刪除執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除執行掛勾，防止其在未來的行動中執行。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 Execution Hook API 資源。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts.html 
+keywords: create account,account resource,new account,account creation,account setup 
 summary: 建立新帳戶 
 ---
 = 建立新帳戶
@@ -10,7 +11,20 @@ summary: 建立新帳戶
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立新帳戶，並指定帳戶 API 資源所需的值。使用此功能來設置與設定存取服務的帳戶詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Account API 資源的所需值。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-core-v1-users-groups-.html 
+keywords: account resource,user resource,group collection,stored group,group resource 
 summary: 擷取使用者的群組 
 ---
 = 擷取使用者的群組
@@ -10,7 +11,20 @@ summary: 擷取使用者的群組
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索使用者的群組，並以結構化格式提供儲存的群組資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/groups/{group_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Group API 資源。
 

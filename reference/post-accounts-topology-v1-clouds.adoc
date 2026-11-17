@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-clouds.html 
+keywords: netapp ontap,cloud resource,account resource,cloud topology,create cloud 
 summary: 建立新的雲端 
 ---
 = 建立新的雲端
@@ -10,7 +11,20 @@ summary: 建立新的雲端
 :imagesdir: ../media/
 
 
+[role="lead"]
+在 Astra API 中建立一個新的雲端資源。使用此功能可以指定雲端組態所需的值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Cloud API 資源的期望值。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-executionhooks-.html 
+keywords: execution hook,execution hook resource,matching containers,matching images,matching criteria,execution hook collection 
 summary: 擷取執行掛鉤 
 ---
 = 擷取執行掛鉤
@@ -10,7 +11,20 @@ summary: 擷取執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取執行掛鉤，提供儲存的資源詳細資訊，並根據目前條件比對 Container 和映像資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應主體中傳回已儲存的 Execution Hook API 資源。同時根據目前的 matchingCriteria 和已定義的應用程式，填入 matchingContainers 及 matchingImages。
 

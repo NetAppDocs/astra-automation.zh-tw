@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-appbackups-.html 
+keywords: account topology,application backup,stored backup,backup resource,app backup collection 
 summary: 擷取應用程式備份 
 ---
 = 擷取應用程式備份
@@ -10,7 +11,20 @@ summary: 擷取應用程式備份
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索應用程式備份，提供對儲存的備份資源的存取，以便進行進一步檢查或恢復。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的 Application Backup API 資源。
 

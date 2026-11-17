@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v2-managedclusters-apps.html 
+keywords: managed clusters,app creation,account resource,app resource,cluster management 
 summary: 為託管叢集建立新應用程式 
 ---
 = 為託管叢集建立新應用程式
@@ -10,7 +11,20 @@ summary: 為託管叢集建立新應用程式
 :imagesdir: ../media/
 
 
+[role="lead"]
+為代管叢集建立新的應用程式，並指定應用程式 API 資源組態的所需值。使用此端點可在您的代管叢集環境中啟動應用程式。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 App API 資源的期望值。
 

@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/hook_source_endpoints.html 
+keywords: hook sources,shared hook source,execution hooks,hook management,reusable hooks 
 summary: Astra API（ACC）攔截程序來源端點 
 ---
 = Astra API（ACC）攔截程序來源端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+將鉤子來源與執行鉤子分開管理，以便多個鉤子可以共享同一個來源。更新共享的來源會將變更套用到所有使用該來源的地方。
 
 Hook Source API 可簡化 Hook Source 的管理、使其與執行 Hook 資源的管理分開。例如、單一 Hook Source 可由多個執行 Hook 參照、以避免重複的 Hook Source、並允許單一 API 呼叫更新一個 Hook Source、即使該 Hook Source 由多個執行 Hook 資源使用也一樣。

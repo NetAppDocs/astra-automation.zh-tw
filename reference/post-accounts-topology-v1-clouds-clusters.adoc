@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-topology-v1-clouds-clusters.html 
+keywords: cluster creation,cloud clusters,account clusters,cloud resource,cluster resource 
 summary: 為雲端建立新叢集 
 ---
 = 為雲端建立新叢集
@@ -10,7 +11,20 @@ summary: 為雲端建立新叢集
 :imagesdir: ../media/
 
 
+[role="lead"]
+為雲端環境建立叢集，並指定 Cluster API 資源的所需組態。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Cluster API 資源的期望值。
 

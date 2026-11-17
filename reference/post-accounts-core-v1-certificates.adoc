@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-certificates.html 
+keywords: certificate creation,account certificate,certificate resource,create certificate,account id 
 summary: 建立新憑證 
 ---
 = 建立新憑證
@@ -10,7 +11,20 @@ summary: 建立新憑證
 :imagesdir: ../media/
 
 
+[role="lead"]
+為憑證 API 資源建立新憑證。使用此選項可指定安全的通訊所需的值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/certificates`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Certificate API 資源所需的值。
 

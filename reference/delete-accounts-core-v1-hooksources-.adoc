@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-hooksources-.html 
+keywords: hook source,remove resource,delete hook,account management,remove hook 
 summary: 刪除掛鉤來源 
 ---
 = 刪除掛鉤來源
@@ -10,7 +11,20 @@ summary: 刪除掛鉤來源
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除掛勾來源，從系統中移除指定的資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 Hook Source API 資源。
 

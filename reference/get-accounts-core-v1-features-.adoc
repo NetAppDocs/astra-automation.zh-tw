@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-features-.html 
+keywords: feature resource,feature collection,account id,feature id,stored feature 
 summary: 擷取功能 
 ---
 = 擷取功能
@@ -10,7 +11,20 @@ summary: 擷取功能
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取功能，提供儲存的功能 API 資源以供檢查或整合。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/features/{feature_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Feature API 資源。
 

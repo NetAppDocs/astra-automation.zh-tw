@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-hooksources-.html 
+keywords: replace resource,source hook,snapshot impact,md5 checksum,execution hooks 
 summary: 修改 hook 來源 
 ---
 = 修改 hook 來源
@@ -10,7 +11,20 @@ summary: 修改 hook 來源
 :imagesdir: ../media/
 
 
+[role="lead"]
+修改 Astra API 中的掛鉤來源。您可以使用此端點更新與應用程式快照關聯的執行掛鉤的原始碼。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/hookSources/{hookSource_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

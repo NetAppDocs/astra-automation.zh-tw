@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-clusternodes-.html 
+keywords: cluster node,cloud cluster,account resource,cloud resource,cluster resource,stored resource 
 summary: 擷取雲端的叢集節點 
 ---
 = 擷取雲端的叢集節點
@@ -10,7 +11,20 @@ summary: 擷取雲端的叢集節點
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索雲端的叢集節點，提供對儲存的節點組態的存取，以便進行雲端資源管理。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的叢集節點 API 資源。
 

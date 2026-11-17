@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/bucket_endpoints.html 
+keywords: backup buckets,object storage buckets,application backups,bucket management,backup storage 
 summary: Astra API（ACC）儲存區端點 
 ---
 = Astra API（ACC）儲存區端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理 Astra Control 用於儲存應用程式備份的儲存桶。
 
 Bucket API 提供對用於在 Astra 中儲存應用程式備份的儲存桶的存取。

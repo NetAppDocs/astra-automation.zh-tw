@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-subscriptions.html 
+keywords: subscription,create subscription,account subscription,account id,subscription resource 
 summary: 建立新訂閱 
 ---
 = 建立新訂閱
@@ -10,7 +11,20 @@ summary: 建立新訂閱
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立新訂閱，並指定訂閱 API 資源的所需值。使用此功能可以啟動具有自訂的設定的訂閱，以滿足您的特定需求。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/subscriptions`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Subscription API 資源的期望值。
 

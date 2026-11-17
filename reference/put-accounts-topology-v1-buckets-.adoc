@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v1-buckets-.html 
+keywords: replace resource,bucket management,data storage,account bucket,bucket topology 
 summary: 修改儲存貯體 
 ---
 = 修改儲存貯體
@@ -10,7 +11,20 @@ summary: 修改儲存貯體
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過使用提供的 JSON 請求主體更新其儲存的資源來修改儲存桶，同時保留基本的鍵值。使用此功能可確保儲存桶的組態反映您所需的設定，同時保持系統完整性。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

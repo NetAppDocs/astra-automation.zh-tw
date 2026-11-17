@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users.html 
+keywords: users collection,account users,resource fields,collection list,resource sort,collection filter 
 summary: 列出所有使用者 
 ---
 = 列出所有使用者
@@ -10,7 +11,20 @@ summary: 列出所有使用者
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得系統中所有使用者的列表，並提供對使用者資訊和組態的存取。使用此功能可以有效率地審查或管理使用者帳戶。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

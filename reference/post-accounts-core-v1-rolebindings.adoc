@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-rolebindings.html 
+keywords: role binding,create role,account role,core role binding,role management 
 summary: 建立新的角色繫結 
 ---
 = 建立新的角色繫結
@@ -10,7 +11,20 @@ summary: 建立新的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+在 Astra API 中建立角色綁定，並指定角色綁定資源的所需值。使用此功能可定義環境中使用者的權限和存取控制。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/roleBindings`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的角色繫結 API 資源所需的值。
 

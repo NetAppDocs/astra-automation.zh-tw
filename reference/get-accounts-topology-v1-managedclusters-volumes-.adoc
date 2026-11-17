@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-volumes-.html 
+keywords: volume resource,volume collection,managed cluster,account id,stored volume,volume json 
 summary: 為託管叢集擷取磁碟區 
 ---
 = 為託管叢集擷取磁碟區
@@ -10,7 +11,20 @@ summary: 為託管叢集擷取磁碟區
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索受代管叢集的 Volume，以便存取儲存的 Volume 資訊，進行進一步的管理或分析。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Volume API 資源。
 

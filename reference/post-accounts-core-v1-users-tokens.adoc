@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users-tokens.html 
+keywords: account token,create token,user token,core token,user identifier,account identifier 
 summary: 為使用者建立新權杖 
 ---
 = 為使用者建立新權杖
@@ -10,7 +11,20 @@ summary: 為使用者建立新權杖
 :imagesdir: ../media/
 
 
+[role="lead"]
+為使用者建立新的權杖，並指定 Token API 資源所需的值。當您需要安全地驗證並存取 Astra API 服務時，請使用此功能。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Token API 資源的期望值。
 

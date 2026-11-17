@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-volumes.html 
+keywords: account topology,volume list,resource collection,field order,account resources 
 summary: 列出所有磁碟區 
 ---
 = 列出所有磁碟區
@@ -10,7 +11,20 @@ summary: 列出所有磁碟區
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索 Volume 列表，提供集合中每個 Volume 的詳細資訊。使用此功能可檢視所有符合的 Volume 中您感興趣的特定欄位。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/volumes`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

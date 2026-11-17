@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v2-apps-.html 
+keywords: account resource,app collection,stored app,k8s resource,json response 
 summary: 檢索應用程式 
 ---
 = 檢索應用程式
@@ -10,7 +11,20 @@ summary: 檢索應用程式
 :imagesdir: ../media/
 
 
+[role="lead"]
+從 Astra API 擷取應用程式，提供儲存的應用程式詳細資訊以進行進一步分析或管理。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的應用程式 API 資源。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/get-accounts-topology-v1-appbackups-appassets-.html 
+keywords: application asset,app asset,app backup,account resource,app asset collection 
 summary: 從應用程式備份中擷取應用程式資產 
 ---
 = 從應用程式備份中擷取應用程式資產
@@ -10,7 +11,20 @@ summary: 從應用程式備份中擷取應用程式資產
 :imagesdir: ../media/
 
 
+[role="lead"]
+從應用程式備份檢索應用程式資產。使用此功能可存取已儲存的資產組態，以進行恢復或分析。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/appBackups/{appBackup_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的應用程式資產 API 資源。
 

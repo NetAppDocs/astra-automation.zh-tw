@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/certificate_endpoints.html 
+keywords: trusted certificates,certificate management,outgoing connections,admin-trusted certificates,secure connections 
 summary: Astra API（ACC）憑證端點 
 ---
 = Astra API（ACC）憑證端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理 Astra Control 用於建立出站連線的管理員信任憑證。
 
 憑證 API 代表管理員信任的憑證，用於建立傳出連線。

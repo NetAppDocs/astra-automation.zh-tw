@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/asup_endpoints.html 
+keywords: autosupport,asup bundles,support bundles,bundle upload,troubleshooting 
 summary: Astra API（ACC）AutoSupport 端點 
 ---
 = Astra API（ACC）AutoSupport 端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+建立 AutoSupport（ASUP）套件，並可選擇將其上傳至 NetApp 以協助進行疑難排解。
 
 ASUP API 提供對 ASUP 資源的存取、以便建立並選擇性上傳 AutoSupport 套裝組合。

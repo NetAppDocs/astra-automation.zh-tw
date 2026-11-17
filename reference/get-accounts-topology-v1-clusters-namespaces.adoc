@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clusters-namespaces.html 
+keywords: cluster topology,namespaces list,resource collection,account cluster,namespaces fields 
 summary: 列出叢集的命名空間 
 ---
 = 列出叢集的命名空間
@@ -10,7 +11,20 @@ summary: 列出叢集的命名空間
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索叢集的命名空間，並提供集合中所有符合資源的清單。可根據需要使用此功能檢視每個資源的特定欄位。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clusters/{cluster_id}/namespaces`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

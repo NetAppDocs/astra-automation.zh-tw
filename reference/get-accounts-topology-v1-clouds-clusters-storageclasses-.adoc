@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-clouds-clusters-storageclasses-.html 
+keywords: account storage class,cloud storage class,cluster storage class,storage class topology,storage class resource,storage class list 
 summary: 為雲端擷取儲存類別 
 ---
 = 為雲端擷取儲存類別
@@ -10,7 +11,20 @@ summary: 為雲端擷取儲存類別
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索雲端的儲存設備類別，提供儲存資源的可用類別組態。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/clouds/{cloud_id}/clusters/{cluster_id}/storageClasses/{storageClass_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Storage Class API 資源。
 

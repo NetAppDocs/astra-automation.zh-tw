@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-unreadnotifications-.html 
+keywords: remove unread notification,unread notification delete,delete unread notification,user notification remove,account notification delete 
 summary: 刪除未讀通知 
 ---
 = 刪除未讀通知
@@ -10,7 +11,20 @@ summary: 刪除未讀通知
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除未讀通知，從通知清單中移除指定的通知資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的未讀通知 API 資源。
 

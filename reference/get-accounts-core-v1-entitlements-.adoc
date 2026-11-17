@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements-.html 
+keywords: account entitlement,entitlement resource,entitlement collection,account information,stored entitlement 
 summary: 擷取權利 
 ---
 = 擷取權利
@@ -10,7 +11,20 @@ summary: 擷取權利
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取授權，並在 JSON 回應主體中提供儲存的授權 API 資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements/{entitlement_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Entitlement API 資源。
 

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/post-accounts-core-v1-groups-users-rolebindings.html 
+keywords: role binding,group roles,user roles,account role binding,user role binding 
 summary: 為群組中的使用者建立新的角色繫結 
 ---
 = 為群組中的使用者建立新的角色繫結
@@ -10,7 +11,20 @@ summary: 為群組中的使用者建立新的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+為群組中的使用者建立新的角色繫結，建立使用者在指定群組環境中執行操作的權限。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的角色繫結 API 資源所需的值。
 

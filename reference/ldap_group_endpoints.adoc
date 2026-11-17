@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/ldap_group_endpoints.html 
+keywords: ldap groups,directory groups,ldap server,read-only access,group lookup 
 summary: Astra API（ACC）LDAP 群組端點 
 ---
 = Astra API（ACC）LDAP 群組端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+檢視已設定的輕量級目錄存取協定（LDAP）伺服器上的群組。這些端點是唯讀的。
 
 LDAP 群組 API 可對已設定 LDAP 伺服器中的 LDAP 群組進行唯讀存取。

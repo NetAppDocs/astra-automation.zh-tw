@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-volumes-.html 
+keywords: volume resource,volume collection,stored volume,app resource,k8s volumes 
 summary: 擷取應用程式的 Volume 
 ---
 = 擷取應用程式的 Volume
@@ -10,7 +11,20 @@ summary: 擷取應用程式的 Volume
 :imagesdir: ../media/
 
 
+[role="lead"]
+為應用程式檢索 Volume，提供已儲存 Volume 資源的詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/volumes/{volume_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Volume API 資源。
 

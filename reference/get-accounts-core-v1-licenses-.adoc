@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-licenses-.html 
+keywords: license resource,license collection,account resource,license id,account id 
 summary: 擷取授權 
 ---
 = 擷取授權
@@ -10,7 +11,20 @@ summary: 擷取授權
 :imagesdir: ../media/
 
 
+[role="lead"]
+擷取授權，並提供已儲存的授權 API 資源的詳細資訊。使用此功能可檢查目前的授權組態，並確保法規遵循授權要求。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/licenses/{license_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 License API 資源。
 

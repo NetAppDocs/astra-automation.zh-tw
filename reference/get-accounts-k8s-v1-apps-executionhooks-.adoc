@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhooks-.html 
+keywords: execution hook,matching containers,matching images,kubernetes apps,execution criteria 
 summary: 擷取應用程式的執行掛鉤 
 ---
 = 擷取應用程式的執行掛鉤
@@ -10,7 +11,20 @@ summary: 擷取應用程式的執行掛鉤
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得應用程式的執行掛鉤。使用此功能可根據目前的準則，檢查已儲存的執行掛鉤資源及其相關聯的容器與映像。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHooks/{executionHook_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應主體中傳回已儲存的 Execution Hook API 資源。同時根據目前的 matchingCriteria 和已定義的應用程式，填入 matchingContainers 及 matchingImages。
 

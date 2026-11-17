@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-entitlements.html 
+keywords: entitlements,account resources,field selection,resource collection,collection filtering,resource sorting 
 summary: 列出所有權利 
 ---
 = 列出所有權利
@@ -10,7 +11,20 @@ summary: 列出所有權利
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得授權清單，提供集合中所有相符資源的資訊。使用此功能可根據您的請求條件存取特定資源詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/entitlements`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

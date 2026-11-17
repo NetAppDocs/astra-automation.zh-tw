@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-core-v1-users-tokens-.html 
+keywords: remove token,credential removal,delete token,token resource,remove credential 
 summary: 刪除 token 
 ---
 = 刪除 token
@@ -10,7 +11,20 @@ summary: 刪除 token
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除指定的權杖，並從認證資料服務中移除其關聯的認證資料。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/tokens/{token_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 Token API 資源。
 

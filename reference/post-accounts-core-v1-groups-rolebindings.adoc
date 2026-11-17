@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-groups-rolebindings.html 
+keywords: role binding,create role,group role,account role,role management 
 summary: 為群組建立新的角色繫結 
 ---
 = 為群組建立新的角色繫結
@@ -10,7 +11,20 @@ summary: 為群組建立新的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+為群組建立新的角色綁定，並在 Astra 環境中為該群組指派特定權限。使用此端點可以有效地管理以群組為基礎之作業的存取控制。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/roleBindings`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的角色繫結 API 資源所需的值。
 

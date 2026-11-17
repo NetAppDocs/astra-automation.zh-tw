@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/application_snapshot_endpoints.html 
+keywords: application snapshots,snapshot creation,managed applications,snapshot retrieval,data protection 
 summary: Astra API（ACC）應用程式 Snapshot 端點 
 ---
 = Astra API（ACC）應用程式 Snapshot 端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+建立和檢視代管應用程式的快照。
 
 應用程式快照 API 可讓使用者建立及檢視受管理應用程式的快照。

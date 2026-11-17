@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cluster_node_endpoints.html 
+keywords: cluster nodes,kubernetes nodes,node details,node information,cluster resources 
 summary: Astra API（ACC）叢集節點端點 
 ---
 = Astra API（ACC）叢集節點端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+檢視屬於叢集的節點。
 
 Cluster Node API 可存取與叢集相關聯的節點。

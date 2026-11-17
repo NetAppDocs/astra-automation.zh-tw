@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/role_binding_endpoints.html 
+keywords: role bindings,roles,permissions,access control,user permissions,group permissions 
 summary: Astra API（ACC）角色繫結端點 
 ---
 = Astra API（ACC）角色繫結端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理授予帳戶中使用者或群組權限的角色綁定。角色綁定將使用者或群組連結到角色。
 
 Role Binding API 描述了使用者帳戶配對或群組帳戶配對之間的關係，以及授予它們的權限集（角色）。

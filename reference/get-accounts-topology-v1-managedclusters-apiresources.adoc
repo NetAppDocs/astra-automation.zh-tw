@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apiresources.html 
+keywords: topology resources,managed clusters,resource collection,include fields,limit resources 
 summary: 列出託管叢集的 K8s API 資源 
 ---
 = 列出託管叢集的 K8s API 資源
@@ -10,7 +11,20 @@ summary: 列出託管叢集的 K8s API 資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得代管叢集的 Kubernetes API 資源清單。使用此方法可以檢視指定叢集中的可用資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apiResources`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

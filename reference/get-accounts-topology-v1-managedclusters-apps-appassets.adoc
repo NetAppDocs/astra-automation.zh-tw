@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apps-appassets.html 
+keywords: managed clusters,app assets,resource collection,account resources,field inclusion,resource limit 
 summary: 列出託管叢集的應用程式資產 
 ---
 = 列出託管叢集的應用程式資產
@@ -10,7 +11,20 @@ summary: 列出託管叢集的應用程式資產
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索代管叢集的應用程式資產，並提供與叢集應用程式相關的資源清單。使用此清單可以識別和存取代管叢集中的特定應用程式資源。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apps/{app_id}/appAssets`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 

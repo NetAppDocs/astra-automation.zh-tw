@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-users.html 
+keywords: user creation,user resource,account user,create user,account management 
 summary: 建立新使用者 
 ---
 = 建立新使用者
@@ -10,7 +11,20 @@ summary: 建立新使用者
 :imagesdir: ../media/
 
 
+[role="lead"]
+在 Astra API 中建立新使用者，並指定使用者 API 資源的所需值。使用此功能可管理 Astra 環境中的使用者存取和權限。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的使用者 API 資源的期望值。
 

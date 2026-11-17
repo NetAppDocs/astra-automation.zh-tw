@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-users-rolebindings-.html 
+keywords: role binding,role permissions,user role,group role,account role,user permissions 
 summary: 擷取使用者的角色繫結 
 ---
 = 擷取使用者的角色繫結
@@ -10,7 +11,20 @@ summary: 擷取使用者的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+取得使用者的角色綁定，提供與使用者角色關聯的特定權限。使用此功能可檢視治理帳戶或群組內資源存取權限的角色指派。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的角色綁定 API 資源。如果請求指向 /accounts/{account_id}/core/v1/users/{user_id}/roleBindings 端點,則僅允許讀取使用者 ID 與請求 URL 中的使用者 ID 相符的 roleBinding 資源。如果請求指向 /accounts/{account_id}/core/v1/groups/{group_id}/roleBindings 端點,則僅允許讀取群組 ID 與請求 URL 中的群組 ID 相符的 roleBinding 資源。
 

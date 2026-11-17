@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-schedules-.html 
+keywords: account schedule,k8s schedule,app schedule,stored schedule,schedule listing 
 summary: 擷取排程 
 ---
 = 擷取排程
@@ -10,7 +11,20 @@ summary: 擷取排程
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索已儲存的排程。使用此功能可以存取和審查排程組態詳情。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Schedule API 資源。
 

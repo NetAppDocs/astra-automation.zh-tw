@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-topology-v2-managedclusters-apps-.html 
+keywords: account topology,managed cluster,app resource,replace resource,force update 
 summary: 修改託管叢集的應用程式 
 ---
 = 修改託管叢集的應用程式
@@ -10,7 +11,20 @@ summary: 修改託管叢集的應用程式
 :imagesdir: ../media/
 
 
+[role="lead"]
+修改代管叢集的應用程式，將整個儲存的資源替換為提供的 JSON 請求主體。使用此功能可在保留使用者不可修改的鍵值的同時更新應用程式組態。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/topology/v2/managedClusters/{managedCluster_id}/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

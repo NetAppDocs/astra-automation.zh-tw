@@ -3,11 +3,15 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/cloud_endpoints.html 
+keywords: cloud resources,cloud connections,cloud management,managed clusters,cloud configuration 
 summary: Astra API （ACC） 雲端端點 
 ---
 = Astra API （ACC） 雲端端點
 :allow-uri-read: 
 :imagesdir: ../media/
 
+
+[role="lead"]
+管理雲端資源，以便您可以連接到特定的雲端平台，並管理其中的叢集和應用程式。
 
 Cloud API 可存取雲端資源、讓用戶端連線至特定雲端、以管理叢集和應用程式。

@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-core-v1-users-rolebindings-.html 
+keywords: update role,role binding,replace resource,user role,account resource,user management 
 summary: 修改使用者的角色繫結 
 ---
 = 修改使用者的角色繫結
@@ -10,7 +11,20 @@ summary: 修改使用者的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+修改使用者的角色綁定，並根據提供的規格更新儲存的資源。使用此端點可在 Astra API 環境中調整使用者權限。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

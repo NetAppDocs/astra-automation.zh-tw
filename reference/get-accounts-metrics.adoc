@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-metrics.html 
+keywords: account metrics,metrics retrieval,account performance,account data,performance metrics 
 summary: 擷取帳戶的所有指標 
 ---
 = 擷取帳戶的所有指標
@@ -10,7 +11,20 @@ summary: 擷取帳戶的所有指標
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索帳戶的所有計量，提供有關效能和使用率的見解。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/metrics`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回該帳戶的所有指標
 

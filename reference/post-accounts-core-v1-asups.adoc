@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-core-v1-asups.html 
+keywords: asup creation,account resource,core v1,account id,netapp ontap 
 summary: 建立新的 ASUP 資源 
 ---
 = 建立新的 ASUP 資源
@@ -10,7 +11,20 @@ summary: 建立新的 ASUP 資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立 ASUP 資源，以指定自動支援上傳所需的值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/asups`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 ASUP API 資源所需的值。
 

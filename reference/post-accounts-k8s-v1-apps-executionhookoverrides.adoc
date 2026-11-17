@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-executionhookoverrides.html 
+keywords: execution hook,hook override,app resource,account resource,k8s app 
 summary: 為應用程式建立新的執行掛鉤覆寫資源 
 ---
 = 為應用程式建立新的執行掛鉤覆寫資源
@@ -10,7 +11,20 @@ summary: 為應用程式建立新的執行掛鉤覆寫資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+為應用程式建立執行掛鉤置換資源，並指定所需的自訂值。使用此功能可根據特定應用程式需求自訂執行掛鉤。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Execution Hook Override API 資源所需的值。
 

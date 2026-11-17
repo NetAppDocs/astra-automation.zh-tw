@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/delete-accounts-k8s-v2-apps-.html 
+keywords: remove app,kubernetes app,delete application,app management,application state,deleting app 
 summary: 刪除應用程式 
 ---
 = 刪除應用程式
@@ -10,7 +11,20 @@ summary: 刪除應用程式
 :imagesdir: ../media/
 
 
+[role="lead"]
+從 Astra 刪除應用程式，移除指定的應用程式 API 資源並將其與管理解除關聯。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v2/apps/{app_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的 App API 資源。
 

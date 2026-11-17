@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/put-accounts-core-v1-groups-users-rolebindings-.html 
+keywords: replace resource,role binding,group resource,user role,account resource,stored resource 
 summary: 修改群組中使用者的角色繫結 
 ---
 = 修改群組中使用者的角色繫結
@@ -10,7 +11,20 @@ summary: 修改群組中使用者的角色繫結
 :imagesdir: ../media/
 
 
+[role="lead"]
+修改群組中使用者的角色綁定，使用提供的詳細資料更新儲存的資源，同時保持使用者不可修改的鍵值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/roleBindings/{roleBinding_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

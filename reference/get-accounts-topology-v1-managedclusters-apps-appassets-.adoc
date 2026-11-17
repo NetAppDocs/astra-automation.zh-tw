@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-apps-appassets-.html 
+keywords: application asset,managed cluster,app assets,stored resource,json response 
 summary: 為託管叢集擷取應用程式資產 
 ---
 = 為託管叢集擷取應用程式資產
@@ -10,7 +11,20 @@ summary: 為託管叢集擷取應用程式資產
 :imagesdir: ../media/
 
 
+[role="lead"]
+為代管叢集檢索應用程式資產，提供對儲存的資源詳細資訊的存取，以便進行管理工作。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/apps/{app_id}/appAssets/{appAsset_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應正文中傳回已儲存的應用程式資產 API 資源。
 

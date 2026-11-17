@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/put-accounts-k8s-v1-apps-schedules-.html 
+keywords: replace resource,schedule update,account management,app scheduling,modify schedule 
 summary: 修改排程 
 ---
 = 修改排程
@@ -10,7 +11,20 @@ summary: 修改排程
 :imagesdir: ../media/
 
 
+[role="lead"]
+透過將儲存的資源替換為提供的 JSON 請求主體來修改排程，同時保留使用者不可修改的鍵值。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-put]#PUT# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/schedules/{schedule_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 將整個儲存的資源替換為提供的 JSON 請求主體，同時保留使用者不可修改的鍵值。
 

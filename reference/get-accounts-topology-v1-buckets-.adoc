@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-buckets-.html 
+keywords: bucket resource,stored bucket,account bucket,topology bucket,bucket collection 
 summary: 擷取儲存貯體 
 ---
 = 擷取儲存貯體
@@ -10,7 +11,20 @@ summary: 擷取儲存貯體
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索儲存桶，並在回應中提供已儲存的儲存桶組態詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/buckets/{bucket_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的 Bucket API 資源。
 

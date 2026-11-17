@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/post-accounts-k8s-v1-apps-appbackups.html 
+keywords: application backup,account resource,app resource,k8s apps,kubernetes backup 
 summary: 為應用程式建立新的應用程式備份 
 ---
 = 為應用程式建立新的應用程式備份
@@ -10,7 +11,20 @@ summary: 為應用程式建立新的應用程式備份
 :imagesdir: ../media/
 
 
+[role="lead"]
+建立應用程式備份，並指定備份資源的所需組態。使用此功能可保留應用程式的目前狀態，以便日後恢復或分析。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-post]#POST# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/appBackups`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 指示要建立的 Application Backup API 資源的期望值。
 

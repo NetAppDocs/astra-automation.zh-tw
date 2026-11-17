@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-k8s-v1-apps-executionhookoverrides-.html 
+keywords: execution hook,execution override,execution hook override,k8s apps,account resource,app resource 
 summary: 擷取執行掛鉤覆寫資源 
 ---
 = 擷取執行掛鉤覆寫資源
@@ -10,7 +11,20 @@ summary: 擷取執行掛鉤覆寫資源
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索執行掛鉤置換資源，提供儲存的整合和自動化工作流程的組態詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/k8s/v1/apps/{app_id}/executionHookOverrides/{executionHookOverride_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應內文中傳回已儲存的 Execution Hook Override API 資源。
 

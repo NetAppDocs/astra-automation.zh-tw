@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: true 
 permalink: reference/delete-accounts-core-v1-groups-users-unreadnotifications-.html 
+keywords: remove notification,unread notification,delete notification,user notification,notification management,notification removal 
 summary: 刪除群組中某個使用者的未讀通知 
 ---
 = 刪除群組中某個使用者的未讀通知
@@ -10,7 +11,20 @@ summary: 刪除群組中某個使用者的未讀通知
 :imagesdir: ../media/
 
 
+[role="lead"]
+刪除群組中使用者的未讀通知。使用此功能可以管理和維護群組互動中的通知狀態。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-delete]#DELETE# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/groups/{group_id}/users/{user_id}/unreadNotifications/{unreadNotification_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 移除指定的未讀通知 API 資源。
 

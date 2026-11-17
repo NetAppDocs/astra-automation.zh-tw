@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-topology-v1-managedclusters-clusternodes-.html 
+keywords: cluster node,managed cluster,cluster topology,account resource,stored resource 
 summary: 擷取託管叢集的叢集節點 
 ---
 = 擷取託管叢集的叢集節點
@@ -10,7 +11,20 @@ summary: 擷取託管叢集的叢集節點
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索代管叢集的叢集節點，提供有關該節點在叢集中的組態和狀態的詳細資訊。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/topology/v1/managedClusters/{managedCluster_id}/clusterNodes/{clusterNode_id}`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 在 JSON 回應本文中傳回已儲存的叢集節點 API 資源。
 

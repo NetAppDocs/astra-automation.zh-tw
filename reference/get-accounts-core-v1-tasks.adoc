@@ -3,6 +3,7 @@ sidebar: sidebar
 api: true 
 explorer: false 
 permalink: reference/get-accounts-core-v1-tasks.html 
+keywords: account tasks,field selection,resource collection,field filter,maximum resources,task list 
 summary: 列出所有任務 
 ---
 = 列出所有任務
@@ -10,7 +11,20 @@ summary: 列出所有任務
 :imagesdir: ../media/
 
 
+[role="lead"]
+檢索集合中的所有工作，提供可用工作資源的完整檢視。利用此功能，您可以有效率地識別和管理工作流程中的工作。
+
+
+
+[[http-method-and-endpoint]]
+== HTTP 方法和端點
+
 [.api-doc-operation .api-doc-operation-get]#GET# [.api-doc-code-block]#`/accounts/{account_id}/core/v1/tasks`#
+
+
+
+[[usage-notes]]
+== 使用注意事項
 
 傳回集合中所有符合資源的 JSON 陣列。如果在請求中指定了個別欄位，則項目 JSON 陣列將按指定順序包含每個相符資源所請求的欄位。
 
